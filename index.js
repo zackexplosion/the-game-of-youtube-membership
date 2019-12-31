@@ -64,8 +64,14 @@ function create () {
     // currentTime: START_TIME,
     // loop: true
   })
-
-  if (DEBUG) music.audio.currentTime = START_TIME - 1
+  window.addEventListener('click', e => {
+    if (music.isPlaying) return
+    music.play({
+      // currentTime: START_TIME,
+      // loop: true
+    })
+    if (DEBUG) music.audio.currentTime = START_TIME - 1
+  })
 
   this.tweens.add({
     targets: logo,
@@ -93,7 +99,12 @@ function create () {
 }
 
 function update () {
-  AUDIO_PLAY_PERCENTAGE = parseFloat((music.audio.currentTime / music.audio.duration * 100).toFixed(1))
+  try {
+    AUDIO_PLAY_PERCENTAGE = parseFloat((music.audio.currentTime / music.audio.duration * 100).toFixed(1))
+  } catch (error) {
+
+  }
+
   // going to show members
   if (LAST_PLAY_TIME !== AUDIO_PLAY_PERCENTAGE && music.audio.currentTime > START_TIME) {
     virtualTime = moment(virtualTime).add(DATE_DURATION_PER_PERIOD_BY_SECONDS, 'seconds')
@@ -125,7 +136,7 @@ function currentTimeChange () {
     if (x >= config.width) {
       x = 88 * Math.abs(lastProfileIndex - lastProfileIndex - 1)
     }
-    activedMembers[lastProfileIndex] = this.add.image(x, y, imageKey, MEMBER_SIZE)
+    activedMembers[lastProfileIndex] = this.add.image(x, y, imageKey)
     // var shape = this.make.graphics()
 
     //  Create a hash shape Graphics object
