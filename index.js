@@ -58,27 +58,36 @@ function preload () {
 }
 
 function playMusic () {
+  console.log('music.isPlaying', music.isPlaying)
+  // debugger
   if (music.isPlaying) return
   music.play({
     // currentTime: START_TIME,
     // loop: true
   })
-
-  music.on('play', e => {
-    console.log('on play')
-    if (DEBUG) music.audio.currentTime = START_TIME - 1
-  })
+  if (DEBUG) music.audio.currentTime = START_TIME - 1
+  console.log(music)
+  // music.on('play', e => {
+  //   console.log('on play')
+  //   if (DEBUG) music.audio.currentTime = START_TIME - 1
+  // })
 }
 
 function create () {
   const logo = this.add.image(400, 150, 'player')
   music = this.sound.add('music')
-
-  // if user played music, just run it
   playMusic()
+  music.on('decoded', e => {
+    console.log(e)
+    playMusic()
+  })
+  // game.sound.setDecodedCallback([music], playMusic, this)
+  // if user played music, just run it
+  // playMusic()
 
   // for user whom not played music
   window.addEventListener('click', e => {
+    console.log('click')
     playMusic()
   })
 
