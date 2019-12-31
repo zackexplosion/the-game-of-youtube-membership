@@ -37,10 +37,10 @@ const MEMBER_SIZE = {
 }
 function preload () {
   // this.load.image('logo', logoImg)
-  this.load.image('player', '/src/assets/player.png')
+  this.load.image('player', './assets/player.png')
 
   this.sound.pauseOnBlur = false
-  this.load.audio('music', '/src/assets/music-en.mp3')
+  this.load.audio('music', './assets/music-en.mp3')
 
   for (let i = 0; i < memeberList.length; i++) {
     const [name, url, profileImageUrl, joinDate] = memeberList[i]
@@ -144,7 +144,7 @@ function currentTimeChange () {
     // debugger
     // activedMembers[lastProfileIndex] = this.add.image(50 * lastProfileIndex, 10 * lastProfileIndex, 'memberProfile_' + lastProfileIndex)
 
-    // activedMembers[lastProfileIndex] = this.add.graphics()
+    // activedMembers[lastProfileIndex] = this.add.graphics()「
     // // debugger
     // activedMembers[lastProfileIndex].fillStyle(0x00ff00, 1)
     // // activedMembers[lastProfileIndex].setTexture('memberProfile_' + lastProfileIndex)
