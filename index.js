@@ -57,20 +57,22 @@ function preload () {
   }
 }
 
-function create () {
-  const logo = this.add.image(400, 150, 'player')
-  music = this.sound.add('music')
+function playMusic () {
+  if (music.isPlaying) return
   music.play({
     // currentTime: START_TIME,
     // loop: true
   })
+  if (DEBUG) music.audio.currentTime = START_TIME - 1
+}
+
+function create () {
+  const logo = this.add.image(400, 150, 'player')
+  music = this.sound.add('music')
+
+  playMusic()
   window.addEventListener('click', e => {
-    if (music.isPlaying) return
-    music.play({
-      // currentTime: START_TIME,
-      // loop: true
-    })
-    if (DEBUG) music.audio.currentTime = START_TIME - 1
+    playMusic()
   })
 
   this.tweens.add({
