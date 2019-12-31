@@ -5,8 +5,8 @@ const DEBUG = true
 const config = {
   type: Phaser.AUTO,
   parent: 'phaser-example',
-  width: 1024,
-  height: 768,
+  width: 800,
+  height: 600,
   audio: {
     disableWebAudio: true
   },
@@ -47,7 +47,7 @@ function preload () {
     if (!FIRST_MEMBER_JOIN_DATE) {
       FIRST_MEMBER_JOIN_DATE = joinDate
       virtualTime = moment(FIRST_MEMBER_JOIN_DATE)
-      console.log(i, name, FIRST_MEMBER_JOIN_DATE)
+      // console.log(i, name, FIRST_MEMBER_JOIN_DATE)
     }
     // console.log(name, url, joinDate)
     this.load.image('memberProfile_' + i, profileImageUrl, {
@@ -65,7 +65,13 @@ function playMusic () {
     // currentTime: START_TIME,
     // loop: true
   })
-  if (DEBUG) music.audio.currentTime = START_TIME - 1
+  if (DEBUG) {
+    try {
+      music.audio.currentTime = START_TIME - 1
+    } catch (error) {
+
+    }
+  }
   console.log(music)
   // music.on('play', e => {
   //   console.log('on play')
@@ -76,20 +82,24 @@ function playMusic () {
 function create () {
   const logo = this.add.image(400, 150, 'player')
   music = this.sound.add('music')
-  playMusic()
-  music.on('decoded', e => {
-    console.log(e)
-    playMusic()
-  })
-  // game.sound.setDecodedCallback([music], playMusic, this)
-  // if user played music, just run it
   // playMusic()
-
-  // for user whom not played music
-  window.addEventListener('click', e => {
-    console.log('click')
-    playMusic()
+  music.play({
+    seek: START_TIME - 1
   })
+
+  if (this.sound.locked) {
+    // var text = this.add.bitmapText(400, 300, 'atari-classic', 'Tap to start', 40)
+
+    var text = this.add.text(400, 300, 'Tap to Start', {
+      fontSize: '40px'
+    })
+    text.x -= Math.round(text.width / 2)
+    text.y -= Math.round(text.height / 2)
+
+    this.sound.once('unlocked', function (soundManager) {
+      text.visible = false
+    }, this)
+  }
 
   this.tweens.add({
     targets: logo,
