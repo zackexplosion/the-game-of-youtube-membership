@@ -29,14 +29,21 @@ const config = {
     }
   }
 }
-
-class Model {
-  FIRST_MEMBER_JOIN_DATE = ''
+const avaiableMusics = [
+  ['music-end.mp3', 81, 320],
+  ['music-en.mp3', 27.1, 320],
+  ['music-jp.mp3', 27.1, 320]
+]
+const settings = {
+  DEBUG: process.env.DEBUG || false,
+  avaiableMusics,
+  currentMusic: avaiableMusics[Phaser.Math.Between(0, avaiableMusics.length - 1)]
+  // currentMusic: avaiableMusics[2]
 }
-const model = new Model()
+
+// console.log(settings)
 
 window.addEventListener('load', () => {
   const game = new Phaser.Game(config)
-  game.yee = 'hello'
-  game.globals = { model }
+  game.settings = settings
 })

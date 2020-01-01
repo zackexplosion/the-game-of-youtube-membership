@@ -15,7 +15,10 @@ export default class MainScene extends Phaser.Scene {
   }
 
   create () {
-    this.fpsText = new FpsText(this)
+    if (this.game.settings.DEBUG) {
+      this.fpsText = new FpsText(this)
+    }
+
     this.messageBox = new MessageBox(this)
     /**
      * Delete all the code below to start a fresh scene
@@ -40,16 +43,15 @@ export default class MainScene extends Phaser.Scene {
 
       this.sound.once('unlocked', function (soundManager) {
         text.visible = false
-        this.playMusic()
+        this.startGame()
       }, this)
     } else {
-      this.playMusic()
+      this.startGame()
     }
   }
 
-  playMusic () {
+  startGame () {
     this.music.on('play', e => {
-      this.startGame()
       window.loadingText.destroy()
     })
 
@@ -80,21 +82,20 @@ export default class MainScene extends Phaser.Scene {
     })
 
     this.music.play()
-  }
 
-  startGame () {
-    // new PhaserLogo(this, this.cameras.main.width / 2, 0)
-
-    this.add
-      .text(this.cameras.main.width - 15, 15, `Phaser v${Phaser.VERSION}`, {
-        color: '#000000',
-        fontSize: 24
-      })
-      .setOrigin(1, 0)
+    // this.add
+    //   .text(this.cameras.main.width - 15, 15, `Phaser v${Phaser.VERSION}`, {
+    //     color: '#000000',
+    //     fontSize: 24
+    //   })
+    //   .setOrigin(1, 0)
   }
 
   update (time, delta) {
-    this.fpsText.update()
+    if (this.game.settings.DEBUG) {
+      this.fpsText.update()
+    }
+
     this.music.update(time, delta)
   }
 }

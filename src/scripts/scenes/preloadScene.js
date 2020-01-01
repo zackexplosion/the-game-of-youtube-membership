@@ -1,10 +1,6 @@
-import moment from 'moment'
 import memeberList from '../../assets/memberlist.json'
 import createRoundProfileImage from '../../lib/createRoundProfileImage'
-const musics = [
-  ['music-end.mp3', 83, 320],
-  ['music-en.mp3', 27.1, 320]
-]
+
 export default class PreloadScene extends Phaser.Scene {
   music
   constructor () {
@@ -16,8 +12,8 @@ export default class PreloadScene extends Phaser.Scene {
     window.loadingText = this.add.text(centerX, centerY, 'Loading', { color: 'black', fontSize: '40px' })
     window.loadingText.setOrigin(0.5)
     this.load.image('player', 'assets/zack2_80.png')
-    // const music = musics[Phaser.Math.Between(0, musics.length - 1)]
-    const music = musics[1]
+
+    const music = this.game.settings.currentMusic
     this.load.audio({
       key: 'music',
       url: 'assets/' + music[0],
@@ -50,12 +46,7 @@ export default class PreloadScene extends Phaser.Scene {
     // this.music = this.sound.add('music')
     // this.music.play({
     //   seek: 2
-    // })
-    this.model = this.sys.game.globals.model
-
-    const joinDate = memeberList[0][3]
-    this.model.FIRST_MEMBER_JOIN_DATE = joinDate
-    this.model.virtualTime = moment(joinDate)
+    // }
     this.scene.start('MainScene')
     // this.scene.start('EndScene')
 

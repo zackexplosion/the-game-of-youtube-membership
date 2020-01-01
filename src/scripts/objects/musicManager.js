@@ -1,6 +1,7 @@
 import sponsors from '../../assets/memberlist.json'
 import moment from 'moment'
 export default class MusicManager {
+  settings
   audio
   scene
   sponsors = sponsors
@@ -20,10 +21,16 @@ export default class MusicManager {
   nextSponsor
   constructor (scene) {
     this.scene = scene
+    const { settings } = scene.game
+    this.settings = settings
     scene.pauseOnBlur = false
     this.music = scene.sound.add('music')
 
-    if (window.DEBUG) {
+    this.showSponsorsAt = settings.currentMusic[1]
+    this.endShowSponsorAt = settings.currentMusic[2]
+    this.showSponsorDuration = this.endShowSponsorAt - this.showSponsorsAt
+
+    if (this.settings.DEBUG) {
       this.debugMsg = scene.add.text(10, 40, '', {
         color: 'black',
         fontSize: '20px'
@@ -63,14 +70,10 @@ export default class MusicManager {
 
   play (config) {
     var seek = 0
-    if (window.DEBUG) {
-      // seek = this.showSponsorsAt - 2
-      seek = this.endShowSponsorAt - 5
+    if (this.settings.DEBUG) {
+      seek = this.showSponsorsAt - 2
+      // seek = this.endShowSponsorAt - 5
     }
-
-    var a = this.music
-
-    console.log(a)
 
     this.music.play({
       ...config,
@@ -83,7 +86,6 @@ export default class MusicManager {
     this.showSponsors = true
     this.virtualTimeStartAt = moment(s[3])
     this.virtualTimeDurationInSeconds = this.virtualTimeEndAt.diff(this.virtualTimeStartAt, 'seconds')
-    console.log('show first sponsor', s)
     this.showSponsor(s)
     this.nextSponsor = this.sponsors.shift()
   }
@@ -115,7 +117,7 @@ export default class MusicManager {
       this.nextSponsor = sponsors.shift()
     }
 
-    if (window.DEBUG) {
+    if (this.settings.DEBUG) {
       try {
         var texts = [
           'seek: ' + seek.toFixed(1) + ' total:' + this.music.duration,
