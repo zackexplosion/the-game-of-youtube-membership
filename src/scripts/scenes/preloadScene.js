@@ -8,7 +8,7 @@ export default class PreloadScene extends Phaser.Scene {
   }
 
   async preload () {
-    this.load.image('player', 'assets/player.png')
+    this.load.image('player', 'assets/zack2_80.png')
     this.load.audio('music', 'assets/music-en.mp3', { stream: true })
     this.sound.pauseOnBlur = false
     const imageProcessers = []
@@ -56,12 +56,12 @@ export default class PreloadScene extends Phaser.Scene {
   }
 }
 // var canvas = document.getElementById('c')
-const imageSize = 40
+const imageSize = 80
 
 function createRoundProfileImage (url) {
   var canvas = document.createElement('canvas')
-  canvas.width = 40
-  canvas.height = 40
+  canvas.width = imageSize
+  canvas.height = imageSize
   const ctx = canvas.getContext('2d')
   var i = new Image()
   i.src = url
@@ -77,7 +77,7 @@ function createRoundProfileImage (url) {
       // call the clip method so the next render is clipped in last path
       //       ctx.stroke();
       ctx.closePath()
-      ctx.drawImage(img, 0, 0, 40, 40)
+      ctx.drawImage(img, 0, 0, imageSize, imageSize)
       const base64Data = canvas.toDataURL()
       resolve(base64Data)
     }
