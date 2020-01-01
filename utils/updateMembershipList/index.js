@@ -78,11 +78,12 @@ const path = require('path')
 
 const list = require('./memberlist.json')
 const odlerSponsers = [
+  // next sponserSince "2019-12-29T07:32:44.567Z"
   {
-    displayName: '茶壺',
-    channelUrl: 'https://www.youtube.com/channel/UC7pA4tLtW1EdlZimOvgdlKw',
-    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l78xMBQKJ-9mV3axcsaOMSqCFdmKetr6TTKGVw=s80-c-k-c0xffffffff-no-rj-mo',
-    sponserSince: '2019-12-28T14:00:00.000Z'
+    displayName: '巨鴿',
+    channelUrl: 'https://www.youtube.com/channel/UCk8mNBAOhvdkkvBVTY6NYgg',
+    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l7-ghRSla7iLzKYcDOqr3aiT4TaPomXFkCS6QA=s80-c-k-c0xffffffff-no-rj-mo',
+    sponserSince: '2019-12-28T17:00:00.000Z'
   },
   {
     displayName: 'Edward Nerv',
@@ -91,12 +92,11 @@ const odlerSponsers = [
     sponserSince: '2019-12-28T16:00:00.000Z'
   },
   {
-    displayName: '巨鴿',
-    channelUrl: 'https://www.youtube.com/channel/UCk8mNBAOhvdkkvBVTY6NYgg',
-    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l7-ghRSla7iLzKYcDOqr3aiT4TaPomXFkCS6QA=s80-c-k-c0xffffffff-no-rj-mo',
-    sponserSince: '2019-12-28T17:00:00.000Z'
+    displayName: '茶壺',
+    channelUrl: 'https://www.youtube.com/channel/UC7pA4tLtW1EdlZimOvgdlKw',
+    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l78xMBQKJ-9mV3axcsaOMSqCFdmKetr6TTKGVw=s80-c-k-c0xffffffff-no-rj-mo',
+    sponserSince: '2019-12-28T14:00:00.000Z'
   }
-  // next sponserSince "2019-12-29T07:32:44.567Z"
 ]
 var result = []
 list.items.forEach((l, index) => {

@@ -11,6 +11,7 @@ export default class PreloadScene extends Phaser.Scene {
   }
 
   async preload () {
+    window.loadingText = this.add.text(10, this.cameras.main.centerY, 'Loading', { color: 'black', fontSize: '40px' })
     this.load.image('player', 'assets/zack2_80.png')
     // const music = musics[Phaser.Math.Between(0, musics.length - 1)]
     const music = musics[1]

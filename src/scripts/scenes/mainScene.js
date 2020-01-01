@@ -50,6 +50,7 @@ export default class MainScene extends Phaser.Scene {
   playMusic () {
     this.music.on('play', e => {
       this.startGame()
+      window.loadingText.destroy()
     })
 
     this.music.on('sponsorJoin', e => {
