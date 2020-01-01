@@ -71,8 +71,8 @@ export default class MusicManager {
   play (config) {
     var seek = 0
     if (this.settings.DEBUG) {
-      seek = this.showSponsorsAt - 2
-      // seek = this.endShowSponsorAt - 5
+      // seek = this.showSponsorsAt - 2
+      seek = this.endShowSponsorAt - 10
     }
 
     this.music.play({
@@ -101,13 +101,10 @@ export default class MusicManager {
     // console.log(seek, this.showSponsorsAt)
     if (seek >= this.showSponsorsAt && this.showSponsors === false) {
       this.showFirstSponsor()
-    } else if (seek >= this.endShowSponsorAt && this.endShowSponsors === false) {
-      this.emitEvent('endShowSponsors', {})
-      this.endShowSponsors = true
     }
     var showsSeekP = (seek - this.showSponsorsAt) / this.showSponsorDuration
-    if (showsSeekP >= 1) {
-      showsSeekP = 1
+    if (showsSeekP >= 1.2) {
+      showsSeekP = 1.2
     }
     const secsToAdd = showsSeekP * this.virtualTimeDurationInSeconds
     this.virtualTime = moment(this.virtualTimeStartAt).add(secsToAdd, 'seconds')
@@ -115,6 +112,11 @@ export default class MusicManager {
     if (this.nextSponsor && this.virtualTime >= moment(this.nextSponsor[3])) {
       this.showSponsor(this.nextSponsor)
       this.nextSponsor = sponsors.shift()
+    }
+
+    if (seek >= this.endShowSponsorAt + 10 && this.endShowSponsors === false) {
+      this.emitEvent('endShowSponsors', {})
+      this.endShowSponsors = true
     }
 
     if (this.settings.DEBUG) {
