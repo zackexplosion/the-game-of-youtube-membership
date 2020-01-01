@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/logo.png"
   },
   {
-    "revision": "1e81f65b28b4fe48bc0ef0c35fc6eea5",
+    "revision": "e75076a45568bedb0e128aa6320cfe82",
     "url": "assets/memberlist.json"
   },
   {
@@ -24,8 +24,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/player.png"
   },
   {
-    "revision": "b8b26599f0250d18c5874616f88033ab",
+    "revision": "f7c746b7b7f760b1479415707d0dd11e",
     "url": "assets/zack2.png"
+  },
+  {
+    "revision": "f7c746b7b7f760b1479415707d0dd11e",
+    "url": "assets/zack2_80.png"
   },
   {
     "revision": "57040e5677322118f6d56a1d9e43c5c6",
@@ -40,12 +44,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "icons/icons-512.png"
   },
   {
-    "revision": "5dd61b9b23254b2a99b215cdb7f7fbae",
+    "revision": "d14cabc076e048150552a270148464e8",
     "url": "index.html"
   },
   {
-    "revision": "1174c530df58f34d6d62",
-    "url": "main.33264abccd59934717ef.bundle.js"
+    "revision": "c470d5fafd50697c1650",
+    "url": "main.b41f214466796c1cdfb2.bundle.js"
   },
   {
     "revision": "bf38d0c9760162342f12cd9b44fbf4ef",
