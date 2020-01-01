@@ -80,6 +80,20 @@ const list = require('./memberlist.json')
 const odlerSponsers = [
   // next sponserSince "2019-12-29T07:32:44.567Z"
   {
+    displayName: 'Bossun',
+    channelUrl: 'https://www.youtube.com/channel/UCHUvUmDtT7mthKN1SdPRqPA',
+    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l79yC-s3pW0MioMZsEtifOIEcPbyjUNH4Skflw=s80-c-k-c0xffffffff-no-rj-mo',
+    sponserSince: '2019-12-28T20:00:00.000Z',
+    originJoinAt: 'yee'
+  },
+  {
+    displayName: '獅子丸',
+    channelUrl: 'https://www.youtube.com/channel/UCg9TbU2B8meoyo_tom62_QA',
+    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l7_nlidZaW6f1eE6mMHPqaSIKh_rtQEZexLcLQ=s80-c-k-c0xffffffff-no-rj-mo',
+    sponserSince: '2019-12-28T19:30:00.000Z',
+    originJoinAt: 'yee'
+  }
+  {
     displayName: 'HC Hwang',
     channelUrl: 'https://www.youtube.com/channel/UCOBDuAcYisU3XltdBjKvQvg',
     profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l7_moyiVaArfIZPtaF5s0lMOTOjvUVY9zQ1qqg=s80-c-k-c0xffffffff-no-rj-mo',
@@ -102,20 +116,6 @@ const odlerSponsers = [
     channelUrl: 'https://www.youtube.com/channel/UC7pA4tLtW1EdlZimOvgdlKw',
     profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l78xMBQKJ-9mV3axcsaOMSqCFdmKetr6TTKGVw=s80-c-k-c0xffffffff-no-rj-mo',
     sponserSince: '2019-12-28T14:00:00.000Z',
-    originJoinAt: 'yee'
-  },
-  {
-    displayName: 'Bossun',
-    channelUrl: 'https://www.youtube.com/channel/UCHUvUmDtT7mthKN1SdPRqPA',
-    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l79yC-s3pW0MioMZsEtifOIEcPbyjUNH4Skflw=s80-c-k-c0xffffffff-no-rj-mo',
-    sponserSince: '2019-12-28T12:00:00.000Z',
-    originJoinAt: 'yee'
-  },
-  {
-    displayName: '獅子丸',
-    channelUrl: 'https://www.youtube.com/channel/UCg9TbU2B8meoyo_tom62_QA',
-    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l7_nlidZaW6f1eE6mMHPqaSIKh_rtQEZexLcLQ=s80-c-k-c0xffffffff-no-rj-mo',
-    sponserSince: '2019-12-28T10:30:00.000Z',
     originJoinAt: 'yee'
   }
 ]

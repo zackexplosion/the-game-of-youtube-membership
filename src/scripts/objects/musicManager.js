@@ -38,10 +38,6 @@ export default class MusicManager {
     }
   }
 
-  onSeek (e) {
-    console.log(e)
-  }
-
   on (event, listener) {
     switch (event) {
       case 'sponsorJoin':
@@ -70,9 +66,12 @@ export default class MusicManager {
 
   play (config) {
     var seek = 0
+    // TODO
+    // REMOVE in production
+    seek = this.showSponsorsAt - 2
     if (this.settings.DEBUG) {
-      // seek = this.showSponsorsAt - 2
-      seek = this.endShowSponsorAt - 10
+      seek = this.showSponsorsAt - 2
+      // seek = this.endShowSponsorAt - 10
     }
 
     this.music.play({
