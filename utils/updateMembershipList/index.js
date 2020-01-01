@@ -80,6 +80,12 @@ const list = require('./memberlist.json')
 const odlerSponsers = [
   // next sponserSince "2019-12-29T07:32:44.567Z"
   {
+    displayName: 'HC Hwang',
+    channelUrl: 'https://www.youtube.com/channel/UCOBDuAcYisU3XltdBjKvQvg',
+    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l7_moyiVaArfIZPtaF5s0lMOTOjvUVY9zQ1qqg=s80-c-k-c0xffffffff-no-rj-mo',
+    sponserSince: '2019-12-28T18:00:00.000Z'
+  },
+  {
     displayName: '巨鴿',
     channelUrl: 'https://www.youtube.com/channel/UCk8mNBAOhvdkkvBVTY6NYgg',
     profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l7-ghRSla7iLzKYcDOqr3aiT4TaPomXFkCS6QA=s80-c-k-c0xffffffff-no-rj-mo',
@@ -95,7 +101,8 @@ const odlerSponsers = [
     displayName: '茶壺',
     channelUrl: 'https://www.youtube.com/channel/UC7pA4tLtW1EdlZimOvgdlKw',
     profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l78xMBQKJ-9mV3axcsaOMSqCFdmKetr6TTKGVw=s80-c-k-c0xffffffff-no-rj-mo',
-    sponserSince: '2019-12-28T14:00:00.000Z'
+    sponserSince: '2019-12-28T14:00:00.000Z',
+    originJoinAt: 'yee'
   }
 ]
 var result = []
@@ -115,14 +122,30 @@ list.items.forEach((l, index) => {
 })
 result = result.reverse()
 odlerSponsers.forEach(o => {
+  const {
+    displayName,
+    channelUrl,
+    profileImageUrl,
+    sponserSince
+  } = o
+
+  delete o.displayName
+  delete o.channelUrl
+  delete o.profileImageUrl
+  delete o.sponserSince
+
   result.splice(2, 0, [
-    o.displayName,
-    o.channelUrl,
-    o.profileImageUrl,
-    o.sponserSince
+    displayName,
+    channelUrl,
+    profileImageUrl,
+    sponserSince,
+    {
+      older: true,
+      ...o
+    }
   ])
 })
 const data = JSON.stringify(result)
 fs.writeFileSync(path.join(__dirname, '../../src/assets/memberlist.json'), data)
 
-console.log(`${result.length} members write into memberlist.json`)
+console.log(`${result.length} members writen into memberlist.json`)

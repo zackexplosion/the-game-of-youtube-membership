@@ -62,7 +62,7 @@ export default class MusicManager {
   play (config) {
     var seek = 0
     if (window.DEBUG) {
-      seek = this.showSponsorsAt - 1
+      seek = this.showSponsorsAt - 2
     }
 
     var a = this.music

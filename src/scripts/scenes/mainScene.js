@@ -54,16 +54,21 @@ export default class MainScene extends Phaser.Scene {
     })
 
     this.music.on('sponsorJoin', e => {
-      const [name, channelUrl, profileUrl, joinSince] = e
+      const [name, channelUrl, profileUrl, joinSince, extra] = e
 
       const { width } = this.cameras.main
+      var timestamp = moment(joinSince).format()
+      if (extra && extra.older === true) {
+        // timestamp = '????/??/?? ??:??:??'
+        timestamp = '-- 以前加入的乾爹娘 --'
+      }
       // const s = sponsors[index]
       // TODO
       // to around main player
       const x = Phaser.Math.Between(0, width)
       const p = new People(this, x, 0, 'memberProfile_' + this.activeSponsers.length)
       this.activeSponsers.push(p)
-      this.messageBox.add(`${moment(joinSince).format()} ${name} 加入了戰鬥`)
+      this.messageBox.add(`${timestamp} ${name} 加入了戰鬥`)
     })
 
     this.music.on('complete', e => {
