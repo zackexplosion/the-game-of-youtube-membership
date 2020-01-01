@@ -66,6 +66,10 @@ export default class MainScene extends Phaser.Scene {
       this.messageBox.add(`${moment(joinSince).format()} ${name} 加入了戰鬥`)
     })
 
+    this.music.on('complete', e => {
+      this.scene.start('EndScene')
+    })
+
     this.music.play()
   }
 

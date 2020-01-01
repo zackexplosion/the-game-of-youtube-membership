@@ -54,6 +54,7 @@ export default class PreloadScene extends Phaser.Scene {
     this.model.FIRST_MEMBER_JOIN_DATE = joinDate
     this.model.virtualTime = moment(joinDate)
     this.scene.start('MainScene')
+    // this.scene.start('EndScene')
 
     /**
      * This is how you would dynamically import the mainScene class (with code splitting),

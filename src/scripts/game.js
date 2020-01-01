@@ -3,6 +3,7 @@ import '@babel/polyfill'
 
 import MainScene from './scenes/mainScene'
 import PreloadScene from './scenes/preloadScene'
+import EndScene from './scenes/endScene'
 import moment from 'moment'
 moment.defaultFormat = 'YYYY/MM/DD HH:mm:ss'
 const DEFAULT_WIDTH = 720
@@ -19,7 +20,7 @@ const config = {
     width: DEFAULT_WIDTH,
     height: DEFAULT_HEIGHT
   },
-  scene: [PreloadScene, MainScene],
+  scene: [PreloadScene, MainScene, EndScene],
   physics: {
     default: 'arcade',
     arcade: {
