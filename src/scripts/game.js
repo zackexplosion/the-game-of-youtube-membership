@@ -5,8 +5,8 @@ import MainScene from './scenes/mainScene'
 import PreloadScene from './scenes/preloadScene'
 import moment from 'moment'
 moment.defaultFormat = 'YYYY/MM/DD HH:mm:ss'
-const DEFAULT_WIDTH = 1280
-const DEFAULT_HEIGHT = 720
+const DEFAULT_WIDTH = 720
+const DEFAULT_HEIGHT = 1280
 window.DEBUG = true
 
 const config = {
