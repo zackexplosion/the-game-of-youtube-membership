@@ -34,7 +34,7 @@ export default class MainScene extends Phaser.Scene {
     this.group.add(this.player)
 
     if (this.sound.locked) {
-      var text = this.add.bitmapText(400, 50, 'atari-classic', 'Tap to start', 40)
+      var text = this.add.text(400, 50, 'Tap to start', 40)
       text.x -= Math.round(text.width / 2)
       text.y -= Math.round(text.height / 2)
 

@@ -9,7 +9,7 @@ export default class PreloadScene extends Phaser.Scene {
 
   async preload () {
     this.load.image('player', 'assets/player.png')
-    this.load.audio('music', 'assets/music-en.mp3')
+    this.load.audio('music', 'assets/music-en.mp3', { stream: true })
     this.sound.pauseOnBlur = false
     const imageProcessers = []
     for (let i = 0; i < memeberList.length; i++) {
