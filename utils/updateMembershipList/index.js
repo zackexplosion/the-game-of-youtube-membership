@@ -77,48 +77,7 @@ const path = require('path')
 // }
 
 const list = require('./memberlist.json')
-const odlerSponsers = [
-  // next sponserSince "2019-12-29T07:32:44.567Z"
-  {
-    displayName: 'Bossun',
-    channelUrl: 'https://www.youtube.com/channel/UCHUvUmDtT7mthKN1SdPRqPA',
-    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l79yC-s3pW0MioMZsEtifOIEcPbyjUNH4Skflw=s80-c-k-c0xffffffff-no-rj-mo',
-    sponserSince: '2019-12-28T20:00:00.000Z',
-    originJoinAt: 'yee'
-  },
-  {
-    displayName: '獅子丸',
-    channelUrl: 'https://www.youtube.com/channel/UCg9TbU2B8meoyo_tom62_QA',
-    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l7_nlidZaW6f1eE6mMHPqaSIKh_rtQEZexLcLQ=s80-c-k-c0xffffffff-no-rj-mo',
-    sponserSince: '2019-12-28T19:30:00.000Z',
-    originJoinAt: 'yee'
-  }
-  {
-    displayName: 'HC Hwang',
-    channelUrl: 'https://www.youtube.com/channel/UCOBDuAcYisU3XltdBjKvQvg',
-    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l7_moyiVaArfIZPtaF5s0lMOTOjvUVY9zQ1qqg=s80-c-k-c0xffffffff-no-rj-mo',
-    sponserSince: '2019-12-28T18:00:00.000Z'
-  },
-  {
-    displayName: '巨鴿',
-    channelUrl: 'https://www.youtube.com/channel/UCk8mNBAOhvdkkvBVTY6NYgg',
-    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l7-ghRSla7iLzKYcDOqr3aiT4TaPomXFkCS6QA=s80-c-k-c0xffffffff-no-rj-mo',
-    sponserSince: '2019-12-28T17:00:00.000Z'
-  },
-  {
-    displayName: 'Edward Nerv',
-    channelUrl: 'https://www.youtube.com/channel/UC2Ean2g7RFvXk1Yllc6IqIw',
-    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l79maNJPFQsBHG0_TaqtS51B2P62xsZi2bYvhQ=s80-c-k-c0xffffffff-no-rj-mo',
-    sponserSince: '2019-12-28T16:00:00.000Z'
-  },
-  {
-    displayName: '茶壺',
-    channelUrl: 'https://www.youtube.com/channel/UC7pA4tLtW1EdlZimOvgdlKw',
-    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l78xMBQKJ-9mV3axcsaOMSqCFdmKetr6TTKGVw=s80-c-k-c0xffffffff-no-rj-mo',
-    sponserSince: '2019-12-28T14:00:00.000Z',
-    originJoinAt: 'yee'
-  }
-]
+const odlerSponsors = require('./olderSponsors')
 var result = []
 list.items.forEach((l, index) => {
   const i = l.snippet.sponsorDetails
@@ -135,7 +94,7 @@ list.items.forEach((l, index) => {
   }
 })
 result = result.reverse()
-odlerSponsers.forEach(o => {
+odlerSponsors.forEach(o => {
   const {
     displayName,
     channelUrl,

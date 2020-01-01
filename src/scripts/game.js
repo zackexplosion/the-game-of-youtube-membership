@@ -31,7 +31,7 @@ const config = {
 const avaiableMusics = [
   ['music-end.mp3', 81, 317],
   ['music-en.mp3', 27.1, 320],
-  ['music-jp.mp3', 27.1, 320]
+  ['music-jp.mp3', 25, 320]
 ]
 const settings = {
   DEBUG: process.env.DEBUG || false,
