@@ -1,5 +1,6 @@
 import moment from 'moment'
 import memeberList from '../../assets/memberlist.json'
+import createRoundProfileImage from '../../lib/createRoundProfileImage'
 const musics = [
   ['music-end.mp3', 83, 320],
   ['music-en.mp3', 27.1, 320]
@@ -70,32 +71,4 @@ export default class PreloadScene extends Phaser.Scene {
     //   })
     // else console.log('The mainScene class will not even be loaded by the browser')
   }
-}
-// var canvas = document.getElementById('c')
-const imageSize = 80
-
-function createRoundProfileImage (url) {
-  var canvas = document.createElement('canvas')
-  canvas.width = imageSize
-  canvas.height = imageSize
-  const ctx = canvas.getContext('2d')
-  var i = new Image()
-  i.src = url
-
-  var img = document.createElement('img')
-  img.setAttribute('crossOrigin', 'anonymous')
-  return new Promise((resolve, reject) => {
-    img.src = url
-    img.onload = function () {
-      ctx.beginPath()
-      ctx.arc(imageSize / 2, imageSize / 2, imageSize / 2, 0, 6.28, false) // draw the circle
-      ctx.clip()
-      // call the clip method so the next render is clipped in last path
-      //       ctx.stroke();
-      ctx.closePath()
-      ctx.drawImage(img, 0, 0, imageSize, imageSize)
-      const base64Data = canvas.toDataURL()
-      resolve(base64Data)
-    }
-  })
 }
