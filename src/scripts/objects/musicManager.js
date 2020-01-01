@@ -1,5 +1,4 @@
 import sponsors from '../../assets/memberlist.json'
-import People from '../objects/People'
 import moment from 'moment'
 export default class MusicManager {
   audio
@@ -21,7 +20,7 @@ export default class MusicManager {
   constructor (scene) {
     this.scene = scene
     scene.pauseOnBlur = false
-    this.audio = scene.sound.add('music')
+    this.music = scene.sound.add('music')
 
     if (window.DEBUG) {
       this.debugMsg = scene.add.text(10, 40, '', {
@@ -41,7 +40,7 @@ export default class MusicManager {
         this.addEvent(event, listener)
         break
       default:
-        this.audio.on(event, listener)
+        this.music.on(event, listener)
         break
     }
   }
@@ -63,10 +62,14 @@ export default class MusicManager {
   play (config) {
     var seek = 0
     if (window.DEBUG) {
-      seek = 26
+      seek = this.showSponsorsAt - 1
     }
 
-    this.audio.play({
+    var a = this.music
+
+    console.log(a)
+
+    this.music.play({
       ...config,
       seek
     })
@@ -88,8 +91,8 @@ export default class MusicManager {
 
   update (time, delta) {
     // console.log('update in music m')
-    if (!this.audio) return
-    const seek = parseFloat(this.audio.seek.toFixed(1))
+    if (!this.music) return
+    const seek = parseFloat(this.music.seek.toFixed(1))
     // console.log(seek, this.showSponsorsAt)
     if (seek >= this.showSponsorsAt && this.showSponsors === false) {
       this.showFirstSponsor()
@@ -109,8 +112,8 @@ export default class MusicManager {
     if (window.DEBUG) {
       try {
         var texts = [
-          'seek: ' + seek.toFixed(1) + ' total:' + this.audio.duration,
-          'msuic_seek_p: ' + seek / this.audio.duration,
+          'seek: ' + seek.toFixed(1) + ' total:' + this.music.duration,
+          'msuic_seek_p: ' + seek / this.music.duration,
           'showsSeekP: ' + (showsSeekP * 100).toFixed(2) + ' %',
           // 'secsToAdd: ' + secsToAdd,
           // 'showSponsorDuration: ' + this.showSponsorDuration,

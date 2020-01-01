@@ -1,6 +1,9 @@
 import moment from 'moment'
 import memeberList from '../../assets/memberlist.json'
-
+const musics = [
+  ['music-end.mp3', 83, 320],
+  ['music-en.mp3', 27.1, 320]
+]
 export default class PreloadScene extends Phaser.Scene {
   music
   constructor () {
@@ -9,7 +12,18 @@ export default class PreloadScene extends Phaser.Scene {
 
   async preload () {
     this.load.image('player', 'assets/zack2_80.png')
-    this.load.audio('music', 'assets/music-en.mp3', { stream: true })
+    // const music = musics[Phaser.Math.Between(0, musics.length - 1)]
+    const music = musics[1]
+    this.load.audio({
+      key: 'music',
+      url: 'assets/' + music[0],
+      config: {
+        showStartAt: music[1],
+        showEndAt: music[2]
+      }
+    }, {
+      stream: true
+    })
     this.sound.pauseOnBlur = false
     const imageProcessers = []
     for (let i = 0; i < memeberList.length; i++) {
