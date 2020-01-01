@@ -89,7 +89,14 @@ const odlerSponsers = [
     channelUrl: 'https://www.youtube.com/channel/UC2Ean2g7RFvXk1Yllc6IqIw',
     profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l79maNJPFQsBHG0_TaqtS51B2P62xsZi2bYvhQ=s80-c-k-c0xffffffff-no-rj-mo',
     sponserSince: '2019-12-28T16:00:00.000Z'
+  },
+  {
+    displayName: '巨鴿',
+    channelUrl: 'https://www.youtube.com/channel/UCk8mNBAOhvdkkvBVTY6NYgg',
+    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l7-ghRSla7iLzKYcDOqr3aiT4TaPomXFkCS6QA=s80-c-k-c0xffffffff-no-rj-mo',
+    sponserSince: '2019-12-28T17:00:00.000Z'
   }
+  // next sponserSince "2019-12-29T07:32:44.567Z"
 ]
 var result = []
 list.items.forEach((l, index) => {
