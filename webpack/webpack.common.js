@@ -29,7 +29,7 @@ module.exports = {
     }
   },
   plugins: [
-    new HtmlWebpackPlugin({ gameName: 'My Phaser Game', template: 'src/index.html' }),
+    new HtmlWebpackPlugin({ gameName: 'Zackexplosion 負能量宅肥 的支持者們', template: 'src/index.html' }),
     new CopyWebpackPlugin([
       { from: 'CNAME', to: './' },
       { from: 'src/assets', to: 'assets' },
