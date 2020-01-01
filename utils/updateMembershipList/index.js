@@ -110,8 +110,14 @@ const odlerSponsers = [
     profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l79yC-s3pW0MioMZsEtifOIEcPbyjUNH4Skflw=s80-c-k-c0xffffffff-no-rj-mo',
     sponserSince: '2019-12-28T12:00:00.000Z',
     originJoinAt: 'yee'
+  },
+  {
+    displayName: '獅子丸',
+    channelUrl: 'https://www.youtube.com/channel/UCg9TbU2B8meoyo_tom62_QA',
+    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l7_nlidZaW6f1eE6mMHPqaSIKh_rtQEZexLcLQ=s80-c-k-c0xffffffff-no-rj-mo',
+    sponserSince: '2019-12-28T10:30:00.000Z',
+    originJoinAt: 'yee'
   }
-
 ]
 var result = []
 list.items.forEach((l, index) => {

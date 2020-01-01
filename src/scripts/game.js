@@ -8,7 +8,6 @@ import moment from 'moment'
 moment.defaultFormat = 'YYYY/MM/DD HH:mm:ss'
 const DEFAULT_WIDTH = 720
 const DEFAULT_HEIGHT = 1280
-window.DEBUG = true
 
 const config = {
   type: Phaser.AUTO,
@@ -30,7 +29,7 @@ const config = {
   }
 }
 const avaiableMusics = [
-  ['music-end.mp3', 81, 320],
+  ['music-end.mp3', 81, 315],
   ['music-en.mp3', 27.1, 320],
   ['music-jp.mp3', 27.1, 320]
 ]

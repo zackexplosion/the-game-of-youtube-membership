@@ -1,11 +1,25 @@
 {
   "kind": "youtube#sponsorListResponse",
-  "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/-mm5U4rAF4UrWs4xweUGwn0zqoU\"",
+  "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/riy0jXwh1-_wD8Yu-GFjdYGZAc0\"",
   "pageInfo": {
-   "totalResults": 18,
-   "resultsPerPage": 18
+   "totalResults": 19,
+   "resultsPerPage": 19
   },
   "items": [
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/1YpQx8CztXZWjkUw0vYiYB8NZhw\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCafENzbm-bcVdsIm6TQhd2Q",
+      "channelUrl": "http://www.youtube.com/channel/UCafENzbm-bcVdsIm6TQhd2Q",
+      "displayName": "gorden Yang",
+      "profileImageUrl": "https://yt3.ggpht.com/-v-HF3TOYfZo/AAAAAAAAAAI/AAAAAAAAAAA/shHEjKyrK14/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2020-01-01T14:21:13.442Z"
+    }
+   },
    {
     "kind": "youtube#sponsor",
     "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/ddOwQ5JXKgLn-ayAvzqH7D5bkQk\"",
