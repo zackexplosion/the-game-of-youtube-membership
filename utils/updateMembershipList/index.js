@@ -1,5 +1,5 @@
-// const fs = require('fs')
-// const path = require('path')
+const fs = require('fs')
+const path = require('path')
 // const readline = require('readline');
 // const {google} = require('googleapis');
 
@@ -81,20 +81,27 @@ const odlerSponsers = [
   {
     displayName: '茶壺',
     channelUrl: 'https://www.youtube.com/channel/UC7pA4tLtW1EdlZimOvgdlKw',
-    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l78xMBQKJ-9mV3axcsaOMSqCFdmKetr6TTKGVw=s40-c-k-c0xffffffff-no-rj-mo',
+    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l78xMBQKJ-9mV3axcsaOMSqCFdmKetr6TTKGVw=s80-c-k-c0xffffffff-no-rj-mo',
     sponserSince: '2019-12-28T14:00:00.000Z'
+  },
+  {
+    displayName: 'Edward Nerv',
+    channelUrl: 'https://www.youtube.com/channel/UC2Ean2g7RFvXk1Yllc6IqIw',
+    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l79maNJPFQsBHG0_TaqtS51B2P62xsZi2bYvhQ=s80-c-k-c0xffffffff-no-rj-mo',
+    sponserSince: '2019-12-28T16:00:00.000Z'
   }
 ]
 var result = []
 list.items.forEach((l, index) => {
   const i = l.snippet.sponsorDetails
+  // this is myself
   if (i.channelId === 'UCnT7Ujp9CKmfDTl2v4XtLDw') {
     return false
   } else {
     result.push([
       i.displayName,
       i.channelUrl,
-      i.profileImageUrl.replace('s88-', 's40-'),
+      i.profileImageUrl.replace('s88-', 's80-'),
       l.snippet.sponsorSince
     ])
   }
@@ -108,5 +115,7 @@ odlerSponsers.forEach(o => {
     o.sponserSince
   ])
 })
+const data = JSON.stringify(result)
+fs.writeFileSync(path.join(__dirname, '../../src/assets/memberlist.json'), data)
 
-console.log(JSON.stringify(result))
+console.log(`${result.length} members write into memberlist.json`)
