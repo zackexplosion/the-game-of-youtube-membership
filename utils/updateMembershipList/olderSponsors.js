@@ -1,6 +1,14 @@
 module.exports = [
   // next sponserSince "2019-12-29T07:32:44.567Z"
   {
+    displayName: '朱晏霆',
+    channelUrl: 'https://www.youtube.com/channel/UC4Q8yu2fLqMKOqyy2AsSsoA',
+    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l78Z9ziYKE6eNnwSStISBkxB5LncLcFdxwt27Q=s280-c-k-c0xffffffff-no-rj-mo',
+    sponserSince: '2019-12-28T23:00:00.000Z',
+    originJoinAt: 'yee',
+    note: 'C922Pro 是這位贊助的！'
+  },
+  {
     displayName: '網友Z',
     channelUrl: 'https://www.youtube.com/channel/UCk9aKmQYvCkJL0m6tCIODAg',
     profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l792E40CybBBsw600KMzg4tJntAqkb3NATfEuQ=s80-c-k-c0xffffffff-no-rj-mo',
@@ -14,7 +22,7 @@ module.exports = [
     profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l79u0btE7rd1flGrvhSZx3yA7NIqd8C8akO9uQ=s80-c-k-c0xffffffff-no-rj-mo',
     sponserSince: '2019-12-28T21:00:00.000Z',
     originJoinAt: 'yee',
-    note: '大力幫忙我的律師 :D'
+    note: '大力幫忙我的律師!'
   },
   {
     displayName: 'Bossun',
