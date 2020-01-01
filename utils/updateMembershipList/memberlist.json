@@ -1,11 +1,25 @@
 {
   "kind": "youtube#sponsorListResponse",
-  "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/AagTxrbQBlerWupu7RcZA8djHc4\"",
+  "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/-mm5U4rAF4UrWs4xweUGwn0zqoU\"",
   "pageInfo": {
-   "totalResults": 17,
-   "resultsPerPage": 17
+   "totalResults": 18,
+   "resultsPerPage": 18
   },
   "items": [
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/ddOwQ5JXKgLn-ayAvzqH7D5bkQk\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCLn-g2NVypYR8A0PzE0lv-g",
+      "channelUrl": "http://www.youtube.com/channel/UCLn-g2NVypYR8A0PzE0lv-g",
+      "displayName": "Bowen Xiao",
+      "profileImageUrl": "https://yt3.ggpht.com/-xPAmDn5S3-E/AAAAAAAAAAI/AAAAAAAAAAA/jDN0eXQyhmg/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2019-12-31T16:46:38.672Z"
+    }
+   },
    {
     "kind": "youtube#sponsor",
     "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/QP-LgbhLTSCzrro67FwGKW24zTE\"",

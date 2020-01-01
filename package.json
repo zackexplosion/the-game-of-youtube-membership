@@ -9,7 +9,7 @@
     "deploy": "npm run build && gh-pages -d dist",
     "build": "webpack --config webpack/webpack.prod.js",
     "test": "jest",
-    "updateMemberList": "node utils/updateMembershipList/index.js"
+    "updatelist": "node utils/updateMembershipList/index.js"
   },
   "keywords": [
     "Phaser",
