@@ -5,9 +5,10 @@ export default class MusicManager {
   scene
   sponsors = sponsors
   showSponsorsAt = 27.1
-  endShowSponsorAt = 320
+  endShowSponsorAt = 322
   showSponsorDuration = this.endShowSponsorAt - this.showSponsorsAt
   showSponsors = false
+  endShowSponsors = false
   currentSponsers = []
   events = []
   virtualTime
@@ -37,6 +38,7 @@ export default class MusicManager {
   on (event, listener) {
     switch (event) {
       case 'sponsorJoin':
+      case 'endShowSponsors':
         this.addEvent(event, listener)
         break
       default:
@@ -62,7 +64,8 @@ export default class MusicManager {
   play (config) {
     var seek = 0
     if (window.DEBUG) {
-      seek = this.showSponsorsAt - 2
+      // seek = this.showSponsorsAt - 2
+      seek = this.endShowSponsorAt - 5
     }
 
     var a = this.music
@@ -96,6 +99,9 @@ export default class MusicManager {
     // console.log(seek, this.showSponsorsAt)
     if (seek >= this.showSponsorsAt && this.showSponsors === false) {
       this.showFirstSponsor()
+    } else if (seek >= this.endShowSponsorAt && this.endShowSponsors === false) {
+      this.emitEvent('endShowSponsors', {})
+      this.endShowSponsors = true
     }
     var showsSeekP = (seek - this.showSponsorsAt) / this.showSponsorDuration
     if (showsSeekP >= 1) {

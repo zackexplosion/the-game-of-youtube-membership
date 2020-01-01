@@ -4,6 +4,7 @@ export default class EndScene extends Phaser.Scene {
   }
 
   create () {
+    this.cameras.main.fadeIn(4000)
     const { centerX, centerY } = this.cameras.main
     var text = this.add.text(centerX, centerY, '謝謝大家的支持:D', { color: 'black', fontSize: '40px' })
 
@@ -13,15 +14,7 @@ export default class EndScene extends Phaser.Scene {
         window.location.reload()
       })
 
-    text.alpha = 0.1
-    restart.alpha = 0.1
     text.setOrigin(0.5)
     restart.setOrigin(0.5)
-    this.tweens.add({
-      targets: [text, restart],
-      props: {
-        alpha: { value: 1, duration: 4000, ease: 'Power2' }
-      }
-    })
   }
 }

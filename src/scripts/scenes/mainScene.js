@@ -71,8 +71,12 @@ export default class MainScene extends Phaser.Scene {
       this.messageBox.add(`${timestamp} ${name} 加入了戰鬥`)
     })
 
-    this.music.on('complete', e => {
-      this.scene.start('EndScene')
+    this.music.on('endShowSponsors', e => {
+      this.cameras.main.once('camerafadeoutcomplete', (camera) => {
+        this.scene.start('EndScene')
+      })
+
+      this.cameras.main.fadeOut(4000)
     })
 
     this.music.play()
