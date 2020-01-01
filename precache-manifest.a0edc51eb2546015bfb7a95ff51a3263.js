@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/logo.png"
   },
   {
-    "revision": "5668c35be452c5a80f9549aac764ad40",
+    "revision": "d97890bbbfab7c308629f1d0ddee5a1d",
     "url": "assets/memberlist.json"
   },
   {
@@ -52,12 +52,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "icons/icons-512.png"
   },
   {
-    "revision": "2ee97b8e0b1265a7dc55d25758c9371f",
+    "revision": "e9901887025a48fe5a364dfb0d9f69ff",
     "url": "index.html"
   },
   {
-    "revision": "7bad57645fc51e19f071",
-    "url": "main.a777118fc1dcc9d17a64.bundle.js"
+    "revision": "eb02094087d9969171bf",
+    "url": "main.0c8cb147aa40812c41ff.bundle.js"
   },
   {
     "revision": "bf38d0c9760162342f12cd9b44fbf4ef",
