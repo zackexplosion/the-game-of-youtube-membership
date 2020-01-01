@@ -1,0 +1,249 @@
+{
+  "kind": "youtube#sponsorListResponse",
+  "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/AagTxrbQBlerWupu7RcZA8djHc4\"",
+  "pageInfo": {
+   "totalResults": 17,
+   "resultsPerPage": 17
+  },
+  "items": [
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/QP-LgbhLTSCzrro67FwGKW24zTE\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCkKcPd9X07S7JfXpjROpRmw",
+      "channelUrl": "http://www.youtube.com/user/jimmu20121010",
+      "displayName": "jimmu20121010",
+      "profileImageUrl": "https://yt3.ggpht.com/-eZI_0KpXgpM/AAAAAAAAAAI/AAAAAAAAAAA/IfRjzNyKVlM/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2019-12-31T14:43:03.460Z"
+    }
+   },
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/zcVapp4GxCEfL60IFQIV5iA3das\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCpE6my916W2g_JVTAZvUn4g",
+      "channelUrl": "http://www.youtube.com/user/gt689229",
+      "displayName": "OTAKU_G",
+      "profileImageUrl": "https://yt3.ggpht.com/-gg-DjT3gd8U/AAAAAAAAAAI/AAAAAAAAAAA/PaZfe0yNyn0/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2019-12-31T13:49:35.684Z"
+    }
+   },
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/OJpfHuFykxELBQu-uGUanO3PoiA\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCaJVdO_kDLJb0nHQUbQh2kA",
+      "channelUrl": "http://www.youtube.com/user/coondorsam",
+      "displayName": "wolfe black",
+      "profileImageUrl": "https://yt3.ggpht.com/-qeM8SYazMxw/AAAAAAAAAAI/AAAAAAAAAAA/_ZiaOH_Aku4/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2019-12-31T12:54:17.422Z"
+    }
+   },
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/AglFJBMS2r3pWrRDbVq1zLjoDRs\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCYCgdQiIy0sqHq1Y7_bOs3g",
+      "channelUrl": "http://www.youtube.com/user/hughytb",
+      "displayName": "Hugh Chang",
+      "profileImageUrl": "https://yt3.ggpht.com/-2hTukByJ76A/AAAAAAAAAAI/AAAAAAAAAAA/IKdfBHMkK7k/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2019-12-31T02:17:07.165Z"
+    }
+   },
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/rbLnqVUiTffEyxKjRyJp7eVpFt8\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCvCwEpZiEsjUmtn64mit53A",
+      "channelUrl": "http://www.youtube.com/user/lemonsoda1123",
+      "displayName": "TaibeiMoto。台北摩多",
+      "profileImageUrl": "https://yt3.ggpht.com/-g9Oso6g4i7k/AAAAAAAAAAI/AAAAAAAAAAA/pacj2c8dScA/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2019-12-31T01:49:37.521Z"
+    }
+   },
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/Oti1P-yJWyRNLOvaoX-b5AjacIA\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCnT7Ujp9CKmfDTl2v4XtLDw",
+      "channelUrl": "http://www.youtube.com/channel/UCnT7Ujp9CKmfDTl2v4XtLDw",
+      "displayName": "負能量超廢片台",
+      "profileImageUrl": "https://yt3.ggpht.com/-3pN4RydXFDE/AAAAAAAAAAI/AAAAAAAAAAA/zthmLt75gjk/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2019-12-30T21:52:05.642Z"
+    }
+   },
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/_HLvRYI7Su0K6ivGuZzw6ZO8aQ0\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCCXUATHXC2YTzBXn7uUWsjg",
+      "channelUrl": "http://www.youtube.com/channel/UCCXUATHXC2YTzBXn7uUWsjg",
+      "displayName": "王思翔",
+      "profileImageUrl": "https://yt3.ggpht.com/-K4FgHN9vP6c/AAAAAAAAAAI/AAAAAAAAAAA/4a_n0rvbCCM/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2019-12-30T16:39:27.195Z"
+    }
+   },
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/UMGknrQY8GnbFMPhtJLWnJyD8hE\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCeVwrTV1f9j_2InyIDyicvA",
+      "channelUrl": "http://www.youtube.com/channel/UCeVwrTV1f9j_2InyIDyicvA",
+      "displayName": "林真",
+      "profileImageUrl": "https://yt3.ggpht.com/-wXp0-0q_YTk/AAAAAAAAAAI/AAAAAAAAAAA/WH08XxPjDX0/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2019-12-30T15:02:55.144Z"
+    }
+   },
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/MOQm2hQ1Dq_8kT4TYPR3jnnemfg\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCwo1o2WNz12DMkc3IIaK2wg",
+      "channelUrl": "http://www.youtube.com/channel/UCwo1o2WNz12DMkc3IIaK2wg",
+      "displayName": "Zhenyang Liou",
+      "profileImageUrl": "https://yt3.ggpht.com/-LrcpeAUtgt8/AAAAAAAAAAI/AAAAAAAAAAA/_Fy0ZRRNpI0/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2019-12-30T14:08:55.066Z"
+    }
+   },
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/E3Cf_QkeQ0dZ0E1CKZibBGacwmk\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCJfhMXMZR410JMJd3ke5TOQ",
+      "channelUrl": "http://www.youtube.com/user/nienyun9644",
+      "displayName": "吳念芸",
+      "profileImageUrl": "https://yt3.ggpht.com/-WOaIda70shg/AAAAAAAAAAI/AAAAAAAAAAA/mg3twKzF-Ac/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2019-12-30T13:24:22.699Z"
+    }
+   },
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/6NM2weCBiFu47XroJ4cd4TzAVtg\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCVCup2kqZ290_9YdIXaUFWQ",
+      "channelUrl": "http://www.youtube.com/user/ShinRSZ",
+      "displayName": "Shin",
+      "profileImageUrl": "https://yt3.ggpht.com/-6wWi3LZbJcA/AAAAAAAAAAI/AAAAAAAAAAA/jILbImrD3LU/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2019-12-30T12:55:21.786Z"
+    }
+   },
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/MNz-JW-HYwu736RKQjujUibdCzE\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCcS4iKa3RXR0DPpRdgzItIw",
+      "channelUrl": "http://www.youtube.com/user/stubidgut",
+      "displayName": "stubidgut",
+      "profileImageUrl": "https://yt3.ggpht.com/-fJZ3CG6-TW0/AAAAAAAAAAI/AAAAAAAAAAA/kglTlyjEHCA/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2019-12-30T11:28:57.379Z"
+    }
+   },
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/Ms6OtxcAEpuIQtVvlOernUU2Zdk\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCSPN7Wa3iZibStzhtVPAIXQ",
+      "channelUrl": "http://www.youtube.com/channel/UCSPN7Wa3iZibStzhtVPAIXQ",
+      "displayName": "忍者無尾熊",
+      "profileImageUrl": "https://yt3.ggpht.com/-88ROEVVsvLg/AAAAAAAAAAI/AAAAAAAAAAA/RKLsIoTp624/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2019-12-29T21:02:29.482Z"
+    }
+   },
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/UdNdCg12uOYrPIO8rgxbrhhsx4g\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCdOQGDGGYKaJI_P-uuNOMBQ",
+      "channelUrl": "http://www.youtube.com/channel/UCdOQGDGGYKaJI_P-uuNOMBQ",
+      "displayName": "Yurong Chen",
+      "profileImageUrl": "https://yt3.ggpht.com/-vT2ySxTDFzY/AAAAAAAAAAI/AAAAAAAAAAA/4KAI8lKKnGU/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2019-12-29T17:41:26.476Z"
+    }
+   },
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/OPe732T-voVUEmibgVtFozmdUo0\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCx2c_0PhAODnHX4Z3F_q4aA",
+      "channelUrl": "http://www.youtube.com/channel/UCx2c_0PhAODnHX4Z3F_q4aA",
+      "displayName": "葉紹琥",
+      "profileImageUrl": "https://yt3.ggpht.com/-0sijtrLx_8s/AAAAAAAAAAI/AAAAAAAAAAA/0MiaQVB9qD8/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2019-12-29T07:32:44.567Z"
+    }
+   },
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/uayChj7j8SJss-b7xPuY6Y3btYE\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCYCYc2nYINx1TscJrk3kVUQ",
+      "channelUrl": "http://www.youtube.com/channel/UCYCYc2nYINx1TscJrk3kVUQ",
+      "displayName": "B T",
+      "profileImageUrl": "https://yt3.ggpht.com/-RRayhlLD7L8/AAAAAAAAAAI/AAAAAAAAAAA/E0_MnHIk3IM/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2019-12-28T12:19:55.403Z"
+    }
+   },
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/r6A6boLvKCzYkJZS3429vzNUY6M\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UC6xL1Wqh0AIpSWqmZKLasuA",
+      "channelUrl": "http://www.youtube.com/channel/UC6xL1Wqh0AIpSWqmZKLasuA",
+      "displayName": "ねこ沙",
+      "profileImageUrl": "https://yt3.ggpht.com/-rZTE7FSLPz8/AAAAAAAAAAI/AAAAAAAAAAA/UVTdQzqtUzY/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2019-12-28T04:21:56.620Z"
+    }
+   }
+  ]
+ }
+ 

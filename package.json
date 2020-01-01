@@ -1,0 +1,68 @@
+{
+  "name": "phaser-project-template-es6",
+  "version": "3.21.0",
+  "description": "Phaser 3 starter template with ES6 and webpack.",
+  "homepage": "https://github.com/yandeu/phaser-project-template-es6#readme",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack/webpack.dev.js --host=0.0.0.0",
+    "deploy": "npm run build && gh-pages -d dist",
+    "build": "webpack --config webpack/webpack.prod.js",
+    "test": "jest",
+    "updateMemberList": "node utils/updateMembershipList/index.js"
+  },
+  "keywords": [
+    "Phaser",
+    "Phaser 3",
+    "Phaser3",
+    "html5 game",
+    "TypeScript",
+    "webpack",
+    "starter"
+  ],
+  "author": {
+    "name": "Yannick Deubel",
+    "url": "https://github.com/yandeu"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yandeu/phaser-project-template-es6.git"
+  },
+  "template": {
+    "name": "phaser-project-template-es6",
+    "url": "https://github.com/yandeu/phaser-project-template-es6",
+    "author": "Yannick Deubel (https://github.com/yandeu)"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "@babel/preset-env": "^7.7.7",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^1.0.1",
+    "copy-webpack-plugin": "^5.1.1",
+    "eslint": "^6.8.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.9.0",
+    "moment": "^2.24.0",
+    "standard": "^14.3.1",
+    "typescript": "^3.7.4",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1",
+    "webpack-merge": "^4.2.1",
+    "webpack-obfuscator": "^0.18.8",
+    "workbox-webpack-plugin": "^4.3.1",
+    "gh-pages": "^2.1.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0",
+    "eslint-plugin-jest": "^23.2.0",
+    "phaser": "^3.21.0"
+  }
+}
