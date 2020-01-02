@@ -1,5 +1,21 @@
 module.exports = [
-  // next sponserSince "2019-12-29T07:32:44.567Z"
+  // next sponserSince "2019-12-29T07:32:44.567Z",
+  {
+    displayName: '阿魂',
+    channelUrl: 'https://www.youtube.com/channel/UCZDKfgc03T6IfF-0gVFczQw',
+    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l7_oa52gVsFC2ePigDfALpmJJ63C8DAbTrTJzQ=s80-c-k-c0xffffffff-no-rj-mo',
+    sponserSince: '2019-12-29T00:00:00.000Z',
+    originJoinAt: 'yee',
+    note: '買過吃雞T的星海基友'
+  },
+  {
+    displayName: 'Lin Sakuya',
+    channelUrl: 'https://www.youtube.com/channel/UCIW6dqlW_2l5_7Q4lHOSZfg',
+    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l7_637D9Fl-jhu4082DgTY9IIbd4EiXKjOs9UA=s80-c-k-c0xffffffff-no-rj-mo',
+    sponserSince: '2019-12-28T23:30:00.000Z',
+    originJoinAt: 'yee',
+    note: '電腦是他組的！'
+  },
   {
     displayName: '朱晏霆',
     channelUrl: 'https://www.youtube.com/channel/UC4Q8yu2fLqMKOqyy2AsSsoA',

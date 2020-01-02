@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack/webpack.dev.js --host=0.0.0.0",
-    "deploy": "npm run build && gh-pages -d dist",
+    "deploy": "npm run updatelist && npm run build && gh-pages -d dist",
     "build": "webpack --config webpack/webpack.prod.js",
     "test": "jest",
     "updatelist": "node utils/updateMembershipList/index.js"
