@@ -3,6 +3,10 @@ import FpsText from '../objects/fpsText'
 import MusicManager from '../objects/musicManager'
 import MessageBox from '../objects/messageBox'
 import moment from 'moment'
+import playerController from '../helpers/playerController'
+import Enemy from '../objects/enemy'
+import PlayerBullet from '../objects/playerBullet'
+// import enemy
 
 export default class MainScene extends Phaser.Scene {
   fpsText
@@ -14,57 +18,70 @@ export default class MainScene extends Phaser.Scene {
     super({ key: 'MainScene' })
   }
 
-  create () {
-    if (this.game.settings.DEBUG) {
-      this.fpsText = new FpsText(this)
+  setupPlayer () {
+    this.player = new People(this, 0, 0, 'player')
+    this.playerControlerKeys = this.input.keyboard.addKeys({
+      up: settings.PLAYER_CONTROL_KEYS.up,
+      down: settings.PLAYER_CONTROL_KEYS.down,
+      left: settings.PLAYER_CONTROL_KEYS.left,
+      right: settings.PLAYER_CONTROL_KEYS.right,
+      fire: 'space'
+    })
+
+    Utils.Align.scaleToGameW(this.player, 0.125)
+    if (this.player.displayWidth > 40) {
+      this.player.displayWidth = 40
+      this.player.displayHeight = 40
     }
 
+    this.grid.placeAtIndex(82, this.player)
+
+    this.input.on('pointermove', (pointer) => {
+      const { player } = this
+      const angle = Phaser.Math.Angle.Between(player.x, player.y, pointer.x, pointer.y)
+      // console.log(angle)
+      // angle = Phaser.Math.RadToDeg(angle)
+      // player.angle = angle
+      player.rotation = angle
+    })
+  }
+
+  // setupEnemy () {
+
+  // }
+
+  playerFire () {
+    const bullet = new PlayerBullet(this)
+    this.bulletGroup.add(bullet)
+    const BULLET_SPEED = 100
+    const { tx, ty } = Phaser.Math.getDirFromAngle(this.player.angle)
+    bullet.setVelocity(tx * BULLET_SPEED, ty * BULLET_SPEED)
+  }
+
+  bulletHitEnemy (enemy, bullet) {
+    enemy.gotHit()
+    bullet.destroy()
+  }
+
+  create () {
+    const grid = new Utils.AlignGrid({ scene: this })
+    if (settings.DEBUG) {
+      grid.showNumbers()
+      this.fpsText = new FpsText(this)
+    }
+    this.grid = grid
+
     this.messageBox = new MessageBox(this)
-    /**
-     * Delete all the code below to start a fresh scene
-     */
     this.music = new MusicManager(this)
+    this.setupPlayer()
+    // this.setupEnemy()
+    const e = new Enemy(this)
 
-    // this.group = this.physics.add.group({
-    //   bounceX: 1,
-    //   bounceY: 1,
-    //   collideWorldBounds: true
-    // })
-    // this.physics.add.collider(this.group, this.group)
+    this.grid.placeAtIndex(16, e)
+    this.bulletGroup = this.physics.add.group()
 
-    this.player = new People(this, 0, 0, 'player')
-    this.player.x = this.game.config.width / 2
-    this.player.y = this.game.config.height / 2
-
-    // this.player = this.impact.add.sprite(400, 200, 'player').setDepth(1)
-    // this.player.setMaxVelocity(1000).setFriction(800, 600).setPassiveCollision()
-
-    // Enables movement of player with WASD keys
-    var chunk = 10
-    this.input.keyboard.on('keydown_W', (event) => {
-      // var a = this.player
-      // this.player.setAccelerationY(200)
-      // debugger
-
-      this.player.y = this.player.y - chunk
-    })
-    this.input.keyboard.on('keydown_S', (event) => {
-      this.player.setAccelerationY(200)
-    })
-    this.input.keyboard.on('keyup_S', (event) => {
-      this.player.setAccelerationY(0)
-    })
-    this.input.keyboard.on('keydown_A', (event) => {
-      this.player.setAccelerationX(-200)
-    })
-    this.input.keyboard.on('keyup_A', (event) => {
-      this.player.setAccelerationX(0)
-    })
-    this.input.keyboard.on('keydown_D', (event) => {
-      this.player.setAccelerationX(200)
-    })
-
-    // this.group.add(this.player)
+    this.physics.add.collider(this.bulletGroup, e, this.bulletHitEnemy)
+    // this.physics.set
 
     if (this.sound.locked) {
       var text = this.add.text(400, 50, 'Tap to start', 40)
@@ -82,7 +99,7 @@ export default class MainScene extends Phaser.Scene {
 
   startGame () {
     this.music.on('play', e => {
-      window.loadingText.destroy()
+      // window.loadingText.destroy()
     })
 
     this.music.on('sponsorJoin', e => {
@@ -119,20 +136,15 @@ export default class MainScene extends Phaser.Scene {
     })
 
     // this.music.play()
-
-    // this.add
-    //   .text(this.cameras.main.width - 15, 15, `Phaser v${Phaser.VERSION}`, {
-    //     color: '#000000',
-    //     fontSize: 24
-    //   })
-    //   .setOrigin(1, 0)
   }
 
   update (time, delta) {
-    if (this.game.settings.DEBUG) {
+    if (settings.DEBUG) {
       this.fpsText.update()
     }
 
     this.music.update(time, delta)
+
+    playerController.call(this, time, delta)
   }
 }

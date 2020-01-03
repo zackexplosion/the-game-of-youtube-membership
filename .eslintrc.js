@@ -7,6 +7,8 @@ module.exports = {
     "globals": {
         "Utils": "readonly",
         "STYLES": "readonly",
+        "model": "readonly",
+        "settings": "readonly",
         "game": "readonly",
         "test": "readonly",
         "expect": "readonly",

@@ -6,11 +6,11 @@ import MainScene from './scenes/mainScene'
 import PreloadScene from './scenes/preloadScene'
 import EndScene from './scenes/endScene'
 import moment from 'moment'
+
+import settings from './settings'
 // inject Utils to global
 window.Utils = Utils
 moment.defaultFormat = 'YYYY/MM/DD HH:mm:ss'
-// const DEFAULT_WIDTH = 720
-// const DEFAULT_HEIGHT = 1280
 
 const DEFAULT_WIDTH = window.innerWidth
 const DEFAULT_HEIGHT = window.innerHeight
@@ -39,30 +39,22 @@ const config = {
       }
     },
     arcade: {
-      debug: false,
+      debug: true,
       gravity: { y: 0 }
     }
   }
 }
-const avaiableMusics = [
-  ['music-end.mp3', 81.3, 317],
-  ['music-en.mp3', 27.1, 300],
-  ['music-jp.mp3', 26, 280]
-]
-const settings = {
-  DEBUG: process.env.DEBUG || false,
-  avaiableMusics
-}
 
 class Model {
   constructor () {
-    this.currentMusic = avaiableMusics[Phaser.Math.Between(0, avaiableMusics.length - 1)]
+    const { AVAIABLE_MUSICS } = settings
+    this.currentMusic = AVAIABLE_MUSICS[Phaser.Math.Between(0, AVAIABLE_MUSICS.length - 1)]
   }
 
   set currentMusic (val) {
-    const [key, showStartAt, showEndAt] = val
+    const [key, showSponsorsAt, endShowSponsorAt] = val
     this._currentMusic = {
-      key, showStartAt, showEndAt
+      key, showSponsorsAt, endShowSponsorAt
     }
   }
 
@@ -72,13 +64,12 @@ class Model {
 }
 
 window.addEventListener('load', () => {
-  var game = new Phaser.Game(config)
-  game.settings = settings
-  game.model = new Model()
-  game.emitter = new Phaser.Events.EventEmitter()
-  window.game = game
+  window.game = new Phaser.Game(config)
 })
 
+window.settings = settings
+window.model = new Model()
+window.emitter = new Phaser.Events.EventEmitter()
 window.STYLES = {
   DEFAULT_TEXT_COLOR: '#FFFFFF'
 }

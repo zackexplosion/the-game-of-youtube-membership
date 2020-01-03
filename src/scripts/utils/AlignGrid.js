@@ -6,10 +6,10 @@ export default class AlignGrid {
       return
     }
     if (!config.rows) {
-      config.rows = 5
+      config.rows = 11
     }
     if (!config.cols) {
-      config.cols = 5
+      config.cols = 11
     }
     if (!config.height) {
       config.height = game.config.height

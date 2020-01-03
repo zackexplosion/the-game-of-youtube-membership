@@ -1,16 +1,23 @@
-export default class People extends Phaser.GameObjects.Container {
-  constructor (scene, x, y, imageKey) {
+
+export default class Enemy extends Phaser.GameObjects.Container {
+  constructor (scene, enemy) {
     super(scene)
     scene.add.existing(this)
+    this.hp = 10
+    const text = scene.add.text(0, 0, '機車道DEJA!', {
+      color: STYLES.DEFAULT_TEXT_COLOR,
+      fontSize: 40
+    })
 
-    const img = scene.add.image(0, 0, imageKey)
-    img.angle = 90
+    text.setOrigin(0.5, 0.5)
+    this.add(text)
+    // debugger
+
+    this.setSize(text.width, text.height)
+
     scene.physics.add.existing(this)
-    this.setSize(img.width, img.height)
-    // this.setSize(img.width, img.height)
     this.body.setCollideWorldBounds(true)
 
-    this.add(img)
     //   .setBounce(0)
     //   .setInteractive({ useHandCursor: true })
     //   .on('pointerdown', () => {
@@ -32,6 +39,14 @@ export default class People extends Phaser.GameObjects.Container {
 
   setVelocityY (y) {
     this.body.setVelocityY(y)
+  }
+
+  gotHit () {
+    this.hp--
+    console.log('this.hp', this.hp)
+    if (this.hp === 0) {
+      this.destroy()
+    }
   }
 }
 

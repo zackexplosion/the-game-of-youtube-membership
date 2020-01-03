@@ -10,42 +10,48 @@ export default class PreloadScene extends Phaser.Scene {
   }
 
   async preload () {
-    // const { centerX, centerY } = this.cameras.main
     this.loadingBar = new LoadingBar({ scene: this })
 
     this.load.on('progress', e => {
       this.loadingBar.setPer(e)
     })
 
-    // window.loadingText = this.add.text(centerX, centerY, 'Loading', { color: 'black', fontSize: '40px' })
-    // window.loadingText.setOrigin(0.5)
-
     this.load.image('player', 'assets/zack2_80.png')
+    this.load.image('playerBullet', 'assets/bullet.png')
 
-    const music = this.game.model.currentMusic
+    // loading music
+    const {
+      key,
+      showSponsorsAt,
+      endShowSponsorAt
+    } = model.currentMusic
+
     this.load.audio({
       key: 'music',
-      url: 'assets/' + music.key,
+      url: 'assets/' + key,
       config: {
-        showStartAt: music.showStartAt,
-        showEndAt: music.showEndAt
+        showSponsorsAt,
+        endShowSponsorAt
       }
     }, {
       stream: true
     })
+
     this.sound.pauseOnBlur = false
+
+    // create rounded profile images
     const imageProcessers = []
     for (let i = 0; i < memeberList.length; i++) {
       // const [name, url, profileImageUrl, joinDate] = memeberList[i]
       const profileImageUrl = memeberList[i][2]
-      imageProcessers.push(
-        createRoundProfileImage.apply(this, [profileImageUrl])
-      )
+      // const p = createRoundProfileImage.apply(this, [profileImageUrl])
+      const p = createRoundProfileImage(profileImageUrl)
+      imageProcessers.push(p)
     }
+
     const images = await Promise.all(imageProcessers)
     images.forEach((data, i) => {
       const key = 'memberProfile_' + i
-      // this.load.image(, data)
       this.textures.addBase64(key, data)
     })
   }
@@ -55,7 +61,7 @@ export default class PreloadScene extends Phaser.Scene {
     // this.music.play({
     //   seek: 2
     // }
-    // this.scene.start('MainScene')
+    this.scene.start('MainScene')
     // this.scene.start('EndScene')
 
     /**
