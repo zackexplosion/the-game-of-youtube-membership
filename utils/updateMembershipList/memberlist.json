@@ -1,11 +1,39 @@
 {
   "kind": "youtube#sponsorListResponse",
-  "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/riy0jXwh1-_wD8Yu-GFjdYGZAc0\"",
+  "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/1cV349HZAaVTpLlmBEIiX550ItE\"",
   "pageInfo": {
-   "totalResults": 19,
-   "resultsPerPage": 19
+   "totalResults": 21,
+   "resultsPerPage": 21
   },
   "items": [
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/uw0b-KDeHLHUi3NrC6cMLutgLlg\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCPJOXkPTJdy_X8nbFG3Be7w",
+      "channelUrl": "http://www.youtube.com/channel/UCPJOXkPTJdy_X8nbFG3Be7w",
+      "displayName": "陳是謀",
+      "profileImageUrl": "https://yt3.ggpht.com/-3o6424Z5xBk/AAAAAAAAAAI/AAAAAAAAAAA/GDi1SjbuklQ/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2020-01-03T06:29:35.580Z"
+    }
+   },
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/tubZ_dZ0qpu9V_DAGaEAaBVIw_Y\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCdq7ebFaRe9YJ9PMz-tNtQg",
+      "channelUrl": "http://www.youtube.com/user/ken19890107",
+      "displayName": "Chen Ken",
+      "profileImageUrl": "https://yt3.ggpht.com/-rvI18bi6F6s/AAAAAAAAAAI/AAAAAAAAAAA/U2HIXj0f9yA/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2020-01-02T20:02:46.487Z"
+    }
+   },
    {
     "kind": "youtube#sponsor",
     "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/1YpQx8CztXZWjkUw0vYiYB8NZhw\"",
