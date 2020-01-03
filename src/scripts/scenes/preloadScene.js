@@ -1,25 +1,34 @@
 import memeberList from '../../assets/memberlist.json'
 import createRoundProfileImage from '../../lib/createRoundProfileImage'
+import LoadingBar from '../objects/loadingBar'
 
 export default class PreloadScene extends Phaser.Scene {
   music
+  loadingBar
   constructor () {
     super({ key: 'PreloadScene' })
   }
 
   async preload () {
-    const { centerX, centerY } = this.cameras.main
-    window.loadingText = this.add.text(centerX, centerY, 'Loading', { color: 'black', fontSize: '40px' })
-    window.loadingText.setOrigin(0.5)
+    // const { centerX, centerY } = this.cameras.main
+    this.loadingBar = new LoadingBar({ scene: this })
+
+    this.load.on('progress', e => {
+      this.loadingBar.setPer(e)
+    })
+
+    // window.loadingText = this.add.text(centerX, centerY, 'Loading', { color: 'black', fontSize: '40px' })
+    // window.loadingText.setOrigin(0.5)
+
     this.load.image('player', 'assets/zack2_80.png')
 
-    const music = this.game.settings.currentMusic
+    const music = this.game.model.currentMusic
     this.load.audio({
       key: 'music',
-      url: 'assets/' + music[0],
+      url: 'assets/' + music.key,
       config: {
-        showStartAt: music[1],
-        showEndAt: music[2]
+        showStartAt: music.showStartAt,
+        showEndAt: music.showEndAt
       }
     }, {
       stream: true
@@ -27,12 +36,11 @@ export default class PreloadScene extends Phaser.Scene {
     this.sound.pauseOnBlur = false
     const imageProcessers = []
     for (let i = 0; i < memeberList.length; i++) {
-      const [name, url, profileImageUrl, joinDate] = memeberList[i]
+      // const [name, url, profileImageUrl, joinDate] = memeberList[i]
+      const profileImageUrl = memeberList[i][2]
       imageProcessers.push(
         createRoundProfileImage.apply(this, [profileImageUrl])
       )
-      // // console.log(name, url, joinDate)
-      // this.load.image('memberProfile_' + i, data)
     }
     const images = await Promise.all(imageProcessers)
     images.forEach((data, i) => {
@@ -47,7 +55,7 @@ export default class PreloadScene extends Phaser.Scene {
     // this.music.play({
     //   seek: 2
     // }
-    this.scene.start('MainScene')
+    // this.scene.start('MainScene')
     // this.scene.start('EndScene')
 
     /**

@@ -21,13 +21,13 @@ export default class MusicManager {
   nextSponsor
   constructor (scene) {
     this.scene = scene
-    const { settings } = scene.game
+    const { settings, model } = scene.game
     this.settings = settings
     scene.pauseOnBlur = false
     this.music = scene.sound.add('music')
 
-    this.showSponsorsAt = settings.currentMusic[1]
-    this.endShowSponsorAt = settings.currentMusic[2]
+    this.showSponsorsAt = model.currentMusic[1]
+    this.endShowSponsorAt = model.currentMusic[2]
     this.showSponsorDuration = this.endShowSponsorAt - this.showSponsorsAt
 
     if (this.settings.DEBUG) {

@@ -1,10 +1,13 @@
 import 'phaser'
 import '@babel/polyfill'
 
+import Utils from './utils'
 import MainScene from './scenes/mainScene'
 import PreloadScene from './scenes/preloadScene'
 import EndScene from './scenes/endScene'
 import moment from 'moment'
+// inject Utils to global
+window.Utils = Utils
 moment.defaultFormat = 'YYYY/MM/DD HH:mm:ss'
 // const DEFAULT_WIDTH = 720
 // const DEFAULT_HEIGHT = 1280
@@ -48,14 +51,34 @@ const avaiableMusics = [
 ]
 const settings = {
   DEBUG: process.env.DEBUG || false,
-  avaiableMusics,
-  currentMusic: avaiableMusics[Phaser.Math.Between(0, avaiableMusics.length - 1)]
-  // currentMusic: avaiableMusics[2]
+  avaiableMusics
 }
 
-// console.log(settings)
+class Model {
+  constructor () {
+    this.currentMusic = avaiableMusics[Phaser.Math.Between(0, avaiableMusics.length - 1)]
+  }
+
+  set currentMusic (val) {
+    const [key, showStartAt, showEndAt] = val
+    this._currentMusic = {
+      key, showStartAt, showEndAt
+    }
+  }
+
+  get currentMusic () {
+    return this._currentMusic
+  }
+}
 
 window.addEventListener('load', () => {
-  const game = new Phaser.Game(config)
+  var game = new Phaser.Game(config)
   game.settings = settings
+  game.model = new Model()
+  game.emitter = new Phaser.Events.EventEmitter()
+  window.game = game
 })
+
+window.STYLES = {
+  DEFAULT_TEXT_COLOR: '#FFFFFF'
+}

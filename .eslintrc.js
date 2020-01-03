@@ -5,6 +5,9 @@ module.exports = {
     },
     "extends": "standard",
     "globals": {
+        "Utils": "readonly",
+        "STYLES": "readonly",
+        "game": "readonly",
         "test": "readonly",
         "expect": "readonly",
         "Phaser": "readonly",
