@@ -6,12 +6,15 @@ import PreloadScene from './scenes/preloadScene'
 import EndScene from './scenes/endScene'
 import moment from 'moment'
 moment.defaultFormat = 'YYYY/MM/DD HH:mm:ss'
-const DEFAULT_WIDTH = 720
-const DEFAULT_HEIGHT = 1280
+// const DEFAULT_WIDTH = 720
+// const DEFAULT_HEIGHT = 1280
+
+const DEFAULT_WIDTH = window.innerWidth
+const DEFAULT_HEIGHT = window.innerHeight
 
 const config = {
   type: Phaser.AUTO,
-  backgroundColor: '#ffffff',
+  backgroundColor: '#333',
   scale: {
     parent: 'phaser-game',
     mode: Phaser.Scale.FIT,
@@ -22,9 +25,19 @@ const config = {
   scene: [PreloadScene, MainScene, EndScene],
   physics: {
     default: 'arcade',
+    // default: 'impact',
+    impact: {
+      setBounds: {
+        x: 0,
+        y: 0,
+        width: DEFAULT_WIDTH,
+        height: DEFAULT_HEIGHT,
+        thickness: 32
+      }
+    },
     arcade: {
       debug: false,
-      gravity: { y: 400 }
+      gravity: { y: 0 }
     }
   }
 }

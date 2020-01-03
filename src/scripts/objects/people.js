@@ -4,15 +4,15 @@ export default class People extends Phaser.Physics.Arcade.Sprite {
     scene.add.existing(this)
     scene.physics.add.existing(this)
     this.setCollideWorldBounds(true)
-      .setBounce(0.8)
-      .setInteractive({ useHandCursor: true })
-      .on('pointerdown', () => {
-        const v = Phaser.Math.Between(0, -800)
-        this.setVelocity(v, v)
-      })
-    this.setVelocity(100, 0)
+    //   .setBounce(0)
+    //   .setInteractive({ useHandCursor: true })
+    //   .on('pointerdown', () => {
+    //     const v = Phaser.Math.Between(0, -800)
+    //     this.setVelocity(v, v)
+    //   })
+    // this.setVelocity(100, 0)
 
-    scene.group.add(this)
+    // scene.group.add(this)
   }
 }
 

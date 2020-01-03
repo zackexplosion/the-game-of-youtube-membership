@@ -25,16 +25,46 @@ export default class MainScene extends Phaser.Scene {
      */
     this.music = new MusicManager(this)
 
-    this.group = this.physics.add.group({
-      bounceX: 1,
-      bounceY: 1,
-      collideWorldBounds: true
+    // this.group = this.physics.add.group({
+    //   bounceX: 1,
+    //   bounceY: 1,
+    //   collideWorldBounds: true
+    // })
+    // this.physics.add.collider(this.group, this.group)
+
+    this.player = new People(this, 0, 0, 'player')
+    this.player.x = this.game.config.width / 2
+    this.player.y = this.game.config.height / 2
+
+    // this.player = this.impact.add.sprite(400, 200, 'player').setDepth(1)
+    // this.player.setMaxVelocity(1000).setFriction(800, 600).setPassiveCollision()
+
+    // Enables movement of player with WASD keys
+    var chunk = 10
+    this.input.keyboard.on('keydown_W', (event) => {
+      // var a = this.player
+      // this.player.setAccelerationY(200)
+      // debugger
+
+      this.player.y = this.player.y - chunk
     })
-    this.physics.add.collider(this.group, this.group)
+    this.input.keyboard.on('keydown_S', (event) => {
+      this.player.setAccelerationY(200)
+    })
+    this.input.keyboard.on('keyup_S', (event) => {
+      this.player.setAccelerationY(0)
+    })
+    this.input.keyboard.on('keydown_A', (event) => {
+      this.player.setAccelerationX(-200)
+    })
+    this.input.keyboard.on('keyup_A', (event) => {
+      this.player.setAccelerationX(0)
+    })
+    this.input.keyboard.on('keydown_D', (event) => {
+      this.player.setAccelerationX(200)
+    })
 
-    this.player = new People(this, Phaser.Math.Between(0, this.cameras.main.width), 0, 'player')
-
-    this.group.add(this.player)
+    // this.group.add(this.player)
 
     if (this.sound.locked) {
       var text = this.add.text(400, 50, 'Tap to start', 40)
@@ -88,7 +118,7 @@ export default class MainScene extends Phaser.Scene {
       this.cameras.main.fadeOut(4000)
     })
 
-    this.music.play()
+    // this.music.play()
 
     // this.add
     //   .text(this.cameras.main.width - 15, 15, `Phaser v${Phaser.VERSION}`, {
