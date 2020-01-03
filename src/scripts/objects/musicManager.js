@@ -1,4 +1,4 @@
-import sponsors from '../../assets/memberlist.json'
+import sponsors from 'gamedata/memberlist.json'
 import moment from 'moment'
 export default class MusicManager {
   audio

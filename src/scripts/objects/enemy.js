@@ -1,10 +1,15 @@
-
+import ENEMIES from 'gamedata/enemies.json'
 export default class Enemy extends Phaser.GameObjects.Container {
   constructor (scene, enemy) {
     super(scene)
     scene.add.existing(this)
-    this.hp = 10
-    const text = scene.add.text(0, 0, '機車道DEJA!', {
+
+    const eindex = Phaser.Math.Between(0, ENEMIES.length - 1)
+
+    const e = ENEMIES[eindex]
+
+    this.hp = e.hp
+    const text = scene.add.text(0, 0, e.text, {
       color: STYLES.DEFAULT_TEXT_COLOR,
       fontSize: 40
     })
@@ -17,7 +22,7 @@ export default class Enemy extends Phaser.GameObjects.Container {
 
     scene.physics.add.existing(this)
     this.body.setCollideWorldBounds(true)
-
+    this.body.immovable = true
     //   .setBounce(0)
     //   .setInteractive({ useHandCursor: true })
     //   .on('pointerdown', () => {
@@ -43,10 +48,6 @@ export default class Enemy extends Phaser.GameObjects.Container {
 
   gotHit () {
     this.hp--
-    console.log('this.hp', this.hp)
-    if (this.hp === 0) {
-      this.destroy()
-    }
   }
 }
 

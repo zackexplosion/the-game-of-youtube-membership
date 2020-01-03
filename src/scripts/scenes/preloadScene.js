@@ -1,4 +1,4 @@
-import memeberList from '../../assets/memberlist.json'
+import memeberList from 'gamedata/memberlist.json'
 import createRoundProfileImage from '../../lib/createRoundProfileImage'
 import LoadingBar from '../objects/loadingBar'
 

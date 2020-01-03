@@ -10,7 +10,10 @@ const settings = {
     down: 'S',
     left: 'A',
     right: 'D'
-  }
+  },
+  BULLET_SPEED: 150,
+  PLAYER_FIRE_DELAY: 300,
+  PLAYER_MOVE_SPEED: 110
 }
 
 export default settings

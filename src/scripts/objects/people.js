@@ -6,8 +6,8 @@ export default class People extends Phaser.GameObjects.Container {
     const img = scene.add.image(0, 0, imageKey)
     img.angle = 90
     scene.physics.add.existing(this)
-    this.setSize(img.width, img.height)
     // this.setSize(img.width, img.height)
+    this.setSize(40, 40)
     this.body.setCollideWorldBounds(true)
 
     this.add(img)

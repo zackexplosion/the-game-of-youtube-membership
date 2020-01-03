@@ -7,7 +7,7 @@ import PreloadScene from './scenes/preloadScene'
 import EndScene from './scenes/endScene'
 import moment from 'moment'
 
-import settings from './settings'
+import settings from '../gamedata/settings'
 // inject Utils to global
 window.Utils = Utils
 moment.defaultFormat = 'YYYY/MM/DD HH:mm:ss'
@@ -39,7 +39,7 @@ const config = {
       }
     },
     arcade: {
-      debug: true,
+      debug: false,
       gravity: { y: 0 }
     }
   }

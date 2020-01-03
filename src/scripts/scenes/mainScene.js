@@ -53,14 +53,26 @@ export default class MainScene extends Phaser.Scene {
   playerFire () {
     const bullet = new PlayerBullet(this)
     this.bulletGroup.add(bullet)
-    const BULLET_SPEED = 100
+
+    const { BULLET_SPEED } = settings
     const { tx, ty } = Phaser.Math.getDirFromAngle(this.player.angle)
     bullet.setVelocity(tx * BULLET_SPEED, ty * BULLET_SPEED)
   }
 
   bulletHitEnemy (enemy, bullet) {
     enemy.gotHit()
+    if (enemy.hp === 0) {
+      enemy.destroy()
+      this.buildEnemy()
+    }
     bullet.destroy()
+  }
+
+  buildEnemy () {
+    const e = new Enemy(this)
+    this.grid.placeAtIndex(Phaser.Math.Between(0, 32), e)
+    this.enemy = e
+    this.physics.add.collider(this.bulletGroup, this.enemy, this.bulletHitEnemy, null, this)
   }
 
   create () {
@@ -75,29 +87,15 @@ export default class MainScene extends Phaser.Scene {
     this.music = new MusicManager(this)
     this.setupPlayer()
     // this.setupEnemy()
-    const e = new Enemy(this)
 
-    this.grid.placeAtIndex(16, e)
     this.bulletGroup = this.physics.add.group()
+    this.buildEnemy()
 
-    this.physics.add.collider(this.bulletGroup, e, this.bulletHitEnemy)
-    // this.physics.set
-
-    if (this.sound.locked) {
-      var text = this.add.text(400, 50, 'Tap to start', 40)
-      text.x -= Math.round(text.width / 2)
-      text.y -= Math.round(text.height / 2)
-
-      this.sound.once('unlocked', function (soundManager) {
-        text.visible = false
-        this.startGame()
-      }, this)
-    } else {
-      this.startGame()
-    }
+    this.startGame()
   }
 
   startGame () {
+    this.music.play()
     this.music.on('play', e => {
       // window.loadingText.destroy()
     })

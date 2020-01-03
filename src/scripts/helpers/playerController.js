@@ -1,6 +1,3 @@
-
-var chunk = 100
-var FIRE_DELAY = 300
 var lastTimeFired = 0
 export default function playerController (time, delta) {
   const { player, playerControlerKeys } = this
@@ -8,25 +5,21 @@ export default function playerController (time, delta) {
   player.setVelocity(0, 0)
 
   if (playerControlerKeys.up.isDown) {
-    player.setVelocityY(-chunk)
+    player.setVelocityY(-settings.PLAYER_MOVE_SPEED)
   }
   if (playerControlerKeys.down.isDown) {
-    player.setVelocityY(chunk)
+    player.setVelocityY(settings.PLAYER_MOVE_SPEED)
   }
   if (playerControlerKeys.left.isDown) {
-    player.setVelocityX(-chunk)
+    player.setVelocityX(-settings.PLAYER_MOVE_SPEED)
   }
   if (playerControlerKeys.right.isDown) {
-    player.setVelocityX(chunk)
+    player.setVelocityX(settings.PLAYER_MOVE_SPEED)
   }
 
-  if (playerControlerKeys.fire.isDown && time - lastTimeFired > FIRE_DELAY
+  if (playerControlerKeys.fire.isDown && time - lastTimeFired > settings.PLAYER_FIRE_DELAY
   ) {
     this.playerFire()
     lastTimeFired = time
   }
-
-  // if (keys.up.isUp && keys.down.isUp) {
-  //   player.setVelocity(0, 0)
-  // } else if()
 }
