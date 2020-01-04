@@ -61,6 +61,10 @@ export default class MainScene extends Phaser.Scene {
   // }
 
   playerFire () {
+    var sound = this.sound.add('playerFireSFX')
+    sound.play({
+      volume: 0.4
+    })
     this.makeBullet(this.player.x, this.player.y)
     this.sponsors.getChildren().forEach(c => {
       this.makeBullet(c.x, c.y)
@@ -74,15 +78,20 @@ export default class MainScene extends Phaser.Scene {
     const { BULLET_SPEED } = settings
     const { tx, ty } = Phaser.Math.getDirFromAngle(this.player.angle)
     bullet.setVelocity(tx * BULLET_SPEED, ty * BULLET_SPEED)
+
+    // if (model.soundOn == true) {
+
+    // }
   }
 
   bulletHitEnemy (enemy, bullet) {
+    bullet.destroy()
     enemy.gotHit()
-    if (enemy.hp === 0) {
+
+    if (enemy.hp <= 0) {
       enemy.destroy()
       this.buildEnemy()
     }
-    bullet.destroy()
   }
 
   buildEnemy () {
@@ -122,7 +131,7 @@ export default class MainScene extends Phaser.Scene {
     })
 
     this.music.on('sponsorJoin', e => {
-      if (this.sponsors.getLength() > 1) {
+      if (this.sponsors.getLength() > model.maxActiveSponsors) {
         this.sponsors.getChildren()[0].destroy()
       }
       const [name, channelUrl, profileUrl, joinSince, extra] = e

@@ -13,6 +13,7 @@ class Model {
   constructor () {
     const { AVAIABLE_MUSICS } = settings
     this.currentMusic = AVAIABLE_MUSICS[Phaser.Math.Between(0, AVAIABLE_MUSICS.length - 1)]
+    this._maxActiveSponsors = 6
   }
 
   set currentMusic (val) {
@@ -27,7 +28,8 @@ class Model {
   }
 
   set maxActiveSponsors (val) {
-    this._maxActiveSponsors = val
+    if (val >= 6) { val = 6 }
+    this._maxActiveSponsors = val - 1
     window.emitter('maxActiveSponsorsChange', val)
   }
 
