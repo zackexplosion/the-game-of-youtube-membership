@@ -11,7 +11,7 @@ export default class Enemy extends Phaser.GameObjects.Container {
     this.hp = e.hp
     const text = scene.add.text(0, 0, e.text, {
       color: STYLES.DEFAULT_TEXT_COLOR,
-      fontSize: game.config.width / e.size
+      fontSize: e.size * 1.5
     })
 
     // Utils.Align.scaleToGameW(text, 0.25)

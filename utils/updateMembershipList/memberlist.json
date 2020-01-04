@@ -1,11 +1,25 @@
 {
   "kind": "youtube#sponsorListResponse",
-  "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/1cV349HZAaVTpLlmBEIiX550ItE\"",
+  "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/Hleufkm_xShVhevb_ST4eq_xUVA\"",
   "pageInfo": {
-   "totalResults": 21,
-   "resultsPerPage": 21
+   "totalResults": 22,
+   "resultsPerPage": 22
   },
   "items": [
+   {
+    "kind": "youtube#sponsor",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/iYsLTG2NNyKLaItwu44mLrEut6Y\"",
+    "snippet": {
+     "channelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+     "sponsorDetails": {
+      "channelId": "UCekqBypQMqLxDjkoy5eZiXA",
+      "channelUrl": "http://www.youtube.com/channel/UCekqBypQMqLxDjkoy5eZiXA",
+      "displayName": "洨太郎 Little Taro",
+      "profileImageUrl": "https://yt3.ggpht.com/-CF8n4GUD9cw/AAAAAAAAAAI/AAAAAAAAAAA/la4NSmeJSZk/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+     },
+     "sponsorSince": "2020-01-04T12:58:55.313Z"
+    }
+   },
    {
     "kind": "youtube#sponsor",
     "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/uw0b-KDeHLHUi3NrC6cMLutgLlg\"",

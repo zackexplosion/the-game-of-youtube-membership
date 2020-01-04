@@ -1,16 +1,33 @@
+
 export default class People extends Phaser.GameObjects.Container {
-  constructor (scene, x = 0, y = 0, imageKey) {
+  constructor (scene, imageKey) {
     super(scene)
+    const { PEOPLE_SIZE } = settings
+    this.width = PEOPLE_SIZE
+    this.height = PEOPLE_SIZE
     scene.add.existing(this)
 
-    const img = scene.add.image(x, y, imageKey)
+    const img = scene.add.image(0, 0, imageKey)
+    img.displayWidth = PEOPLE_SIZE
+    img.displayHeight = PEOPLE_SIZE
     img.angle = 90
     scene.physics.add.existing(this)
     // this.setSize(img.width, img.height)
-    this.setSize(40, 40)
-    this.body.setCollideWorldBounds(true)
+    // this.setSize(PEOPLE_SIZE, PEOPLE_SIZE)
 
+    // only main player need this
+    if (imageKey === 'player') {
+      this.body.setCollideWorldBounds(true)
+    }
+
+    // this.body.x = -100
+    // img.setOrigin(0.5, 0.5)
+    // img.setOrigin(0.5)
     this.add(img)
+    scene.input.enableDebug(img)
+    // this.refreshBody()
+
+    // this.setOrigin(0.5, 0.5)
     //   .setBounce(0)
     //   .setInteractive({ useHandCursor: true })
     //   .on('pointerdown', () => {
