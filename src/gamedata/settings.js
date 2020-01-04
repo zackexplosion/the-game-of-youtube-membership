@@ -28,7 +28,7 @@ const settings = {
         }
       },
       arcade: {
-        debug: true,
+        debug: process.env.PHYSIC_DEBUG || false,
         gravity: { y: 0 }
       }
     }
@@ -48,10 +48,10 @@ const settings = {
   },
   BULLET_SPEED: 350,
   PLAYER_FIRE_DELAY: 200,
-  PLAYER_MOVE_SPEED: 150,
+  PLAYER_MOVE_SPEED: 250,
   SPONSORS_ROTATE_SPEED: -0.05,
-  PEOPLE_SIZE: 40,
-  SPONSORS_RADIUS: 50
+  PEOPLE_SIZE: 30,
+  SPONSORS_RADIUS: 40
 }
 
 window.STYLES = {

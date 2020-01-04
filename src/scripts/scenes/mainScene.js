@@ -30,11 +30,6 @@ export default class MainScene extends Phaser.Scene {
       right: settings.PLAYER_CONTROL_KEYS.right,
       fire: 'space'
     })
-    // Utils.Align.scaleToGameW(this.player, 0.075)
-    // if (this.player.displayWidth > s) {
-    //   this.player.displayWidth = s
-    //   this.player.displayHeight = s
-    // }
 
     this.grid.placeAtIndex(82, this.player)
 
