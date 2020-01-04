@@ -4,6 +4,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "CNAME"
   },
   {
+    "revision": "194577a7e20bdcc7afbb718f502c134c",
+    "url": "assets/.DS_Store"
+  },
+  {
     "revision": "6219551824675c3c031504d2dca92f43",
     "url": "assets/bullet.png"
   },
@@ -32,6 +36,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/player.png"
   },
   {
+    "revision": "2fe8babb076422761fe7585038d83240",
+    "url": "assets/sfx_laserfire.ogg"
+  },
+  {
     "revision": "f7c746b7b7f760b1479415707d0dd11e",
     "url": "assets/zack2.png"
   },
@@ -52,12 +60,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "icons/icons-512.png"
   },
   {
-    "revision": "3d0388d80a6bdb6f37d49d8af450da6f",
+    "revision": "d5d368b6c2f84c2dec3a65cc49ba2557",
     "url": "index.html"
   },
   {
-    "revision": "7d7a1d9b60ba9f17c0a2",
-    "url": "main.669913594c39795d0db2.bundle.js"
+    "revision": "2333a439f6a88c758d7f",
+    "url": "main.3c7dc51df344e9c319f5.bundle.js"
   },
   {
     "revision": "bf38d0c9760162342f12cd9b44fbf4ef",
@@ -68,7 +76,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "sw.js"
   },
   {
-    "revision": "9a2e505d7d1c232ff968",
-    "url": "vendors.6728de56f224c366eb4e.bundle.js"
+    "revision": "145719625fbd54a2cf8c",
+    "url": "vendors.8a85fcdbe3088f7ce03a.bundle.js"
   }
 ]);
