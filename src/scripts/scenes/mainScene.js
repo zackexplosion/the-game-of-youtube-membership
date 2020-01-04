@@ -12,8 +12,11 @@ export default class MainScene extends Phaser.Scene {
   fpsText
   music
   player
-  activeSponsers = []
   group
+  activeSponsorIndex = 0
+  activeSponsors = 0
+  startAngle = 0
+  endAngle = 6.28
   constructor () {
     super({ key: 'MainScene' })
   }
@@ -60,7 +63,7 @@ export default class MainScene extends Phaser.Scene {
   playerFire () {
     this.makeBullet(this.player.x, this.player.y)
     this.sponsors.getChildren().forEach(c => {
-      console.log(c)
+      if (!c.isActive) return
       this.makeBullet(c.x, c.y)
     })
     // this.sponsorsContainer.getAll().forEach(_ => {
@@ -113,19 +116,10 @@ export default class MainScene extends Phaser.Scene {
 
     for (let i = 0; i < 6; i++) {
       const c = this.add.container(0, 0)
-      const p = this.add.image(0, 0, 'memberProfile_' + i)
-      p.angle = 90
-      c.add(p)
-      // this.sponsorsContainer.add(c)
+      c.isActive = false
       this.sponsors.add(c)
     }
-
-    // this.startGame()
-
-    // Phaser.Actions.PlaceOnCircle(this.sponsorsContainer.getAll(), this.circle1)
     this.startGame()
-
-    // this.sponsorsContainer.add(this.circle1)
   }
 
   startGame () {
@@ -144,21 +138,26 @@ export default class MainScene extends Phaser.Scene {
           // timestamp = '????/??/?? ??:??:??'
           timestamp = '-- 以前加入的乾爹娘 --'
         }
-
         if (extra.note) {
           note = ', ' + extra.note
         }
       }
-      // const s = sponsors[index]
-      // TODO
-      // to around main player
-      const sIndex = this.activeSponsers.length
-      // const p = new People(this, sIndex * 45, sIndex * 45, 'memberProfile_' + this.activeSponsers.length)
-      // const p = this.add.image(90, 0, 'memberProfile_' + this.activeSponsers.length)
-      // p.angle = 90
-      // this.sponsors.add(p)
-      // this.activeSponsers.push(p)
       this.messageBox.add(`${timestamp} ${name} 加入了戰鬥${note}`)
+
+      if (this.activeSponsorIndex >= 6) {
+        this.activeSponsorIndex = 0
+        return
+      }
+      const i = this.activeSponsorIndex
+      const p = this.add.image(0, 0, 'memberProfile_' + this.activeSponsors)
+      p.angle = 90
+      this.sponsors.getChildren()[i].removeAll()
+      this.sponsors.getChildren()[i].add(p)
+      this.sponsors.getChildren()[i].isActive = true
+      // this.sponsors.get(i).add(p)
+
+      this.activeSponsors++
+      this.activeSponsorIndex++
     })
 
     this.music.on('endShowSponsors', e => {
@@ -168,10 +167,6 @@ export default class MainScene extends Phaser.Scene {
 
       this.cameras.main.fadeOut(4000)
     })
-
-    // this.music.play()
-    this.startAngle = 0
-    this.endAngle = 6.28
   }
 
   update (time, delta) {
