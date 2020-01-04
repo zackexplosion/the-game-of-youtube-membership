@@ -1,43 +1,57 @@
-import memeberList from '../../assets/memberlist.json'
+import memeberList from 'gamedata/memberlist.json'
 import createRoundProfileImage from '../../lib/createRoundProfileImage'
+import LoadingBar from '../objects/loadingBar'
 
 export default class PreloadScene extends Phaser.Scene {
   music
+  loadingBar
   constructor () {
     super({ key: 'PreloadScene' })
   }
 
   async preload () {
-    const { centerX, centerY } = this.cameras.main
-    window.loadingText = this.add.text(centerX, centerY, 'Loading', { color: 'black', fontSize: '40px' })
-    window.loadingText.setOrigin(0.5)
-    this.load.image('player', 'assets/zack2_80.png')
+    this.loadingBar = new LoadingBar({ scene: this })
 
-    const music = this.game.settings.currentMusic
+    this.load.on('progress', e => {
+      this.loadingBar.setPer(e)
+    })
+
+    this.load.image('player', 'assets/zack2_80.png')
+    this.load.image('playerBullet', 'assets/bullet.png')
+
+    // loading music
+    const {
+      key,
+      showSponsorsAt,
+      endShowSponsorAt
+    } = model.currentMusic
+
     this.load.audio({
       key: 'music',
-      url: 'assets/' + music[0],
+      url: 'assets/' + key,
       config: {
-        showStartAt: music[1],
-        showEndAt: music[2]
+        showSponsorsAt,
+        endShowSponsorAt
       }
     }, {
       stream: true
     })
+
     this.sound.pauseOnBlur = false
+
+    // create rounded profile images
     const imageProcessers = []
     for (let i = 0; i < memeberList.length; i++) {
-      const [name, url, profileImageUrl, joinDate] = memeberList[i]
-      imageProcessers.push(
-        createRoundProfileImage.apply(this, [profileImageUrl])
-      )
-      // // console.log(name, url, joinDate)
-      // this.load.image('memberProfile_' + i, data)
+      // const [name, url, profileImageUrl, joinDate] = memeberList[i]
+      const profileImageUrl = memeberList[i][2]
+      // const p = createRoundProfileImage.apply(this, [profileImageUrl])
+      const p = createRoundProfileImage(profileImageUrl)
+      imageProcessers.push(p)
     }
+
     const images = await Promise.all(imageProcessers)
     images.forEach((data, i) => {
       const key = 'memberProfile_' + i
-      // this.load.image(, data)
       this.textures.addBase64(key, data)
     })
   }

@@ -5,6 +5,11 @@ module.exports = {
     },
     "extends": "standard",
     "globals": {
+        "Utils": "readonly",
+        "STYLES": "readonly",
+        "model": "readonly",
+        "settings": "readonly",
+        "game": "readonly",
         "test": "readonly",
         "expect": "readonly",
         "Phaser": "readonly",

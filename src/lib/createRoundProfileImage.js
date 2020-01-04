@@ -16,7 +16,7 @@ export default function createRoundProfileImage (url) {
       ctx.arc(imageSize / 2, imageSize / 2, imageSize / 2, 0, 6.28, false) // draw the circle
       ctx.clip()
       // call the clip method so the next render is clipped in last path
-      //       ctx.stroke();
+      // ctx.stroke();
       ctx.closePath()
       ctx.drawImage(img, 0, 0, imageSize, imageSize)
       const base64Data = canvas.toDataURL()

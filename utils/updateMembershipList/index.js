@@ -119,6 +119,6 @@ odlerSponsors.forEach(o => {
   ])
 })
 const data = JSON.stringify(result)
-fs.writeFileSync(path.join(__dirname, '../../src/assets/memberlist.json'), data)
+fs.writeFileSync(path.join(__dirname, '../../src/gamedata/memberlist.json'), data)
 
 console.log(`${result.length} members writen into memberlist.json`)

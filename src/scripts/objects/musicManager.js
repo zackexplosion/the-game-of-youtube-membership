@@ -1,13 +1,12 @@
-import sponsors from '../../assets/memberlist.json'
+import sponsors from 'gamedata/memberlist.json'
 import moment from 'moment'
 export default class MusicManager {
-  settings
   audio
   scene
   sponsors = sponsors
-  showSponsorsAt = 27.1
-  endShowSponsorAt = 322
-  showSponsorDuration = this.endShowSponsorAt - this.showSponsorsAt
+  showSponsorsAt = 0
+  endShowSponsorAt = 0
+  showSponsorDuration = 0
   showSponsors = false
   endShowSponsors = false
   currentSponsers = []
@@ -21,18 +20,16 @@ export default class MusicManager {
   nextSponsor
   constructor (scene) {
     this.scene = scene
-    const { settings } = scene.game
-    this.settings = settings
     scene.pauseOnBlur = false
     this.music = scene.sound.add('music')
 
-    this.showSponsorsAt = settings.currentMusic[1]
-    this.endShowSponsorAt = settings.currentMusic[2]
+    this.showSponsorsAt = model.currentMusic.showSponsorsAt
+    this.endShowSponsorAt = model.currentMusic.endShowSponsorAt
     this.showSponsorDuration = this.endShowSponsorAt - this.showSponsorsAt
 
-    if (this.settings.DEBUG) {
+    if (settings.DEBUG) {
       this.debugMsg = scene.add.text(10, 40, '', {
-        color: 'black',
+        color: STYLES.DEFAULT_TEXT_COLOR,
         fontSize: '20px'
       })
     }
@@ -69,9 +66,8 @@ export default class MusicManager {
     // TODO
     // REMOVE in production
     seek = this.showSponsorsAt - 2
-    if (this.settings.DEBUG) {
+    if (settings.DEBUG) {
       seek = this.showSponsorsAt - 2
-      // seek = this.endShowSponsorAt - 10
     }
 
     this.music.play({
@@ -118,7 +114,7 @@ export default class MusicManager {
       this.endShowSponsors = true
     }
 
-    if (this.settings.DEBUG) {
+    if (settings.DEBUG) {
       try {
         var texts = [
           'seek: ' + seek.toFixed(1) + ' total:' + this.music.duration,
