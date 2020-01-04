@@ -11,9 +11,12 @@ moment.defaultFormat = 'YYYY/MM/DD HH:mm:ss'
 
 class Model {
   constructor () {
+    // random choose music
     const { AVAIABLE_MUSICS } = settings
     this.currentMusic = AVAIABLE_MUSICS[Phaser.Math.Between(0, AVAIABLE_MUSICS.length - 1)]
-    this._maxActiveSponsors = 6
+
+    // setup default
+    this.maxActiveSponsors = 6
   }
 
   set currentMusic (val) {
@@ -30,18 +33,16 @@ class Model {
   set maxActiveSponsors (val) {
     if (val >= 6) { val = 6 }
     this._maxActiveSponsors = val - 1
-    window.emitter('maxActiveSponsorsChange', val)
   }
 
   get maxActiveSponsors () {
     return this._maxActiveSponsors
   }
 }
+window.emitter = new Phaser.Events.EventEmitter()
+window.settings = settings
+window.model = new Model()
 
 window.addEventListener('load', () => {
   window.game = new Phaser.Game(settings.gameConfig)
 })
-
-window.settings = settings
-window.model = new Model()
-window.emitter = new Phaser.Events.EventEmitter()

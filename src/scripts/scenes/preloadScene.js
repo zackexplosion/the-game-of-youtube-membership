@@ -18,6 +18,8 @@ export default class PreloadScene extends Phaser.Scene {
 
     this.load.image('player', 'assets/zack2_80.png')
     this.load.image('playerBullet', 'assets/bullet.png')
+    this.load.image('ebulletA', 'assets/ebullet_a.png')
+    this.load.image('ebulletB', 'assets/ebullet_b.png')
 
     this.load.audio('playerFireSFX', 'assets/sfx_laserfire.ogg')
     // this.load.audio('playerFireSFX', 'assets/laser.ogg')

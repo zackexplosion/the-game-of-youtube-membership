@@ -9,6 +9,8 @@ export default class Enemy extends Phaser.GameObjects.Container {
     const e = ENEMIES[eindex]
 
     this.hp = e.hp
+    this.maxHP = e.hp
+    this.hpPercent = 0
     const text = scene.add.text(0, 0, e.text, {
       color: STYLES.DEFAULT_TEXT_COLOR,
       fontSize: e.size * 1.5
@@ -50,6 +52,7 @@ export default class Enemy extends Phaser.GameObjects.Container {
 
   gotHit () {
     this.hp--
+    this.hpPercent = this.hp / this.maxHP
   }
 }
 

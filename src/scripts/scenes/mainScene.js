@@ -17,6 +17,7 @@ export default class MainScene extends Phaser.Scene {
   activeSponsors = 0
   startAngle = 0
   endAngle = Math.PI * 2
+  maxActiveEnemies = 2
   constructor () {
     super({ key: 'MainScene' })
   }
@@ -30,6 +31,7 @@ export default class MainScene extends Phaser.Scene {
       right: settings.PLAYER_CONTROL_KEYS.right,
       fire: 'space'
     })
+    this.player.hp = 50
 
     this.grid.placeAtIndex(82, this.player)
 
@@ -85,15 +87,64 @@ export default class MainScene extends Phaser.Scene {
 
     if (enemy.hp <= 0) {
       enemy.destroy()
+    }
+
+    if (enemy.hpPercent === 0.5) {
       this.buildEnemy()
     }
   }
 
+  bulletHitEnemyBulletA (ebulletA, bullet) {
+    ebulletA.destroy()
+    bullet.destroy()
+  }
+
+  ebulletHitPlyer (player, ebullet) {
+    ebullet.destroy()
+    player.hp--
+    if (player.hp <= 0) {
+      alert('GG!')
+
+      this.scene.start('EndScene')
+    }
+    console.log('player.hp', player.hp)
+  }
+
   buildEnemy () {
     const e = new Enemy(this)
-    this.grid.placeAtIndex(Phaser.Math.Between(0, 32), e)
+    const index = Phaser.Math.Between(11, 76)
+    this.grid.placeAtIndex(index, e)
     this.enemy = e
     this.physics.add.collider(this.bulletGroup, this.enemy, this.bulletHitEnemy, null, this)
+    this.ebullet_group_a = this.physics.add.group({
+      key: 'ebulletA',
+      frameQuantity: 200
+    })
+    this.ebullet_group_a.children.iterate(c => {
+      c.x = e.x
+      c.y = e.y
+      c.scale = 0.3
+      var vx = Phaser.Math.Between(-100, 100)
+      var vy = Phaser.Math.Between(-100, 100)
+      c.body.setVelocity(vx, vy)
+    })
+    this.physics.add.collider(this.bulletGroup, this.ebullet_group_a, this.bulletHitEnemyBulletA, null, this)
+
+    this.ebullet_group_b = this.physics.add.group({
+      key: 'ebulletB',
+      frameQuantity: 200
+    })
+    this.ebullet_group_b.children.iterate(c => {
+      c.x = e.x
+      c.y = e.y
+      c.scale = 0.3
+      var vx = Phaser.Math.Between(-100, 100)
+      var vy = Phaser.Math.Between(-100, 100)
+      c.body.setVelocity(vx, vy)
+    })
+
+    this.physics.add.collider(this.player, this.ebullet_group_a, this.ebulletHitPlyer, null, this)
+    this.physics.add.collider(this.player, this.ebullet_group_b, this.ebulletHitPlyer, null, this)
   }
 
   create () {
@@ -107,7 +158,6 @@ export default class MainScene extends Phaser.Scene {
     this.messageBox = new MessageBox(this)
     this.music = new MusicManager(this)
     this.setupPlayer()
-    // this.setupEnemy()
 
     this.bulletGroup = this.physics.add.group()
     this.buildEnemy()

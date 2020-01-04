@@ -31,6 +31,15 @@ const settings = {
         debug: process.env.PHYSIC_DEBUG || false,
         gravity: { y: 0 }
       }
+    },
+    plugins: {
+      // global: [{
+      //   key: 'rexShake',
+      //   plugin: ShakePlugin,
+      //   start: true
+      // }
+      // // ...
+      // ]
     }
   },
   DEBUG: process.env.DEBUG || false,
