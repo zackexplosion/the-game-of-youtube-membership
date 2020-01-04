@@ -11,9 +11,14 @@ const settings = {
     left: 'A',
     right: 'D'
   },
-  BULLET_SPEED: 150,
+  BULLET_SPEED: 350,
   PLAYER_FIRE_DELAY: 300,
-  PLAYER_MOVE_SPEED: 110
+  PLAYER_MOVE_SPEED: 150,
+  SPONSORS_ROTATE_SPEED: -0.03
+}
+
+window.STYLES = {
+  DEFAULT_TEXT_COLOR: '#FFFFFF'
 }
 
 export default settings

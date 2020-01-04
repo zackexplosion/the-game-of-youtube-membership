@@ -43,6 +43,13 @@ export default class MainScene extends Phaser.Scene {
       // angle = Phaser.Math.RadToDeg(angle)
       // player.angle = angle
       player.rotation = angle
+      this.sponsors.getChildren().forEach(c => {
+        c.rotation = angle
+      })
+
+      // this.sponsorsContainer.getAll().forEach(c => {
+      //   c.rotation = angle
+      // })
     })
   }
 
@@ -51,7 +58,18 @@ export default class MainScene extends Phaser.Scene {
   // }
 
   playerFire () {
-    const bullet = new PlayerBullet(this)
+    this.makeBullet(this.player.x, this.player.y)
+    this.sponsors.getChildren().forEach(c => {
+      console.log(c)
+      this.makeBullet(c.x, c.y)
+    })
+    // this.sponsorsContainer.getAll().forEach(_ => {
+    //   // this.makeBullet(c.x, c.y)
+    // })
+  }
+
+  makeBullet (x, y) {
+    const bullet = new PlayerBullet(this, x, y)
     this.bulletGroup.add(bullet)
 
     const { BULLET_SPEED } = settings
@@ -90,8 +108,24 @@ export default class MainScene extends Phaser.Scene {
 
     this.bulletGroup = this.physics.add.group()
     this.buildEnemy()
+    this.sponsors = this.add.group()
+    this.sponsorsContainer = this.add.container(0, 0)
 
+    for (let i = 0; i < 6; i++) {
+      const c = this.add.container(0, 0)
+      const p = this.add.image(0, 0, 'memberProfile_' + i)
+      p.angle = 90
+      c.add(p)
+      // this.sponsorsContainer.add(c)
+      this.sponsors.add(c)
+    }
+
+    // this.startGame()
+
+    // Phaser.Actions.PlaceOnCircle(this.sponsorsContainer.getAll(), this.circle1)
     this.startGame()
+
+    // this.sponsorsContainer.add(this.circle1)
   }
 
   startGame () {
@@ -103,7 +137,6 @@ export default class MainScene extends Phaser.Scene {
     this.music.on('sponsorJoin', e => {
       const [name, channelUrl, profileUrl, joinSince, extra] = e
 
-      const { width } = this.cameras.main
       var timestamp = moment(joinSince).format()
       var note = ''
       if (extra) {
@@ -119,9 +152,12 @@ export default class MainScene extends Phaser.Scene {
       // const s = sponsors[index]
       // TODO
       // to around main player
-      const x = Phaser.Math.Between(0, width)
-      const p = new People(this, x, 0, 'memberProfile_' + this.activeSponsers.length)
-      this.activeSponsers.push(p)
+      const sIndex = this.activeSponsers.length
+      // const p = new People(this, sIndex * 45, sIndex * 45, 'memberProfile_' + this.activeSponsers.length)
+      // const p = this.add.image(90, 0, 'memberProfile_' + this.activeSponsers.length)
+      // p.angle = 90
+      // this.sponsors.add(p)
+      // this.activeSponsers.push(p)
       this.messageBox.add(`${timestamp} ${name} 加入了戰鬥${note}`)
     })
 
@@ -134,6 +170,8 @@ export default class MainScene extends Phaser.Scene {
     })
 
     // this.music.play()
+    this.startAngle = 0
+    this.endAngle = 6.28
   }
 
   update (time, delta) {
@@ -144,5 +182,22 @@ export default class MainScene extends Phaser.Scene {
     this.music.update(time, delta)
 
     playerController.call(this, time, delta)
+
+    // rotate sponsors
+    var circle = {
+      x: this.player.x,
+      y: this.player.y,
+      radius: 90
+    }
+
+    this.startAngle += settings.SPONSORS_ROTATE_SPEED
+    this.endAngle += settings.SPONSORS_ROTATE_SPEED
+
+    if (this.startAngle >= 6.28) {
+      this.startAngle = 0
+      this.endAngle = 6.28
+    }
+
+    Phaser.Actions.PlaceOnCircle(this.sponsors.getChildren(), circle, this.startAngle, this.endAngle)
   }
 }

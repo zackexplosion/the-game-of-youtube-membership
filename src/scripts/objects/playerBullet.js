@@ -1,8 +1,8 @@
 
 export default class PlayerBullet extends Phaser.Physics.Arcade.Sprite {
-  constructor (scene) {
+  constructor (scene, x, y) {
     const { player } = scene
-    super(scene, player.x, player.y, 'playerBullet')
+    super(scene, x, y, 'playerBullet')
 
     scene.physics.add.existing(this)
     this.setCollideWorldBounds(true)

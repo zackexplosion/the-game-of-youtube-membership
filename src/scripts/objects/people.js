@@ -1,9 +1,9 @@
 export default class People extends Phaser.GameObjects.Container {
-  constructor (scene, x, y, imageKey) {
+  constructor (scene, x = 0, y = 0, imageKey) {
     super(scene)
     scene.add.existing(this)
 
-    const img = scene.add.image(0, 0, imageKey)
+    const img = scene.add.image(x, y, imageKey)
     img.angle = 90
     scene.physics.add.existing(this)
     // this.setSize(img.width, img.height)

@@ -70,6 +70,3 @@ window.addEventListener('load', () => {
 window.settings = settings
 window.model = new Model()
 window.emitter = new Phaser.Events.EventEmitter()
-window.STYLES = {
-  DEFAULT_TEXT_COLOR: '#FFFFFF'
-}

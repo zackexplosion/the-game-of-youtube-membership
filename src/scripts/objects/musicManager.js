@@ -29,7 +29,7 @@ export default class MusicManager {
 
     if (settings.DEBUG) {
       this.debugMsg = scene.add.text(10, 40, '', {
-        color: 'black',
+        color: STYLES.DEFAULT_TEXT_COLOR,
         fontSize: '20px'
       })
     }
