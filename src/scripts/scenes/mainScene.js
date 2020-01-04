@@ -18,6 +18,7 @@ export default class MainScene extends Phaser.Scene {
   startAngle = 0
   endAngle = Math.PI * 2
   maxActiveEnemies = 2
+
   constructor () {
     super({ key: 'MainScene' })
   }
@@ -31,7 +32,7 @@ export default class MainScene extends Phaser.Scene {
       right: settings.PLAYER_CONTROL_KEYS.right,
       fire: 'space'
     })
-    this.player.hp = 50
+    this.player.hp = 10
 
     this.grid.placeAtIndex(82, this.player)
 
@@ -60,7 +61,7 @@ export default class MainScene extends Phaser.Scene {
   playerFire () {
     var sound = this.sound.add('playerFireSFX')
     sound.play({
-      volume: 0.4
+      volume: 0.6
     })
     this.makeBullet(this.player.x, this.player.y)
     this.sponsors.getChildren().forEach(c => {
@@ -71,6 +72,7 @@ export default class MainScene extends Phaser.Scene {
   makeBullet (x, y) {
     const bullet = new PlayerBullet(this, x, y)
     this.bulletGroup.add(bullet)
+    bullet.scale = 0.5
 
     const { BULLET_SPEED } = settings
     const { tx, ty } = Phaser.Math.getDirFromAngle(this.player.angle)
@@ -89,7 +91,7 @@ export default class MainScene extends Phaser.Scene {
       enemy.destroy()
     }
 
-    if (enemy.hpPercent === 0.5) {
+    if (enemy.hpPercent <= 0.2 && this.enemyGropup.getLength() < 2) {
       this.buildEnemy()
     }
   }
@@ -102,9 +104,11 @@ export default class MainScene extends Phaser.Scene {
   ebulletHitPlyer (player, ebullet) {
     ebullet.destroy()
     player.hp--
+    var sound = this.sound.add('explosion')
+    sound.play({
+      volume: 0.4
+    })
     if (player.hp <= 0) {
-      alert('GG!')
-
       this.scene.start('EndScene')
     }
     console.log('player.hp', player.hp)
@@ -145,6 +149,7 @@ export default class MainScene extends Phaser.Scene {
 
     this.physics.add.collider(this.player, this.ebullet_group_a, this.ebulletHitPlyer, null, this)
     this.physics.add.collider(this.player, this.ebullet_group_b, this.ebulletHitPlyer, null, this)
+    this.enemyGropup.add(e)
   }
 
   create () {
@@ -160,6 +165,7 @@ export default class MainScene extends Phaser.Scene {
     this.setupPlayer()
 
     this.bulletGroup = this.physics.add.group()
+    this.enemyGropup = this.add.group()
     this.buildEnemy()
     this.sponsors = this.add.group({
       removeCallback: (g) => {

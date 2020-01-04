@@ -28,7 +28,7 @@ export default class AlignGrid {
 
   show () {
     this.graphics = this.scene.add.graphics()
-    this.graphics.lineStyle(2, 0xff0000)
+    this.graphics.lineStyle(2, 0x3300ff)
 
     for (let i = 0; i < this.config.width; i += this.cw) {
       this.graphics.moveTo(i, 0)
@@ -64,7 +64,7 @@ export default class AlignGrid {
     var count = 0
     for (var i = 0; i < this.config.rows; i++) {
       for (var j = 0; j < this.config.cols; j++) {
-        var numText = this.scene.add.text(0, 0, count, { color: '#ff0000' })
+        var numText = this.scene.add.text(0, 0, count, { color: '#3300ff' })
         numText.setOrigin(0.5, 0.5)
         this.placeAtIndex(count, numText)
 
