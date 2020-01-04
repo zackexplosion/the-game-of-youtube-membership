@@ -8,16 +8,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/.DS_Store"
   },
   {
-    "revision": "6219551824675c3c031504d2dca92f43",
+    "revision": "f31278238da26ff2db3a1663c24dd74c",
     "url": "assets/bullet.png"
   },
   {
-    "revision": "20eb31f2501e10293acaa61be59b9e95",
+    "revision": "1f120b0affd7360a78b626f4b0862d8d",
     "url": "assets/ebullet_a.png"
   },
   {
-    "revision": "51b920be3f9dbefd74ec89bac12df0ec",
+    "revision": "e9d0140e881a7d728020a9116dbf27f4",
     "url": "assets/ebullet_b.png"
+  },
+  {
+    "revision": "00ee5cd33279c302ce444108537db941",
+    "url": "assets/explosion.wav"
   },
   {
     "revision": "895ceb8ed81797129ff6372e8e413d1c",
@@ -68,12 +72,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "icons/icons-512.png"
   },
   {
-    "revision": "a3ec03f1e4c3cd7bf5708f12a988e757",
+    "revision": "9cea3aa3fb4e30191365bd2016d68b77",
     "url": "index.html"
   },
   {
-    "revision": "7059a302eea39a04f64e",
-    "url": "main.7d8179a61d9be1d5e2cb.bundle.js"
+    "revision": "e9c81bece35b8d9f5eb0",
+    "url": "main.2361a18a197898aeda0a.bundle.js"
   },
   {
     "revision": "bf38d0c9760162342f12cd9b44fbf4ef",
