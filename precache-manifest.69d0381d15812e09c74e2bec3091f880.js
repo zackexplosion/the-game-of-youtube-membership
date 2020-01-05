@@ -48,6 +48,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/player.png"
   },
   {
+    "revision": "e28be5826363c0e4b8214f8b3b035346",
+    "url": "assets/player_die.mp3"
+  },
+  {
+    "revision": "613b52588e4d55dab0ceabe3501174a2",
+    "url": "assets/player_hitten.mp3"
+  },
+  {
     "revision": "2fe8babb076422761fe7585038d83240",
     "url": "assets/sfx_laserfire.ogg"
   },
@@ -72,12 +80,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "icons/icons-512.png"
   },
   {
-    "revision": "fc8d915b81001aba564e99d5b8dc4f75",
+    "revision": "69f6977a8c881ddfbc92dad8301eb599",
     "url": "index.html"
   },
   {
-    "revision": "1cc8e2bd92d8f8e29ff6",
-    "url": "main.7591d9b2bbc8759a8360.bundle.js"
+    "revision": "e0b91764c5f0ae5905cb",
+    "url": "main.2cbe00930d8991fe463d.bundle.js"
   },
   {
     "revision": "bf38d0c9760162342f12cd9b44fbf4ef",
