@@ -63,9 +63,6 @@ export default class MusicManager {
 
   play (config) {
     var seek = 0
-    // TODO
-    // REMOVE in production
-    seek = this.showSponsorsAt - 2
     if (settings.DEBUG) {
       seek = this.showSponsorsAt - 2
     }

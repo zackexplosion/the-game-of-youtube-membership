@@ -1,9 +1,11 @@
 import Align from './Align'
 import AlignGrid from './AlignGrid'
+import SoundManager from './SoundManager'
 
 export default {
   Align,
-  AlignGrid
+  AlignGrid,
+  SoundManager
 }
 
 function getDirFromAngle (angle) {

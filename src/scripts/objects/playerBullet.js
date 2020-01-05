@@ -13,9 +13,4 @@ export default class PlayerBullet extends Phaser.Physics.Arcade.Sprite {
     this.setOrigin(0.5)
     this.angle = player.angle
   }
-
-  // destroy () {
-  //   console.log('on bullet destroy')
-  //   this.destroy()
-  // }
 }

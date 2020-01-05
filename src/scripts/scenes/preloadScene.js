@@ -22,7 +22,8 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.image('ebulletB', 'assets/ebullet_b.png')
 
     this.load.audio('playerFireSFX', 'assets/sfx_laserfire.ogg')
-    this.load.audio('explosion', 'assets/explosion.wav')
+    this.load.audio('playerDie', 'assets/player_die.mp3')
+    this.load.audio('explosion', 'assets/player_hitten.mp3')
     // this.load.audio('playerFireSFX', 'assets/laser.ogg')
     // loading music
     const {

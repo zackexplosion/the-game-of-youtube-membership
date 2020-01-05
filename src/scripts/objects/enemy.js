@@ -1,8 +1,10 @@
 import ENEMIES from 'gamedata/enemies.json'
+
 export default class Enemy extends Phaser.GameObjects.Container {
   constructor (scene, enemy) {
     super(scene)
     scene.add.existing(this)
+    this.scene = scene
 
     const eindex = Phaser.Math.Between(0, ENEMIES.length - 1)
 
@@ -51,6 +53,15 @@ export default class Enemy extends Phaser.GameObjects.Container {
   }
 
   gotHit () {
+    const offset = Phaser.Math.Between(-10, 10)
+    this.scene.tweens.add({
+      targets: this,
+      x: this.x + offset,
+      y: this.y + offset,
+      duration: 10,
+      repeat: -1,
+      ease: 'Elastic'
+    })
     this.hp--
     this.hpPercent = this.hp / this.maxHP
   }

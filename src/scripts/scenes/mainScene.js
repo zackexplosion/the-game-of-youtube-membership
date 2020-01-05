@@ -4,8 +4,8 @@ import MusicManager from '../objects/musicManager'
 import MessageBox from '../objects/messageBox'
 import moment from 'moment'
 import playerController from '../helpers/playerController'
+import rotateSponsors from '../helpers/rotateSponsors'
 import Enemy from '../objects/enemy'
-import PlayerBullet from '../objects/playerBullet'
 // import enemy
 
 export default class MainScene extends Phaser.Scene {
@@ -15,8 +15,6 @@ export default class MainScene extends Phaser.Scene {
   group
   activeSponsorIndex = 0
   activeSponsors = 0
-  startAngle = 0
-  endAngle = Math.PI * 2
   maxActiveEnemies = 2
 
   constructor () {
@@ -40,47 +38,18 @@ export default class MainScene extends Phaser.Scene {
     this.input.on('pointermove', (pointer) => {
       const { player } = this
       const angle = Phaser.Math.Angle.Between(player.x, player.y, pointer.x, pointer.y)
-      // console.log(angle)
-      // angle = Phaser.Math.RadToDeg(angle)
-      // player.angle = angle
       player.rotation = angle
       this.sponsors.getChildren().forEach(c => {
         c.rotation = angle
       })
-
-      // this.sponsorsContainer.getAll().forEach(c => {
-      //   c.rotation = angle
-      // })
     })
   }
-
-  // setupEnemy () {
-
-  // }
 
   playerFire () {
-    var sound = this.sound.add('playerFireSFX')
-    sound.play({
-      volume: 0.6
-    })
-    this.makeBullet(this.player.x, this.player.y)
+    this.player.fire()
     this.sponsors.getChildren().forEach(c => {
-      this.makeBullet(c.x, c.y)
+      c.fire()
     })
-  }
-
-  makeBullet (x, y) {
-    const bullet = new PlayerBullet(this, x, y)
-    this.bulletGroup.add(bullet)
-    bullet.scale = 0.5
-
-    const { BULLET_SPEED } = settings
-    const { tx, ty } = Phaser.Math.getDirFromAngle(this.player.angle)
-    bullet.setVelocity(tx * BULLET_SPEED, ty * BULLET_SPEED)
-
-    // if (model.soundOn == true) {
-
-    // }
   }
 
   bulletHitEnemy (enemy, bullet) {
@@ -96,22 +65,18 @@ export default class MainScene extends Phaser.Scene {
     }
   }
 
+  // e bullet a can be destory, b yet
   bulletHitEnemyBulletA (ebulletA, bullet) {
     ebulletA.destroy()
     bullet.destroy()
   }
 
-  ebulletHitPlyer (player, ebullet) {
+  ebulletHitPlayer (player, ebullet) {
     ebullet.destroy()
-    player.hp--
-    var sound = this.sound.add('explosion')
-    sound.play({
-      volume: 0.4
-    })
+    player.gotHit()
     if (player.hp <= 0) {
       this.scene.start('EndScene')
     }
-    console.log('player.hp', player.hp)
   }
 
   buildEnemy () {
@@ -147,32 +112,9 @@ export default class MainScene extends Phaser.Scene {
       c.body.setVelocity(vx, vy)
     })
 
-    this.physics.add.collider(this.player, this.ebullet_group_a, this.ebulletHitPlyer, null, this)
-    this.physics.add.collider(this.player, this.ebullet_group_b, this.ebulletHitPlyer, null, this)
+    this.physics.add.collider(this.player, this.ebullet_group_a, this.ebulletHitPlayer, null, this)
+    this.physics.add.collider(this.player, this.ebullet_group_b, this.ebulletHitPlayer, null, this)
     this.enemyGropup.add(e)
-  }
-
-  create () {
-    const grid = new Utils.AlignGrid({ scene: this })
-    if (settings.DEBUG) {
-      grid.showNumbers()
-      this.fpsText = new FpsText(this)
-    }
-    this.grid = grid
-
-    this.messageBox = new MessageBox(this)
-    this.music = new MusicManager(this)
-    this.setupPlayer()
-
-    this.bulletGroup = this.physics.add.group()
-    this.enemyGropup = this.add.group()
-    this.buildEnemy()
-    this.sponsors = this.add.group({
-      removeCallback: (g) => {
-        console.log('removed', g.name)
-      }
-    })
-    this.startGame()
   }
 
   startGame () {
@@ -186,7 +128,6 @@ export default class MainScene extends Phaser.Scene {
         this.sponsors.getChildren()[0].destroy()
       }
       const [name, channelUrl, profileUrl, joinSince, extra] = e
-
       var timestamp = moment(joinSince).format()
       var note = ''
       if (extra) {
@@ -217,24 +158,28 @@ export default class MainScene extends Phaser.Scene {
     })
   }
 
-  rotateSponsors () {
-    // rotate sponsors
-    const { x, y } = this.player
-    var circle = {
-      x,
-      y,
-      radius: settings.SPONSORS_RADIUS
+  create () {
+    this.soundManager = new Utils.SoundManager({ scene: this })
+    const grid = new Utils.AlignGrid({ scene: this })
+    if (settings.DEBUG) {
+      grid.showNumbers()
+      this.fpsText = new FpsText(this)
     }
+    this.grid = grid
 
-    this.startAngle += settings.SPONSORS_ROTATE_SPEED
-    this.endAngle += settings.SPONSORS_ROTATE_SPEED
+    this.messageBox = new MessageBox(this)
+    this.music = new MusicManager(this)
+    this.setupPlayer()
 
-    if (this.startAngle >= Math.PI * 2) {
-      this.startAngle = 0
-      this.endAngle = Math.PI * 2
-    }
-
-    Phaser.Actions.PlaceOnCircle(this.sponsors.getChildren(), circle, this.startAngle, this.endAngle)
+    this.bulletGroup = this.physics.add.group()
+    this.enemyGropup = this.add.group()
+    this.buildEnemy()
+    this.sponsors = this.add.group({
+      removeCallback: (g) => {
+        console.log('removed', g.name)
+      }
+    })
+    this.startGame()
   }
 
   update (time, delta) {
@@ -245,6 +190,6 @@ export default class MainScene extends Phaser.Scene {
     this.music.update(time, delta)
 
     playerController.call(this, time, delta)
-    this.rotateSponsors()
+    rotateSponsors.call(this, time, delta)
   }
 }

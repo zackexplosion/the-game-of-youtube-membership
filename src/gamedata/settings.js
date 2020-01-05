@@ -1,8 +1,12 @@
 import MainScene from 'scripts/scenes/mainScene'
 import PreloadScene from 'scripts/scenes/preloadScene'
 import EndScene from 'scripts/scenes/endScene'
-const DEFAULT_WIDTH = window.innerWidth
-const DEFAULT_HEIGHT = window.innerHeight
+// const DEFAULT_WIDTH = window.innerWidth
+// const DEFAULT_HEIGHT = window.innerHeight
+
+const DEFAULT_WIDTH = 1024
+const DEFAULT_HEIGHT = 768
+
 const settings = {
   gameConfig: {
     type: Phaser.AUTO,

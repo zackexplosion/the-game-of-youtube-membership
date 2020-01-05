@@ -9,6 +9,7 @@ module.exports = {
         "STYLES": "readonly",
         "model": "readonly",
         "settings": "readonly",
+        "emitter": "readonly",
         "game": "readonly",
         "test": "readonly",
         "expect": "readonly",

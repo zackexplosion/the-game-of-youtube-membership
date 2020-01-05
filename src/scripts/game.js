@@ -19,6 +19,10 @@ class Model {
     this.maxActiveSponsors = 6
   }
 
+  get soundOn () {
+    return true
+  }
+
   set currentMusic (val) {
     const [key, showSponsorsAt, endShowSponsorAt] = val
     this._currentMusic = {
