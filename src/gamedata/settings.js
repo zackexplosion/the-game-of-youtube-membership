@@ -1,11 +1,11 @@
 import MainScene from 'scripts/scenes/mainScene'
 import PreloadScene from 'scripts/scenes/preloadScene'
 import EndScene from 'scripts/scenes/endScene'
-// const DEFAULT_WIDTH = window.innerWidth
-// const DEFAULT_HEIGHT = window.innerHeight
+const DEFAULT_WIDTH = window.innerWidth
+const DEFAULT_HEIGHT = window.innerHeight
 
-const DEFAULT_WIDTH = 1024
-const DEFAULT_HEIGHT = 768
+// const DEFAULT_WIDTH = 1024
+// const DEFAULT_HEIGHT = 768
 
 const settings = {
   gameConfig: {
@@ -59,9 +59,12 @@ const settings = {
     left: 'A',
     right: 'D'
   },
+  E_BULLET_SPEED: 100,
   BULLET_SPEED: 350,
   PLAYER_FIRE_DELAY: 150,
   PLAYER_MOVE_SPEED: 250,
+  PLYAER_INIT_POSITION: Phaser.Math.Between(77, 87),
+  PLAYER_MAX_HP: 10,
   SPONSORS_ROTATE_SPEED: -0.05,
   PEOPLE_SIZE: 30,
   SPONSORS_RADIUS: 40

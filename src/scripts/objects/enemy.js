@@ -59,7 +59,7 @@ export default class Enemy extends Phaser.GameObjects.Container {
       x: this.x + offset,
       y: this.y + offset,
       duration: 10,
-      repeat: -1,
+      repeat: 10,
       ease: 'Elastic'
     })
     this.hp--

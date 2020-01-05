@@ -12,8 +12,6 @@ export default class MainScene extends Phaser.Scene {
   fpsText
   music
   player
-  group
-  activeSponsorIndex = 0
   activeSponsors = 0
   maxActiveEnemies = 2
 
@@ -30,11 +28,11 @@ export default class MainScene extends Phaser.Scene {
       right: settings.PLAYER_CONTROL_KEYS.right,
       fire: 'space'
     })
-    this.player.hp = 10
+    this.player.hp = settings.PLAYER_MAX_HP
 
-    this.grid.placeAtIndex(82, this.player)
+    this.grid.placeAtIndex(settings.PLYAER_INIT_POSITION, this.player)
 
-    // roate player an sponsros
+    // tracking pointer position and roate player and sponsors
     this.input.on('pointermove', (pointer) => {
       const { player } = this
       const angle = Phaser.Math.Angle.Between(player.x, player.y, pointer.x, pointer.y)
@@ -60,6 +58,8 @@ export default class MainScene extends Phaser.Scene {
       enemy.destroy()
     }
 
+    // TODO
+    // change enemy showing logic
     if (enemy.hpPercent <= 0.2 && this.enemyGropup.getLength() < 2) {
       this.buildEnemy()
     }
@@ -89,12 +89,13 @@ export default class MainScene extends Phaser.Scene {
       key: 'ebulletA',
       frameQuantity: 200
     })
+    const { E_BULLET_SPEED } = settings
     this.ebullet_group_a.children.iterate(c => {
       c.x = e.x
       c.y = e.y
       c.scale = 0.3
-      var vx = Phaser.Math.Between(-100, 100)
-      var vy = Phaser.Math.Between(-100, 100)
+      var vx = Phaser.Math.Between(-E_BULLET_SPEED, E_BULLET_SPEED)
+      var vy = Phaser.Math.Between(-E_BULLET_SPEED, E_BULLET_SPEED)
       c.body.setVelocity(vx, vy)
     })
     this.physics.add.collider(this.bulletGroup, this.ebullet_group_a, this.bulletHitEnemyBulletA, null, this)
@@ -107,8 +108,8 @@ export default class MainScene extends Phaser.Scene {
       c.x = e.x
       c.y = e.y
       c.scale = 0.3
-      var vx = Phaser.Math.Between(-100, 100)
-      var vy = Phaser.Math.Between(-100, 100)
+      var vx = Phaser.Math.Between(-E_BULLET_SPEED, E_BULLET_SPEED)
+      var vy = Phaser.Math.Between(-E_BULLET_SPEED, E_BULLET_SPEED)
       c.body.setVelocity(vx, vy)
     })
 
@@ -124,6 +125,7 @@ export default class MainScene extends Phaser.Scene {
     })
 
     this.music.on('sponsorJoin', e => {
+      this.player.hp = settings.PLAYER_MAX_HP
       if (this.sponsors.getLength() > model.maxActiveSponsors) {
         this.sponsors.getChildren()[0].destroy()
       }
