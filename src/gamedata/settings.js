@@ -21,16 +21,6 @@ const settings = {
     scene: [PreloadScene, MainScene, EndScene],
     physics: {
       default: 'arcade',
-      // default: 'impact',
-      impact: {
-        setBounds: {
-          x: 0,
-          y: 0,
-          width: DEFAULT_WIDTH,
-          height: DEFAULT_HEIGHT,
-          thickness: 32
-        }
-      },
       arcade: {
         debug: process.env.PHYSIC_DEBUG || false,
         gravity: { y: 0 }

@@ -5,6 +5,7 @@ import MessageBox from '../objects/messageBox'
 import moment from 'moment'
 import playerController from '../helpers/playerController'
 import rotateSponsors from '../helpers/rotateSponsors'
+import removeOutOfBoundsBullets from '../helpers/removeOutOfBoundsBullets'
 import Enemy from '../objects/enemy'
 // import enemy
 
@@ -173,7 +174,12 @@ export default class MainScene extends Phaser.Scene {
     this.music = new MusicManager(this)
     this.setupPlayer()
 
-    this.bulletGroup = this.physics.add.group()
+    this.bulletGroup = this.physics.add.group({
+      removeCallback: (g) => {
+        console.log(g, 'removed')
+      }
+    })
+
     this.enemyGropup = this.add.group()
     this.buildEnemy()
     this.sponsors = this.add.group({
@@ -193,5 +199,6 @@ export default class MainScene extends Phaser.Scene {
 
     playerController.call(this, time, delta)
     rotateSponsors.call(this, time, delta)
+    removeOutOfBoundsBullets.call(this, time, delta)
   }
 }

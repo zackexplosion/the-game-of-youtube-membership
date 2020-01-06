@@ -7,10 +7,11 @@ export default class PlayerBullet extends Phaser.Physics.Arcade.Sprite {
     this.height = 20
 
     scene.physics.add.existing(this)
-    this.setCollideWorldBounds(true)
-
     scene.add.existing(this)
+    // this.setCollideWorldBounds(true)
+    // this.onWorldBounds = true
     this.setOrigin(0.5)
     this.angle = player.angle
+    //
   }
 }
