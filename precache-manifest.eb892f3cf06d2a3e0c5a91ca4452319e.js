@@ -80,12 +80,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "icons/icons-512.png"
   },
   {
-    "revision": "e21829bec4c99c30a894d4ce4b86505f",
+    "revision": "011a7e2d43f89203a36fbb47b47c7f5e",
     "url": "index.html"
   },
   {
-    "revision": "cca2f5f4b0a16e62183a",
-    "url": "main.85b74830f570134056f4.bundle.js"
+    "revision": "a0a05e1ac744ffc0ce95",
+    "url": "main.2c264928e59464fdc56f.bundle.js"
   },
   {
     "revision": "bf38d0c9760162342f12cd9b44fbf4ef",
