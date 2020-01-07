@@ -188,6 +188,14 @@ export default class MainScene extends Phaser.Scene {
       }
     })
     this.startGame()
+
+    // check bullets
+    this.time.addEvent({
+      delay: 1000, // ms
+      callback: removeOutOfBoundsBullets,
+      callbackScope: this,
+      loop: true
+    })
   }
 
   update (time, delta) {
@@ -199,6 +207,5 @@ export default class MainScene extends Phaser.Scene {
 
     playerController.call(this, time, delta)
     rotateSponsors.call(this, time, delta)
-    removeOutOfBoundsBullets.call(this, time, delta)
   }
 }

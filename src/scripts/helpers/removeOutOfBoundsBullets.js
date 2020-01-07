@@ -1,8 +1,8 @@
 
+// Destroy bullet if it's out of bound
 const removeCallback = function (c) {
   const { width, height } = settings.gameConfig.scale
   if (c.x <= 0 || c.x >= width || c.y > height || c.y <= 0) {
-    // remove bullet out of bound
     c.destroy()
   }
 }
