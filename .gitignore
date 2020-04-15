@@ -3,3 +3,5 @@
 /.cache
 /.vscode
 CNAME
+credentials.json
+token.json
