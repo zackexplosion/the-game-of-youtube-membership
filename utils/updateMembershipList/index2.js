@@ -5,21 +5,35 @@ var OAuth2 = google.auth.OAuth2
 
 // If modifying these scopes, delete your previously saved credentials
 // at ~/.credentials/youtube-nodejs-quickstart.json
-var SCOPES = ['https://www.googleapis.com/auth/youtube.readonly']
+var SCOPES = [
+  'https://www.googleapis.com/auth/youtube.readonly',
+  'https://www.googleapis.com/auth/youtube.channel-memberships.creator'
+]
 var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
     process.env.USERPROFILE) + '/.credentials/'
 var TOKEN_PATH = TOKEN_DIR + 'youtube-nodejs-quickstart.json'
 
 // Load client secrets from a local file.
-fs.readFile('client_secret.json', function processClientSecrets (err, content) {
+fs.readFile('credentials.json', function processClientSecrets (err, content) {
   if (err) {
     console.log('Error loading client secret file: ' + err)
     return
   }
   // Authorize a client with the loaded credentials, then call the YouTube API.
-  authorize(JSON.parse(content), getChannel)
+  authorize(JSON.parse(content), getMembers)
 })
 
+function getMembers (auth) {
+  var service = google.youtube('v3')
+  // console.log('service', service)
+  service.members.list({
+    auth: auth,
+    part: 'snippet',
+  }, function (err, response) {
+    console.log('err', err)
+    console.log(response)
+  })
+}
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
  * given callback function.
@@ -102,6 +116,7 @@ function storeToken (token) {
  */
 function getChannel (auth) {
   var service = google.youtube('v3')
+  // console.log('service', service)
   service.channels.list({
     auth: auth,
     part: 'snippet,contentDetails,statistics',
