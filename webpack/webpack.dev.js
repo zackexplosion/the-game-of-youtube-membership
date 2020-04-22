@@ -11,7 +11,7 @@ const dev = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.DEBUG': JSON.stringify(true),
-      'process.env.PHYSIC_DEBUG': JSON.stringify(false)
+      'process.env.PHYSIC_DEBUG': JSON.stringify(true)
     })
   ]
 }

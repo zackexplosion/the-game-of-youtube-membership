@@ -1,6 +1,8 @@
 import memeberList from 'gamedata/memberlist.json'
 import createRoundProfileImage from '../../lib/createRoundProfileImage'
 import LoadingBar from '../objects/loadingBar'
+// const START_SCENE = 'MainScene'
+const START_SCENE = 'TestScene'
 
 export default class PreloadScene extends Phaser.Scene {
   music
@@ -67,7 +69,7 @@ export default class PreloadScene extends Phaser.Scene {
     // this.music.play({
     //   seek: 2
     // }
-    this.scene.start('MainScene')
+    this.scene.start(START_SCENE)
     // this.scene.start('EndScene')
 
     /**

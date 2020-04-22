@@ -1,6 +1,7 @@
 import MainScene from 'scripts/scenes/mainScene'
 import PreloadScene from 'scripts/scenes/preloadScene'
 import EndScene from 'scripts/scenes/endScene'
+import TestScene from 'scripts/scenes/TestScene'
 const DEFAULT_WIDTH = window.innerWidth
 const DEFAULT_HEIGHT = window.innerHeight
 
@@ -18,7 +19,7 @@ const settings = {
       width: DEFAULT_WIDTH,
       height: DEFAULT_HEIGHT
     },
-    scene: [PreloadScene, MainScene, EndScene],
+    scene: [PreloadScene, MainScene, EndScene, TestScene],
     physics: {
       default: 'arcade',
       arcade: {
