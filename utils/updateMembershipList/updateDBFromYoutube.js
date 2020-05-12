@@ -1,3 +1,11 @@
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+const adapter = new FileSync('db.json')
+const db = low(adapter)
+// Set some defaults (required if your JSON file is empty)
+db.defaults({ raw_members: [], members: [] })
+  .write()
+console.log('request from youtube')
 var fs = require('fs')
 var readline = require('readline')
 var { google } = require('googleapis')
@@ -13,27 +21,6 @@ var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
     process.env.USERPROFILE) + '/.credentials/'
 var TOKEN_PATH = TOKEN_DIR + 'youtube-nodejs-quickstart.json'
 
-// Load client secrets from a local file.
-fs.readFile('credentials.json', function processClientSecrets (err, content) {
-  if (err) {
-    console.log('Error loading client secret file: ' + err)
-    return
-  }
-  // Authorize a client with the loaded credentials, then call the YouTube API.
-  authorize(JSON.parse(content), getMembers)
-})
-
-function getMembers (auth) {
-  var service = google.youtube('v3')
-  // console.log('service', service)
-  service.members.list({
-    auth: auth,
-    part: 'snippet',
-  }, function (err, response) {
-    console.log('err', err)
-    console.log(response)
-  })
-}
 /**
  * Create an OAuth2 client with the given credentials, and then execute the
  * given callback function.
@@ -99,7 +86,7 @@ function storeToken (token) {
   try {
     fs.mkdirSync(TOKEN_DIR)
   } catch (err) {
-    if (err.code != 'EEXIST') {
+    if (err.code !== 'EEXIST') {
       throw err
     }
   }
@@ -109,32 +96,47 @@ function storeToken (token) {
   })
 }
 
-/**
- * Lists the names and IDs of up to 10 files.
- *
- * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
- */
-function getChannel (auth) {
-  var service = google.youtube('v3')
-  // console.log('service', service)
-  service.channels.list({
-    auth: auth,
-    part: 'snippet,contentDetails,statistics',
-    forUsername: 'GoogleDevelopers'
-  }, function (err, response) {
-    if (err) {
-      console.log('The API returned an error: ' + err)
-      return
+module.exports = function main () {
+  return new Promise((resolve, reject) => {
+    function getMembers (auth) {
+      var service = google.youtube('v3')
+      service.members.list({
+        auth: auth,
+        part: 'snippet',
+        maxResults: 10000
+      }, function (err, response) {
+        if (err) {
+          console.log('err', err)
+          return reject(err)
+        }
+
+        console.log(response.data.pageInfo.totalResults, 'members loaded from youtube')
+
+        var data = response.data
+
+        const items = data.items
+        db.set('raw_members', []).write()
+        items.forEach(i => {
+        // Add a post
+          db.get('raw_members')
+            .push(i)
+            .write()
+        })
+
+        data = JSON.stringify(data, null, 1)
+
+        // console.log(data)
+        return resolve(data)
+      })
     }
-    var channels = response.data.items
-    if (channels.length === 0) {
-      console.log('No channel found.')
-    } else {
-      console.log('This channel\'s ID is %s. Its title is \'%s\', and ' +
-                  'it has %s views.',
-      channels[0].id,
-      channels[0].snippet.title,
-      channels[0].statistics.viewCount)
-    }
+    // Load client secrets from a local file.
+    fs.readFile('credentials.json', function processClientSecrets (err, content) {
+      if (err) {
+        console.log('Error loading client secret file: ' + err)
+        return
+      }
+      // Authorize a client with the loaded credentials, then call the YouTube API.
+      authorize(JSON.parse(content), getMembers)
+    })
   })
 }
