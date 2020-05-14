@@ -5,7 +5,7 @@ const db = low(adapter)
 // Set some defaults (required if your JSON file is empty)
 db.defaults({ raw_members: [], members: [] })
   .write()
-console.log('request from youtube')
+
 var fs = require('fs')
 var readline = require('readline')
 var { google } = require('googleapis')
@@ -129,6 +129,8 @@ module.exports = function main () {
         return resolve(data)
       })
     }
+
+    console.log('request from youtube')
     // Load client secrets from a local file.
     fs.readFile('credentials.json', function processClientSecrets (err, content) {
       if (err) {

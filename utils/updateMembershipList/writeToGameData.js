@@ -1,16 +1,19 @@
-const fs = require('fs')
-const path = require('path')
 const odlerSponsors = require('./olderSponsors')
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('db.json')
 const db = low(adapter)
 const rawMembers = db.get('raw_members').value()
-// var d = JSON.stringify(members, null, 4)
-// console.log(d)
-// return false
 
-module.exports = function () {
+const firebase = require('firebase')
+const { ADMIN_USER, ADMIN_PASS, FIREBASE_APIKEY } = process.env
+
+var firebaseDB = firebase.initializeApp({
+  apiKey: FIREBASE_APIKEY,
+  databaseURL: 'https://zackexplosion-members.firebaseio.com/'
+}).database()
+
+module.exports = async function () {
   var result = []
   rawMembers.forEach((l, index) => {
     const i = l.snippet.memberDetails
@@ -44,16 +47,6 @@ module.exports = function () {
     }
   })
 
-  db.get('members').value().forEach(_ => {
-    const m = [
-      _.displayName,
-      _.channelUrl,
-      _.profileImageUrl,
-      _.memberSince
-    ]
-    result.push(m)
-  })
-
   result = result.reverse()
   odlerSponsors.forEach(o => {
     const {
@@ -79,8 +72,14 @@ module.exports = function () {
       }
     ])
   })
-  const data = JSON.stringify(result)
-  fs.writeFileSync(path.join(__dirname, '../../src/gamedata/memberlist.json'), data)
-
-  console.log(`${result.length} members writen into memberlist.json`)
+  try {
+    await firebase.auth().signInWithEmailAndPassword(ADMIN_USER, ADMIN_PASS)
+    await firebaseDB.ref('/members').set(result)
+  } catch (error) {
+    console.error(error)
+  }
+  console.log(`${result.length} members writen`)
+  return result
+  // const data = JSON.stringify(result)
+  // fs.writeFileSync(path.join(__dirname, '../../src/gamedata/memberlist.json'), data)
 }
