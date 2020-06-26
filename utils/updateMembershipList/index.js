@@ -1,7 +1,8 @@
 const updateDBFromYoutube = require('./updateDBFromYoutube')
 const writeToGameData = require('./writeToGameData')
+const downloadMemberProfileImages = require('./downloadMemberProfileImages')
 
-async function main () {
+async function main() {
   try {
     // console.log(firebaseDB)
 
@@ -15,6 +16,7 @@ async function main () {
     // })
     await updateDBFromYoutube()
     await writeToGameData()
+    await downloadMemberProfileImages()
   } catch (error) {
     console.error(error)
   }
