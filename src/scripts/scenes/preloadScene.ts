@@ -1,20 +1,20 @@
-import memeberList from 'gamedata/memberlist.json'
-import createRoundProfileImage from '../../lib/createRoundProfileImage'
-import LoadingBar from '../objects/loadingBar'
 // const START_SCENE = 'MainScene'
 const START_SCENE = 'TestScene'
+import memeberList from '@/gamedata/memberlist.json'
+import createRoundProfileImage from '@/lib/createRoundProfileImage.js'
+import LoadingBar from '@/scripts/objects/loadingBar'
 
 export default class PreloadScene extends Phaser.Scene {
   music
   loadingBar
-  constructor () {
+  constructor() {
     super({ key: 'PreloadScene' })
   }
 
-  async preload () {
+  async preload() {
     this.loadingBar = new LoadingBar({ scene: this })
 
-    this.load.on('progress', e => {
+    this.load.on('progress', (e) => {
       this.loadingBar.setPer(e)
     })
 
@@ -28,27 +28,29 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.audio('explosion', 'assets/player_hitten.mp3')
     // this.load.audio('playerFireSFX', 'assets/laser.ogg')
     // loading music
-    const {
-      key,
+    const { key, showSponsorsAt, endShowSponsorAt } = window.model.currentMusic
+    this.load.audio('music', 'assets/' + key, {
       showSponsorsAt,
-      endShowSponsorAt
-    } = model.currentMusic
-
-    this.load.audio({
-      key: 'music',
-      url: 'assets/' + key,
-      config: {
-        showSponsorsAt,
-        endShowSponsorAt
-      }
-    }, {
-      stream: true
+      endShowSponsorAt,
     })
+    // this.load.audio(
+    //   {
+    //     key: 'music',
+    //     urlConfig: 'assets/' + key,
+    //     // audioConfig: {
+    //     //   showSponsorsAt,
+    //     //   endShowSponsorAt,
+    //     // },
+    //   }
+    //   // {
+    //   //   stream: true,
+    //   // }
+    // )
 
     this.sound.pauseOnBlur = false
 
     // create rounded profile images
-    const imageProcessers = []
+    const imageProcessers: Array<any> = []
     for (let i = 0; i < memeberList.length; i++) {
       // const [name, url, profileImageUrl, joinDate] = memeberList[i]
       const profileImageUrl = memeberList[i][2]
@@ -64,7 +66,7 @@ export default class PreloadScene extends Phaser.Scene {
     })
   }
 
-  create () {
+  create() {
     // this.music = this.sound.add('music')
     // this.music.play({
     //   seek: 2

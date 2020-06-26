@@ -1,6 +1,5 @@
 const merge = require('webpack-merge')
 const common = require('./webpack.common')
-const webpack = require('webpack')
 
 const dev = {
   mode: 'development',
@@ -14,6 +13,7 @@ const dev = {
       'process.env.PHYSIC_DEBUG': JSON.stringify(true)
     })
   ]
+  }
 }
 
 module.exports = merge(common, dev)

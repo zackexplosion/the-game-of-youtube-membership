@@ -1,15 +1,15 @@
 {
-  "name": "phaser-project-template-es6",
-  "version": "3.21.0",
-  "description": "Phaser 3 starter template with ES6 and webpack.",
-  "homepage": "https://github.com/yandeu/phaser-project-template-es6#readme",
+  "name": "zackexplosion-youtube-members",
+  "version": "3.22.0",
+  "description": "Phaser 3 starter template with TypeScript and webpack.",
+  "homepage": "https://github.com/yandeu/phaser-project-template#readme",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack/webpack.dev.js --host=0.0.0.0",
-    "deploy": "npm run updatelist && npm run build && gh-pages -d dist",
+    "start": "webpack-dev-server --config webpack/webpack.dev.js",
     "build": "webpack --config webpack/webpack.prod.js",
-    "test": "jest",
-    "updatelist": "node utils/updateMembershipList/index.js"
+    "format": "prettier --write 'src/**/*.{js,vue,ts}'",
+    "bundle": "npm run build",
+    "serve": "serve dist"
   },
   "keywords": [
     "Phaser",
@@ -26,11 +26,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yandeu/phaser-project-template-es6.git"
+    "url": "https://github.com/yandeu/phaser-project-template.git"
   },
   "template": {
-    "name": "phaser-project-template-es6",
-    "url": "https://github.com/yandeu/phaser-project-template-es6",
+    "name": "phaser-project-template",
+    "url": "https://github.com/yandeu/phaser-project-template",
     "author": "Yannick Deubel (https://github.com/yandeu)"
   },
   "engines": {
@@ -38,17 +38,13 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.7.7",
-    "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
-    "@babel/preset-env": "^7.7.7",
-    "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.0.6",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
-    "clean-webpack-plugin": "^1.0.1",
+    "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
-    "eslint": "^6.8.0",
-    "gh-pages": "^2.1.1",
+    "googleapis": "^52.1.0",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.9.0",
     "lowdb": "^1.0.0",
@@ -67,6 +63,16 @@
     "eslint-plugin-jest": "^23.2.0",
     "firebase": "^7.14.3",
     "googleapis": "^48.0.0",
-    "phaser": "^3.21.0"
+    "moment": "^2.27.0",
+    "serve": "^11.3.1",
+    "ts-loader": "^5.4.5",
+    "typescript": "^3.9.3",
+    "webpack": ">=4 < 4.29",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2",
+    "webpack-obfuscator": "^0.27.4",
+    "workbox-webpack-plugin": "^5.1.3",
+    "phaser": "^3.23.0"
   }
 }
