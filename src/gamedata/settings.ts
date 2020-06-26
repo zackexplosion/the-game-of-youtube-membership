@@ -19,7 +19,12 @@ const settings = {
       width: DEFAULT_WIDTH,
       height: DEFAULT_HEIGHT,
     },
-    scene: [PreloadScene, MainScene, EndScene, TestScene],
+    scene: [
+      PreloadScene,
+      MainScene,
+      EndScene,
+      // TestScene
+    ],
     physics: {
       default: 'arcade',
       arcade: {

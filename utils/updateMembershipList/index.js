@@ -1,6 +1,6 @@
 const updateDBFromYoutube = require('./updateDBFromYoutube')
-const writeToGameData = require('./writeToGameData')
 const downloadMemberProfileImages = require('./downloadMemberProfileImages')
+const handleRawMembers = require('./handleRawMembers')
 
 async function main() {
   try {
@@ -15,8 +15,9 @@ async function main() {
     //   console.error(errorMessage)
     // })
     await updateDBFromYoutube()
-    await writeToGameData()
+    await handleRawMembers()
     await downloadMemberProfileImages()
+    await writeToAssets()
   } catch (error) {
     console.error(error)
   }

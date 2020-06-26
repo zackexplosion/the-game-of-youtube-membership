@@ -1,7 +1,6 @@
 // const START_SCENE = 'MainScene'
 const START_SCENE = 'TestScene'
 import memeberList from '@/gamedata/memberlist.json'
-import createRoundProfileImage from '@/lib/createRoundProfileImage.js'
 import LoadingBar from '@/scripts/objects/loadingBar'
 
 export default class PreloadScene extends Phaser.Scene {
@@ -50,20 +49,14 @@ export default class PreloadScene extends Phaser.Scene {
     this.sound.pauseOnBlur = false
 
     // create rounded profile images
-    const imageProcessers: Array<any> = []
     for (let i = 0; i < memeberList.length; i++) {
       // const [name, url, profileImageUrl, joinDate] = memeberList[i]
       const profileImageUrl = memeberList[i][2]
-      // const p = createRoundProfileImage.apply(this, [profileImageUrl])
-      const p = createRoundProfileImage(profileImageUrl)
-      imageProcessers.push(p)
-    }
 
-    const images = await Promise.all(imageProcessers)
-    images.forEach((data, i) => {
-      const key = 'memberProfile_' + i
-      this.textures.addBase64(key, data)
-    })
+      console.log(memeberList[i])
+
+      // this.load.image('ebulletB', 'assets/member-profile-images/' + )
+    }
   }
 
   create() {
@@ -71,9 +64,8 @@ export default class PreloadScene extends Phaser.Scene {
     // this.music.play({
     //   seek: 2
     // }
-    this.scene.start(START_SCENE)
+    // this.scene.start(START_SCENE)
     // this.scene.start('EndScene')
-
     /**
      * This is how you would dynamically import the mainScene class (with code splitting),
      * add the mainScene to the Scene Manager

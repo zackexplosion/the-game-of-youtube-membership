@@ -1,4 +1,3 @@
-const odlerSponsors = require('./olderSponsors')
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('db.json')
@@ -43,26 +42,6 @@ module.exports = async function () {
     }
   })
 
-  result = result.reverse()
-  odlerSponsors.forEach((o) => {
-    const { displayName, channelUrl, profileImageUrl, sponserSince } = o
-
-    delete o.displayName
-    delete o.channelUrl
-    delete o.profileImageUrl
-    delete o.sponserSince
-
-    result.splice(2, 0, [
-      displayName,
-      channelUrl,
-      profileImageUrl,
-      sponserSince,
-      {
-        older: true,
-        ...o,
-      },
-    ])
-  })
   try {
     await firebase.auth().signInWithEmailAndPassword(ADMIN_USER, ADMIN_PASS)
     await firebaseDB.ref('/members').set(result)
@@ -71,6 +50,4 @@ module.exports = async function () {
   }
   console.log(`${result.length} members writen`)
   return result
-  // const data = JSON.stringify(result)
-  // fs.writeFileSync(path.join(__dirname, '../../src/gamedata/memberlist.json'), data)
 }
