@@ -1,8 +1,9 @@
 import PlayerBullet from './playerBullet'
+import { getDirFromAngle } from 'Utils'
 export default class People extends Phaser.GameObjects.Container {
   hp = -1
   isPlayer = false
-  constructor (scene, imageKey) {
+  constructor(scene, imageKey) {
     super(scene)
     const { PEOPLE_SIZE } = settings
     this.width = PEOPLE_SIZE
@@ -43,22 +44,22 @@ export default class People extends Phaser.GameObjects.Container {
     // scene.group.add(this)
   }
 
-  setVelocity (x, y) {
+  setVelocity(x, y) {
     this.body.setVelocity(x, y)
   }
 
-  setVelocityX (x) {
+  setVelocityX(x) {
     this.body.setVelocityX(x)
   }
 
-  setVelocityY (y) {
+  setVelocityY(y) {
     this.body.setVelocityY(y)
   }
 
-  fire () {
+  fire() {
     if (this.isPlayer) {
       emitter.emit('PLAY_SOUND', 'playerFireSFX', {
-        volume: 0.6
+        volume: 0.6,
       })
     }
 
@@ -68,11 +69,11 @@ export default class People extends Phaser.GameObjects.Container {
     bullet.scale = 0.5
 
     const { BULLET_SPEED } = settings
-    const { tx, ty } = Phaser.Math.getDirFromAngle(this.angle)
+    const { tx, ty } = getDirFromAngle(this.angle)
     bullet.setVelocity(tx * BULLET_SPEED, ty * BULLET_SPEED)
   }
 
-  gotHit () {
+  gotHit() {
     this.hp--
     const volume = 0.2
     if (this.hp > 0) {

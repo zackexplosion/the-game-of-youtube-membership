@@ -1,5 +1,5 @@
-// const START_SCENE = 'MainScene'
-const START_SCENE = 'TestScene'
+const START_SCENE = 'MainScene'
+// const START_SCENE = 'TestScene'
 import memeberList from '@/gamedata/memberlist.json'
 import LoadingBar from '@/scripts/objects/loadingBar'
 
@@ -10,7 +10,7 @@ export default class PreloadScene extends Phaser.Scene {
     super({ key: 'PreloadScene' })
   }
 
-  async preload() {
+  preload(): void {
     this.loadingBar = new LoadingBar({ scene: this })
 
     this.load.on('progress', (e) => {
@@ -32,34 +32,18 @@ export default class PreloadScene extends Phaser.Scene {
       showSponsorsAt,
       endShowSponsorAt,
     })
-    // this.load.audio(
-    //   {
-    //     key: 'music',
-    //     urlConfig: 'assets/' + key,
-    //     // audioConfig: {
-    //     //   showSponsorsAt,
-    //     //   endShowSponsorAt,
-    //     // },
-    //   }
-    //   // {
-    //   //   stream: true,
-    //   // }
-    // )
 
     this.sound.pauseOnBlur = false
 
     // create rounded profile images
     for (let i = 0; i < memeberList.length; i++) {
-      // const [name, url, profileImageUrl, joinDate] = memeberList[i]
-      const profileImageUrl = memeberList[i][2]
-
-      console.log(memeberList[i])
-
-      // this.load.image('ebulletB', 'assets/member-profile-images/' + )
+      const [channelId, name, memberSince] = memeberList[i]
+      const key = 'memberProfile_' + i
+      this.load.image(key, `assets/member-profile-images/${channelId}.jpg`)
     }
   }
 
-  create() {
+  create(): void {
     // this.music = this.sound.add('music')
     // this.music.play({
     //   seek: 2

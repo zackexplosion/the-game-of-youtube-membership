@@ -7,8 +7,9 @@ import playerController from '@/scripts/helpers/playerController'
 import rotateSponsors from '@/scripts/helpers/rotateSponsors'
 import removeOutOfBoundsBullets from '@/scripts/helpers/removeOutOfBoundsBullets'
 import Enemy from '@/scripts/objects/enemy'
+import settings from '@/gamedata/settings'
 // import enemy
-const { settings, model, Utils } = window
+const { model, Utils } = window
 export default class MainScene extends Phaser.Scene {
   fpsText
   music
@@ -30,8 +31,7 @@ export default class MainScene extends Phaser.Scene {
     super({ key: 'MainScene' })
   }
 
-  setupPlayer() {
-    const { settings } = window
+  setupPlayer(): void {
     this.player = new People(this, 'player')
     this.playerControlerKeys = this.input.keyboard.addKeys({
       up: settings.PLAYER_CONTROL_KEYS.up,
@@ -55,14 +55,14 @@ export default class MainScene extends Phaser.Scene {
     })
   }
 
-  playerFire() {
+  playerFire(): void {
     this.player.fire()
     this.sponsors.getChildren().forEach((c) => {
       c.fire()
     })
   }
 
-  bulletHitEnemy(enemy, bullet) {
+  bulletHitEnemy(enemy, bullet): void {
     bullet.destroy()
     enemy.gotHit()
 
@@ -91,7 +91,7 @@ export default class MainScene extends Phaser.Scene {
     }
   }
 
-  buildEnemy() {
+  buildEnemy(): void {
     const e = new Enemy(this)
     const index = Phaser.Math.Between(11, 76)
     this.grid.placeAtIndex(index, e)
@@ -101,7 +101,7 @@ export default class MainScene extends Phaser.Scene {
       key: 'ebulletA',
       frameQuantity: 200,
     })
-    const { E_BULLET_SPEED } = window.settings
+    const { E_BULLET_SPEED } = settings
     this.ebullet_group_a.children.iterate((c) => {
       c.x = e.x
       c.y = e.y
@@ -130,7 +130,7 @@ export default class MainScene extends Phaser.Scene {
     this.enemyGropup.add(e)
   }
 
-  startGame() {
+  startGame(): void {
     const { settings } = window
     this.music.play()
     this.music.on('play', (e) => {
@@ -139,7 +139,7 @@ export default class MainScene extends Phaser.Scene {
 
     this.music.on('sponsorJoin', (e) => {
       this.player.hp = settings.PLAYER_MAX_HP
-      if (this.sponsors.getLength() > model.maxActiveSponsors) {
+      if (this.sponsors.getLength() > window.model.maxActiveSponsors) {
         this.sponsors.getChildren()[0].destroy()
       }
       const [name, channelUrl, profileUrl, joinSince, extra] = e
@@ -176,7 +176,7 @@ export default class MainScene extends Phaser.Scene {
   create() {
     this.soundManager = new window.Utils.SoundManager({ scene: this })
     const grid = new window.Utils.AlignGrid({ scene: this })
-    if (window.settings.DEBUG) {
+    if (settings.DEBUG) {
       grid.showNumbers()
       this.fpsText = new FpsText(this)
     }
@@ -210,8 +210,8 @@ export default class MainScene extends Phaser.Scene {
     })
   }
 
-  update(time, delta) {
-    if (window.settings.DEBUG) {
+  update(time, delta): void {
+    if (settings.DEBUG) {
       this.fpsText.update()
     }
 

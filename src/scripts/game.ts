@@ -4,7 +4,8 @@ import 'phaser'
 import Utils from './utils'
 import moment from 'moment'
 
-import settings from '../gamedata/settings'
+import settings from '@/gamedata/settings'
+import gameConfig from '@/gamedata/gameconfig'
 
 // inject Utils to global
 window.Utils = Utils
@@ -51,9 +52,12 @@ class Model {
   }
 }
 window.emitter = new Phaser.Events.EventEmitter()
-window.settings = settings
 window.model = new Model()
 
 window.addEventListener('load', () => {
-  window.game = new Phaser.Game(settings.gameConfig)
+  window.game = new Phaser.Game(gameConfig)
+})
+
+window.addEventListener('resize', () => {
+  // window.game.resize(window.innerWidth, window.innerHeight)
 })

@@ -13,6 +13,7 @@ const config = {
     extensions: ['.ts', '.tsx', '.js'],
     alias: {
       '@': path.resolve(__dirname, '../src'),
+      Utils: path.resolve(__dirname, '../src/scripts/utils'),
     },
   },
   module: {
@@ -59,4 +60,4 @@ const config = {
 }
 module.exports = config
 
-console.log(config)
+// console.log(config)

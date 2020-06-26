@@ -12,7 +12,8 @@
     "lib": ["dom", "es5", "esnext"],
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "Utils": ["src/scripts/utils/index.ts"]
     }
   }
 }

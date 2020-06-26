@@ -1,7 +1,8 @@
 import Enemy from '../objects/enemy'
+import settings from '@/gamedata/settings'
 
 const createBullet = (scene, e) => {
-  const _createBullet = (direction, key = 'ebulletA') => {
+  const _createBullet = (direction: number, key = 'ebulletA') => {
     const fireBullet = (delay = 700) => {
       const b = scene.physics.add.sprite(0, 0, key)
       b.x = e.x
@@ -10,10 +11,10 @@ const createBullet = (scene, e) => {
 
       const { E_BULLET_SPEED } = settings
 
-      var p = 0
-      const SPEED_SHIFTER = 1.5
+      var p: number = 0
+      const SPEED_SHIFTER: number = 1.5
       setInterval(function () {
-        var vx, vy
+        var vx: number, vy: number
         switch (direction) {
           case 0: // right top
             vx = E_BULLET_SPEED + p * SPEED_SHIFTER
@@ -41,7 +42,7 @@ const createBullet = (scene, e) => {
         p = p + 2
       }, 50)
       // grid.placeAtIndex(60, b)
-      scene.time.
+      // scene.time.
     }
 
     fireBullet()
@@ -54,12 +55,12 @@ const createBullet = (scene, e) => {
 }
 
 export default class TestScene extends Phaser.Scene {
-  constructor () {
+  constructor() {
     super({ key: 'TestScene' })
   }
 
-  create () {
-    const grid = new Utils.AlignGrid({ scene: this })
+  create(): void {
+    const grid = new window.Utils.AlignGrid({ scene: this })
     if (settings.DEBUG) {
       grid.showNumbers()
     }
@@ -91,18 +92,16 @@ export default class TestScene extends Phaser.Scene {
     //     frameQuantity: 20
     //   })
 
-  //   const { E_BULLET_SPEED } = settings
-  //   this.ebullet_group_a.children.iterate(c => {
-  //     c.x = e.x
-  //     c.y = e.y
-  //     c.scale = 0.3
-  //     var vx = Phaser.Math.Between(-E_BULLET_SPEED, E_BULLET_SPEED)
-  //     var vy = Phaser.Math.Between(-E_BULLET_SPEED, E_BULLET_SPEED)
-  //     c.body.setVelocity(vx, vy)
-  //   })
+    //   const { E_BULLET_SPEED } = settings
+    //   this.ebullet_group_a.children.iterate(c => {
+    //     c.x = e.x
+    //     c.y = e.y
+    //     c.scale = 0.3
+    //     var vx = Phaser.Math.Between(-E_BULLET_SPEED, E_BULLET_SPEED)
+    //     var vy = Phaser.Math.Between(-E_BULLET_SPEED, E_BULLET_SPEED)
+    //     c.body.setVelocity(vx, vy)
+    //   })
   }
 
-  update (time, delta) {
-
-  }
+  update(time, delta): void {}
 }
