@@ -1,33 +1,44 @@
-import People from '../objects/People'
-import FpsText from '../objects/fpsText'
-import MusicManager from '../objects/musicManager'
-import MessageBox from '../objects/messageBox'
 import moment from 'moment'
-import playerController from '../helpers/playerController'
-import rotateSponsors from '../helpers/rotateSponsors'
-import removeOutOfBoundsBullets from '../helpers/removeOutOfBoundsBullets'
-import Enemy from '../objects/enemy'
+import People from '@/scripts/objects/People'
+import FpsText from '@/scripts/objects/fpsText'
+import MusicManager from '@/scripts/objects/musicManager'
+import MessageBox from '@/scripts/objects/messageBox'
+import playerController from '@/scripts/helpers/playerController'
+import rotateSponsors from '@/scripts/helpers/rotateSponsors'
+import removeOutOfBoundsBullets from '@/scripts/helpers/removeOutOfBoundsBullets'
+import Enemy from '@/scripts/objects/enemy'
 // import enemy
-
+const { settings, model, Utils } = window
 export default class MainScene extends Phaser.Scene {
   fpsText
   music
   player
+  sponsors
+  grid
   activeSponsors = 0
   maxActiveEnemies = 2
+  playerControlerKeys
+  enemyGropup
+  enemy
+  ebullet_group_b
+  ebullet_group_a
+  bulletGroup
+  soundManager
+  messageBox
 
-  constructor () {
+  constructor() {
     super({ key: 'MainScene' })
   }
 
-  setupPlayer () {
+  setupPlayer() {
+    const { settings } = window
     this.player = new People(this, 'player')
     this.playerControlerKeys = this.input.keyboard.addKeys({
       up: settings.PLAYER_CONTROL_KEYS.up,
       down: settings.PLAYER_CONTROL_KEYS.down,
       left: settings.PLAYER_CONTROL_KEYS.left,
       right: settings.PLAYER_CONTROL_KEYS.right,
-      fire: 'space'
+      fire: 'space',
     })
     this.player.hp = settings.PLAYER_MAX_HP
 
@@ -38,20 +49,20 @@ export default class MainScene extends Phaser.Scene {
       const { player } = this
       const angle = Phaser.Math.Angle.Between(player.x, player.y, pointer.x, pointer.y)
       player.rotation = angle
-      this.sponsors.getChildren().forEach(c => {
+      this.sponsors.getChildren().forEach((c) => {
         c.rotation = angle
       })
     })
   }
 
-  playerFire () {
+  playerFire() {
     this.player.fire()
-    this.sponsors.getChildren().forEach(c => {
+    this.sponsors.getChildren().forEach((c) => {
       c.fire()
     })
   }
 
-  bulletHitEnemy (enemy, bullet) {
+  bulletHitEnemy(enemy, bullet) {
     bullet.destroy()
     enemy.gotHit()
 
@@ -67,12 +78,12 @@ export default class MainScene extends Phaser.Scene {
   }
 
   // e bullet a can be destory, b yet
-  bulletHitEnemyBulletA (ebulletA, bullet) {
+  bulletHitEnemyBulletA(ebulletA, bullet) {
     ebulletA.destroy()
     bullet.destroy()
   }
 
-  ebulletHitPlayer (player, ebullet) {
+  ebulletHitPlayer(player: People, ebullet) {
     ebullet.destroy()
     player.gotHit()
     if (player.hp <= 0) {
@@ -80,18 +91,18 @@ export default class MainScene extends Phaser.Scene {
     }
   }
 
-  buildEnemy () {
+  buildEnemy() {
     const e = new Enemy(this)
     const index = Phaser.Math.Between(11, 76)
     this.grid.placeAtIndex(index, e)
     this.enemy = e
-    this.physics.add.collider(this.bulletGroup, this.enemy, this.bulletHitEnemy, null, this)
+    this.physics.add.collider(this.bulletGroup, this.enemy, this.bulletHitEnemy, undefined, this)
     this.ebullet_group_a = this.physics.add.group({
       key: 'ebulletA',
-      frameQuantity: 200
+      frameQuantity: 200,
     })
-    const { E_BULLET_SPEED } = settings
-    this.ebullet_group_a.children.iterate(c => {
+    const { E_BULLET_SPEED } = window.settings
+    this.ebullet_group_a.children.iterate((c) => {
       c.x = e.x
       c.y = e.y
       c.scale = 0.3
@@ -99,13 +110,13 @@ export default class MainScene extends Phaser.Scene {
       var vy = Phaser.Math.Between(-E_BULLET_SPEED, E_BULLET_SPEED)
       c.body.setVelocity(vx, vy)
     })
-    this.physics.add.collider(this.bulletGroup, this.ebullet_group_a, this.bulletHitEnemyBulletA, null, this)
+    this.physics.add.collider(this.bulletGroup, this.ebullet_group_a, this.bulletHitEnemyBulletA, undefined, this)
 
     this.ebullet_group_b = this.physics.add.group({
       key: 'ebulletB',
-      frameQuantity: 200
+      frameQuantity: 200,
     })
-    this.ebullet_group_b.children.iterate(c => {
+    this.ebullet_group_b.children.iterate((c) => {
       c.x = e.x
       c.y = e.y
       c.scale = 0.3
@@ -114,18 +125,19 @@ export default class MainScene extends Phaser.Scene {
       c.body.setVelocity(vx, vy)
     })
 
-    this.physics.add.collider(this.player, this.ebullet_group_a, this.ebulletHitPlayer, null, this)
-    this.physics.add.collider(this.player, this.ebullet_group_b, this.ebulletHitPlayer, null, this)
+    this.physics.add.collider(this.player, this.ebullet_group_a, this.ebulletHitPlayer, undefined, this)
+    this.physics.add.collider(this.player, this.ebullet_group_b, this.ebulletHitPlayer, undefined, this)
     this.enemyGropup.add(e)
   }
 
-  startGame () {
+  startGame() {
+    const { settings } = window
     this.music.play()
-    this.music.on('play', e => {
+    this.music.on('play', (e) => {
       // window.loadingText.destroy()
     })
 
-    this.music.on('sponsorJoin', e => {
+    this.music.on('sponsorJoin', (e) => {
       this.player.hp = settings.PLAYER_MAX_HP
       if (this.sponsors.getLength() > model.maxActiveSponsors) {
         this.sponsors.getChildren()[0].destroy()
@@ -152,7 +164,7 @@ export default class MainScene extends Phaser.Scene {
       this.activeSponsors++
     })
 
-    this.music.on('endShowSponsors', e => {
+    this.music.on('endShowSponsors', (e) => {
       this.cameras.main.once('camerafadeoutcomplete', (camera) => {
         this.scene.start('EndScene')
       })
@@ -161,10 +173,10 @@ export default class MainScene extends Phaser.Scene {
     })
   }
 
-  create () {
-    this.soundManager = new Utils.SoundManager({ scene: this })
-    const grid = new Utils.AlignGrid({ scene: this })
-    if (settings.DEBUG) {
+  create() {
+    this.soundManager = new window.Utils.SoundManager({ scene: this })
+    const grid = new window.Utils.AlignGrid({ scene: this })
+    if (window.settings.DEBUG) {
       grid.showNumbers()
       this.fpsText = new FpsText(this)
     }
@@ -177,7 +189,7 @@ export default class MainScene extends Phaser.Scene {
     this.bulletGroup = this.physics.add.group({
       removeCallback: (g) => {
         console.log(g, 'removed')
-      }
+      },
     })
 
     this.enemyGropup = this.add.group()
@@ -185,7 +197,7 @@ export default class MainScene extends Phaser.Scene {
     this.sponsors = this.add.group({
       removeCallback: (g) => {
         console.log('removed', g.name)
-      }
+      },
     })
     this.startGame()
 
@@ -194,12 +206,12 @@ export default class MainScene extends Phaser.Scene {
       delay: 1000, // ms
       callback: removeOutOfBoundsBullets,
       callbackScope: this,
-      loop: true
+      loop: true,
     })
   }
 
-  update (time, delta) {
-    if (settings.DEBUG) {
+  update(time, delta) {
+    if (window.settings.DEBUG) {
       this.fpsText.update()
     }
 

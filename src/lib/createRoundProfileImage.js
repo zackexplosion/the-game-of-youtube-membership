@@ -1,5 +1,5 @@
 const imageSize = 80
-export default function createRoundProfileImage (url) {
+export default function createRoundProfileImage(url) {
   var canvas = document.createElement('canvas')
   canvas.width = imageSize
   canvas.height = imageSize
@@ -9,6 +9,7 @@ export default function createRoundProfileImage (url) {
 
   var img = document.createElement('img')
   img.setAttribute('crossOrigin', 'anonymous')
+  document.body.appendChild(img)
   return new Promise((resolve, reject) => {
     img.src = url
     img.onload = function () {

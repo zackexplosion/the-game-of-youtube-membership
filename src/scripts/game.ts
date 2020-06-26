@@ -1,16 +1,19 @@
 import 'phaser'
-import '@babel/polyfill'
+// import '@babel/polyfill'
 
 import Utils from './utils'
 import moment from 'moment'
 
 import settings from '../gamedata/settings'
+
 // inject Utils to global
 window.Utils = Utils
 moment.defaultFormat = 'YYYY/MM/DD HH:mm:ss'
 
 class Model {
-  constructor () {
+  _currentMusic
+  _maxActiveSponsors
+  constructor() {
     // random choose music
     const { AVAIABLE_MUSICS } = settings
     this.currentMusic = AVAIABLE_MUSICS[Phaser.Math.Between(0, AVAIABLE_MUSICS.length - 1)]
@@ -19,27 +22,31 @@ class Model {
     this.maxActiveSponsors = 6
   }
 
-  get soundOn () {
+  get soundOn() {
     return true
   }
 
-  set currentMusic (val) {
+  set currentMusic(val) {
     const [key, showSponsorsAt, endShowSponsorAt] = val
     this._currentMusic = {
-      key, showSponsorsAt, endShowSponsorAt
+      key,
+      showSponsorsAt,
+      endShowSponsorAt,
     }
   }
 
-  get currentMusic () {
+  get currentMusic() {
     return this._currentMusic
   }
 
-  set maxActiveSponsors (val) {
-    if (val >= 6) { val = 6 }
+  set maxActiveSponsors(val) {
+    if (val >= 6) {
+      val = 6
+    }
     this._maxActiveSponsors = val - 1
   }
 
-  get maxActiveSponsors () {
+  get maxActiveSponsors() {
     return this._maxActiveSponsors
   }
 }

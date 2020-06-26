@@ -1,30 +1,41 @@
+const { STYLES } = window
 export default class EndScene extends Phaser.Scene {
   timedEvent
   restartButton
-  constructor () {
+  constructor() {
     super({ key: 'EndScene' })
   }
 
-  create () {
+  create() {
+    const { STYLES } = window
     this.cameras.main.fadeIn(4000)
     const { centerX, centerY } = this.cameras.main
     var text = this.add.text(centerX, centerY, ':( 失敗囉', { color: STYLES.DEFAULT_TEXT_COLOR, fontSize: '40px' })
 
-    this.restartButton = this.add.text(centerX, this.cameras.main.centerY + 100, '再玩一次', { color: STYLES.DEFAULT_TEXT_COLOR, fontSize: '20px' })
+    this.restartButton = this.add
+      .text(centerX, this.cameras.main.centerY + 100, '再玩一次', {
+        color: STYLES.DEFAULT_TEXT_COLOR,
+        fontSize: '20px',
+      })
       .setInteractive()
-      .on('pointerup', e => {
+      .on('pointerup', (e) => {
         window.location.reload()
       })
 
     text.setOrigin(0.5)
     this.restartButton.setOrigin(0.5)
 
-    this.timedEvent = this.time.delayedCall(20000, function () {
-      window.location.reload()
-    }, [], this)
+    this.timedEvent = this.time.delayedCall(
+      20000,
+      function () {
+        window.location.reload()
+      },
+      [],
+      this
+    )
   }
 
-  update () {
+  update() {
     var a = this.timedEvent
     const l = ((a.delay - a.elapsed) / 1000).toFixed(0)
     this.restartButton.setText('再玩一次: ' + l)

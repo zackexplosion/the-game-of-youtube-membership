@@ -1,7 +1,7 @@
-import ENEMIES from 'gamedata/enemies.json'
+import ENEMIES from '@/gamedata/enemies.json'
 
 export default class Enemy extends Phaser.GameObjects.Container {
-  constructor (scene, enemy) {
+  constructor(scene, enemy) {
     super(scene)
     scene.add.existing(this)
     this.scene = scene
@@ -15,7 +15,7 @@ export default class Enemy extends Phaser.GameObjects.Container {
     this.hpPercent = 0
     const text = scene.add.text(0, 0, e.text, {
       color: STYLES.DEFAULT_TEXT_COLOR,
-      fontSize: e.size * 1.5
+      fontSize: e.size * 1.5,
     })
 
     // Utils.Align.scaleToGameW(text, 0.25)
@@ -40,19 +40,19 @@ export default class Enemy extends Phaser.GameObjects.Container {
     // scene.group.add(this)
   }
 
-  setVelocity (x, y) {
+  setVelocity(x, y) {
     this.body.setVelocity(x, y)
   }
 
-  setVelocityX (x) {
+  setVelocityX(x) {
     this.body.setVelocityX(x)
   }
 
-  setVelocityY (y) {
+  setVelocityY(y) {
     this.body.setVelocityY(y)
   }
 
-  gotHit () {
+  gotHit() {
     const offset = Phaser.Math.Between(-10, 10)
     this.scene.tweens.add({
       targets: this,
@@ -60,7 +60,7 @@ export default class Enemy extends Phaser.GameObjects.Container {
       y: this.y + offset,
       duration: 10,
       repeat: 10,
-      ease: 'Elastic'
+      ease: 'Elastic',
     })
     this.hp--
     this.hpPercent = this.hp / this.maxHP

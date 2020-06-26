@@ -2,19 +2,36 @@ const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { InjectManifest } = require('workbox-webpack-plugin')
-
-module.exports = {
-  entry: ['./src/scripts/game.js', './webpack/credits.js'],
+const config = {
+  entry: ['./src/scripts/game.ts', './webpack/credits.js'],
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].bundle.js',
-    chunkFilename: '[name].chunk.js'
+    chunkFilename: '[name].chunk.js',
   },
   resolve: {
-    extensions: ['.js']
+    extensions: ['.ts', '.tsx', '.js'],
+    alias: {
+      '@': path.resolve(__dirname, '../src'),
+    },
   },
   module: {
-    rules: [{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }]
+    rules: [
+      {
+        test: /\.jsx?$/,
+        include: path.join(__dirname, '../src'),
+        // loader: ['ts-loader'],
+        // loader: ['babel-loader', 'ts-loader'],
+        loader: ['babel-loader'],
+      },
+      {
+        test: /\.tsx?$/,
+        include: path.join(__dirname, '../src'),
+        loader: ['ts-loader'],
+        // loader: ['babel-loader', 'ts-loader'],
+        // loader: ['babel-loader'],
+      },
+    ],
   },
   optimization: {
     splitChunks: {
@@ -23,21 +40,23 @@ module.exports = {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'all',
-          filename: '[name].bundle.js'
-        }
-      }
-    }
+          filename: '[name].bundle.js',
+        },
+      },
+    },
   },
   plugins: [
-    new HtmlWebpackPlugin({ gameName: 'Zackexplosion 負能量宅肥 的支持者們', template: 'src/index.html' }),
+    new HtmlWebpackPlugin({ gameName: 'My Phaser Game', template: 'src/index.html' }),
     new CopyWebpackPlugin([
-      { from: 'CNAME', to: './' },
       { from: 'src/assets', to: 'assets' },
       { from: 'pwa', to: '' },
-      { from: 'src/favicon.ico', to: '' }
+      { from: 'src/favicon.ico', to: '' },
     ]),
     new InjectManifest({
-      swSrc: path.resolve(__dirname, '../pwa/sw.js')
-    })
-  ]
+      swSrc: path.resolve(__dirname, '../pwa/sw.js'),
+    }),
+  ],
 }
+module.exports = config
+
+console.log(config)
