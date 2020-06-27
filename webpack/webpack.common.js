@@ -1,7 +1,7 @@
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { InjectManifest } = require('workbox-webpack-plugin')
+// const { InjectManifest } = require('workbox-webpack-plugin')
 const config = {
   entry: ['./src/scripts/game.ts', './webpack/credits.js'],
   output: {
@@ -50,12 +50,12 @@ const config = {
     new HtmlWebpackPlugin({ gameName: 'My Phaser Game', template: 'src/index.html' }),
     new CopyWebpackPlugin([
       { from: 'src/assets', to: 'assets' },
-      { from: 'pwa', to: '' },
+      // { from: 'pwa', to: '' },
       { from: 'src/favicon.ico', to: '' },
     ]),
-    new InjectManifest({
-      swSrc: path.resolve(__dirname, '../pwa/sw.js'),
-    }),
+    // new InjectManifest({
+    //   swSrc: path.resolve(__dirname, '../pwa/sw.js'),
+    // }),
   ],
 }
 module.exports = config
