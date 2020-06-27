@@ -5,9 +5,13 @@ import LoadingBar from '@/scripts/objects/loadingBar'
 
 export default class PreloadScene extends Phaser.Scene {
   music
-  loadingBar
+  private loadingBar: LoadingBar
   constructor() {
     super({ key: 'PreloadScene' })
+  }
+
+  init(config): void {
+    console.log(config)
   }
 
   preload(): void {

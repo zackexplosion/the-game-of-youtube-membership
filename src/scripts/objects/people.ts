@@ -1,9 +1,13 @@
 import PlayerBullet from './playerBullet'
 import { getDirFromAngle } from 'Utils'
+import settings from '@/gamedata/settings'
+import MainScene from '../scenes/mainScene'
 export default class People extends Phaser.GameObjects.Container {
+  body!: Phaser.Physics.Arcade.Body
   hp = -1
   isPlayer = false
-  constructor(scene, imageKey) {
+  scene: MainScene
+  constructor(scene: MainScene, imageKey: string) {
     super(scene)
     const { PEOPLE_SIZE } = settings
     this.width = PEOPLE_SIZE
@@ -22,7 +26,7 @@ export default class People extends Phaser.GameObjects.Container {
     // only main player need this
     if (imageKey === 'player') {
       this.isPlayer = true
-      this.body.setCollideWorldBounds(true)
+      // this.body.setCollideWorldBounds(true)
     }
 
     // this.body.x = -100
@@ -44,21 +48,22 @@ export default class People extends Phaser.GameObjects.Container {
     // scene.group.add(this)
   }
 
-  setVelocity(x, y) {
+  public setVelocity(x: number, y: number): void {
     this.body.setVelocity(x, y)
+    this.body
   }
 
-  setVelocityX(x) {
+  setVelocityX(x: number) {
     this.body.setVelocityX(x)
   }
 
-  setVelocityY(y) {
+  setVelocityY(y: number) {
     this.body.setVelocityY(y)
   }
 
   fire() {
     if (this.isPlayer) {
-      emitter.emit('PLAY_SOUND', 'playerFireSFX', {
+      window.emitter.emit('PLAY_SOUND', 'playerFireSFX', {
         volume: 0.6,
       })
     }
@@ -77,9 +82,9 @@ export default class People extends Phaser.GameObjects.Container {
     this.hp--
     const volume = 0.2
     if (this.hp > 0) {
-      emitter.emit('PLAY_SOUND', 'explosion', { volume })
+      window.emitter.emit('PLAY_SOUND', 'explosion', { volume })
     } else {
-      emitter.emit('PLAY_SOUND', 'playerDie', { volume })
+      window.emitter.emit('PLAY_SOUND', 'playerDie', { volume })
     }
   }
 }

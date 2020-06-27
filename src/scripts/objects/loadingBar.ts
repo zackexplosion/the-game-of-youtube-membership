@@ -2,13 +2,13 @@ import STYLES from '@/gamedata/styles'
 import Utils from 'Utils'
 
 export default class LoadingBar extends Phaser.GameObjects.Container {
-  SIGN: String = '%'
-  loadingText: Phaser.GameObjects.Text
-  progText: Phaser.GameObjects.Text
+  public SIGN: String = '%'
+  private loadingText: Phaser.GameObjects.Text
+  private progText: Phaser.GameObjects.Text
   constructor(config: ObjectConfig) {
     super(config.scene)
     const scene = config.scene
-    const fontSize = Number(window.game.config.width) / 10
+    const fontSize = scene.cameras.main.width / 10
     const style = {
       color: STYLES.DEFAULT_TEXT_COLOR,
       fontSize,
@@ -28,7 +28,7 @@ export default class LoadingBar extends Phaser.GameObjects.Container {
     this.scene = scene
   }
 
-  setPer(value: number) {
+  public setPer(value: number) {
     var per = Math.floor(value * 100)
     this.progText.setText(per.toString() + this.SIGN)
   }

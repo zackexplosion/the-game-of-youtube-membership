@@ -12,8 +12,8 @@ window.Utils = Utils
 moment.defaultFormat = 'YYYY/MM/DD HH:mm:ss'
 
 class Model {
-  _currentMusic
-  _maxActiveSponsors
+  private _currentMusic
+  private _maxActiveSponsors
   constructor() {
     // random choose music
     const { AVAIABLE_MUSICS } = settings
@@ -59,5 +59,5 @@ window.addEventListener('load', () => {
 })
 
 window.addEventListener('resize', () => {
-  // window.game.resize(window.innerWidth, window.innerHeight)
+  window.game.scale.resize(window.innerWidth, window.innerHeight)
 })

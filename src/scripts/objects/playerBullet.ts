@@ -1,6 +1,11 @@
+import MainScene from '../scenes/mainScene'
 
 export default class PlayerBullet extends Phaser.Physics.Arcade.Sprite {
-  constructor (scene, x, y) {
+  constructor(
+    scene: MainScene,
+    x: number,
+    y: number
+  ) {
     const { player } = scene
     super(scene, x, y, 'playerBullet')
     this.width = 20

@@ -9,16 +9,15 @@ import removeOutOfBoundsBullets from '@/scripts/helpers/removeOutOfBoundsBullets
 import Enemy from '@/scripts/objects/enemy'
 import settings from '@/gamedata/settings'
 // import enemy
-const { model, Utils } = window
 export default class MainScene extends Phaser.Scene {
-  fpsText
+  private fpsText: FpsText
+  player: People
   music
-  player
   sponsors
   grid
-  activeSponsors = 0
-  maxActiveEnemies = 2
-  playerControlerKeys
+  activeSponsors: number = 0
+  maxActiveEnemies: number = 2
+  // playerControlerKeys
   enemyGropup
   enemy
   ebullet_group_b
@@ -33,11 +32,12 @@ export default class MainScene extends Phaser.Scene {
 
   setupPlayer(): void {
     this.player = new People(this, 'player')
-    this.playerControlerKeys = this.input.keyboard.addKeys({
-      up: settings.PLAYER_CONTROL_KEYS.up,
-      down: settings.PLAYER_CONTROL_KEYS.down,
-      left: settings.PLAYER_CONTROL_KEYS.left,
-      right: settings.PLAYER_CONTROL_KEYS.right,
+    const { up, down, left, right } = settings.PLAYER_CONTROL_KEYS
+    this.input.keyboard.addKeys({
+      up,
+      down,
+      left,
+      right,
       fire: 'space',
     })
     this.player.hp = settings.PLAYER_MAX_HP
@@ -91,7 +91,7 @@ export default class MainScene extends Phaser.Scene {
     }
   }
 
-  buildEnemy(): void {
+  buildEnemy() {
     const e = new Enemy(this)
     const index = Phaser.Math.Between(11, 76)
     this.grid.placeAtIndex(index, e)
@@ -124,9 +124,25 @@ export default class MainScene extends Phaser.Scene {
       var vy = Phaser.Math.Between(-E_BULLET_SPEED, E_BULLET_SPEED)
       c.body.setVelocity(vx, vy)
     })
-
-    this.physics.add.collider(this.player, this.ebullet_group_a, this.ebulletHitPlayer, undefined, this)
-    this.physics.add.collider(this.player, this.ebullet_group_b, this.ebulletHitPlayer, undefined, this)
+    this.physics.add.collider(this.player, this.ebullet_group_a)
+    this.physics.add.collider(
+      this.player,
+      this.ebullet_group_a,
+      () => {
+        this.ebulletHitPlayer(this.player, this.ebullet_group_a)
+      },
+      undefined,
+      this
+    )
+    this.physics.add.collider(
+      this.player,
+      this.ebullet_group_b,
+      () => {
+        this.ebulletHitPlayer(this.player, this.ebullet_group_b)
+      },
+      undefined,
+      this
+    )
     this.enemyGropup.add(e)
   }
 
