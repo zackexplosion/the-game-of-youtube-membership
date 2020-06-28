@@ -1,5 +1,7 @@
 import sponsors from '@/gamedata/memberlist.json'
 import moment from 'moment'
+import settings from '@/gamedata/settings'
+import STYLES from '@/gamedata/styles'
 export default class MusicManager {
   audio
   scene
@@ -10,7 +12,7 @@ export default class MusicManager {
   showSponsors = false
   endShowSponsors = false
   currentSponsers = []
-  events = []
+  events = <any>Array
   virtualTime
   virtualTimeSeek = 0.1
   virtualTimeDurationInSeconds
@@ -18,11 +20,12 @@ export default class MusicManager {
   virtualTimeEndAt = moment(sponsors[sponsors.length - 1][3])
   debugMsg
   nextSponsor
+  music
   constructor(scene) {
     this.scene = scene
     scene.pauseOnBlur = false
     this.music = scene.sound.add('music')
-
+    const { model } = window
     this.showSponsorsAt = model.currentMusic.showSponsorsAt
     this.endShowSponsorAt = model.currentMusic.endShowSponsorAt
     this.showSponsorDuration = this.endShowSponsorAt - this.showSponsorsAt
@@ -126,10 +129,11 @@ export default class MusicManager {
         ]
 
         texts.push('nextSponsor:' + moment(this.nextSponsor[3]).format() + ', ' + this.nextSponsor[0])
+        this.debugMsg.setText(texts)
       } catch (error) {
         // console.error(error)
       }
-      this.debugMsg.setText(texts)
+
     }
   }
 }

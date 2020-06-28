@@ -1,6 +1,11 @@
 import ENEMIES from '@/gamedata/enemies.json'
+import STYLES from '@/gamedata/styles'
 
 export default class Enemy extends Phaser.GameObjects.Container {
+  body!: Phaser.Physics.Arcade.Body
+  hp: number
+  maxHP: number
+  hpPercent: number
   constructor(scene, enemy) {
     super(scene)
     scene.add.existing(this)
@@ -40,15 +45,15 @@ export default class Enemy extends Phaser.GameObjects.Container {
     // scene.group.add(this)
   }
 
-  setVelocity(x, y) {
+  setVelocity(x: number, y: number) {
     this.body.setVelocity(x, y)
   }
 
-  setVelocityX(x) {
+  setVelocityX(x: number) {
     this.body.setVelocityX(x)
   }
 
-  setVelocityY(y) {
+  setVelocityY(y: number) {
     this.body.setVelocityY(y)
   }
 
