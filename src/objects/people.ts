@@ -1,5 +1,5 @@
 import PlayerBullet from './playerBullet'
-import { getDirFromAngle } from 'Utils'
+import { getDirFromAngle } from '@/utils'
 import settings from '@/gamedata/settings'
 import MainScene from '../scenes/mainScene'
 export default class People extends Phaser.GameObjects.Container {

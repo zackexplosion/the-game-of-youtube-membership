@@ -1,7 +1,7 @@
-import MainScene from '@/scripts/scenes/mainScene'
-import PreloadScene from '@/scripts/scenes/preloadScene'
-import EndScene from '@/scripts/scenes/endScene'
-import TestScene from '@/scripts/scenes/TestScene'
+import MainScene from '@/scenes/mainScene'
+import PreloadScene from '@/scenes/preloadScene'
+import EndScene from '@/scenes/endScene'
+import TestScene from '@/scenes/TestScene'
 const DEFAULT_WIDTH = window.innerWidth
 const DEFAULT_HEIGHT = window.innerHeight
 

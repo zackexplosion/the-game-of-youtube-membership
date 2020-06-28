@@ -9,11 +9,19 @@
     "allowUnreachableCode": false,
     "sourceMap": true,
     "strictPropertyInitialization": false,
-    "lib": ["dom", "es5", "esnext"],
+    "lib": [
+      "dom",
+      "es5",
+      "esnext"
+    ],
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"],
-      "Utils": ["src/scripts/utils/index.ts"]
+      "@/*": [
+        "src/*"
+      ],
+      "Utils": [
+        "src/utils/index.ts"
+      ]
     }
   }
 }

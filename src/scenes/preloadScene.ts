@@ -1,7 +1,7 @@
 const START_SCENE = 'MainScene'
 // const START_SCENE = 'TestScene'
 import memeberList from '@/gamedata/memberlist.json'
-import LoadingBar from '@/scripts/objects/loadingBar'
+import LoadingBar from '@/objects/loadingBar'
 
 export default class PreloadScene extends Phaser.Scene {
   music

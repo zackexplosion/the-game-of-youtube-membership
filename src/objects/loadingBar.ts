@@ -1,5 +1,5 @@
 import STYLES from '@/gamedata/styles'
-import Utils from 'Utils'
+import Utils from '@/utils'
 
 export default class LoadingBar extends Phaser.GameObjects.Container {
   public SIGN: String = '%'
