@@ -18,7 +18,7 @@ function toCircleImage(img_path) {
   return new Promise((resolve, reject) => {
     fs.createReadStream(img_path)
       .pipe(new PNG({ filterType: 4 }))
-      .on('parsed', function () {
+      .on('parsed', async function () {
         let radius = this.width / 2
         for (var y = 0; y < this.height; y++) {
           for (var x = 0; x < this.width; x++) {
@@ -28,35 +28,41 @@ function toCircleImage(img_path) {
             }
           }
         }
-        this.pack().pipe(fs.createWriteStream(img_path))
+        var stream = this.pack().pipe(fs.createWriteStream(img_path))
 
-        return resolve()
+        stream.on('finish', () => {
+          return resolve(img_path)
+        })
       })
   })
 }
 
 const main = async function () {
-  const profileImages = fs.readdirSync(profile_images_path)
+  var profileImages = fs.readdirSync(profile_images_path)
     .filter(_ => {
       return _.indexOf('.jpg') > 0
     })
-    .map(async _ => {
-      const file = path.resolve(profile_images_path, _)
-      const f = await toPNG(file)
-      await toCircleImage(f)
-      return file
+    .map(_ => {
+      return new Promise(async (resolve, reject) => {
+        var file = path.resolve(profile_images_path, _)
+        file = await toPNG(file)
+        file = await toCircleImage(file)
+        resolve(file)
+      })
     })
-
+  profileImages = await Promise.all(profileImages)
+  // console.log(profileImages)
+  // return
   Spritesmith.run({ src: profileImages }, function handleResult(err, result) {
     if (err) {
-      return console.error(err)
+      return console.error('Spritesmith', err)
     }
     result.image; // Buffer representation of image
     result.coordinates; // Object mapping filename to {x, y, width, height} of image
     result.properties; // Object with metadata about spritesheet {width, height}
 
     // save processed image
-    fs.writeFileSync(path.resolve(profile_images_path, '../members-profile-sprite.jpg'), result.image);
+    fs.writeFileSync(path.resolve(profile_images_path, '../members-profile-sprite.png'), result.image);
     result.coordinates
 
     // remove full path of coordinates
