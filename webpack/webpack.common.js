@@ -2,6 +2,8 @@ const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 // const { InjectManifest } = require('workbox-webpack-plugin')
+
+
 const config = {
   entry: ['./src/scripts/game.ts', './webpack/credits.js'],
   output: {
@@ -53,6 +55,20 @@ const config = {
       // { from: 'pwa', to: '' },
       { from: 'src/favicon.ico', to: '' },
     ]),
+    // new SpritesmithPlugin({
+    //   src: {
+    //     // cwd: path.resolve(__dirname, './src/assets/members-profile-images'),
+    //     cwd: path.resolve('../src/assets/members-profile-images'),
+    //     glob: '*.jpg'
+    //   },
+    //   target: {
+    //     image: path.resolve('../src/members-profile-sprite.jpg'),
+    //     css: '/tmp/tmp.css'
+    //   },
+    // apiOptions: {
+    //   cssImageRef: "~sprite.png"
+    // }
+    // })
     // new InjectManifest({
     //   swSrc: path.resolve(__dirname, '../pwa/sw.js'),
     // }),

@@ -19,12 +19,12 @@ export default class MainScene extends Phaser.Scene {
   maxActiveEnemies: number = 2
   // playerControlerKeys
   enemyGropup
-  enemy
+  enemy: Enemy
   ebullet_group_b
   ebullet_group_a
   bulletGroup
   soundManager
-  messageBox
+  messageBox: MessageBox
 
   constructor() {
     super({ key: 'MainScene' })

@@ -19,7 +19,7 @@ module.exports = [
   {
     displayName: '朱晏霆',
     channelUrl: 'https://www.youtube.com/channel/UC4Q8yu2fLqMKOqyy2AsSsoA',
-    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l78Z9ziYKE6eNnwSStISBkxB5LncLcFdxwt27Q=s280-c-k-c0xffffffff-no-rj-mo',
+    profileImageUrl: 'https://yt3.ggpht.com/a/AGF-l78Z9ziYKE6eNnwSStISBkxB5LncLcFdxwt27Q=s80-c-k-c0xffffffff-no-rj-mo',
     sponserSince: '2019-12-28T23:00:00.000Z',
     originJoinAt: 'yee',
     note: 'C922Pro 是這位贊助的！'

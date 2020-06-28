@@ -5,6 +5,7 @@ const adapter = new FileSync('db.json')
 const db = low(adapter)
 const downloadImage = require('image-downloader')
 const path = require('path')
+const image_path = path.resolve('./', 'src', 'assets', 'member-profile-images')
 const main = async function () {
   const members = db.get('members').value()
   console.log('members', members.length)
@@ -14,7 +15,7 @@ const main = async function () {
   function download(_) {
     const options = {
       url: _.profileImageUrl,
-      dest: path.resolve('./', 'src', 'assets', 'member-profile-images', `${_.channelId}.jpg`),
+      dest: path.resolve(image_path, `${_.channelId}.jpg`)
     }
     return downloadImage
       .image(options)
