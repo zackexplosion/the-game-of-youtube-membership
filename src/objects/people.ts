@@ -62,35 +62,16 @@ export default class People extends Phaser.GameObjects.Container {
   }
 
   fire() {
-    if (this.isPlayer) {
-      window.emitter.emit('PLAY_SOUND', 'playerFireSFX', {
-        volume: 0.6,
-      })
-    }
-
     const { scene } = this
     const bullet = new PlayerBullet(scene, this.x, this.y)
-    scene.bulletGroup.add(bullet)
-    bullet.scale = 0.5
+    if (scene.bulletGroup) {
+      scene.bulletGroup.add(bullet)
+    }
+
+    // bullet.scale = 0.5
 
     const { BULLET_SPEED } = settings
     const { tx, ty } = getDirFromAngle(this.angle)
     bullet.setVelocity(tx * BULLET_SPEED, ty * BULLET_SPEED)
   }
-
-  gotHit() {
-    this.hp--
-    const volume = 0.2
-    if (this.hp > 0) {
-      window.emitter.emit('PLAY_SOUND', 'explosion', { volume })
-    } else {
-      window.emitter.emit('PLAY_SOUND', 'playerDie', { volume })
-    }
-  }
 }
-
-// export default class People {
-//   constructor (scene, x, y, imageKey) {
-//     scene.group.create(x, y, imageKey)
-//   }
-// }

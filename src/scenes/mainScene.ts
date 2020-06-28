@@ -1,23 +1,22 @@
 import moment from 'moment'
-import People from '@/scripts/objects/People'
-import FpsText from '@/scripts/objects/fpsText'
-import MusicManager from '@/scripts/objects/musicManager'
-import MessageBox from '@/scripts/objects/messageBox'
-import playerController from '@/scripts/helpers/playerController'
-import rotateSponsors from '@/scripts/helpers/rotateSponsors'
-import removeOutOfBoundsBullets from '@/scripts/helpers/removeOutOfBoundsBullets'
-import Enemy from '@/scripts/objects/enemy'
+import People from '@/objects/People'
+import FpsText from '@/objects/fpsText'
+import MusicManager from '@/objects/musicManager'
+import MessageBox from '@/objects/messageBox'
+import rotateSponsors from '@/helpers/rotateSponsors'
+import removeOutOfBoundsBullets from '@/helpers/removeOutOfBoundsBullets'
+import Enemy from '@/objects/enemy'
 import settings from '@/gamedata/settings'
+import Player from '@/objects/Player'
 // import enemy
 export default class MainScene extends Phaser.Scene {
   private fpsText: FpsText
-  player: People
+  player: Player
   music
   sponsors
   grid
   activeSponsors: number = 0
   maxActiveEnemies: number = 2
-  // playerControlerKeys
   enemyGropup
   enemy: Enemy
   ebullet_group_b
@@ -28,31 +27,6 @@ export default class MainScene extends Phaser.Scene {
 
   constructor() {
     super({ key: 'MainScene' })
-  }
-
-  setupPlayer(): void {
-    this.player = new People(this, 'player')
-    const { up, down, left, right } = settings.PLAYER_CONTROL_KEYS
-    this.input.keyboard.addKeys({
-      up,
-      down,
-      left,
-      right,
-      fire: 'space',
-    })
-    this.player.hp = settings.PLAYER_MAX_HP
-
-    this.grid.placeAtIndex(settings.PLYAER_INIT_POSITION, this.player)
-
-    // tracking pointer position and roate player and sponsors
-    this.input.on('pointermove', (pointer) => {
-      const { player } = this
-      const angle = Phaser.Math.Angle.Between(player.x, player.y, pointer.x, pointer.y)
-      player.rotation = angle
-      this.sponsors.getChildren().forEach((c) => {
-        c.rotation = angle
-      })
-    })
   }
 
   playerFire(): void {
@@ -83,7 +57,7 @@ export default class MainScene extends Phaser.Scene {
     bullet.destroy()
   }
 
-  ebulletHitPlayer(player: People, ebullet) {
+  ebulletHitPlayer(player: Player, ebullet) {
     ebullet.destroy()
     player.gotHit()
     if (player.hp <= 0) {
@@ -190,6 +164,7 @@ export default class MainScene extends Phaser.Scene {
   }
 
   create() {
+    this.player = new Player(this)
     this.soundManager = new window.Utils.SoundManager({ scene: this })
     const grid = new window.Utils.AlignGrid({ scene: this })
     if (settings.DEBUG) {
@@ -198,42 +173,41 @@ export default class MainScene extends Phaser.Scene {
     }
     this.grid = grid
 
-    this.messageBox = new MessageBox(this)
-    this.music = new MusicManager(this)
-    this.setupPlayer()
+    // this.messageBox = new MessageBox(this)
+    // this.music = new MusicManager(this)
 
-    this.bulletGroup = this.physics.add.group({
-      removeCallback: (g) => {
-        console.log(g, 'removed')
-      },
-    })
+    // this.bulletGroup = this.physics.add.group({
+    //   removeCallback: (g) => {
+    //     console.log(g, 'removed')
+    //   },
+    // })
 
-    this.enemyGropup = this.add.group()
-    this.buildEnemy()
-    this.sponsors = this.add.group({
-      removeCallback: (g) => {
-        console.log('removed', g.name)
-      },
-    })
-    this.startGame()
+    // this.enemyGropup = this.add.group()
+    // this.buildEnemy()
+    // this.sponsors = this.add.group({
+    //   removeCallback: (g) => {
+    //     console.log('removed', g.name)
+    //   },
+    // })
+    // this.startGame()
 
-    // check bullets
-    this.time.addEvent({
-      delay: 1000, // ms
-      callback: removeOutOfBoundsBullets,
-      callbackScope: this,
-      loop: true,
-    })
+    // // check bullets
+    // this.time.addEvent({
+    //   delay: 1000, // ms
+    //   callback: removeOutOfBoundsBullets,
+    //   callbackScope: this,
+    //   loop: true,
+    // })
+
   }
 
-  update(time, delta): void {
+  update(time: number, delta: number): void {
     if (settings.DEBUG) {
       this.fpsText.update()
     }
 
-    this.music.update(time, delta)
-
-    playerController.call(this, time, delta)
-    rotateSponsors.call(this, time, delta)
+    // this.music.update(time, delta)
+    this.player.update(time, delta)
+    // rotateSponsors.call(this, time, delta)
   }
 }

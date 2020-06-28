@@ -1,6 +1,12 @@
 export default class AlignGrid {
-  constructor (config) {
+  config: any
+  scene: Phaser.Scene
+  cw: number
+  ch: number
+  graphics: Phaser.GameObjects.Graphics
+  constructor(config) {
     this.config = config
+    const { game } = window
     if (!config.scene) {
       console.log('missing scene')
       return
@@ -26,7 +32,7 @@ export default class AlignGrid {
     this.ch = config.height / config.rows
   }
 
-  show () {
+  show() {
     this.graphics = this.scene.add.graphics()
     this.graphics.lineStyle(2, 0x3300ff)
 
@@ -43,7 +49,7 @@ export default class AlignGrid {
     this.graphics.strokePath()
   }
 
-  placeAt (xx, yy, obj) {
+  placeAt(xx, yy, obj) {
     // calc position based upon the cellwidth and cellheight
     var x2 = this.cw * xx + this.cw / 2
     var y2 = this.ch * yy + this.ch / 2
@@ -52,19 +58,19 @@ export default class AlignGrid {
     obj.y = y2
   }
 
-  placeAtIndex (index, obj) {
+  placeAtIndex(index, obj) {
     var yy = Math.floor(index / this.config.cols)
     var xx = index - (yy * this.config.cols)
 
     this.placeAt(xx, yy, obj)
   }
 
-  showNumbers () {
+  showNumbers() {
     this.show()
-    var count = 0
+    var count: number = 0
     for (var i = 0; i < this.config.rows; i++) {
       for (var j = 0; j < this.config.cols; j++) {
-        var numText = this.scene.add.text(0, 0, count, { color: '#3300ff' })
+        var numText = this.scene.add.text(0, 0, count.toString(), { color: '#3300ff' })
         numText.setOrigin(0.5, 0.5)
         this.placeAtIndex(count, numText)
 

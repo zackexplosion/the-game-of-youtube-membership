@@ -78,6 +78,7 @@ export default class MusicManager {
 
   showFirstSponsor() {
     const s = this.sponsors.shift()
+    if (!s) return
     this.showSponsors = true
     this.virtualTimeStartAt = moment(s[3])
     this.virtualTimeDurationInSeconds = this.virtualTimeEndAt.diff(this.virtualTimeStartAt, 'seconds')

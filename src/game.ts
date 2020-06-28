@@ -1,7 +1,7 @@
 import 'phaser'
 // import '@babel/polyfill'
 
-import Utils from '../utils'
+import Utils from './utils'
 import moment from 'moment'
 
 import settings from '@/gamedata/settings'

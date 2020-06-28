@@ -52,7 +52,7 @@ export default class PreloadScene extends Phaser.Scene {
     // this.music.play({
     //   seek: 2
     // }
-    // this.scene.start(START_SCENE)
+    this.scene.start(START_SCENE)
     // this.scene.start('EndScene')
     /**
      * This is how you would dynamically import the mainScene class (with code splitting),

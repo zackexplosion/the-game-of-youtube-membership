@@ -6,7 +6,7 @@ export default class Enemy extends Phaser.GameObjects.Container {
   hp: number
   maxHP: number
   hpPercent: number
-  constructor(scene, enemy) {
+  constructor(scene: Phaser.Scene) {
     super(scene)
     scene.add.existing(this)
     this.scene = scene

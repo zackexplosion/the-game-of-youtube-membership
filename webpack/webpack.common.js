@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 
 const config = {
-  entry: ['./src/scripts/game.ts', './webpack/credits.js'],
+  entry: ['./src/game.ts', './webpack/credits.js'],
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: '[name].bundle.js',
@@ -15,7 +15,7 @@ const config = {
     extensions: ['.ts', '.tsx', '.js'],
     alias: {
       '@': path.resolve(__dirname, '../src'),
-      Utils: path.resolve(__dirname, '../src/scripts/utils'),
+      Utils: path.resolve(__dirname, '../src/utils'),
     },
   },
   module: {
