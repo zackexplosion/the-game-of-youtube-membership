@@ -11,6 +11,14 @@ export default class menuScene extends _menuScene {
     this.difficult_array.push(this._difficults_normal)
     this.difficult_array.push(this._difficults_hard)
 
+    this.difficult_array.forEach(_ => {
+      _
+        .setInteractive()
+        .on('pointerup', (e) => {
+          this.menuChange(_)
+        })
+    })
+
     this.input.keyboard.on('keydown-W', () => this.preMenu())
     this.input.keyboard.on('keydown-UP', () => this.preMenu())
 
@@ -18,21 +26,22 @@ export default class menuScene extends _menuScene {
     this.input.keyboard.on('keydown-S', () => this.nextMenu())
     this.input.keyboard.on('keydown-DOWN', () => this.nextMenu())
 
-
     this.input.keyboard.on('keydown-SPACE', () => this.startGame())
+    this.input.keyboard.on('keydown-ENTER', () => this.startGame())
+
+
+    const backgroundSound = this.sound.add('menu-bgm', {
+      loop: true
+    })
+    if (!backgroundSound.isPlaying) {
+      backgroundSound.play()
+    }
 
     this.game.events.addListener(Phaser.Core.Events.BLUR, () => {
       console.log('blur')
     })
-    const backgroundSound = this.sound.add('menu-bgm', {
-      loop: true
-    }) // here "true" means to loop
+
     this.game.events.addListener(Phaser.Core.Events.FOCUS, () => {
-
-      if (!backgroundSound.isPlaying) {
-        backgroundSound.play()
-      }
-
       console.log('focus')
     })
 

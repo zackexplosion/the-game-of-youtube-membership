@@ -1,6 +1,5 @@
 const START_SCENE = 'menuScene'
 // const START_SCENE = 'TestScene'
-import memeberList from '@/gamedata/memberlist.json'
 import LoadingBar from '@/objects/loadingBar'
 
 export default class LoadingScene extends Phaser.Scene {
@@ -25,6 +24,7 @@ export default class LoadingScene extends Phaser.Scene {
     this.load.image('playerBullet', 'assets/bullet.png')
     this.load.image('ebulletA', 'assets/ebullet_a.png')
     this.load.image('ebulletB', 'assets/ebullet_b.png')
+    this.load.image('hand-click', 'assets/hand-click.png')
 
     this.load.audio('playerFireSFX', 'assets/sfx_laserfire.ogg')
     this.load.audio('playerDie', 'assets/player_die.mp3')
@@ -54,7 +54,29 @@ export default class LoadingScene extends Phaser.Scene {
     // this.music.play({
     //   seek: 2
     // }
-    this.scene.start(START_SCENE)
+
+    this.loadingBar.setVisible(false)
+
+    const handClick = this.add.image(
+      <number>this.game.config.width / 2,
+      <number>this.game.config.height / 2,
+      'hand-click'
+    )
+      .setInteractive()
+      .on('pointerup', () => {
+        this.scene.start(START_SCENE)
+      })
+
+    this.tweens.add({
+      targets: handClick,
+      y: 500,
+      // x: 500,
+      // ease: 'Power1',
+      duration: 300,
+      loop: -1,
+      yoyo: true
+    })
+
     // this.scene.start('EndScene')
     /**
      * This is how you would dynamically import the mainScene class (with code splitting),
