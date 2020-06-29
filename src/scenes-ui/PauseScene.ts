@@ -12,8 +12,8 @@ class PauseScene extends Phaser.Scene {
 	create() {
 		
 		// pause_background
-		const pause_background = this.add.image(587, 549, "pause-background");
-		pause_background.setOrigin(0.5100742357938807, 0.5022235925851358);
+		const pause_background = this.add.image(0, 0, "pause-background");
+		pause_background.setOrigin(0, 0);
 		pause_background.alpha = 0.8;
 		pause_background.alphaTopLeft = 0.8;
 		pause_background.alphaTopRight = 0.8;

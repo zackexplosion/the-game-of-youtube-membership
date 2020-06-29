@@ -17,10 +17,8 @@
             "texture": {
                 "key": "pause-background"
             },
-            "x": 587,
-            "y": 549,
-            "originX": 0.5100742357938807,
-            "originY": 0.5022235925851358,
+            "originX": 0,
+            "originY": 0,
             "alpha": 0.8,
             "alphaTopLeft": 0.8,
             "alphaTopRight": 0.8
