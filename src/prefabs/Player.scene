@@ -1,60 +1,91 @@
 {
-    "id": "eaa032d4-ce56-4302-9c97-a536affc3d0f",
+    "id": "ff4f1a1a-bf24-422e-9b63-e26d3987007b",
     "sceneType": "PREFAB",
     "settings": {
         "sceneType": "PREFAB",
+        "superClassName": "_Player",
         "preloadMethodName": "",
         "preloadPackFiles": [],
-        "createMethodName": ""
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT"
     },
     "displayList": [
         {
             "type": "Image",
-            "id": "4601b7ed-6fd6-4776-83c7-e2ecc46cfefe",
+            "id": "f3f30fcc-a32c-47b7-a274-658ce0057b6d",
+            "label": "uC6xL1Wqh0AIpSWqmZKLasuA",
+            "texture": {
+                "key": "members-profile-sprite",
+                "frame": "UC6xL1Wqh0AIpSWqmZKLasuA"
+            },
+            "x": 287,
+            "y": 238
+        },
+        {
+            "type": "Image",
+            "id": "e2e58f3c-42dd-4805-929b-1c5ebe4c412e",
             "label": "zack2_80",
             "texture": {
                 "key": "zack2_80"
             },
-            "x": 385,
-            "y": 283
+            "x": 360,
+            "y": 364
         },
         {
             "type": "Image",
-            "id": "5ae33ca5-1f0d-4416-8730-c939d783863f",
-            "label": "uCIW6dqlW_2l5_7Q4lHOSZfg",
+            "id": "8f821af5-e4b3-4128-9646-b2a96e926bb3",
+            "label": "bullet",
             "texture": {
-                "key": "members-profile-sprite",
-                "frame": "UCIW6dqlW_2l5_7Q4lHOSZfg"
+                "key": "bullet"
             },
-            "x": 510,
-            "y": 195
+            "x": 545,
+            "y": 386
         },
         {
             "type": "Image",
-            "id": "714a9c12-97dd-40c8-af0e-a58e6628c753",
-            "label": "uCJfhMXMZR410JMJd3ke5TOQ",
+            "id": "63654ba6-57d5-4e4d-a7e6-b8761b46387d",
+            "label": "uC7pA4tLtW1EdlZimOvgdlKw",
             "texture": {
                 "key": "members-profile-sprite",
-                "frame": "UCJfhMXMZR410JMJd3ke5TOQ"
+                "frame": "UC7pA4tLtW1EdlZimOvgdlKw"
             },
-            "x": 493,
-            "y": 303
+            "x": 285,
+            "y": 441
+        },
+        {
+            "type": "Image",
+            "id": "0b5635a4-ec3f-4b32-9853-9045e4cc2ec9",
+            "label": "bullet_1",
+            "texture": {
+                "key": "bullet"
+            },
+            "x": 486,
+            "y": 500
+        },
+        {
+            "type": "Image",
+            "id": "baea45f5-dab7-4ad4-902e-2dae85af1b9f",
+            "label": "bullet_2",
+            "texture": {
+                "key": "bullet"
+            },
+            "x": 537,
+            "y": 256
+        },
+        {
+            "type": "Image",
+            "id": "092b93d3-f756-4715-8f8e-c5f6f65c5bc4",
+            "label": "zack2_80_1",
+            "texture": {
+                "key": "zack2_80"
+            },
+            "x": 360,
+            "y": 364
         }
     ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType"
-    },
-    "prefabProperties": [
-        {
-            "name": "property1",
-            "label": "Property 1",
-            "tooltip": "Property 1",
-            "defValue": 0,
-            "type": {
-                "id": "number"
-            }
-        }
-    ]
+    }
 }

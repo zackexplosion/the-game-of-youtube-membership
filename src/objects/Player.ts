@@ -6,8 +6,8 @@ export default class Player extends People {
   hp: number = settings.PLAYER_MAX_HP
   lastTimeFired: number
   private controllerKeys: any
-  constructor(scene: MainScene) {
-    super(scene, 'player')
+  constructor(scene: Phaser.Scene, x?, y?, texture?) {
+    super(<MainScene>scene, 'player')
 
     const { up, down, left, right } = settings.PLAYER_CONTROL_KEYS
     this.controllerKeys = scene.input.keyboard.addKeys({

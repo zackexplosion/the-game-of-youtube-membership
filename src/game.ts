@@ -57,7 +57,3 @@ window.model = new Model()
 window.addEventListener('load', () => {
   window.game = new Phaser.Game(gameConfig)
 })
-
-window.addEventListener('resize', () => {
-  window.game.scale.resize(window.innerWidth, window.innerHeight)
-})

@@ -1,4 +1,4 @@
-const START_SCENE = 'MainScene'
+const START_SCENE = 'menuScene'
 // const START_SCENE = 'TestScene'
 import memeberList from '@/gamedata/memberlist.json'
 import LoadingBar from '@/objects/loadingBar'

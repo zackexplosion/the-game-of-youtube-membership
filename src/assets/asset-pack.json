@@ -1,18 +1,33 @@
 {
-  "section1": {
-    "files": [
-      {
-        "type": "multiatlas",
-        "url": "src/assets/members-profile-sprite.json",
-        "path": "src/assets/",
-        "key": "members-profile-sprite"
-      }
-    ]
-  },
-  "meta": {
-    "app": "Phaser Editor 2D - Asset Pack Editor",
-    "contentType": "phasereditor2d.pack.core.AssetContentType",
-    "url": "https://phasereditor2d.com",
-    "version": 2
-  }
+    "section1": {
+        "files": [
+            {
+                "type": "multiatlas",
+                "url": "src/assets/members-profile-sprite.json",
+                "path": "src/assets/",
+                "key": "members-profile-sprite"
+            },
+            {
+                "url": "src/assets/zack2_80.png",
+                "type": "image",
+                "key": "zack2_80"
+            },
+            {
+                "url": "src/assets/bullet.png",
+                "type": "image",
+                "key": "bullet"
+            },
+            {
+                "url": "src/assets/zack-logo-large.png",
+                "type": "image",
+                "key": "zack-logo-large"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2
+    }
 }
