@@ -50,12 +50,18 @@ export default class LoadingScene extends Phaser.Scene {
   }
 
   create(): void {
-    // this.music = this.sound.add('music')
-    // this.music.play({
-    //   seek: 2
-    // }
-
     this.loadingBar.setVisible(false)
+
+    const rotateNotice = this.add.text(
+      <number>this.game.config.width / 2,
+      <number>this.game.config.height / 2,
+      "請把手機轉橫 :D",
+      {
+        fontSize: 120
+      }
+    )
+      .setOrigin(0.5)
+      .setVisible(false)
 
     const handClick = this.add.image(
       <number>this.game.config.width / 2,
@@ -64,32 +70,38 @@ export default class LoadingScene extends Phaser.Scene {
     )
       .setInteractive()
       .on('pointerup', () => {
+        if (!this.scale.isFullscreen) {
+          this.scale.startFullscreen()
+        }
+
         this.scene.start(START_SCENE)
       })
+
 
     this.tweens.add({
       targets: handClick,
       y: 500,
-      // x: 500,
-      // ease: 'Power1',
       duration: 300,
       loop: -1,
       yoyo: true
     })
 
-    // this.scene.start('EndScene')
-    /**
-     * This is how you would dynamically import the mainScene class (with code splitting),
-     * add the mainScene to the Scene Manager
-     * and start the scene.
-     * The name of the chunk would be 'mainScene.chunk.js
-     * Find more about code splitting here: https://webpack.js.org/guides/code-splitting/
-     */
-    // let someCondition = true
-    // if (someCondition)
-    //   import(/* webpackChunkName: "mainScene" */ './mainScene').then(mainScene => {
-    //     this.scene.add('MainScene', mainScene.default, true)
-    //   })
-    // else console.log('The mainScene class will not even be loaded by the browser')
+    // check devise orientation on not desktop device
+    if (!this.game.device.os.desktop && this.scale.orientation == Phaser.Scale.Orientation.PORTRAIT) {
+      handClick.setVisible(false)
+      rotateNotice.setVisible(true)
+    }
+
+    this.game.scale.on('orientationchange', (orientation: Phaser.Scale.Orientation) => {
+      if (orientation === Phaser.Scale.Orientation.LANDSCAPE) {
+        handClick.setVisible(true)
+        rotateNotice.setVisible(false)
+      } else {
+        handClick.setVisible(false)
+        rotateNotice.setVisible(true)
+      }
+    })
+
+
   }
 }

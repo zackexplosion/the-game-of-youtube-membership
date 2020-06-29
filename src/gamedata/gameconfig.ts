@@ -7,6 +7,7 @@ import TestScene from '@/scenes/TestScene'
 const gameConfig: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
   backgroundColor: '#333',
+  // autoFocus: true,
   scale: {
     parent: 'phaser-game',
     mode: Phaser.Scale.FIT,
