@@ -3,7 +3,7 @@ const START_SCENE = 'menuScene'
 import memeberList from '@/gamedata/memberlist.json'
 import LoadingBar from '@/objects/loadingBar'
 
-export default class PreloadScene extends Phaser.Scene {
+export default class LoadingScene extends Phaser.Scene {
   music
   private loadingBar: LoadingBar
   constructor() {
@@ -11,7 +11,7 @@ export default class PreloadScene extends Phaser.Scene {
   }
 
   init(config): void {
-    console.log(config)
+    // console.log(config)
   }
 
   preload(): void {
@@ -29,6 +29,8 @@ export default class PreloadScene extends Phaser.Scene {
     this.load.audio('playerFireSFX', 'assets/sfx_laserfire.ogg')
     this.load.audio('playerDie', 'assets/player_die.mp3')
     this.load.audio('explosion', 'assets/player_hitten.mp3')
+    this.load.audio('menu-selection', 'assets/audios/menu-selection.wav')
+    this.load.audio('menu-bgm', 'assets/audios/menu-bgm.mp3')
     // this.load.audio('playerFireSFX', 'assets/laser.ogg')
     // loading music
     const { key, showSponsorsAt, endShowSponsorAt } = window.model.currentMusic
@@ -40,11 +42,11 @@ export default class PreloadScene extends Phaser.Scene {
     this.sound.pauseOnBlur = false
 
     // create rounded profile images
-    for (let i = 0; i < memeberList.length; i++) {
-      const [channelId, name, memberSince] = memeberList[i]
-      const key = 'memberProfile_' + i
-      this.load.image(key, `assets/member-profile-images/${channelId}.jpg`)
-    }
+    // for (let i = 0; i < memeberList.length; i++) {
+    //   const [channelId, name, memberSince] = memeberList[i]
+    //   const key = 'memberProfile_' + i
+    //   this.load.image(key, `assets/member-profile-images/${channelId}.jpg`)
+    // }
   }
 
   create(): void {

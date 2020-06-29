@@ -17,36 +17,39 @@ class menuScene extends Phaser.Scene {
 	create() {
 		
 		// text_1
-		const text_1 = this.add.text(958, 582, "", {});
+		const text_1 = this.add.text(960, 576, "", {});
 		text_1.setOrigin(0.5, 0.5);
 		text_1.text = "選擇難度";
 		text_1.setStyle({"fontSize":"60px"});
 		
 		// _difficults_easy
-		const _difficults_easy = this.add.text(960, 771, "", {});
+		const _difficults_easy = this.add.text(960, 768, "", {});
 		_difficults_easy.setOrigin(0.5, 0.5);
 		_difficults_easy.text = "簡單";
 		_difficults_easy.setStyle({"fontSize":"40px"});
 		
 		// _difficults_normal
-		const _difficults_normal = this.add.text(960, 862, "", {});
+		const _difficults_normal = this.add.text(960, 864, "", {});
 		_difficults_normal.setOrigin(0.5, 0.5);
 		_difficults_normal.text = "正常";
 		_difficults_normal.setStyle({"fontSize":"40px"});
 		
 		// zack_logo_large
-		const zack_logo_large = this.add.image(962, 251, "zack-logo-large");
+		const zack_logo_large = this.add.image(960, 256, "zack-logo-large");
 		zack_logo_large.scaleX = 0.5;
 		zack_logo_large.scaleY = 0.5;
 		
 		// _difficults_hard
-		const _difficults_hard = this.add.text(964, 958, "", {});
+		const _difficults_hard = this.add.text(960, 960, "", {});
 		_difficults_hard.setOrigin(0.5, 0.5);
 		_difficults_hard.text = "WRYYYY";
 		_difficults_hard.setStyle({"fontSize":"40px"});
 		
 		// cursor
-		const cursor = this.add.image(770, 765, "bullet");
+		const cursor = this.add.image(768, 768, "bullet");
+		
+		// keymap_1
+		this.add.image(1616, 880, "keymap_1");
 		
 		// fields
 		this._difficults_easy = _difficults_easy;

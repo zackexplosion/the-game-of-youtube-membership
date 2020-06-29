@@ -1,6 +1,6 @@
-import _Player from '@/objects/Player'
-// You can write more code here
 
+// You can write more code here
+import _Player from '@/objects/Player'
 /* START OF COMPILED CODE */
 
 class Player extends _Player {
@@ -12,20 +12,8 @@ class Player extends _Player {
 	
 	/* START-USER-CODE */
 
-  // Write your code here.
+	// Write your code here.
 
-  /* END-USER-CODE */
-}
-
-/* END OF COMPILED CODE */
-
-// You can write more code here
-	/* END-USER-CODE */
-}
-
-/* END OF COMPILED CODE */
-
-// You can write more code here
 	/* END-USER-CODE */
 }
 

@@ -2,6 +2,7 @@
     "id": "b1904a3a-ac82-40ac-af2d-b29873685c38",
     "sceneType": "SCENE",
     "settings": {
+        "snapEnabled": true,
         "preloadPackFiles": [
             "zackexplosion-members/src/assets/asset-pack.json"
         ],
@@ -15,8 +16,8 @@
             "type": "Text",
             "id": "32aa836e-432c-49a2-b253-7059a6eb0e70",
             "label": "text_1",
-            "x": 958,
-            "y": 582,
+            "x": 960,
+            "y": 576,
             "text": "選擇難度",
             "fontSize": "60px"
         },
@@ -26,7 +27,7 @@
             "label": "_difficults_easy",
             "scope": "PUBLIC",
             "x": 960,
-            "y": 771,
+            "y": 768,
             "text": "簡單",
             "fontSize": "40px"
         },
@@ -36,7 +37,7 @@
             "label": "_difficults_normal",
             "scope": "PUBLIC",
             "x": 960,
-            "y": 862,
+            "y": 864,
             "text": "正常",
             "fontSize": "40px"
         },
@@ -47,8 +48,8 @@
             "texture": {
                 "key": "zack-logo-large"
             },
-            "x": 962,
-            "y": 251,
+            "x": 960,
+            "y": 256,
             "scaleX": 0.5,
             "scaleY": 0.5
         },
@@ -57,8 +58,8 @@
             "id": "54526a05-a880-431a-b82f-243b2df07174",
             "label": "_difficults_hard",
             "scope": "PUBLIC",
-            "x": 964,
-            "y": 958,
+            "x": 960,
+            "y": 960,
             "text": "WRYYYY",
             "fontSize": "40px"
         },
@@ -70,8 +71,18 @@
             "texture": {
                 "key": "bullet"
             },
-            "x": 770,
-            "y": 765
+            "x": 768,
+            "y": 768
+        },
+        {
+            "type": "Image",
+            "id": "3f21b609-fc10-4643-a577-beb8c1859287",
+            "label": "keymap_1",
+            "texture": {
+                "key": "keymap_1"
+            },
+            "x": 1616,
+            "y": 880
         }
     ],
     "meta": {

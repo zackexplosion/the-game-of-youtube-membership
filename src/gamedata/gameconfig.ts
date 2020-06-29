@@ -1,6 +1,6 @@
 import MenuScene from '@/scenes/menuScene'
 import MainScene from '@/scenes/mainScene'
-import PreloadScene from '@/scenes/preloadScene'
+import LoadingScene from '@/scenes/LoadingScene'
 import EndScene from '@/scenes/endScene'
 import TestScene from '@/scenes/TestScene'
 
@@ -18,8 +18,12 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     height: 1080,
   },
   scene: [
+    LoadingScene,
     MenuScene,
-    PreloadScene, MainScene, EndScene, TestScene],
+    MainScene,
+    EndScene,
+    TestScene
+  ],
   physics: {
     default: 'arcade',
     arcade: {
