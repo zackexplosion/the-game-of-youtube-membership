@@ -1,6 +1,6 @@
 const settings = {
-  DEBUG: new Boolean(process.env.DEBUG) || false,
-  // DEBUG: false,
+  // DEBUG: new Boolean(process.env.DEBUG) || false,
+  DEBUG: true,
   AVAIABLE_MUSICS: [
     ['music-end.mp3', 81.3, 317],
     ['music-en.mp3', 27.1, 300],

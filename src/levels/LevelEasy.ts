@@ -1,6 +1,6 @@
 import Player from '@/prefabs/Player'
 import Enemy from '@/prefabs/Enemy'
-import Level from '@/objects/Level'
+import Level from '@/scenes/LevelScene'
 // You can write more code here
 
 /* START OF COMPILED CODE */
@@ -14,7 +14,7 @@ class LevelEasy extends Level {
 	_create() {
 		
 		// player
-		const player = new Player(this, 759, 894);
+		const player = new Player(this, 863, 903);
 		this.add.existing(player);
 		
 		// enemy
@@ -28,15 +28,26 @@ class LevelEasy extends Level {
 		// enemy_2
 		const enemy_2 = new Enemy(this, 754, -453);
 		this.add.existing(enemy_2);
+		
+		// e1
+		const e1 = new e1(this, 425, 624);
+		this.add.existing(e1);
+		e1.text = "機車道 DEJA！aaa";
+		
+		// fields
+		this.player = player;
 	}
+	
+	public player: Player;
 	
 	
 	/* START-USER-CODE */
 
 	create() {
-		super.create()
 		this._create()
+		super.create()
 	}
+
 
 	// Write your code here.
 

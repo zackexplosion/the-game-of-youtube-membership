@@ -1,8 +1,9 @@
 
 // You can write more code here
+// @ts-nocheck
 import _Player from '@/objects/Player'
-/* START OF COMPILED CODE */
 
+/* START OF COMPILED CODE */
 class Player extends _Player {
 	
 	constructor(scene: Phaser.Scene, x: number, y: number, texture?: string, frame?: number | string) {

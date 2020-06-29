@@ -1,13 +1,13 @@
 import PlayerBullet from './playerBullet'
 import { getDirFromAngle } from '@/utils'
 import settings from '@/gamedata/settings'
-import MainScene from '../scenes/mainScene'
+import Level from '@/scenes/LevelScene'
 export default class People extends Phaser.GameObjects.Container {
   body!: Phaser.Physics.Arcade.Body
   hp = -1
   isPlayer = false
-  scene: MainScene
-  constructor(scene: MainScene, imageKey: string) {
+  scene: Level
+  constructor(scene: Level, imageKey: string) {
     super(scene)
     const { PEOPLE_SIZE } = settings
     this.width = PEOPLE_SIZE
@@ -50,7 +50,6 @@ export default class People extends Phaser.GameObjects.Container {
 
   public setVelocity(x: number, y: number): void {
     this.body.setVelocity(x, y)
-    this.body
   }
 
   setVelocityX(x: number) {
@@ -63,7 +62,8 @@ export default class People extends Phaser.GameObjects.Container {
 
   fire() {
     const { scene } = this
-    const bullet = new PlayerBullet(scene, this.x, this.y)
+    const bullet = new PlayerBullet(scene, this.x + 40, this.y + 40)
+    bullet.scale = 0.5
     if (scene.bulletGroup) {
       scene.bulletGroup.add(bullet)
     }

@@ -1,12 +1,17 @@
-import MainScene from "../scenes/mainScene"
-
 export default class SoundManager {
-  private scene: MainScene
+  private scene: Phaser.Scene
   private bgm: Phaser.Sound.BaseSound
-  constructor(config) {
-    this.scene = config.scene
-    window.emitter.on('PLAY_SOUND', this.playSound, this)
+  constructor(scene: Phaser.Scene) {
+    this.scene = scene
+    const { emitter } = window
+    emitter.on('PLAY_SOUND', this.playSound, this)
     // emitter.on(G.MUSIC_CHANGED, this.musicChanged, this)
+
+    emitter.on('PLAYER_FIRE_SFX', () => {
+      this.playSound('playerFireSFX', {
+        volume: 0.5
+      })
+    })
   }
 
   // musicChanged () {

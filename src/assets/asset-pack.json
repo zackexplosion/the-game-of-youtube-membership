@@ -18,6 +18,11 @@
         "key": "bullet"
       },
       {
+        "url": "src/assets/hand-click.png",
+        "type": "image",
+        "key": "hand-click"
+      },
+      {
         "url": "src/assets/zack-logo-large.png",
         "type": "image",
         "key": "zack-logo-large"

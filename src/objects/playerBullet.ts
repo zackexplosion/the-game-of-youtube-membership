@@ -1,8 +1,7 @@
-import MainScene from '../scenes/mainScene'
-
+import LevelScene from '@/scenes/LevelScene'
 export default class PlayerBullet extends Phaser.Physics.Arcade.Sprite {
   constructor(
-    scene: MainScene,
+    scene: LevelScene,
     x: number,
     y: number
   ) {
@@ -13,10 +12,14 @@ export default class PlayerBullet extends Phaser.Physics.Arcade.Sprite {
 
     scene.physics.add.existing(this)
     scene.add.existing(this)
+
     // this.setCollideWorldBounds(true)
     // this.onWorldBounds = true
-    this.setOrigin(0.5)
-    this.angle = player.angle
-    //
+
+    // this.angle = player.angle
+    // @ts-ignore
+    // this.body.angle = player.angle
+    // @ts-ignore
+    this.body.rotation = player.angle
   }
 }

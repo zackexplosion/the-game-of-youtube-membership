@@ -15,8 +15,9 @@
             "prefabId": "ff4f1a1a-bf24-422e-9b63-e26d3987007b",
             "id": "d9a15a5f-f513-4bd1-a827-ed9f79564af5",
             "label": "player",
-            "x": 759,
-            "y": 894
+            "scope": "PUBLIC",
+            "x": 863,
+            "y": 903
         },
         {
             "prefabId": "8790c0aa-5317-4942-b4ff-55b6689808af",
@@ -38,6 +39,17 @@
             "label": "enemy_2",
             "x": 754,
             "y": -453
+        },
+        {
+            "prefabId": "32b09ed4-a5cf-454d-a74f-2a3f27a91ca5",
+            "id": "4cb991db-0598-422b-ac5e-ef0a1b43865d",
+            "unlock": [
+                "text"
+            ],
+            "label": "e1",
+            "x": 425,
+            "y": 624,
+            "text": "機車道 DEJA！aaa"
         }
     ],
     "meta": {

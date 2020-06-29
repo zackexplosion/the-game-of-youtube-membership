@@ -28,7 +28,9 @@ export default class menuScene extends _menuScene {
     })
     sound.play()
 
+
     this.scene.start('LevelLoaderScene', _difficult)
+
   }
 
   private preMenu() {

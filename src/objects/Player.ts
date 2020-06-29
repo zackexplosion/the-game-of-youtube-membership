@@ -1,14 +1,18 @@
-import People from "./People";
-import MainScene from "@/scenes/mainScene";
-import settings from "@/gamedata/settings";
-
+import People from "./People"
+import settings from "@/gamedata/settings"
+import LevelScene from '@/scenes/LevelScene'
 export default class Player extends People {
   hp: number = settings.PLAYER_MAX_HP
   lastTimeFired: number
   private controllerKeys: any
-  constructor(scene: Phaser.Scene, x?, y?, texture?) {
-    super(<MainScene>scene, 'player')
-
+  constructor(
+    scene: LevelScene,
+    x: number,
+    y: number,
+    texture?
+  ) {
+    super(scene, 'player')
+    console.log('player created')
     const { up, down, left, right } = settings.PLAYER_CONTROL_KEYS
     this.controllerKeys = scene.input.keyboard.addKeys({
       up,
@@ -17,6 +21,10 @@ export default class Player extends People {
       right,
       fire: 'space',
     })
+
+    this.x = x
+    this.y = y
+
 
     // tracking pointer position and roate player and sponsors
     scene.input.on('pointermove', (pointer) => {
@@ -34,6 +42,7 @@ export default class Player extends People {
     const player = this
     const key = this.controllerKeys
     player.setVelocity(0, 0)
+
     // movement control
     if (key.up.isDown) {
       player.setVelocityY(-settings.PLAYER_MOVE_SPEED)
@@ -59,9 +68,7 @@ export default class Player extends People {
 
   fire() {
     super.fire()
-    window.emitter.emit('PLAY_SOUND', 'playerFireSFX', {
-      volume: 0.6,
-    })
+    window.emitter.emit('PLAYER_FIRE_SFX')
   }
 
   gotHit() {

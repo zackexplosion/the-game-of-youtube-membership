@@ -17,15 +17,6 @@ export default class LoadingScene extends Phaser.Scene {
 
     this.load.pack("asset-pack", "src/assets/asset-pack.json")
 
-    this.load.image('player', 'assets/zack2_80.png')
-    this.load.image('playerBullet', 'assets/bullet.png')
-    this.load.image('ebulletA', 'assets/ebullet_a.png')
-    this.load.image('ebulletB', 'assets/ebullet_b.png')
-    this.load.image('hand-click', 'assets/hand-click.png')
-
-    this.load.audio('playerFireSFX', 'assets/sfx_laserfire.ogg')
-    this.load.audio('playerDie', 'assets/player_die.mp3')
-    this.load.audio('explosion', 'assets/player_hitten.mp3')
     this.load.audio('menu-selection', 'assets/audios/menu-selection.wav')
     this.load.audio('menu-bgm', 'assets/audios/menu-bgm.mp3')
 

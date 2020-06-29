@@ -1,10 +1,10 @@
 import MenuScene from '@/scenes/menuScene'
-import MainScene from '@/scenes/mainScene'
+// import MainScene from '@/scenes/mainScene'
 import LoadingScene from '@/scenes/LoadingScene'
 import EndScene from '@/scenes/endScene'
 import LevelLoaderScene from '@/scenes/LevelLoaderScene'
 import TestScene from '@/scenes/TestScene'
-
+import { GAME_WIDTH, GAME_HEIGHT } from '@/gamedata/consts'
 const gameConfig: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
   backgroundColor: '#333',
@@ -16,14 +16,13 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     autoCenter: Phaser.Scale.CENTER_BOTH,
     // width: DEFAULT_WIDTH,
     // height: DEFAULT_HEIGHT,
-    width: 1920,
-    height: 1080,
+    width: GAME_WIDTH,
+    height: GAME_HEIGHT,
   },
   scene: [
     LoadingScene,
     MenuScene,
     LevelLoaderScene,
-    MainScene,
     EndScene,
     TestScene
   ],
@@ -31,6 +30,7 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     default: 'arcade',
     arcade: {
       // debug: new Boolean(process.env.PHYSIC_DEBUG) || false,
+      debug: true,
       gravity: { y: 0 },
     },
   },

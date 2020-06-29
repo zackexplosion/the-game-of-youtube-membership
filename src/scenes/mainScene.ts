@@ -146,10 +146,10 @@ export default class MainScene extends Phaser.Scene {
       }
       this.messageBox.add(`${timestamp} ${name} 加入了戰鬥${note}`)
 
-      const c = new People(this, 'memberProfile_' + this.activeSponsors)
-      c.name = name
+      // const c = new People(this, 'memberProfile_' + this.activeSponsors)
+      // c.name = name
 
-      this.sponsors.add(c)
+      // this.sponsors.add(c)
 
       this.activeSponsors++
     })
@@ -164,7 +164,7 @@ export default class MainScene extends Phaser.Scene {
   }
 
   create() {
-    this.player = new Player(this)
+    // this.player = new Player(this)
     this.soundManager = new window.Utils.SoundManager({ scene: this })
     const grid = new window.Utils.AlignGrid({ scene: this })
     if (settings.DEBUG) {
