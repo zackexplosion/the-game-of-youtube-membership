@@ -1,4 +1,6 @@
-export {}
+import Player from "@/prefabs/Player";
+
+export { }
 declare global {
   interface Window {
     Utils: Utils
@@ -11,4 +13,9 @@ declare global {
   interface ObjectConfig {
     scene: Phaser.Scene
   }
+  interface Level {
+    player: Player
+  }
 }
+
+

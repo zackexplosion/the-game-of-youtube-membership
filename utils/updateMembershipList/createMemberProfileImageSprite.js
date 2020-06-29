@@ -14,6 +14,60 @@ async function toPNG(input) {
   return newfile
 }
 
+function texturePackerTemplate({ coordinates, properties }) {
+
+
+  var items = []
+
+
+  var frames = Object.keys(coordinates).map(_ => {
+    const filename = path.parse(_).name
+    let item = coordinates[_]
+
+    return {
+      filename,
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": item.width,
+        "h": item.height
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": item.width,
+        "h": item.height
+      },
+      "frame": {
+        "x": item.x,
+        "y": item.y,
+        "w": item.width,
+        "h": item.height
+      }
+    }
+  })
+
+
+  var itemObj = {
+    textures: [
+      {
+        "image": "members-profile-sprite.png",
+        "format": "RGBA8888",
+        "size": {
+          "w": properties.width,
+          "h": properties.height
+        },
+        "scale": 1,
+        "frames": frames || []
+      }
+    ],
+    meta: {}
+  }
+
+  // return JSON.stringify(itemObj, null, 4);
+  return itemObj
+}
+
 function toCircleImage(img_path) {
   return new Promise((resolve, reject) => {
     fs.createReadStream(img_path)
@@ -63,14 +117,11 @@ const main = async function () {
 
     // save processed image
     fs.writeFileSync(path.resolve(profile_images_path, '../members-profile-sprite.png'), result.image);
-    result.coordinates
+    // result.coordinates
+
 
     // remove full path of coordinates
-    const spriteData = {}
-    Object.keys(result.coordinates).map(_ => {
-      const key = path.parse(_).name
-      spriteData[key] = result.coordinates[_]
-    })
+    const spriteData = texturePackerTemplate(result)
     fs.writeFileSync(path.resolve(profile_images_path, '../members-profile-sprite.json'), JSON.stringify(spriteData))
   })
 }

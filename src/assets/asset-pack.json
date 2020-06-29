@@ -1,0 +1,18 @@
+{
+  "section1": {
+    "files": [
+      {
+        "type": "multiatlas",
+        "url": "src/assets/members-profile-sprite.json",
+        "path": "src/assets/",
+        "key": "members-profile-sprite"
+      }
+    ]
+  },
+  "meta": {
+    "app": "Phaser Editor 2D - Asset Pack Editor",
+    "contentType": "phasereditor2d.pack.core.AssetContentType",
+    "url": "https://phasereditor2d.com",
+    "version": 2
+  }
+}
