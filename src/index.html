@@ -39,10 +39,29 @@
 
     #phaser-game {
       width: 100%;
+      z-index: 1000;
+    }
+
+    #invalid-orientation-pause-overlay {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-image: url('assets/invalid-orientation-pause.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      z-index: 1001;
+      display: none;
+      opacity: 0.95;
+    }
+
+    .show {
+      display: block !important;
     }
   </style>
 
   <noscript>Please enable javascript to continue using this application.</noscript>
+
 
   <!-- installs the serviceWorker -->
   <!-- <script>
@@ -55,6 +74,7 @@
 </head>
 
 <body>
+  <div id="invalid-orientation-pause-overlay"></div>
   <div id="phaser-game"></div>
 </body>
 

@@ -3,7 +3,6 @@ import MainScene from '@/scenes/mainScene'
 import LoadingScene from '@/scenes/LoadingScene'
 import EndScene from '@/scenes/endScene'
 import TestScene from '@/scenes/TestScene'
-import PauseScene from '@/scenes-ui/PauseScene'
 
 const gameConfig: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
@@ -21,7 +20,6 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
   },
   scene: [
     LoadingScene,
-    PauseScene,
     MenuScene,
     MainScene,
     EndScene,
