@@ -1,10 +1,12 @@
 const START_SCENE = 'menuScene'
 // const START_SCENE = 'TestScene'
 import LoadingBar from '@/objects/loadingBar'
+import OrientationChecker from '@/helpers/OrientationChecker'
 
 export default class LoadingScene extends Phaser.Scene {
   music
   private loadingBar: LoadingBar
+  orientationChecker: OrientationChecker
   constructor() {
     super({ key: 'PreloadScene' })
   }
@@ -52,16 +54,9 @@ export default class LoadingScene extends Phaser.Scene {
   create(): void {
     this.loadingBar.setVisible(false)
 
-    const rotateNotice = this.add.text(
-      <number>this.game.config.width / 2,
-      <number>this.game.config.height / 2,
-      "請把手機轉橫 :D",
-      {
-        fontSize: 120
-      }
-    )
-      .setOrigin(0.5)
-      .setVisible(false)
+    this.orientationChecker = new OrientationChecker(this)
+
+
 
     const handClick = this.add.image(
       <number>this.game.config.width / 2,
@@ -87,19 +82,12 @@ export default class LoadingScene extends Phaser.Scene {
     })
 
     // check devise orientation on not desktop device
-    if (!this.game.device.os.desktop && this.scale.orientation == Phaser.Scale.Orientation.PORTRAIT) {
+    if (this.orientationChecker.isMobile()) {
       handClick.setVisible(false)
-      rotateNotice.setVisible(true)
     }
 
-    this.game.scale.on('orientationchange', (orientation: Phaser.Scale.Orientation) => {
-      if (orientation === Phaser.Scale.Orientation.LANDSCAPE) {
-        handClick.setVisible(true)
-        rotateNotice.setVisible(false)
-      } else {
-        handClick.setVisible(false)
-        rotateNotice.setVisible(true)
-      }
+    this.orientationChecker.onOrientationchange(function (isValid: boolean) {
+      handClick.setVisible(isValid)
     })
 
 
