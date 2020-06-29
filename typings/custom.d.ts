@@ -16,6 +16,11 @@ declare global {
   interface Level {
     player: Player
   }
+  interface LevelConfig {
+    INDEX: number
+    AUDIO_KEY: string
+    AUDIO_FILE_PATH: string
+  }
 }
 
 

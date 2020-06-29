@@ -1,5 +1,6 @@
 import MenuScene from '@/scenes/menuScene'
 import MainScene from '@/scenes/mainScene'
+import LevelScene from '@/scenes/LevelScene'
 import LoadingScene from '@/scenes/LoadingScene'
 import EndScene from '@/scenes/endScene'
 import TestScene from '@/scenes/TestScene'
@@ -21,6 +22,7 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
   scene: [
     LoadingScene,
     MenuScene,
+    LevelScene,
     MainScene,
     EndScene,
     TestScene
