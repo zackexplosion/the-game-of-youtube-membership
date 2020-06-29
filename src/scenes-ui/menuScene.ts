@@ -8,7 +8,11 @@ class menuScene extends Phaser.Scene {
 	constructor() {
 		super("menuScene");
 	}
-
+	
+	preload() {
+		
+		this.load.pack("asset-pack", "src/assets/asset-pack.json");
+	}
 	
 	create() {
 		
@@ -30,10 +34,11 @@ class menuScene extends Phaser.Scene {
 		_difficults_normal.text = "正常";
 		_difficults_normal.setStyle({"fontSize":"40px"});
 		
-		// zack_logo_large
-		const zack_logo_large = this.add.image(960, 256, "zack-logo-large");
-		zack_logo_large.scaleX = 0.5;
-		zack_logo_large.scaleY = 0.5;
+		// zackMark
+		const zackMark = this.add.image(960, 256, "zack-logo-large");
+		zackMark.scaleX = 0.5;
+		zackMark.scaleY = 0.5;
+		zackMark.angle = -5;
 		
 		// _difficults_hard
 		const _difficults_hard = this.add.text(960, 960, "", {});
@@ -50,6 +55,7 @@ class menuScene extends Phaser.Scene {
 		// fields
 		this._difficults_easy = _difficults_easy;
 		this._difficults_normal = _difficults_normal;
+		this.zackMark = zackMark;
 		this._difficults_hard = _difficults_hard;
 		this.cursor = cursor;
 	}
@@ -57,6 +63,8 @@ class menuScene extends Phaser.Scene {
 	public _difficults_easy: Phaser.GameObjects.Text;
 	
 	public _difficults_normal: Phaser.GameObjects.Text;
+	
+	public zackMark: Phaser.GameObjects.Image;
 	
 	public _difficults_hard: Phaser.GameObjects.Text;
 	

@@ -44,14 +44,16 @@
         {
             "type": "Image",
             "id": "c2577075-e006-4eb8-be3f-8e2c1d9fe36f",
-            "label": "zack_logo_large",
+            "label": "zackMark",
+            "scope": "PUBLIC",
             "texture": {
                 "key": "zack-logo-large"
             },
             "x": 960,
             "y": 256,
             "scaleX": 0.5,
-            "scaleY": 0.5
+            "scaleY": 0.5,
+            "angle": -5
         },
         {
             "type": "Text",

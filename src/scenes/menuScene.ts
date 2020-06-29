@@ -39,23 +39,29 @@ export default class menuScene extends _menuScene {
       backgroundSound.play()
     }
 
-    this.game.events.addListener(Phaser.Core.Events.BLUR, () => {
-      console.log('blur')
-    })
+    // this.game.events.addListener(Phaser.Core.Events.BLUR, () => {
+    //   console.log('blur')
+    // })
 
-    this.game.events.addListener(Phaser.Core.Events.FOCUS, () => {
-      console.log('focus')
-    })
+    // this.game.events.addListener(Phaser.Core.Events.FOCUS, () => {
+    //   console.log('focus')
+    // })
 
     this.orientationChecker = new OrientationChecker(this)
 
-
+    this.tweens.add({
+      targets: this.zackMark,
+      angle: 5,
+      duration: 2000,
+      loop: -1,
+      yoyo: true
+    })
 
   }
+
   private startGame() {
     console.log('start level', this.current_difficult_index)
   }
-
 
   // private setCursorY(y: number) {
   //   this.cursor.y = y
@@ -84,5 +90,6 @@ export default class menuScene extends _menuScene {
     // sound.play(config)
     // window.emitter.emit('PLAY_SOUND', 'menu-selection')
   }
+
 }
 
