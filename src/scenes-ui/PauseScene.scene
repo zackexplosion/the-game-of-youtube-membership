@@ -1,0 +1,49 @@
+{
+    "id": "9daa10db-1d53-4a45-ad32-64e4eb8f5781",
+    "sceneType": "SCENE",
+    "settings": {
+        "snapHeight": 10,
+        "preloadPackFiles": [],
+        "sceneKey": "PauseScene",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "853a58d6-e712-4268-94e3-97f4bdfb4545",
+            "label": "pause_background",
+            "texture": {
+                "key": "pause-background"
+            },
+            "x": 587,
+            "y": 549,
+            "originX": 0.5100742357938807,
+            "originY": 0.5022235925851358,
+            "alpha": 0.8,
+            "alphaTopLeft": 0.8,
+            "alphaTopRight": 0.8
+        },
+        {
+            "type": "Text",
+            "id": "430ed4fc-ec52-4b08-b0ca-66ff7ba502bf",
+            "label": "rotateNotice",
+            "x": 957,
+            "y": 534,
+            "text": "請把手機或平板轉成橫的 ：D",
+            "align": "center",
+            "fontSize": "120px",
+            "color": "#EEE",
+            "stroke": "#111",
+            "strokeThickness": 25,
+            "backgroundColor": "",
+            "shadow.stroke": true
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

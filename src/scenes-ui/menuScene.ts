@@ -8,11 +8,7 @@ class menuScene extends Phaser.Scene {
 	constructor() {
 		super("menuScene");
 	}
-	
-	preload() {
-		
-		this.load.pack("asset-pack", "src/assets/asset-pack.json");
-	}
+
 	
 	create() {
 		

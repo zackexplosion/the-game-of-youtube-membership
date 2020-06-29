@@ -1,8 +1,10 @@
 import _menuScene from '@/scenes-ui/menuScene'
+import OrientationChecker from '@/helpers/OrientationChecker'
 export default class menuScene extends _menuScene {
   // private controlerKeys
   private difficult_array: Array<Phaser.GameObjects.Text> = []
   private current_difficult_index: number = 0
+  orientationChecker: OrientationChecker
   // private cursorKeys: Phaser.Types.Input.Keyboard.CursorKeys
   create() {
     super.create()
@@ -44,6 +46,8 @@ export default class menuScene extends _menuScene {
     this.game.events.addListener(Phaser.Core.Events.FOCUS, () => {
       console.log('focus')
     })
+
+    this.orientationChecker = new OrientationChecker(this)
 
 
 

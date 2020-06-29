@@ -22,6 +22,8 @@ export default class LoadingScene extends Phaser.Scene {
       this.loadingBar.setPer(e)
     })
 
+    this.load.pack("asset-pack", "src/assets/asset-pack.json")
+
     this.load.image('player', 'assets/zack2_80.png')
     this.load.image('playerBullet', 'assets/bullet.png')
     this.load.image('ebulletA', 'assets/ebullet_a.png')
@@ -42,13 +44,6 @@ export default class LoadingScene extends Phaser.Scene {
     })
 
     this.sound.pauseOnBlur = false
-
-    // create rounded profile images
-    // for (let i = 0; i < memeberList.length; i++) {
-    //   const [channelId, name, memberSince] = memeberList[i]
-    //   const key = 'memberProfile_' + i
-    //   this.load.image(key, `assets/member-profile-images/${channelId}.jpg`)
-    // }
   }
 
   create(): void {
@@ -56,8 +51,7 @@ export default class LoadingScene extends Phaser.Scene {
 
     this.orientationChecker = new OrientationChecker(this)
 
-
-
+    // start with this
     const handClick = this.add.image(
       <number>this.game.config.width / 2,
       <number>this.game.config.height / 2,
@@ -65,13 +59,12 @@ export default class LoadingScene extends Phaser.Scene {
     )
       .setInteractive()
       .on('pointerup', () => {
-        if (!this.scale.isFullscreen) {
-          this.scale.startFullscreen()
-        }
+        // if (!this.scale.isFullscreen) {
+        //   this.scale.startFullscreen()
+        // }
 
         this.scene.start(START_SCENE)
       })
-
 
     this.tweens.add({
       targets: handClick,
@@ -81,14 +74,14 @@ export default class LoadingScene extends Phaser.Scene {
       yoyo: true
     })
 
-    // check devise orientation on not desktop device
-    if (this.orientationChecker.isMobile()) {
-      handClick.setVisible(false)
-    }
+    // // check devise orientation on not desktop device
+    // if (this.orientationChecker.isMobilePortrait()) {
+    //   handClick.setVisible(false)
+    // }
 
-    this.orientationChecker.onOrientationchange(function (isValid: boolean) {
-      handClick.setVisible(isValid)
-    })
+    // this.orientationChecker.onOrientationchange((isValid: boolean) => {
+    //   handClick.setVisible(isValid)
+    // })
 
 
   }

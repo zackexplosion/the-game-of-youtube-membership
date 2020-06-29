@@ -1,39 +1,51 @@
-type OrientationchangeCallbackType = (isValid: boolean) => void;
-export default class OrientationChecker {
-  scene: Phaser.Scene
-  onOrientationchangeCallback: OrientationchangeCallbackType
+import PauseScene from '@/scenes-ui/PauseScene'
 
-  constructor(scene: Phaser.Scene) {
-    this.scene = scene
-    const rotateNotice = scene.add.text(
-      <number>scene.game.config.width / 2,
-      <number>scene.game.config.height / 2,
-      "請把手機轉橫 :D",
-      {
-        fontSize: 120
-      }
-    )
-      .setOrigin(0.5)
-      .setVisible(false)
+type OrientationchangeCallbackType = (isValid: boolean) => void;
+const PAUSE_SCENE_KEY: string = 'PauseScene'
+export default class OrientationChecker {
+  gameScene: Phaser.Scene
+  onOrientationchangeCallback: OrientationchangeCallbackType
+  currentSceneKey: string
+
+  constructor(gameScene: Phaser.Scene) {
+    this.gameScene = gameScene
+
+    this.currentSceneKey = gameScene.scene.key
 
     // check devise orientation on not desktop device
-    if (this.isMobile()) {
-      rotateNotice.setVisible(true)
+    if (this.isMobilePortrait()) {
+      gameScene.scene.pause(this.currentSceneKey)
+      gameScene.scene.launch(PAUSE_SCENE_KEY)
     }
 
-    scene.game.scale.on('orientationchange', (orientation: Phaser.Scale.Orientation) => {
+    gameScene.game.scale.on('orientationchange', (orientation: Phaser.Scale.Orientation) => {
       var isValid = false
       if (orientation === Phaser.Scale.Orientation.LANDSCAPE) {
         isValid = true
+        gameScene.scene.resume(this.currentSceneKey)
+        gameScene.scene.bringToTop(this.currentSceneKey)
+      } else {
+        // launch the pause secene when orientation is not valid
+        gameScene.scene.launch(PAUSE_SCENE_KEY)
+        gameScene.scene.bringToTop(PAUSE_SCENE_KEY)
+        gameScene.scene.pause(this.currentSceneKey)
       }
 
-      rotateNotice.setVisible(!isValid)
-      this.onOrientationchangeCallback(isValid)
+      // gameScene.scene.switch(PAUSE_SCENE_KEY)
+      // set the visiable for the pause scene
+      gameScene.scene.setVisible(!isValid, PAUSE_SCENE_KEY)
+
+
+      if (typeof this.onOrientationchangeCallback === 'function') {
+        this.onOrientationchangeCallback(isValid)
+      }
+
     })
   }
 
-  isMobile(): boolean {
-    return !this.scene.game.device.os.desktop && this.scene.scale.orientation == Phaser.Scale.Orientation.PORTRAIT
+  isMobilePortrait(): boolean {
+    const { gameScene } = this
+    return !gameScene.game.device.os.desktop && gameScene.scale.orientation == Phaser.Scale.Orientation.PORTRAIT
   }
 
   onOrientationchange(cb: OrientationchangeCallbackType) {
