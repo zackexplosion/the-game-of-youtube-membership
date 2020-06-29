@@ -1,11 +1,11 @@
 import _menuScene from '@/scenes-ui/menuScene'
 import OrientationChecker from '@/helpers/OrientationChecker'
-import CONSTS from '@/utils/Consts'
+import levels from '@/gamedata/levels'
 
 function findDiffucultByIndex(index: number) {
   var difficult!: LevelConfig
-  Object.keys(CONSTS.LEVEL_DIFFICULTS).forEach(_ => {
-    let d = <LevelConfig>CONSTS.LEVEL_DIFFICULTS[_]
+  Object.keys(levels).forEach(_ => {
+    let d = <LevelConfig>levels[_]
     if (d.INDEX === index) {
       difficult = d
     }
@@ -27,9 +27,8 @@ export default class menuScene extends _menuScene {
       this.backgroundSound.pause()
     })
     sound.play()
-    // this.sound.add(CONSTS.START_GAME_AUDIO_KEY).play()
 
-
+    this.scene.start('LevelLoaderScene', _difficult)
   }
 
   private preMenu() {

@@ -1,0 +1,48 @@
+{
+    "id": "7bb5b714-3770-45ea-b21e-a232690a54c0",
+    "sceneType": "SCENE",
+    "settings": {
+        "superClassName": "Level",
+        "preloadPackFiles": [],
+        "createMethodName": "_create",
+        "sceneKey": "LevelEasy",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "prefabId": "ff4f1a1a-bf24-422e-9b63-e26d3987007b",
+            "id": "d9a15a5f-f513-4bd1-a827-ed9f79564af5",
+            "label": "player",
+            "x": 759,
+            "y": 894
+        },
+        {
+            "prefabId": "8790c0aa-5317-4942-b4ff-55b6689808af",
+            "id": "2bdf1dd8-5b44-4b60-baaf-770441563337",
+            "label": "enemy",
+            "x": 274,
+            "y": 190
+        },
+        {
+            "prefabId": "8790c0aa-5317-4942-b4ff-55b6689808af",
+            "id": "ae5a2437-5a73-4682-be34-52ae1c54ab55",
+            "label": "enemy_1",
+            "x": 1182,
+            "y": 116
+        },
+        {
+            "prefabId": "8790c0aa-5317-4942-b4ff-55b6689808af",
+            "id": "b550d933-b237-4884-8b05-1d4027dcf840",
+            "label": "enemy_2",
+            "x": 754,
+            "y": -453
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

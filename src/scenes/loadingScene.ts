@@ -1,26 +1,17 @@
 const START_SCENE = 'menuScene'
-// const START_SCENE = 'TestScene'
 import LoadingBar from '@/objects/loadingBar'
-import OrientationChecker from '@/helpers/OrientationChecker'
-
-import CONSTS from '@/utils/Consts'
+import levels from '@/gamedata/levels'
 
 export default class LoadingScene extends Phaser.Scene {
-  music
   private loadingBar: LoadingBar
-  orientationChecker: OrientationChecker
   constructor() {
-    super({ key: 'PreloadScene' })
+    super({ key: 'LoadingScene' })
   }
 
-  init(config): void {
-    // console.log(config)
-  }
-
-  preload(): void {
+  preload() {
     this.loadingBar = new LoadingBar({ scene: this })
 
-    this.load.on('progress', (e) => {
+    this.load.on('progress', (e: number) => {
       this.loadingBar.setPer(e)
     })
 
@@ -39,36 +30,16 @@ export default class LoadingScene extends Phaser.Scene {
     this.load.audio('menu-bgm', 'assets/audios/menu-bgm.mp3')
 
 
-    for (let i in CONSTS.LEVEL_DIFFICULTS) {
-      const _ = <LevelConfig>CONSTS.LEVEL_DIFFICULTS[i]
+    for (let i in levels) {
+      const _ = <LevelConfig>levels[i]
       this.load.audio(_.AUDIO_KEY, _.AUDIO_FILE_PATH)
     }
-
-    // this.load.audio('playerFireSFX', 'assets/laser.ogg')
-    // loading music
-    const { key, showSponsorsAt, endShowSponsorAt } = window.model.currentMusic
-    this.load.audio('music', 'assets/' + key, {
-      showSponsorsAt,
-      endShowSponsorAt,
-    })
 
     this.sound.pauseOnBlur = false
   }
 
-  create(): void {
+  create() {
     this.loadingBar.setVisible(false)
     this.scene.start(START_SCENE)
-
-
-    // // check devise orientation on not desktop device
-    // if (this.orientationChecker.isMobilePortrait()) {
-    //   handClick.setVisible(false)
-    // }
-
-    // this.orientationChecker.onOrientationchange((isValid: boolean) => {
-    //   handClick.setVisible(isValid)
-    // })
-
-
   }
 }

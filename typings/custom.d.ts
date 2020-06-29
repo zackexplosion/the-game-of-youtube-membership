@@ -16,10 +16,18 @@ declare global {
   interface Level {
     player: Player
   }
+  interface LevelDiddicults {
+    EASY: LevelConfig
+    NORMAL: LevelConfig
+    HARD: LevelConfig
+  }
   interface LevelConfig {
     INDEX: number
+    CLASS: string
     AUDIO_KEY: string
     AUDIO_FILE_PATH: string
+    SCENE_NAME: string
+    MUSIC_FILE_PATH: string
   }
 }
 
