@@ -64,8 +64,8 @@ export default class People extends Phaser.GameObjects.Container {
     const { scene } = this
     const bullet = new PlayerBullet(scene, this.x + 40, this.y + 40)
     bullet.scale = 0.5
-    if (scene.bulletGroup) {
-      scene.bulletGroup.add(bullet)
+    if (scene.playerBulletGroup) {
+      scene.playerBulletGroup.add(bullet)
     }
 
     // bullet.scale = 0.5

@@ -1,4 +1,5 @@
-import Enemy from '../objects/enemy'
+//@ts-nocheck
+import Enemy from '../objects/Enemy'
 import settings from '@/gamedata/settings'
 
 const createBullet = (scene, e) => {
@@ -65,7 +66,7 @@ export default class TestScene extends Phaser.Scene {
       grid.showNumbers()
     }
 
-    const e = new Enemy(this)
+    const e = new Enemy(this, 0, 0)
     createBullet(this, e)
     grid.placeAtIndex(61, e)
 
@@ -103,5 +104,5 @@ export default class TestScene extends Phaser.Scene {
     //   })
   }
 
-  update(time, delta): void {}
+  update(time, delta): void { }
 }

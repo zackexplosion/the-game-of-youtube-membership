@@ -1,4 +1,5 @@
 import Player from '@/prefabs/Player'
+import E1 from '@/prefabs/enemies/E1'
 import Enemy from '@/prefabs/Enemy'
 import Level from '@/scenes/LevelScene'
 // You can write more code here
@@ -30,9 +31,8 @@ class LevelEasy extends Level {
 		this.add.existing(enemy_2);
 		
 		// e1
-		const e1 = new e1(this, 425, 624);
+		const e1 = new E1(this, 425, 624);
 		this.add.existing(e1);
-		e1.text = "機車道 DEJA！aaa";
 		
 		// fields
 		this.player = player;

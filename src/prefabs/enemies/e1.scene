@@ -7,24 +7,43 @@
         "preloadMethodName": "",
         "preloadPackFiles": [],
         "createMethodName": "",
+        "prefabInitMethodName": "create",
         "compilerOutputLanguage": "TYPE_SCRIPT"
     },
     "displayList": [
         {
-            "type": "Text",
-            "id": "2aa3754a-4c74-48a4-9c44-2931635cbd11",
-            "label": "text",
-            "x": 211,
-            "y": 248,
-            "originX": 0,
-            "originY": 0,
-            "text": "機車道 DEJA！",
-            "fontSize": "60px"
+            "type": "Container",
+            "id": "4888569c-2202-416d-86d1-aeeeceb91ef8",
+            "label": "container_1",
+            "scope": "PUBLIC",
+            "x": 409,
+            "y": 265,
+            "list": [
+                {
+                    "type": "Text",
+                    "id": "2aa3754a-4c74-48a4-9c44-2931635cbd11",
+                    "label": "text",
+                    "scope": "PUBLIC",
+                    "text": "機車道 DEJA！",
+                    "fontSize": "60px"
+                }
+            ]
         }
     ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType"
-    }
+    },
+    "prefabProperties": [
+        {
+            "name": "maxHP",
+            "label": "Max HP",
+            "tooltip": "",
+            "defValue": 10,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
 }

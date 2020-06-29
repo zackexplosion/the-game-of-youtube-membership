@@ -8,7 +8,7 @@ const TAG = 'DebugObjsLevel'
 export default class Level extends Phaser.Scene {
   bgm
   player: Player
-  bulletGroup
+  playerBulletGroup
   init(config: LevelConfig) {
     console.log(TAG, config)
 
@@ -20,6 +20,12 @@ export default class Level extends Phaser.Scene {
     new SoundManager(this)
 
     this.cameras.add(0, 0, GAME_WIDTH, GAME_HEIGHT)
+
+    this.playerBulletGroup = this.physics.add.group({
+      removeCallback: (g) => {
+        console.log(g, 'removed')
+      },
+    })
   }
 
   update(time: number, delta: number) {

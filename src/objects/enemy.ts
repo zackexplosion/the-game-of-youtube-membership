@@ -1,48 +1,47 @@
-import ENEMIES from '@/gamedata/enemies.json'
-import STYLES from '@/gamedata/styles'
+import LevelScene from '@/scenes/LevelScene'
 
 export default class Enemy extends Phaser.GameObjects.Container {
   body!: Phaser.Physics.Arcade.Body
   hp: number
   maxHP: number
   hpPercent: number
-  constructor(scene: Phaser.Scene) {
+  text: Phaser.GameObjects.Text
+  scene: LevelScene
+  constructor(
+    scene: LevelScene,
+    x: number,
+    y: number,
+    texture?,
+    etc?
+  ) {
     super(scene)
-    scene.add.existing(this)
     this.scene = scene
+    this.x = x
+    this.y = y
+  }
 
-    const eindex = Phaser.Math.Between(0, ENEMIES.length - 1)
-
-    const e = ENEMIES[eindex]
-
-    this.hp = e.hp
-    this.maxHP = e.hp
+  create() {
     this.hpPercent = 0
-    const text = scene.add.text(0, 0, e.text, {
-      color: STYLES.DEFAULT_TEXT_COLOR,
-      fontSize: e.size * 1.5,
-    })
-
-    // Utils.Align.scaleToGameW(text, 0.25)
-
-    text.setOrigin(0.5, 0.5)
-    this.add(text)
-    // debugger
-
-    this.setSize(text.width, text.height)
-
-    scene.physics.add.existing(this)
+    this.setSize(this.text.width, this.text.height)
+    this.text.setOrigin(0.5, 0.5)
+    this.scene.physics.add.existing(this)
     this.body.setCollideWorldBounds(true)
     this.body.immovable = true
-    //   .setBounce(0)
-    //   .setInteractive({ useHandCursor: true })
-    //   .on('pointerdown', () => {
-    //     const v = Phaser.Math.Between(0, -800)
-    //     this.setVelocity(v, v)
-    //   })
-    // this.setVelocity(100, 0)
+    const { scene } = this
+    // scene.physics.add.collider(scene.playerBulletGroup, this, () => {
+    //   console.log('helo')
+    // }, undefined, this)
+    // scene.physics.add.collider(
+    //   scene.playerBulletGroup,
+    //   this,
+    //   () => {
+    //     console.log('p bullet hit e')
+    //   }
+    // )
+  }
 
-    // scene.group.add(this)
+  update() {
+
   }
 
   setVelocity(x: number, y: number) {

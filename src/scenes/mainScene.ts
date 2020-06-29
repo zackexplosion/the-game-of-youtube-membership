@@ -1,3 +1,4 @@
+//@ts-nocheck
 import moment from 'moment'
 import People from '@/objects/People'
 import FpsText from '@/objects/fpsText'
@@ -66,7 +67,7 @@ export default class MainScene extends Phaser.Scene {
   }
 
   buildEnemy() {
-    const e = new Enemy(this)
+    const e = new Enemy(this, 0, 0)
     const index = Phaser.Math.Between(11, 76)
     this.grid.placeAtIndex(index, e)
     this.enemy = e
