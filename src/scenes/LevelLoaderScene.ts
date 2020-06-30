@@ -51,7 +51,6 @@ export default class LevelLoaderScene extends Phaser.Scene {
 
   create() {
     const { config } = this
-
     this.cameras.main.once('camerafadeoutcomplete', (camera) => {
       this.scene.start(config.CLASS, config)
     })

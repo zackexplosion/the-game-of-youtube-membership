@@ -1,0 +1,49 @@
+{
+  "id": "5572b082-3fa9-492e-8871-6b584738af38",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "ecbd568d-4386-4eca-bad2-d9579be6a9b2",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "d63a29f5-c341-40cf-858f-ef2c353e39d5",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "檢舉達人你家馬桶爆炸！",
+          "fontSize": "30px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 45,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

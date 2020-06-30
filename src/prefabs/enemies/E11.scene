@@ -1,0 +1,49 @@
+{
+  "id": "b482f078-e3fe-4c58-9673-c275016af773",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "be15110c-7a10-4d47-8cc4-e78fdfc7526b",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "d5dc8403-ccd0-4a02-b262-aa7f5fd7d8ae",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "我開車違規就違規啊\n你看到我出來就要讓了。",
+          "fontSize": "30px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 30,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

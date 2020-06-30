@@ -1,0 +1,49 @@
+{
+  "id": "7f91a96a-22f6-4cef-a49d-0c4554ffa0c1",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "727716f8-76c2-4df2-ad17-326d13fe2dfa",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "da4aff82-9b40-4454-8095-a1e9845de1c4",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "老子就是這樣騎車啊\n不然你要怎樣？",
+          "fontSize": "30px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 5,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

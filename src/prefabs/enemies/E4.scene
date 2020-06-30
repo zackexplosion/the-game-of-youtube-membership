@@ -1,0 +1,49 @@
+{
+  "id": "3c022697-70da-4f76-a14a-6c5c1aa891b8",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "2cc69a87-e69c-4d3a-9237-db4490b21456",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "44e4366f-2fb7-43cd-8cdf-837092c3bab1",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "機車道 DEJA！",
+          "fontSize": "50px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 30,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

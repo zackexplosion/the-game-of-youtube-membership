@@ -1,0 +1,49 @@
+{
+  "id": "991bec36-bc7a-4971-8216-159e02fd75ba",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "738bf90a-67cc-4110-89c9-4b47946c407b",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "58531aff-b51e-4a97-b782-4b8b5ba57df1",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "機車騎快是飆車\n照速限騎叫擋路\n騎中間說會被撞危險\n騎旁邊說鑽車很危險",
+          "fontSize": "30px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 20,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

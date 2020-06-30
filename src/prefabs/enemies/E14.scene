@@ -1,0 +1,49 @@
+{
+  "id": "d5b6f715-cc44-40db-a272-939791cd1717",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "48a3a526-6371-46cf-8637-80df7026c461",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "5af4beb8-bfea-4931-a666-d7a21ff60204",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "汽車開七十是正常\n機車沒鐵殼開七十當然是飆！",
+          "fontSize": "30px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 40,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

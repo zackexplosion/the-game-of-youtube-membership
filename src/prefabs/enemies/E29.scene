@@ -1,0 +1,49 @@
+{
+  "id": "0d8f868a-fe84-4027-a2c4-259d864fe303",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "b8b2584c-c309-4bf6-aa90-79e6054c36ff",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "796f9cef-97f7-4552-8fd9-c4e853830556",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "為什麼不拿安全帽砸老二自殺！",
+          "fontSize": "30px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 35,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

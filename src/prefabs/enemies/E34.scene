@@ -1,0 +1,49 @@
+{
+  "id": "784c686c-86ea-4c03-a1f2-53c37fe2af77",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "a9507a72-11a7-4ae3-a6e5-8c3280dd9edc",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "2deb996b-1b60-404c-91f1-293b4ba084b9",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "法盲小妹：推文講沒有違法的，影片中很清楚聽到叭叭叭了吧",
+          "fontSize": "30px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 25,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

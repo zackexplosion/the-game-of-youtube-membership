@@ -1,0 +1,49 @@
+{
+  "id": "074738c8-3dd6-43ce-834d-38f839f62045",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "35f2671f-7a12-4061-a10a-cf6e01762e83",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "1fb65999-4912-4232-a859-07aed1380e38",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "汽車撞車都死角\n但是逼車零死角",
+          "fontSize": "30px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 10,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

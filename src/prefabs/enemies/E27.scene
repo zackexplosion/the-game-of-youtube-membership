@@ -1,0 +1,49 @@
+{
+  "id": "7a0be31d-478a-4c9d-9966-bf18f007f3ff",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "995db32e-23ac-4324-8224-b095c308eed9",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "6b1acde4-f539-404a-b3cb-5bf806503c6b",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "煮蓆：這是抹黑！！！",
+          "fontSize": "25px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 40,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

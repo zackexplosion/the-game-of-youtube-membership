@@ -1,0 +1,49 @@
+{
+  "id": "8a38efe7-12d8-4ebb-8793-904279e5081d",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "abb1939a-0aad-4981-85e6-56e3b3adb5a4",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "1b315e87-384f-4e24-a055-65f8b55ded33",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "守法只是道德最低標準\n這種素質恕我沒辦法支持！",
+          "fontSize": "30px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 20,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "8d8f46e4-60b1-44cc-92bc-89c0c5d71a1e",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "17bc6986-3716-42f7-9ee7-1275836a9f4f",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "d9f88dde-9ac3-49d1-9c58-2c3798a3dd29",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "騎Gogoro的男生中\n外觀/穿著讓人感覺娘砲的確實不少",
+          "fontSize": "15px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 30,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

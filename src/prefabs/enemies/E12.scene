@@ -1,0 +1,49 @@
+{
+  "id": "04a5df9a-63f8-4692-b189-04de58e48d60",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "0de99a43-589c-41f1-b357-c2a9553d0b95",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "1336fd43-2fe5-4e99-bf96-3c5d84ec1417",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "行人走斑馬線是貪快\n會議決定刨除斑馬線。",
+          "fontSize": "30px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 30,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

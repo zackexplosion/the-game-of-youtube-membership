@@ -1,0 +1,49 @@
+{
+  "id": "e3c52608-230b-41ff-b4b1-c49d79057310",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "07598b3b-912a-427f-8812-f542c694906c",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "e4fa84ca-73d1-4ad7-91eb-2deebc9ecada",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "我們終於蓋了安全的隧道\n但是機車騎進去會有靈異影響",
+          "fontSize": "30px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 30,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

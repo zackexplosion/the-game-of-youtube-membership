@@ -1,0 +1,49 @@
+{
+  "id": "9cc1d4d8-ad61-46ad-b72f-5dadc3e87d42",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "b34ad2e0-d254-4fad-8331-801bfe37b8cf",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "9f56748d-9e4e-42cb-97d1-4de6f1d56087",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "luoqr：跟邏輯啥關係？完全就不想給低能重機上路啦\n整天在那自卑又自大 看了有夠好笑",
+          "fontSize": "30px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 25,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

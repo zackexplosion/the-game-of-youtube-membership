@@ -1,0 +1,49 @@
+{
+  "id": "9f78b6c8-bc66-44be-aff4-6a0478a061b7",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "3e2b0e03-b5b1-44a0-987a-a7a4dcc19fa2",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "77f4e35e-a6ba-4dd9-bebf-b90e9d3523f1",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "s566789：吃飽沒事幹 要是後面人有急事怎辦\n好笑嗎 有夠自私 ",
+          "fontSize": "30px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 25,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

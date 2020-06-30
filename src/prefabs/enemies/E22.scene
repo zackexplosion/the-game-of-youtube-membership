@@ -1,0 +1,49 @@
+{
+  "id": "759b41a6-0631-4d5c-91e3-030729196c66",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "797e3bb8-f066-4be5-a00d-a7e63a65ad70",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "45a3d9e6-05a2-4cbd-b1b3-8c7a6fb8b791",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "關於謝X輪我一次說清楚！",
+          "fontSize": "40px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 20,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

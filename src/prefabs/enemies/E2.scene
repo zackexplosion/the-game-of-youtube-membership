@@ -1,0 +1,49 @@
+{
+  "id": "c61cbac4-fd9e-4b60-8dda-343dc63c7702",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "963436ce-0d72-40a1-a076-27f04cc7d91d",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "90e193d9-5a18-4cd9-bf33-262505f628b8",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "才剛上交流道還沒接到主幹道上\n車速不快。靠路邊退回比較好。",
+          "fontSize": "15px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 35,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "9f440735-173a-4101-8375-1e6c38bcb67e",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "4427b71e-43b1-4226-9d89-daf4432fe9ba",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "f5ca65f7-66a0-47af-8aad-be86db949b73",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "你有那個朋友每次出國都帶老媽？！",
+          "fontSize": "25px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 40,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}

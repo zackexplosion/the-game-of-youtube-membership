@@ -1,10 +1,11 @@
+
 //@ts-nocheck
 import Enemy from '@/objects/Enemy'
 // You can write more code here
 
 /* START OF COMPILED CODE */
 
-class E1 extends Enemy {
+class E25 extends Enemy {
 	
 	constructor(scene: Phaser.Scene, x: number, y: number) {
 		super(scene, x, y);
@@ -12,8 +13,9 @@ class E1 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "機車道 DEJA！";
-		text.setStyle({"fontSize":"60px"});
+		text.text = "有時間做噁心的男扮女裝
+倒不如努力賺錢買車老子就是這樣騎車啊";
+		text.setStyle({"fontSize":"30px"});
 		this.add(text);
 		
 		// fields
@@ -26,7 +28,7 @@ class E1 extends Enemy {
 	
 	public text: Phaser.GameObjects.Text;
 	
-	public hp: number = 10;
+	public hp: number = 20;
 	
 	
 	/* START-USER-CODE */
@@ -41,4 +43,4 @@ class E1 extends Enemy {
 /* END OF COMPILED CODE */
 
 // You can write more code here
-export default E1
+export default E25

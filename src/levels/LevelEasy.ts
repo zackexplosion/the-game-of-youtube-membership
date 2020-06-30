@@ -30,10 +30,6 @@ class LevelEasy extends Level {
 		const enemy_2 = new Enemy(this, 754, -453);
 		this.add.existing(enemy_2);
 		
-		// e1
-		const e1 = new E1(this, 425, 624);
-		this.add.existing(e1);
-		
 		// fields
 		this.player = player;
 	}

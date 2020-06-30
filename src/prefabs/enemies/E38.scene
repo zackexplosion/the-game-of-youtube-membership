@@ -1,0 +1,49 @@
+{
+  "id": "ecfe7872-3587-494b-b412-9504869db3d0",
+  "sceneType": "PREFAB",
+  "settings": {
+    "sceneType": "PREFAB",
+    "superClassName": "Enemy",
+    "preloadMethodName": "",
+    "preloadPackFiles": [],
+    "createMethodName": "",
+    "prefabInitMethodName": "create",
+    "compilerOutputLanguage": "TYPE_SCRIPT"
+  },
+  "displayList": [
+    {
+      "type": "Container",
+      "id": "d2c3de74-d033-4b29-a556-af0f81ad0c30",
+      "label": "container_1",
+      "scope": "PUBLIC",
+      "x": 409,
+      "y": 265,
+      "list": [
+        {
+          "type": "Text",
+          "id": "4ada3f46-360f-4964-af6f-390240d8147c",
+          "label": "text",
+          "scope": "PUBLIC",
+          "text": "a8017700:法律是最低的道德標準 果然公民教育失敗\n好像合法就無所不能",
+          "fontSize": "30px"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "Phaser Editor 2D - Scene Editor",
+    "url": "https://phasereditor2d.com",
+    "contentType": "phasereditor2d.core.scene.SceneContentType"
+  },
+  "prefabProperties": [
+    {
+      "name": "hp",
+      "label": "Current HP",
+      "tooltip": "",
+      "defValue": 25,
+      "type": {
+        "id": "number"
+      }
+    }
+  ]
+}
