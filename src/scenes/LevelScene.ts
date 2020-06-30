@@ -12,11 +12,8 @@ export default class Level extends Phaser.Scene {
 
   constructor(key: string) {
     super(key)
-
-    // this.cameras.add(0, 0, GAME_WIDTH, GAME_HEIGHT)
-
-
   }
+
   init(config: LevelConfig) {
     this.playerBulletGroup = this.physics.add.group({
       removeCallback: (g) => {
@@ -24,18 +21,20 @@ export default class Level extends Phaser.Scene {
       },
     })
     console.log(TAG, config)
-
-    this.cameras.main.setBounds(0, 0, GAME_WIDTH, GAME_HEIGHT)
-    this.bgm = this.sound.add('BGM')
-    this.bgm.play()
-    new SoundManager(this)
+    const soundManager = new SoundManager(this)
+    soundManager.setMainMusic(this.sound.add('main-music'))
+    soundManager.playMainMusic()
   }
+
   // run after level create
   create() {
-
+    // this.cameras.main.startFollow(this.player)
   }
 
   update(time: number, delta: number) {
     this.player.update(time, delta)
+
+    // this.game.debug.cameraInfo(this.game.camera, 32, 32);
+    // this.cameras.main.y = this.cameras.main.y + 1
   }
 }

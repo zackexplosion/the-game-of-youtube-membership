@@ -3,6 +3,7 @@ import MenuScene from '@/scenes/menuScene'
 import LoadingScene from '@/scenes/LoadingScene'
 import EndScene from '@/scenes/endScene'
 import LevelLoaderScene from '@/scenes/LevelLoaderScene'
+import UIScene from '@/scenes/UIScene'
 import TestScene from '@/scenes/TestScene'
 import { GAME_WIDTH, GAME_HEIGHT } from '@/gamedata/consts'
 const gameConfig: Phaser.Types.Core.GameConfig = {
@@ -22,6 +23,7 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
   scene: [
     LoadingScene,
     MenuScene,
+    UIScene,
     LevelLoaderScene,
     EndScene,
     TestScene

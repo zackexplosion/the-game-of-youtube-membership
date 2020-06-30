@@ -10,10 +10,11 @@ import gameConfig from '@/gamedata/gameconfig'
 // inject Utils to global
 window.Utils = Utils
 moment.defaultFormat = 'YYYY/MM/DD HH:mm:ss'
-
+window.emitter = new Phaser.Events.EventEmitter()
 class Model {
   private _currentMusic
   private _maxActiveSponsors
+  _soundOn: boolean = true
   constructor() {
     // random choose music
     const { AVAIABLE_MUSICS } = settings
@@ -24,7 +25,12 @@ class Model {
   }
 
   get soundOn() {
-    return true
+    return this._soundOn
+  }
+
+  set soundOn(_: boolean) {
+    this._soundOn = _
+    window.emitter.emit('SOUND_ON_CHANGE', _)
   }
 
   set currentMusic(val) {
@@ -51,7 +57,7 @@ class Model {
     return this._maxActiveSponsors
   }
 }
-window.emitter = new Phaser.Events.EventEmitter()
+
 window.model = new Model()
 
 window.addEventListener('load', () => {

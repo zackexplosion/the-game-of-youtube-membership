@@ -1,0 +1,31 @@
+{
+    "id": "54578ff9-bc1a-432a-95e7-60c1f937c639",
+    "sceneType": "SCENE",
+    "settings": {
+        "preloadPackFiles": [],
+        "createMethodName": "_create",
+        "sceneKey": "UIScene",
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
+    },
+    "displayList": [
+        {
+            "type": "Text",
+            "id": "a00843bc-3b82-45f4-8cba-34090e16ab47",
+            "label": "soundButton",
+            "scope": "PUBLIC",
+            "x": 154,
+            "y": 114,
+            "originX": 0,
+            "originY": 0,
+            "text": "SOUND",
+            "fontSize": "30px"
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}

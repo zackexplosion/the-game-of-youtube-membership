@@ -33,8 +33,7 @@ export default class LevelLoaderScene extends Phaser.Scene {
 
     const { config } = this
 
-    this.load.audio('BGM', config.MUSIC_FILE_PATH)
-    console.log('loading')
+    this.load.audio('main-music', config.MUSIC_FILE_PATH)
     switch (config.CLASS) {
       case 'LevelEasy':
         this.levelToLoad = LevelEasy

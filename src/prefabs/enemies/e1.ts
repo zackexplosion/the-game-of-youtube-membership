@@ -34,7 +34,6 @@ class E1 extends Enemy {
 	// Write your code here.
 	create() {
 		super.create()
-		console.log(this.text)
 	}
 	/* END-USER-CODE */
 }

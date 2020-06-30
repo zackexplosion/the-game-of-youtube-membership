@@ -79,9 +79,3 @@ export default class Enemy extends Phaser.GameObjects.Container {
     }
   }
 }
-
-// export default class People {
-//   constructor (scene, x, y, imageKey) {
-//     scene.group.create(x, y, imageKey)
-//   }
-// }

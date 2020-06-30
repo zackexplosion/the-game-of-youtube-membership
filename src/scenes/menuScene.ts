@@ -1,6 +1,7 @@
-import _menuScene from '@/scenes-ui/menuScene'
+import _menuScene from '@/scenes-editor/menuScene'
 import OrientationChecker from '@/helpers/OrientationChecker'
 import levels from '@/gamedata/levels'
+import SoundManager from '@/utils/SoundManager'
 
 function findDiffucultByIndex(index: number) {
   var difficult!: LevelConfig
@@ -19,18 +20,13 @@ export default class menuScene extends _menuScene {
   private current_difficult_index: number = 0
   orientationChecker: OrientationChecker
   backgroundSound: Phaser.Sound.BaseSound
-
+  private soundManager: SoundManager
   private startLevel() {
     const _difficult = findDiffucultByIndex(this.current_difficult_index)
-    const sound = this.sound.add(_difficult.AUDIO_KEY)
-    sound.on(Phaser.Sound.Events.COMPLETE, () => {
-      this.backgroundSound.pause()
-    })
-    sound.play()
-
-
+    this.soundManager.playSound(_difficult.AUDIO_KEY)
     this.scene.start('LevelLoaderScene', _difficult)
-
+    // this.backgroundSound.destroy()
+    this.soundManager
   }
 
   private preMenu() {
@@ -52,11 +48,12 @@ export default class menuScene extends _menuScene {
 
   private menuChange(difficult: Phaser.GameObjects.Text) {
     this.cursor.y = difficult.y
-    this.sound.add('menu-selection').play()
+    this.soundManager.playSound('menu-selection')
   }
 
   create() {
     this.orientationChecker = new OrientationChecker(this)
+    this.soundManager = new SoundManager(this)
 
     // showing click hand if sound locked, otherwise start the menu
     if (this.sound.locked) {
@@ -88,6 +85,9 @@ export default class menuScene extends _menuScene {
 
   start() {
     super.create()
+    // this.scene.setActive(true, 'UIScene')
+    this.scene.launch('UIScene')
+    // this.scene.start('UIScene')
     this.difficult_array.push(this._difficults_easy)
     this.difficult_array.push(this._difficults_normal)
     this.difficult_array.push(this._difficults_hard)
@@ -110,13 +110,13 @@ export default class menuScene extends _menuScene {
     this.input.keyboard.on('keydown-SPACE', () => this.startLevel())
     this.input.keyboard.on('keydown-ENTER', () => this.startLevel())
 
-
-    this.backgroundSound = this.sound.add('menu-bgm', {
-      loop: true
-    })
-    if (!this.backgroundSound.isPlaying) {
-      this.backgroundSound.play()
-    }
+    this.soundManager.setBackgroundMusic('menu-bgm')
+    // this.backgroundSound = this.sound.add('menu-bgm', {
+    //   loop: true
+    // })
+    // if (!this.backgroundSound.isPlaying) {
+    //   this.backgroundSound.play()
+    // }
 
     // this.game.events.addListener(Phaser.Core.Events.BLUR, () => {
     //   console.log('blur')
