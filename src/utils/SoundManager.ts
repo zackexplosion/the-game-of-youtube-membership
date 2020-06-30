@@ -16,13 +16,13 @@ export default class SoundManager {
 
     emitter.on('E_HITTEN', () => {
       this.playSound('e_hitten', {
-        volume: 0.3
+        volume: 0.1
       })
     })
 
     emitter.on('E_DESTROY', () => {
       this.playSound('e_destroy', {
-        volume: 0.6
+        volume: 0.2
       })
     })
 

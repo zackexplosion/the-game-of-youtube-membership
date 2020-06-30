@@ -25,8 +25,8 @@ export default class menuScene extends _menuScene {
     const _difficult = findDiffucultByIndex(this.current_difficult_index)
     this.soundManager.playSound(_difficult.AUDIO_KEY)
     this.scene.start('LevelLoaderScene', _difficult)
-    // this.backgroundSound.destroy()
-    this.soundManager
+    this.backgroundSound.destroy()
+    // this.soundManager.stopBGM()
   }
 
   private preMenu() {
@@ -110,13 +110,13 @@ export default class menuScene extends _menuScene {
     this.input.keyboard.on('keydown-SPACE', () => this.startLevel())
     this.input.keyboard.on('keydown-ENTER', () => this.startLevel())
 
-    this.soundManager.setBackgroundMusic('menu-bgm')
-    // this.backgroundSound = this.sound.add('menu-bgm', {
-    //   loop: true
-    // })
-    // if (!this.backgroundSound.isPlaying) {
-    //   this.backgroundSound.play()
-    // }
+    // this.soundManager.setBackgroundMusic('menu-bgm')
+    this.backgroundSound = this.sound.add('menu-bgm', {
+      loop: true
+    })
+    if (!this.backgroundSound.isPlaying) {
+      this.backgroundSound.play()
+    }
 
     // this.game.events.addListener(Phaser.Core.Events.BLUR, () => {
     //   console.log('blur')
