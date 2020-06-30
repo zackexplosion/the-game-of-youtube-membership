@@ -13,8 +13,7 @@ class E21 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "我們終於蓋了安全的隧道
-但是機車騎進去會有靈異影響";
+		text.text = "我們終於蓋了安全的隧道\n但是機車騎進去會有靈異影響";
 		text.setStyle({"fontSize":"30px"});
 		this.add(text);
 		

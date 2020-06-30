@@ -13,8 +13,7 @@ class E9 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "老子就是這樣騎車啊
-不然你要怎樣？";
+		text.text = "老子就是這樣騎車啊\n不然你要怎樣？";
 		text.setStyle({"fontSize":"30px"});
 		this.add(text);
 		

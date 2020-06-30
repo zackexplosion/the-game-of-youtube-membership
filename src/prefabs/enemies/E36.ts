@@ -13,8 +13,7 @@ class E36 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "luoqr：跟邏輯啥關係？完全就不想給低能重機上路啦
-整天在那自卑又自大 看了有夠好笑";
+		text.text = "luoqr：跟邏輯啥關係？完全就不想給低能重機上路啦\n整天在那自卑又自大 看了有夠好笑";
 		text.setStyle({"fontSize":"30px"});
 		this.add(text);
 		

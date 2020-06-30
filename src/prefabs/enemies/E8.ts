@@ -13,8 +13,7 @@ class E8 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "垃圾老鼠屎
-莫名其妙！";
+		text.text = "垃圾老鼠屎\n莫名其妙！";
 		text.setStyle({"fontSize":"30px"});
 		this.add(text);
 		

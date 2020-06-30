@@ -13,8 +13,7 @@ class E10 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "汽車跑山愜意悠遊
-機車發動玩命狂飆";
+		text.text = "汽車跑山愜意悠遊\n機車發動玩命狂飆";
 		text.setStyle({"fontSize":"30px"});
 		this.add(text);
 		

@@ -13,8 +13,7 @@ class E24 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "守法只是道德最低標準
-這種素質恕我沒辦法支持！";
+		text.text = "守法只是道德最低標準\n這種素質恕我沒辦法支持！";
 		text.setStyle({"fontSize":"30px"});
 		this.add(text);
 		

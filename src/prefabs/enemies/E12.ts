@@ -13,8 +13,7 @@ class E12 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "行人走斑馬線是貪快
-會議決定刨除斑馬線。";
+		text.text = "行人走斑馬線是貪快\n會議決定刨除斑馬線。";
 		text.setStyle({"fontSize":"30px"});
 		this.add(text);
 		

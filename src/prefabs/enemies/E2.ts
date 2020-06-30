@@ -13,8 +13,7 @@ class E2 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "才剛上交流道還沒接到主幹道上
-車速不快。靠路邊退回比較好。";
+		text.text = "才剛上交流道還沒接到主幹道上\n車速不快。靠路邊退回比較好。";
 		text.setStyle({"fontSize":"15px"});
 		this.add(text);
 		

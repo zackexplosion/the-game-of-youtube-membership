@@ -13,8 +13,7 @@ class E38 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "a8017700:法律是最低的道德標準 果然公民教育失敗
-好像合法就無所不能";
+		text.text = "a8017700:法律是最低的道德標準 果然公民教育失敗\n好像合法就無所不能";
 		text.setStyle({"fontSize":"30px"});
 		this.add(text);
 		

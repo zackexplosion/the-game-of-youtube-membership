@@ -88,7 +88,7 @@ class ${classNAME} extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "${e.text}";
+		text.text = ${JSON.stringify(e.text)};
 		text.setStyle({"fontSize":"${e.size}px"});
 		this.add(text);
 		
@@ -121,7 +121,7 @@ export default ${classNAME}
 `
 return text
 }
-
+var importData = ''
 for (let i = 0; i < enemies.length; i++) {
   let e = enemies[i]
   let sceneData
@@ -141,5 +141,16 @@ for (let i = 0; i < enemies.length; i++) {
   const ts_dist = path.join(dist, `E${i}.ts`)
 
   fs.writeFileSync(ts_dist, tsData)
+
+  importData += `import E${i} from '@/prefabs/enemies/E${i}'\n`
 }
+
+const import_list = path.join(dist, `import.ts`)
+fs.writeFileSync(import_list, importData)
+
+
+
+
+
+
 

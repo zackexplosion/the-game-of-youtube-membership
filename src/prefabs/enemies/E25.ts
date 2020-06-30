@@ -13,8 +13,7 @@ class E25 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "有時間做噁心的男扮女裝
-倒不如努力賺錢買車老子就是這樣騎車啊";
+		text.text = "有時間做噁心的男扮女裝\n倒不如努力賺錢買車老子就是這樣騎車啊";
 		text.setStyle({"fontSize":"30px"});
 		this.add(text);
 		

@@ -13,8 +13,7 @@ class E1 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "2000cc的汽車開100叫做正常
-125cc的速克達機車騎100當然叫做飆車！";
+		text.text = "2000cc的汽車開100叫做正常\n125cc的速克達機車騎100當然叫做飆車！";
 		text.setStyle({"fontSize":"15px"});
 		this.add(text);
 		

@@ -13,10 +13,7 @@ class E18 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "機車騎快是飆車
-照速限騎叫擋路
-騎中間說會被撞危險
-騎旁邊說鑽車很危險";
+		text.text = "機車騎快是飆車\n照速限騎叫擋路\n騎中間說會被撞危險\n騎旁邊說鑽車很危險";
 		text.setStyle({"fontSize":"30px"});
 		this.add(text);
 		

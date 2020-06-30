@@ -13,8 +13,7 @@ class E3 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "使用煞車之前
-ABS都不會做動";
+		text.text = "使用煞車之前\nABS都不會做動";
 		text.setStyle({"fontSize":"15px"});
 		this.add(text);
 		

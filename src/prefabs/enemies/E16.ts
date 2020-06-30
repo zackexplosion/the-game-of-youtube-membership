@@ -13,8 +13,7 @@ class E16 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "我喜歡大一點的汽車
-因為逼車比較方便";
+		text.text = "我喜歡大一點的汽車\n因為逼車比較方便";
 		text.setStyle({"fontSize":"30px"});
 		this.add(text);
 		

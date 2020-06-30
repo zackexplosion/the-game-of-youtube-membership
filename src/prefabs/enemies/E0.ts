@@ -13,8 +13,7 @@ class E0 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "騎Gogoro的男生中
-外觀/穿著讓人感覺娘砲的確實不少";
+		text.text = "騎Gogoro的男生中\n外觀/穿著讓人感覺娘砲的確實不少";
 		text.setStyle({"fontSize":"15px"});
 		this.add(text);
 		

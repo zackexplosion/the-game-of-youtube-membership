@@ -13,8 +13,7 @@ class E11 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "我開車違規就違規啊
-你看到我出來就要讓了。";
+		text.text = "我開車違規就違規啊\n你看到我出來就要讓了。";
 		text.setStyle({"fontSize":"30px"});
 		this.add(text);
 		

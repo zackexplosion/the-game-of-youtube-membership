@@ -13,8 +13,7 @@ class E17 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "汽車撞車都死角
-但是逼車零死角";
+		text.text = "汽車撞車都死角\n但是逼車零死角";
 		text.setStyle({"fontSize":"30px"});
 		this.add(text);
 		

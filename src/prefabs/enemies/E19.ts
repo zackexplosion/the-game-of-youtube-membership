@@ -13,8 +13,7 @@ class E19 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "機車鑽車垃圾老鼠屎
-汽車鑽車技術好";
+		text.text = "機車鑽車垃圾老鼠屎\n汽車鑽車技術好";
 		text.setStyle({"fontSize":"30px"});
 		this.add(text);
 		

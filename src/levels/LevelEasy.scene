@@ -21,34 +21,59 @@
         },
         {
             "prefabId": "8790c0aa-5317-4942-b4ff-55b6689808af",
-            "id": "2bdf1dd8-5b44-4b60-baaf-770441563337",
-            "label": "enemy",
-            "x": 274,
-            "y": 190
-        },
-        {
-            "prefabId": "8790c0aa-5317-4942-b4ff-55b6689808af",
-            "id": "ae5a2437-5a73-4682-be34-52ae1c54ab55",
-            "label": "enemy_1",
-            "x": 1182,
-            "y": 116
-        },
-        {
-            "prefabId": "8790c0aa-5317-4942-b4ff-55b6689808af",
             "id": "b550d933-b237-4884-8b05-1d4027dcf840",
             "label": "enemy_2",
             "x": 754,
             "y": -453
         },
         {
-            "prefabId": "32b09ed4-a5cf-454d-a74f-2a3f27a91ca5",
-            "id": "4cb991db-0598-422b-ac5e-ef0a1b43865d",
-            "unlock": [
-                "text"
-            ],
-            "label": "e1",
-            "x": 425,
-            "y": 624
+            "prefabId": "7f91a96a-22f6-4cef-a49d-0c4554ffa0c1",
+            "id": "e9ceed47-f43b-487c-97e6-feecce8e6fb4",
+            "label": "e9",
+            "x": 718,
+            "y": 642
+        },
+        {
+            "prefabId": "5572b082-3fa9-492e-8871-6b584738af38",
+            "id": "3dc6fd9b-bf82-435d-88bf-e3a3ca1e7749",
+            "label": "e15",
+            "x": 1233,
+            "y": 464
+        },
+        {
+            "prefabId": "0f75684d-32ee-48a5-a51b-c9ad62b3c7b7",
+            "id": "94e8a134-27d2-4eb7-a81e-5aa68be46185",
+            "label": "e20",
+            "x": 244,
+            "y": 487
+        },
+        {
+            "prefabId": "074738c8-3dd6-43ce-834d-38f839f62045",
+            "id": "10a49100-6a99-4ebb-8585-86cb0baef5c6",
+            "label": "e17",
+            "x": 851,
+            "y": 390
+        },
+        {
+            "prefabId": "7a0be31d-478a-4c9d-9966-bf18f007f3ff",
+            "id": "1b2eaf79-8bd3-41e7-94db-4884279be641",
+            "label": "e27",
+            "x": 277,
+            "y": 131
+        },
+        {
+            "prefabId": "fe18004f-272a-43ea-83d2-55040cdddde3",
+            "id": "fe4d0ea0-c709-4895-a69d-728d5284e2e5",
+            "label": "e28",
+            "x": 1514,
+            "y": 275
+        },
+        {
+            "prefabId": "2412294c-e116-46a8-a413-2c262f5ad1d0",
+            "id": "e56c43cd-7f3c-4072-84df-4c95d7ef5b9f",
+            "label": "e8",
+            "x": 1259,
+            "y": 753
         }
     ],
     "meta": {

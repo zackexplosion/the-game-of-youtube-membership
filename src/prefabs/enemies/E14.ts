@@ -13,8 +13,7 @@ class E14 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "汽車開七十是正常
-機車沒鐵殼開七十當然是飆！";
+		text.text = "汽車開七十是正常\n機車沒鐵殼開七十當然是飆！";
 		text.setStyle({"fontSize":"30px"});
 		this.add(text);
 		

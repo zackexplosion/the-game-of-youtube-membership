@@ -13,8 +13,7 @@ class E20 extends Enemy {
 		// text
 		const text = scene.add.text(0, 0, "", {});
 		text.setOrigin(0.5, 0.5);
-		text.text = "機車裝記錄器的都檢舉魔人
-我朋友被撞了請問誰有記錄器";
+		text.text = "機車裝記錄器的都檢舉魔人\n我朋友被撞了請問誰有記錄器";
 		text.setStyle({"fontSize":"30px"});
 		this.add(text);
 		
