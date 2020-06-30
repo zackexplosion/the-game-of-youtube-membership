@@ -26,7 +26,7 @@ class E1 extends Enemy {
 	
 	public text: Phaser.GameObjects.Text;
 	
-	public maxHP: number = 10;
+	public hp: number = 10;
 	
 	
 	/* START-USER-CODE */

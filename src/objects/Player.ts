@@ -13,6 +13,8 @@ export default class Player extends People {
   ) {
     super(scene, 'player')
     console.log('player created')
+    this.scene.physics.add.existing(this)
+    this.body.setCollideWorldBounds(true)
     const { up, down, left, right } = settings.PLAYER_CONTROL_KEYS
     this.controllerKeys = scene.input.keyboard.addKeys({
       up,

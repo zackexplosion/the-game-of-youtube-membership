@@ -31,13 +31,14 @@ export default class Enemy extends Phaser.GameObjects.Container {
     // scene.physics.add.collider(scene.playerBulletGroup, this, () => {
     //   console.log('helo')
     // }, undefined, this)
-    // scene.physics.add.collider(
-    //   scene.playerBulletGroup,
-    //   this,
-    //   () => {
-    //     console.log('p bullet hit e')
-    //   }
-    // )
+    scene.physics.add.collider(
+      scene.playerBulletGroup,
+      this,
+      (enemy, bullet) => {
+        bullet.destroy()
+        this.gotHit()
+      }
+    )
   }
 
   update() {
@@ -68,6 +69,14 @@ export default class Enemy extends Phaser.GameObjects.Container {
     })
     this.hp--
     this.hpPercent = this.hp / this.maxHP
+
+    const { emitter } = window
+    emitter.emit('E_HITTEN')
+
+    if (this.hp === 0) {
+      this.destroy()
+      emitter.emit('E_DESTROY')
+    }
   }
 }
 

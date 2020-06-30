@@ -16,8 +16,8 @@
             "id": "d9a15a5f-f513-4bd1-a827-ed9f79564af5",
             "label": "player",
             "scope": "PUBLIC",
-            "x": 863,
-            "y": 903
+            "x": 85,
+            "y": 1014
         },
         {
             "prefabId": "8790c0aa-5317-4942-b4ff-55b6689808af",
@@ -48,8 +48,7 @@
             ],
             "label": "e1",
             "x": 425,
-            "y": 624,
-            "text": "機車道 DEJA！aaa"
+            "y": 624
         }
     ],
     "meta": {

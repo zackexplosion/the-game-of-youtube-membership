@@ -15,7 +15,7 @@ class LevelEasy extends Level {
 	_create() {
 		
 		// player
-		const player = new Player(this, 863, 903);
+		const player = new Player(this, 85, 1014);
 		this.add.existing(player);
 		
 		// enemy

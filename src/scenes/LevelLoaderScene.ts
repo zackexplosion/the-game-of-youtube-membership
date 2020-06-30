@@ -26,7 +26,10 @@ export default class LevelLoaderScene extends Phaser.Scene {
     this.load.image('ebulletB', 'assets/ebullet_b.png')
     this.load.audio('playerFireSFX', 'assets/sfx_laserfire.ogg')
     this.load.audio('playerDie', 'assets/player_die.mp3')
-    this.load.audio('explosion', 'assets/player_hitten.mp3')
+    this.load.audio('e_hitten', 'assets/audios/e-hitten.mp3')
+    this.load.audio('e_destroy', 'assets/audios/e-destroy.wav')
+
+
 
     const { config } = this
 
@@ -54,6 +57,6 @@ export default class LevelLoaderScene extends Phaser.Scene {
       this.scene.start(config.CLASS, config)
     })
 
-    this.cameras.main.fadeOut(1000)
+    this.cameras.main.fadeOut(1000, 51, 51, 51)
   }
 }

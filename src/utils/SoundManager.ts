@@ -12,6 +12,18 @@ export default class SoundManager {
         volume: 0.5
       })
     })
+
+    emitter.on('E_HITTEN', () => {
+      this.playSound('e_hitten', {
+        volume: 0.5
+      })
+    })
+
+    emitter.on('E_DESTROY', () => {
+      this.playSound('e_destroy', {
+        volume: 0.8
+      })
+    })
   }
 
   // musicChanged () {

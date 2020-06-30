@@ -37,8 +37,8 @@
     },
     "prefabProperties": [
         {
-            "name": "maxHP",
-            "label": "Max HP",
+            "name": "hp",
+            "label": "Current HP",
             "tooltip": "",
             "defValue": 10,
             "type": {
