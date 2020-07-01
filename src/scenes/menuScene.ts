@@ -89,7 +89,7 @@ export default class menuScene extends _menuScene {
   start() {
     super.create()
     // this.scene.setActive(true, 'UIScene')
-    this.scene.launch('UIScene')
+    // this.scene.launch('UIScene')
     // this.scene.start('UIScene')
     this.difficult_array.push(this._difficults_easy)
     this.difficult_array.push(this._difficults_normal)

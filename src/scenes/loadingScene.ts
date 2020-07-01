@@ -15,7 +15,7 @@ export default class LoadingScene extends Phaser.Scene {
       this.loadingBar.setPer(e)
     })
 
-    this.load.pack("asset-pack", "src/assets/asset-pack.json")
+    this.load.pack("asset-pack", "assets/asset-pack.json")
 
     this.load.audio('menu-selection', 'assets/audios/menu-selection.wav')
     this.load.audio('menu-bgm', 'assets/audios/menu-bgm.mp3')
