@@ -24,8 +24,11 @@ export default class menuScene extends _menuScene {
   private startLevel() {
     const _difficult = findDiffucultByIndex(this.current_difficult_index)
     this.soundManager.playSound(_difficult.AUDIO_KEY)
-    this.scene.start('LevelLoaderScene', _difficult)
-    this.backgroundSound.destroy()
+    // TODO, only EasyScene avaiable now.
+    if(this.current_difficult_index === 0) {
+      this.scene.start('LevelLoaderScene', _difficult)
+      this.backgroundSound.destroy()
+    }
     // this.soundManager.stopBGM()
   }
 
