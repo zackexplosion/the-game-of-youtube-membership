@@ -14,8 +14,14 @@ export default class SoundManager {
       })
     })
 
-    emitter.on('E_HITTEN', () => {
-      this.playSound('e_hitten', {
+    emitter.on('PLAYER_HITTEN', () => {
+      this.playSound('player-hitten', {
+        volume: 0.1
+      })
+    })
+
+    emitter.on('PLAYER_DIE', () => {
+      this.playSound('playerDie', {
         volume: 0.1
       })
     })

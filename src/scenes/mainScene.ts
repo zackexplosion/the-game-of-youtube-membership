@@ -5,7 +5,7 @@ import FpsText from '@/objects/fpsText'
 import MusicManager from '@/objects/musicManager'
 import MessageBox from '@/objects/messageBox'
 import rotateSponsors from '@/helpers/rotateSponsors'
-import removeOutOfBoundsBullets from '@/helpers/removeOutOfBoundsBullets'
+
 import Enemy from '@/objects/enemy'
 import settings from '@/gamedata/settings'
 import Player from '@/objects/Player'

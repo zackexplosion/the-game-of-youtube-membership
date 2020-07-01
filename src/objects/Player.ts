@@ -73,13 +73,14 @@ export default class Player extends People {
     window.emitter.emit('PLAYER_FIRE_SFX')
   }
 
-  gotHit() {
+  hitten() {
     this.hp--
-    const volume = 0.2
+    console.log('player hitten', this.hp)
+    const { emitter } = window
     if (this.hp > 0) {
-      window.emitter.emit('PLAY_SOUND', 'explosion', { volume })
+      emitter.emit('PLAYER_HITTEN')
     } else {
-      window.emitter.emit('PLAY_SOUND', 'playerDie', { volume })
+      emitter.emit('PLAYER_DIE')
     }
   }
 }

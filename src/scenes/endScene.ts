@@ -1,4 +1,5 @@
-const { STYLES } = window
+
+import STYLES from '@/gamedata/styles'
 export default class EndScene extends Phaser.Scene {
   timedEvent
   restartButton
@@ -7,7 +8,6 @@ export default class EndScene extends Phaser.Scene {
   }
 
   create() {
-    const { STYLES } = window
     this.cameras.main.fadeIn(4000)
     const { centerX, centerY } = this.cameras.main
     var text = this.add.text(centerX, centerY, ':( 失敗囉', { color: STYLES.DEFAULT_TEXT_COLOR, fontSize: '40px' })
