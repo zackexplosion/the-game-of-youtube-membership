@@ -32,4 +32,8 @@ export default class LoadingBar extends Phaser.GameObjects.Container {
     var per = Math.abs(Math.floor(value * 100) - 1)
     this.progText.setText(per.toString() + this.SIGN)
   }
+
+  public finish() {
+    this.progText.setText('100' + this.SIGN)
+  }
 }

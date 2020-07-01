@@ -30,6 +30,7 @@ export default class LoadingScene extends Phaser.Scene {
   }
 
   create() {
+    this.loadingBar.finish()
     this.loadingBar.setVisible(false)
     this.scene.start(START_SCENE)
   }
