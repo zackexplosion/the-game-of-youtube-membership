@@ -14,7 +14,7 @@ export default class PlayerBullet extends Phaser.Physics.Arcade.Sprite {
     this.x = x
     this.y = y
 
-    console.log('player.x', player.x, x)
+    // console.log('player.x', player.x, x)
     // this.rotation = player.angle
     scene.physics.add.existing(this)
     scene.add.existing(this)

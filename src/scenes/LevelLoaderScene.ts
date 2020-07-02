@@ -1,4 +1,5 @@
 import LevelEasy from '@/levels/LevelEasy'
+import LevelScene from '@/scenes/LevelScene'
 import LoadingBar from '@/objects/loadingBar'
 
 export default class LevelLoaderScene extends Phaser.Scene {
@@ -34,19 +35,19 @@ export default class LevelLoaderScene extends Phaser.Scene {
     const { config } = this
 
     this.load.audio('main-music', config.MUSIC_FILE_PATH)
-    switch (config.CLASS) {
-      case 'LevelEasy':
-        this.levelToLoad = LevelEasy
-        break
-      case 'LevelNormal':
-        this.levelToLoad = LevelEasy
-        break
-      case 'LevelHard':
-        this.levelToLoad = LevelEasy
-        break
-    }
+    // switch (config.CLASS) {
+    //   case 'LevelEasy':
+    //     this.levelToLoad = LevelEasy
+    //     break
+    //   case 'LevelNormal':
+    //     this.levelToLoad = LevelEasy
+    //     break
+    //   case 'LevelHard':
+    //     this.levelToLoad = LevelEasy
+    //     break
+    // }
 
-    this.game.scene.add(config.CLASS, this.levelToLoad)
+    this.game.scene.add(config.CLASS, LevelScene)
   }
 
   create() {

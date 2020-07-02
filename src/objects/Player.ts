@@ -43,20 +43,36 @@ export default class Player extends People {
   update(time: number, delta: number): void {
     const player = this
     const key = this.controllerKeys
-    player.setVelocity(0, 0)
 
+
+    var moveDirection
     // movement control
     if (key.up.isDown) {
-      player.setVelocityY(-settings.PLAYER_MOVE_SPEED)
+      moveDirection = 270
+    } else if (key.down.isDown) {
+      moveDirection = 90
+    } else if (key.left.isDown) {
+      moveDirection = 180
+    } else if (key.right.isDown) {
+      moveDirection = 0
     }
-    if (key.down.isDown) {
-      player.setVelocityY(settings.PLAYER_MOVE_SPEED)
+
+    if (key.right.isDown && key.up.isDown) {
+      moveDirection = 315
+    } else if(key.right.isDown && key.down.isDown) {
+      moveDirection = 45
+    } else if(key.left.isDown && key.up.isDown) {
+      moveDirection = 225
+    } else if(key.left.isDown && key.down.isDown) {
+      moveDirection = 135
     }
-    if (key.left.isDown) {
-      player.setVelocityX(-settings.PLAYER_MOVE_SPEED)
-    }
-    if (key.right.isDown) {
-      player.setVelocityX(settings.PLAYER_MOVE_SPEED)
+
+    if(typeof moveDirection !== 'undefined') {
+      var rad = Phaser.Math.DegToRad(moveDirection)
+      const v = this.scene.physics.velocityFromRotation(rad, settings.PLAYER_MOVE_SPEED)
+      player.setVelocity(v.x, v.y)
+    } else {
+      player.setVelocity(0, 0)
     }
 
     // fire control
