@@ -1,4 +1,6 @@
 import LevelScene from '@/scenes/LevelScene'
+import { getDirFromAngle } from '@/utils'
+import settings from '@/gamedata/settings'
 export default class PlayerBullet extends Phaser.Physics.Arcade.Sprite {
   constructor(
     scene: LevelScene,
@@ -7,9 +9,13 @@ export default class PlayerBullet extends Phaser.Physics.Arcade.Sprite {
   ) {
     const { player } = scene
     super(scene, x, y, 'playerBullet')
-    this.width = 20
-    this.height = 20
+    // this.scale = 0.5
 
+    this.x = x
+    this.y = y
+
+    console.log('player.x', player.x, x)
+    // this.rotation = player.angle
     scene.physics.add.existing(this)
     scene.add.existing(this)
 
@@ -20,6 +26,16 @@ export default class PlayerBullet extends Phaser.Physics.Arcade.Sprite {
     // @ts-ignore
     // this.body.angle = player.angle
     // @ts-ignore
-    this.body.rotation = player.angle
+
+    // @ts-ignore
+    // this.body.angle = player.angle
+    // this.angle = player.angle
+
+
+
+    // bullet.scale = 0.5
+
+
+
   }
 }

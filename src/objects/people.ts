@@ -19,33 +19,9 @@ export default class People extends Phaser.GameObjects.Container {
     img.displayWidth = PEOPLE_SIZE
     img.displayHeight = PEOPLE_SIZE
     img.angle = 90
+    img.setOrigin(0.5, 0.5)
     scene.physics.add.existing(this)
-    // this.setSize(img.width, img.height)
-    // this.setSize(PEOPLE_SIZE, PEOPLE_SIZE)
-
-    // only main player need this
-    if (imageKey === 'player') {
-      this.isPlayer = true
-      // this.body.setCollideWorldBounds(true)
-    }
-
-    // this.body.x = -100
-    // img.setOrigin(0.5, 0.5)
-    // img.setOrigin(0.5)
     this.add(img)
-    scene.input.enableDebug(img)
-    // this.refreshBody()
-
-    // this.setOrigin(0.5, 0.5)
-    //   .setBounce(0)
-    //   .setInteractive({ useHandCursor: true })
-    //   .on('pointerdown', () => {
-    //     const v = Phaser.Math.Between(0, -800)
-    //     this.setVelocity(v, v)
-    //   })
-    // this.setVelocity(100, 0)
-
-    // scene.group.add(this)
   }
 
   public setVelocity(x: number, y: number): void {
@@ -62,7 +38,11 @@ export default class People extends Phaser.GameObjects.Container {
 
   fire() {
     const { scene } = this
-    const bullet = new PlayerBullet(scene, this.x + 40, this.y + 40)
+
+    const { tx, ty } = getDirFromAngle(this.angle)
+    // console.log(tx, ty)
+    // console.log(this.x, this.y)
+    const bullet = new PlayerBullet(scene, this.x, this.y)
     bullet.scale = 0.5
     if (scene.playerBulletGroup) {
       scene.playerBulletGroup.add(bullet)
@@ -71,7 +51,7 @@ export default class People extends Phaser.GameObjects.Container {
     // bullet.scale = 0.5
 
     const { BULLET_SPEED } = settings
-    const { tx, ty } = getDirFromAngle(this.angle)
+
     bullet.setVelocity(tx * BULLET_SPEED, ty * BULLET_SPEED)
   }
 }

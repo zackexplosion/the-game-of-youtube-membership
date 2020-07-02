@@ -54,47 +54,33 @@ class LevelEasy extends Level {
 	_create() {
 		
 		// player
-		const player = new Player(this, 85, 1014);
+		const player = new Player(this, 931, 975);
 		this.add.existing(player);
 		
-		// enemy_2
-		const enemy_2 = new Enemy(this, 754, -453);
-		this.add.existing(enemy_2);
-		
-		// e9
-		const e9 = new E9(this, 718, 642);
-		this.add.existing(e9);
-		
-		// e15
-		const e15 = new E15(this, 1233, 464);
-		this.add.existing(e15);
-		
-		// e20
-		const e20 = new E20(this, 244, 487);
-		this.add.existing(e20);
-		
 		// e17
-		const e17 = new E17(this, 851, 390);
+		const e17 = new E17(this, 876, -100);
 		this.add.existing(e17);
 		
-		// e27
-		const e27 = new E27(this, 277, 131);
-		this.add.existing(e27);
+		// e31
+		const e31 = new E31(this, 1770, -300);
+		this.add.existing(e31);
 		
-		// e28
-		const e28 = new E28(this, 1514, 275);
-		this.add.existing(e28);
+		// e29
+		const e29 = new E29(this, 166, -300);
+		this.add.existing(e29);
 		
-		// e8
-		const e8 = new E8(this, 1259, 753);
-		this.add.existing(e8);
+		// e20
+		const e20 = new E20(this, 939, 645);
+		this.add.existing(e20);
 		
 		// fields
 		this.player = player;
+		this.enemies = [e17, e31, e29, e20];
 	}
 	
 	public player: Player;
 	
+	public enemies: Array<E17|E31|E29|E20>;
 	
 	/* START-USER-CODE */
 

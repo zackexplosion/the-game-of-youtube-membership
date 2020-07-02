@@ -1,6 +1,7 @@
 import SoundManager from "@/utils/SoundManager"
 import removeOutOfBoundsBullets from '@/helpers/removeOutOfBoundsBullets'
 import Player from "../objects/Player"
+import Enemy from '@/objects/Enemy'
 const TAG = 'DebugObjsLevel'
 export default class LevelScene extends Phaser.Scene {
   bgm
@@ -8,7 +9,7 @@ export default class LevelScene extends Phaser.Scene {
   playerBulletGroup: Phaser.Physics.Arcade.Group
   ebulletGroupA: Phaser.Physics.Arcade.Group
   ebullet_group_b: Phaser.Physics.Arcade.Group
-
+	enemies: Array<Enemy>
 
   constructor(key: string) {
     super(key)
@@ -50,9 +51,16 @@ export default class LevelScene extends Phaser.Scene {
     window.emitter.on('PLAYER_DIE', () => {
       this.scene.start('EndScene')
     })
+
+    this.enemies.forEach(e => {
+      if(e.y > 0) {
+        e.wakeUp()
+      }
+    })
   }
 
   update(time: number, delta: number) {
+    // console.log(time)
     this.player.update(time, delta)
 
     // this.game.debug.cameraInfo(this.game.camera, 32, 32);

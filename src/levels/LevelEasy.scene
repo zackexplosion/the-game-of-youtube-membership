@@ -2,6 +2,8 @@
     "id": "7bb5b714-3770-45ea-b21e-a232690a54c0",
     "sceneType": "SCENE",
     "settings": {
+        "snapWidth": 10,
+        "snapHeight": 10,
         "superClassName": "Level",
         "preloadPackFiles": [],
         "createMethodName": "_create",
@@ -16,69 +18,54 @@
             "id": "d9a15a5f-f513-4bd1-a827-ed9f79564af5",
             "label": "player",
             "scope": "PUBLIC",
-            "x": 85,
-            "y": 1014
-        },
-        {
-            "prefabId": "8790c0aa-5317-4942-b4ff-55b6689808af",
-            "id": "b550d933-b237-4884-8b05-1d4027dcf840",
-            "label": "enemy_2",
-            "x": 754,
-            "y": -453
-        },
-        {
-            "prefabId": "7f91a96a-22f6-4cef-a49d-0c4554ffa0c1",
-            "id": "e9ceed47-f43b-487c-97e6-feecce8e6fb4",
-            "label": "e9",
-            "x": 718,
-            "y": 642
-        },
-        {
-            "prefabId": "5572b082-3fa9-492e-8871-6b584738af38",
-            "id": "3dc6fd9b-bf82-435d-88bf-e3a3ca1e7749",
-            "label": "e15",
-            "x": 1233,
-            "y": 464
-        },
-        {
-            "prefabId": "0f75684d-32ee-48a5-a51b-c9ad62b3c7b7",
-            "id": "94e8a134-27d2-4eb7-a81e-5aa68be46185",
-            "label": "e20",
-            "x": 244,
-            "y": 487
+            "x": 931,
+            "y": 975
         },
         {
             "prefabId": "074738c8-3dd6-43ce-834d-38f839f62045",
             "id": "10a49100-6a99-4ebb-8585-86cb0baef5c6",
             "label": "e17",
-            "x": 851,
-            "y": 390
+            "x": 876,
+            "y": -100
         },
         {
-            "prefabId": "7a0be31d-478a-4c9d-9966-bf18f007f3ff",
-            "id": "1b2eaf79-8bd3-41e7-94db-4884279be641",
-            "label": "e27",
-            "x": 277,
-            "y": 131
+            "prefabId": "b7218782-5037-4ad7-9914-b74a749f1789",
+            "id": "d98720ba-4a67-440e-87b0-32fd88691d54",
+            "label": "e31",
+            "x": 1770,
+            "y": -300
         },
         {
-            "prefabId": "fe18004f-272a-43ea-83d2-55040cdddde3",
-            "id": "fe4d0ea0-c709-4895-a69d-728d5284e2e5",
-            "label": "e28",
-            "x": 1514,
-            "y": 275
+            "prefabId": "0d8f868a-fe84-4027-a2c4-259d864fe303",
+            "id": "6aec3317-e2a0-40d1-93d0-0ec3e1430039",
+            "label": "e29",
+            "x": 166,
+            "y": -300
         },
         {
-            "prefabId": "2412294c-e116-46a8-a413-2c262f5ad1d0",
-            "id": "e56c43cd-7f3c-4072-84df-4c95d7ef5b9f",
-            "label": "e8",
-            "x": 1259,
-            "y": 753
+            "prefabId": "0f75684d-32ee-48a5-a51b-c9ad62b3c7b7",
+            "id": "718fcedb-7d34-44f5-8b36-7632f09e0bc1",
+            "label": "e20",
+            "x": 939,
+            "y": 645
         }
     ],
     "meta": {
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType"
-    }
+    },
+    "lists": [
+        {
+            "id": "aadb3fa8-3acc-4cca-9fd6-0cfc6c5a3a09",
+            "label": "Enemies",
+            "objectIds": [
+                "10a49100-6a99-4ebb-8585-86cb0baef5c6",
+                "d98720ba-4a67-440e-87b0-32fd88691d54",
+                "6aec3317-e2a0-40d1-93d0-0ec3e1430039",
+                "718fcedb-7d34-44f5-8b36-7632f09e0bc1"
+            ],
+            "scope": "PUBLIC"
+        }
+    ]
 }
