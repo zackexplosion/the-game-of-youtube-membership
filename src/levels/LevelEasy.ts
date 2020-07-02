@@ -86,7 +86,11 @@ class LevelEasy extends Level {
 
 	create() {
 		this._create()
-		super.create()
+    super.create()
+
+    this.enemies.map(e => {
+      e.hp = e.hp * 0.2
+    })
 	}
 
 
