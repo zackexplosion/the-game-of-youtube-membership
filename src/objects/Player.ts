@@ -1,12 +1,31 @@
 import People from "./People"
 import settings from "@/gamedata/settings"
 import LevelScene from '@/scenes/LevelScene'
-import PlayerBullet from "./playerBullet"
+
+class Button {
+  keys
+  constructor(keys = <any>[]){
+    this.keys = keys
+  }
+
+  isDown() {
+    var isDown = false
+    this.keys.forEach(k => {
+      if(k.isDown === true) isDown = true
+    })
+    return isDown
+  }
+}
 export default class Player extends People {
   hp: number = settings.PLAYER_MAX_HP
   lastTimeFired: number
   private controllerKeys: any
   fireInterval: Phaser.Time.TimerEvent
+  fireButton: Button
+  moveUpButton: Button
+  moveDownButton: Button
+  moveLeftButton: Button
+  moveRightButton: Button
   constructor(
     scene: LevelScene,
     x: number,
@@ -14,16 +33,33 @@ export default class Player extends People {
     texture?
   ) {
     super(scene, 'player', x, y)
+    this.fireButton = new Button([
+      scene.input.activePointer,
+      scene.input.keyboard.addKey('SPACE')
+    ])
+
+    this.moveUpButton = new Button([
+      scene.input.keyboard.addKey('W'),
+      scene.input.keyboard.addKey('UP')
+    ])
+
+    this.moveDownButton = new Button([
+      scene.input.keyboard.addKey('S'),
+      scene.input.keyboard.addKey('DOWN')
+    ])
+
+    this.moveLeftButton = new Button([
+      scene.input.keyboard.addKey('A'),
+      scene.input.keyboard.addKey('LEFT')
+    ])
+
+    this.moveRightButton = new Button([
+      scene.input.keyboard.addKey('D'),
+      scene.input.keyboard.addKey('RIGHT')
+    ])
+
     this.scene.physics.add.existing(this)
     this.body.setCollideWorldBounds(true)
-    const { up, down, left, right } = settings.PLAYER_CONTROL_KEYS
-    this.controllerKeys = scene.input.keyboard.addKeys({
-      up,
-      down,
-      left,
-      right,
-      fire: 'space',
-    })
 
     this.x = x
     this.y = y
@@ -38,56 +74,30 @@ export default class Player extends People {
       //   c.rotation = angle
       // })
     })
-
-    this.scene.input.on('pointerdown', (pointer) => {
-      this.startFireInterval()
-    })
-    this.scene.input.on('pointerup', (pointer) => {
-      this.fireInterval.destroy()
-    })
-
-    var spaceBar = this.scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE)
-    spaceBar.on('down', () => {
-      this.startFireInterval()
-    })
-    spaceBar.on('up', () => {
-      this.fireInterval.destroy()
-    })
-  }
-
-  startFireInterval() {
-    this.fire()
-    this.fireInterval = this.scene.time.addEvent({
-      delay: settings.PLAYER_FIRE_DELAY,
-      callback: this.fire,
-      callbackScope: this,
-      loop: true
-    })
   }
 
   controlMovement(){
     const player = this
-    const key = this.controllerKeys
 
     var moveDirection: number = -1
     // movement control
-    if (key.up.isDown) {
+    if (this.moveUpButton.isDown()) {
       moveDirection = 270
-    } else if (key.down.isDown) {
+    } else if (this.moveDownButton.isDown()) {
       moveDirection = 90
-    } else if (key.left.isDown) {
+    } else if (this.moveLeftButton.isDown()) {
       moveDirection = 180
-    } else if (key.right.isDown) {
+    } else if (this.moveRightButton.isDown()) {
       moveDirection = 0
     }
 
-    if (key.right.isDown && key.up.isDown) {
+    if (this.moveRightButton.isDown() && this.moveUpButton.isDown()) {
       moveDirection = 315
-    } else if(key.right.isDown && key.down.isDown) {
+    } else if(this.moveRightButton.isDown() && this.moveDownButton.isDown()) {
       moveDirection = 45
-    } else if(key.left.isDown && key.up.isDown) {
+    } else if(this.moveLeftButton.isDown() && this.moveUpButton.isDown()) {
       moveDirection = 225
-    } else if(key.left.isDown && key.down.isDown) {
+    } else if(this.moveLeftButton.isDown() && this.moveDownButton.isDown()) {
       moveDirection = 135
     }
 
@@ -98,24 +108,27 @@ export default class Player extends People {
     } else {
       player.setVelocity(0, 0)
     }
+
   }
 
   update(time: number, delta: number) {
+    super.update(time, delta)
     const key = this.controllerKeys
-    // // fire control
+    // fire control
     // var pointer = this.scene.input.activePointer
-    // if (pointer.isDown || key.fire.isDown) {
-    //   if (time - this.lastTimeFired < settings.PLAYER_FIRE_DELAY) return
-    //   // this.fire()
-    //   this.lastTimeFired = time
-    // }
-
+    if (this.fireButton.isDown()) {
+      if (time - this.lastTimeFired < settings.PLAYER_FIRE_DELAY) return
+      this.fire()
+      this.lastTimeFired = time
+    }
 
     this.controlMovement()
+
   }
 
   fire() {
     super.fire()
+
     window.emitter.emit('PLAYER_FIRE_SFX')
   }
 

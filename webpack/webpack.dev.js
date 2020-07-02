@@ -6,7 +6,7 @@ const dev = {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    open: true,
+    // open: true,
   },
   plugins: [
     new webpack.DefinePlugin({
