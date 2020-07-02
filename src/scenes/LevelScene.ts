@@ -11,6 +11,7 @@ export default class LevelScene extends Phaser.Scene {
   ebulletGroupA: Phaser.Physics.Arcade.Group
   ebullet_group_b: Phaser.Physics.Arcade.Group
   enemies: Array<Enemy>
+  config: LevelConfig
 
   constructor(key: string) {
     super(key)
@@ -18,6 +19,7 @@ export default class LevelScene extends Phaser.Scene {
   }
 
   init(config: LevelConfig) {
+    this.config = config
     this.playerBulletGroup = this.physics.add.group({
       removeCallback: (g) => {
         // console.log(g, 'removed')

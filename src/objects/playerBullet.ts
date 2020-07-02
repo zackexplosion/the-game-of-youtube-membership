@@ -10,32 +10,22 @@ export default class PlayerBullet extends Phaser.Physics.Arcade.Sprite {
     const { player } = scene
     super(scene, x, y, 'playerBullet')
     // this.scale = 0.5
-
-    this.x = x
-    this.y = y
-
+    const { tx, ty } = getDirFromAngle(player.angle)
+    this.scale = 0.8
+    this.x = x + (tx * settings.PEOPLE_SIZE / 2 * 2)
+    this.y = y + (ty * settings.PEOPLE_SIZE / 2 * 2)
     // console.log('player.x', player.x, x)
     // this.rotation = player.angle
     scene.physics.add.existing(this)
     scene.add.existing(this)
 
-    // this.setCollideWorldBounds(true)
-    // this.onWorldBounds = true
+    if (scene.playerBulletGroup) {
+      scene.playerBulletGroup.add(this)
+    }
+    this.angle = player.angle
+    const { BULLET_SPEED } = settings
 
-    // this.angle = player.angle
-    // @ts-ignore
-    // this.body.angle = player.angle
-    // @ts-ignore
-
-    // @ts-ignore
-    // this.body.angle = player.angle
-    // this.angle = player.angle
-
-
-
-    // bullet.scale = 0.5
-
-
+    this.setVelocity(tx * BULLET_SPEED, ty * BULLET_SPEED)
 
   }
 }

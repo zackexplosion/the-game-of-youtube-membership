@@ -36,6 +36,7 @@ class FireA extends Fire {
 
     var angle = Phaser.Math.Angle.BetweenPoints(e, p)
     var v = scene.physics.velocityFromRotation(angle, E_BULLET_SPEED)
+
     b1.setVelocity(v.x, v.y)
   }
 }
@@ -49,7 +50,13 @@ export default class Enemy extends Phaser.GameObjects.Container {
   scene: LevelScene
   fire: Fire
   mode?: string
-  constructor(scene: LevelScene, x: number, y: number, texture?, mode?) {
+  constructor(
+    scene: LevelScene,
+    x: number,
+    y: number,
+    texture?,
+    mode?
+  ) {
     super(scene)
     this.scene = scene
     this.x = x
@@ -57,9 +64,7 @@ export default class Enemy extends Phaser.GameObjects.Container {
     this.mode = mode
   }
 
-  create() {
-
-  }
+  create() {}
 
   wakeUp() {
     this.hpPercent = 0
