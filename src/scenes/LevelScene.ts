@@ -13,10 +13,8 @@ export default class LevelScene extends Phaser.Scene {
   ebullet_group_b: Phaser.Physics.Arcade.Group
   enemies: Array<Enemy>
   config: LevelConfig
-  keys
   constructor(key: string) {
     super('LevelScene')
-    // this.game.config.physics.arcade?.debug = false
   }
 
   init(config: LevelConfig) {
@@ -35,10 +33,9 @@ export default class LevelScene extends Phaser.Scene {
 
   // run after level create
   create() {
-    // this.cameras.main.startFollow(this.player)
     this.player = new Player(this, GAME_WIDTH / 2, GAME_HEIGHT / 2)
-    const {x ,y } = this.player
-    new PlayerBullet(this, x, y)
+
+    // bullet colloctor
     this.time.addEvent({
       delay: 1000, // ms
       callback: removeOutOfBoundsBullets,
@@ -55,24 +52,9 @@ export default class LevelScene extends Phaser.Scene {
     //     e.wakeUp()
     //   }
     // })
-    this.keys = this.input.keyboard.createCursorKeys()
   }
 
   update(time: number, delta: number) {
-    // console.log(time)
-    if(this.player) {
-      this.player.update(time, delta)
-      // this.player.fire()
-      // this.player.cc.bind(this.player)
-    }
-    // if(this.keys && this.keys.space.isDown) {
-    //   const {x ,y } = this.player
-    //   new PlayerBullet(this, x, y)
-    // }
+    this.player.update(time, delta)
   }
-
-
-  //   // this.game.debug.cameraInfo(this.game.camera, 32, 32);
-  //   // this.cameras.main.y = this.cameras.main.y + 1
-  // }
 }

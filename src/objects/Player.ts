@@ -16,6 +16,23 @@ class Button {
     return isDown
   }
 }
+
+function buttonCreater(scene: Phaser.Scene, keys = <any>[] ): Button {
+  keys = keys.map(k => {
+    if (typeof k === 'string') {
+      return scene.input.keyboard.addKey(k)
+    }
+
+    return k
+  })
+  return new Button(keys)
+}
+interface ActionKeys {
+  moveUp: Button
+  moveDown: Button
+  moveLeft: Button
+  moveRight: Button
+}
 export default class Player extends People {
   hp: number = settings.PLAYER_MAX_HP
   lastTimeFired: number
@@ -26,6 +43,7 @@ export default class Player extends People {
   moveDownButton: Button
   moveLeftButton: Button
   moveRightButton: Button
+  actionKeys: ActionKeys
   constructor(
     scene: LevelScene,
     x: number,
@@ -33,30 +51,16 @@ export default class Player extends People {
     texture?
   ) {
     super(scene, 'player', x, y)
-    this.fireButton = new Button([
+    this.fireButton = buttonCreater(scene, [
       scene.input.activePointer,
-      scene.input.keyboard.addKey('SPACE')
+      'SPACE'
     ])
 
-    this.moveUpButton = new Button([
-      scene.input.keyboard.addKey('W'),
-      scene.input.keyboard.addKey('UP')
-    ])
-
-    this.moveDownButton = new Button([
-      scene.input.keyboard.addKey('S'),
-      scene.input.keyboard.addKey('DOWN')
-    ])
-
-    this.moveLeftButton = new Button([
-      scene.input.keyboard.addKey('A'),
-      scene.input.keyboard.addKey('LEFT')
-    ])
-
-    this.moveRightButton = new Button([
-      scene.input.keyboard.addKey('D'),
-      scene.input.keyboard.addKey('RIGHT')
-    ])
+    // @ts-ignore
+    this.actionKeys = {}
+    Object.keys(settings.PLAYER_CONTROL_KEYS).forEach(k => {
+      this.actionKeys[k] = buttonCreater(scene, settings.PLAYER_CONTROL_KEYS[k])
+    })
 
     this.scene.physics.add.existing(this)
     this.body.setCollideWorldBounds(true)
@@ -78,26 +82,26 @@ export default class Player extends People {
 
   controlMovement(){
     const player = this
-
+    var aKeys = this.actionKeys
     var moveDirection: number = -1
     // movement control
-    if (this.moveUpButton.isDown()) {
+    if (aKeys.moveUp.isDown()) {
       moveDirection = 270
-    } else if (this.moveDownButton.isDown()) {
+    } else if (aKeys.moveDown.isDown()) {
       moveDirection = 90
-    } else if (this.moveLeftButton.isDown()) {
+    } else if (aKeys.moveLeft.isDown()) {
       moveDirection = 180
-    } else if (this.moveRightButton.isDown()) {
+    } else if (aKeys.moveRight.isDown()) {
       moveDirection = 0
     }
 
-    if (this.moveRightButton.isDown() && this.moveUpButton.isDown()) {
+    if (aKeys.moveRight.isDown() && aKeys.moveUp.isDown()) {
       moveDirection = 315
-    } else if(this.moveRightButton.isDown() && this.moveDownButton.isDown()) {
+    } else if(aKeys.moveRight.isDown() && aKeys.moveDown.isDown()) {
       moveDirection = 45
-    } else if(this.moveLeftButton.isDown() && this.moveUpButton.isDown()) {
+    } else if(aKeys.moveLeft.isDown() && aKeys.moveUp.isDown()) {
       moveDirection = 225
-    } else if(this.moveLeftButton.isDown() && this.moveDownButton.isDown()) {
+    } else if(aKeys.moveLeft.isDown() && aKeys.moveDown.isDown()) {
       moveDirection = 135
     }
 
