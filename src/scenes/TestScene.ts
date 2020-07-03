@@ -12,10 +12,10 @@ const createBullet = (scene, e) => {
 
       const { E_BULLET_SPEED } = settings
 
-      var p: number = 0
-      const SPEED_SHIFTER: number = 1.5
+      let p = 0
+      const SPEED_SHIFTER = 1.5
       setInterval(function () {
-        var vx: number, vy: number
+        let vx: number, vy: number
         switch (direction) {
           case 0: // right top
             vx = E_BULLET_SPEED + p * SPEED_SHIFTER

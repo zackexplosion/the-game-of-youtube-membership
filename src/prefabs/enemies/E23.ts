@@ -27,7 +27,7 @@ class E23 extends Enemy {
 	
 	public text: Phaser.GameObjects.Text;
 	
-	public hp: number = 25;
+	public hp = 25;
 	
 	
 	/* START-USER-CODE */

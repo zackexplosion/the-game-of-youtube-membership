@@ -14,7 +14,7 @@ window.emitter = new Phaser.Events.EventEmitter()
 class Model {
   private _currentMusic
   private _maxActiveSponsors
-  _soundOn: boolean = true
+  _soundOn = true
   constructor() {
     // random choose music
     const { AVAIABLE_MUSICS } = settings

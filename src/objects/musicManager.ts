@@ -65,7 +65,7 @@ export default class MusicManager {
   }
 
   play(config) {
-    var seek = 0
+    let seek = 0
     if (settings.DEBUG) {
       seek = this.showSponsorsAt - 2
     }
@@ -98,7 +98,7 @@ export default class MusicManager {
     if (seek >= this.showSponsorsAt && this.showSponsors === false) {
       this.showFirstSponsor()
     }
-    var showsSeekP = (seek - this.showSponsorsAt) / this.showSponsorDuration
+    let showsSeekP = (seek - this.showSponsorsAt) / this.showSponsorDuration
     if (showsSeekP >= 1.2) {
       showsSeekP = 1.2
     }
@@ -117,7 +117,7 @@ export default class MusicManager {
 
     if (settings.DEBUG) {
       try {
-        var texts = [
+        const texts = [
           'seek: ' + seek.toFixed(1) + ' total:' + this.music.duration,
           'msuic_seek_p: ' + seek / this.music.duration,
           'showsSeekP: ' + (showsSeekP * 100).toFixed(2) + ' %',

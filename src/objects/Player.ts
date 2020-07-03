@@ -9,7 +9,7 @@ class Button {
   }
 
   isDown() {
-    var isDown = false
+    let isDown = false
     this.keys.forEach(k => {
       if(k.isDown === true) isDown = true
     })
@@ -82,8 +82,8 @@ export default class Player extends People {
 
   controlMovement(){
     const player = this
-    var aKeys = this.actionKeys
-    var moveDirection: number = -1
+    const aKeys = this.actionKeys
+    let moveDirection = -1
     // movement control
     if (aKeys.moveUp.isDown()) {
       moveDirection = 270
@@ -106,7 +106,7 @@ export default class Player extends People {
     }
 
     if(moveDirection !== -1) {
-      var rad = Phaser.Math.DegToRad(moveDirection)
+      const rad = Phaser.Math.DegToRad(moveDirection)
       const v = this.scene.physics.velocityFromRotation(rad, settings.PLAYER_MOVE_SPEED)
       player.setVelocity(v.x, v.y)
     } else {

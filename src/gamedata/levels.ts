@@ -1,4 +1,4 @@
-var levels: LevelDiddicults = {
+const levels: LevelDiddicults = {
   EASY: {
     INDEX: 0,
     CLASS: 'LevelEasy',

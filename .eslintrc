@@ -1,9 +1,3 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
-  "rules": {
-    "@typescript-eslint/rule-name": "error"
-  }
-
+  "extends": ["airbnb-typescript-prettier"]
 }

@@ -2,7 +2,7 @@ import STYLES from '@/gamedata/styles'
 import Utils from '@/utils'
 
 export default class LoadingBar extends Phaser.GameObjects.Container {
-  public SIGN: String = '%'
+  public SIGN = '%'
   private loadingText: Phaser.GameObjects.Text
   private progText: Phaser.GameObjects.Text
   constructor(config: ObjectConfig) {
@@ -29,7 +29,7 @@ export default class LoadingBar extends Phaser.GameObjects.Container {
   }
 
   public setPer(value: number) {
-    var per = Math.abs(Math.floor(value * 100) - 1)
+    const per = Math.abs(Math.floor(value * 100) - 1)
     this.progText.setText(per.toString() + this.SIGN)
   }
 

@@ -16,8 +16,8 @@ export default class MainScene extends Phaser.Scene {
   music
   sponsors
   grid
-  activeSponsors: number = 0
-  maxActiveEnemies: number = 2
+  activeSponsors = 0
+  maxActiveEnemies = 2
   enemyGropup
   enemy: Enemy
   ebullet_group_b
@@ -81,8 +81,8 @@ export default class MainScene extends Phaser.Scene {
       c.x = e.x
       c.y = e.y
       c.scale = 0.3
-      var vx = Phaser.Math.Between(-E_BULLET_SPEED, E_BULLET_SPEED)
-      var vy = Phaser.Math.Between(-E_BULLET_SPEED, E_BULLET_SPEED)
+      const vx = Phaser.Math.Between(-E_BULLET_SPEED, E_BULLET_SPEED)
+      const vy = Phaser.Math.Between(-E_BULLET_SPEED, E_BULLET_SPEED)
       c.body.setVelocity(vx, vy)
     })
     this.physics.add.collider(this.bulletGroup, this.ebullet_group_a, this.bulletHitEnemyBulletA, undefined, this)
@@ -95,8 +95,8 @@ export default class MainScene extends Phaser.Scene {
       c.x = e.x
       c.y = e.y
       c.scale = 0.3
-      var vx = Phaser.Math.Between(-E_BULLET_SPEED, E_BULLET_SPEED)
-      var vy = Phaser.Math.Between(-E_BULLET_SPEED, E_BULLET_SPEED)
+      const vx = Phaser.Math.Between(-E_BULLET_SPEED, E_BULLET_SPEED)
+      const vy = Phaser.Math.Between(-E_BULLET_SPEED, E_BULLET_SPEED)
       c.body.setVelocity(vx, vy)
     })
     this.physics.add.collider(this.player, this.ebullet_group_a)
@@ -134,8 +134,8 @@ export default class MainScene extends Phaser.Scene {
         this.sponsors.getChildren()[0].destroy()
       }
       const [name, channelUrl, profileUrl, joinSince, extra] = e
-      var timestamp = moment(joinSince).format()
-      var note = ''
+      let timestamp = moment(joinSince).format()
+      let note = ''
       if (extra) {
         if (extra.older === true) {
           // timestamp = '????/??/?? ??:??:??'

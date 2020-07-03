@@ -12,16 +12,15 @@ class UIScene extends Phaser.Scene {
 	_create() {
 		
 		// soundButton
-		const soundButton = this.add.text(154, 114, "", {});
-		soundButton.text = "SOUND";
-		soundButton.setStyle({"fontSize":"30px"});
+		const soundButton = this.add.image(1798, 101, "volume-on-off-srpite", 1);
+		soundButton.scaleX = 0.6;
+		soundButton.scaleY = 0.6;
 		
 		// fields
 		this.soundButton = soundButton;
 	}
 	
-	public soundButton: Phaser.GameObjects.Text;
-	
+	public soundButton: Phaser.GameObjects.Image;
 	
 	/* START-USER-CODE */
 

@@ -27,7 +27,7 @@ class E19 extends Enemy {
 	
 	public text: Phaser.GameObjects.Text;
 	
-	public hp: number = 20;
+	public hp = 20;
 	
 	
 	/* START-USER-CODE */

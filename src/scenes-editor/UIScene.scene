@@ -11,16 +11,18 @@
     },
     "displayList": [
         {
-            "type": "Text",
-            "id": "a00843bc-3b82-45f4-8cba-34090e16ab47",
+            "type": "Image",
+            "id": "e90630a4-71bb-4ac5-ba40-d893431703c3",
             "label": "soundButton",
             "scope": "PUBLIC",
-            "x": 154,
-            "y": 114,
-            "originX": 0,
-            "originY": 0,
-            "text": "SOUND",
-            "fontSize": "30px"
+            "texture": {
+                "key": "volume-on-off-srpite",
+                "frame": 1
+            },
+            "x": 1798,
+            "y": 101,
+            "scaleX": 0.6,
+            "scaleY": 0.6
         }
     ],
     "meta": {

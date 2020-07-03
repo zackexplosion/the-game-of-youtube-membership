@@ -59,7 +59,7 @@ export default class SoundManager {
 
   playSound(key: string, config = {}) {
     if (!window.model.soundOn) return
-    var sound = this.scene.sound.add(key)
+    const sound = this.scene.sound.add(key)
     sound.play(config)
   }
 

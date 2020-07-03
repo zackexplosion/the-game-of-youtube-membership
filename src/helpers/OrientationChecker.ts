@@ -1,5 +1,5 @@
 type OrientationchangeCallbackType = (isValid: boolean) => void;
-const PAUSE_OVERLAY_SHOW_CLASS: string = 'show'
+const PAUSE_OVERLAY_SHOW_CLASS = 'show'
 export default class OrientationChecker {
   gameScene: Phaser.Scene
   onOrientationchangeCallback: OrientationchangeCallbackType
@@ -18,7 +18,7 @@ export default class OrientationChecker {
     }
 
     gameScene.game.scale.on('orientationchange', (orientation: Phaser.Scale.Orientation) => {
-      var isValid = false
+      let isValid = false
       if (orientation === Phaser.Scale.Orientation.LANDSCAPE) {
         isValid = true
         gameScene.scene.resume(this.currentSceneKey)

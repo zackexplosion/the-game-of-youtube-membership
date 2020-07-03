@@ -25,7 +25,7 @@ class E0 extends Enemy {
 
   public text: Phaser.GameObjects.Text
 
-  public hp: number = 30
+  public hp = 30
 
   /* START-USER-CODE */
 

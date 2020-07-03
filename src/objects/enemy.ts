@@ -9,7 +9,6 @@ abstract class Fire {
   }
 
   abstract fire(): void
-
   destroy() {
     if (this.bulletTimer) this.bulletTimer.destroy()
   }
@@ -34,8 +33,8 @@ class FireA extends Fire {
     const E_BULLET_SPEED = 100
     const b1 = new EBulletA(scene, e.x, e.y)
 
-    var angle = Phaser.Math.Angle.BetweenPoints(e, p)
-    var v = scene.physics.velocityFromRotation(angle, E_BULLET_SPEED)
+    const angle = Phaser.Math.Angle.BetweenPoints(e, p)
+    const v = scene.physics.velocityFromRotation(angle, E_BULLET_SPEED)
 
     b1.setVelocity(v.x, v.y)
   }
@@ -50,13 +49,7 @@ export default class Enemy extends Phaser.GameObjects.Container {
   scene: LevelScene
   fire: Fire
   mode?: string
-  constructor(
-    scene: LevelScene,
-    x: number,
-    y: number,
-    texture?,
-    mode?
-  ) {
+  constructor(scene: LevelScene, x: number, y: number, texture?, mode?) {
     super(scene)
     this.scene = scene
     this.x = x
@@ -87,7 +80,7 @@ export default class Enemy extends Phaser.GameObjects.Container {
     }
   }
 
-  hitten() {
+  hitten(): void {
     const offset = Phaser.Math.Between(-5, 5)
     this.scene.tweens.add({
       targets: this,

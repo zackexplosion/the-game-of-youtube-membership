@@ -1,4 +1,3 @@
-const START_SCENE = 'menuScene'
 import LoadingBar from '@/objects/loadingBar'
 import levels from '@/gamedata/levels'
 
@@ -15,13 +14,12 @@ export default class LoadingScene extends Phaser.Scene {
       this.loadingBar.setPer(e)
     })
 
-    this.load.pack("asset-pack", "assets/asset-pack.json")
+    this.load.pack('asset-pack', 'assets/asset-pack.json')
 
     this.load.audio('menu-selection', 'assets/audios/menu-selection.wav')
     this.load.audio('menu-bgm', 'assets/audios/menu-bgm.mp3')
 
-
-    for (let i in levels) {
+    for (const i in levels) {
       const _ = <LevelConfig>levels[i]
       this.load.audio(_.AUDIO_KEY, _.AUDIO_FILE_PATH)
     }
@@ -32,6 +30,6 @@ export default class LoadingScene extends Phaser.Scene {
   create() {
     this.loadingBar.finish()
     this.loadingBar.setVisible(false)
-    this.scene.start(START_SCENE)
+    this.scene.start('menuScene')
   }
 }

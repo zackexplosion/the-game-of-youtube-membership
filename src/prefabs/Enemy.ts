@@ -12,7 +12,7 @@ class Enemy extends Phaser.GameObjects.Text {
 		this.setStyle({"fontSize":"120px"});
 	}
 	
-	public displayText: string = "wryyy";
+	public displayText = "wryyy";
 	
 	
 	/* START-USER-CODE */

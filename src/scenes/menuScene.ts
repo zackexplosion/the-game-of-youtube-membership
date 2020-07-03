@@ -4,9 +4,9 @@ import levels from '@/gamedata/levels'
 import SoundManager from '@/utils/SoundManager'
 
 function findDiffucultByIndex(index: number) {
-  var difficult!: LevelConfig
+  let difficult!: LevelConfig
   Object.keys(levels).forEach(_ => {
-    let d = <LevelConfig>levels[_]
+    const d = <LevelConfig>levels[_]
     if (d.INDEX === index) {
       difficult = d
     }
@@ -17,7 +17,7 @@ function findDiffucultByIndex(index: number) {
 export default class menuScene extends _menuScene {
 
   private difficult_array: Array<Phaser.GameObjects.Text> = []
-  private current_difficult_index: number = 0
+  private current_difficult_index = 0
   orientationChecker: OrientationChecker
   backgroundSound: Phaser.Sound.BaseSound
   private soundManager: SoundManager
