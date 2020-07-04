@@ -65,9 +65,22 @@ export default class LevelScene extends Phaser.Scene {
     soundManager.playMainMusic()
 
     spawnEnermy.call(this, 1)
+    console.log('config', this.config)
 
+    let E_SPAWN_INTERVAL = 5000
+    switch(this.config.CLASS) {
+      case 'LevelEasy':
+        E_SPAWN_INTERVAL = 5000
+      break
+      case 'LevelNormal':
+        E_SPAWN_INTERVAL = 2500
+      break
+      case 'LevelHard':
+        E_SPAWN_INTERVAL = 1000
+      break
+    }
     this.time.addEvent({
-      delay: 5000, // ms
+      delay: E_SPAWN_INTERVAL, // ms
       callback: spawnEnermy,
       callbackScope: <LevelScene>this,
       loop: true,

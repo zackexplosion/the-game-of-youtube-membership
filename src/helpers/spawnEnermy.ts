@@ -9,11 +9,23 @@ import E0 from '@/prefabs/enemies/E0'
 // }
 export default function spawnEnermy (this: LevelScene, count:number) {
   if(!count) count = Phaser.Math.Between(0, 3)
+  var enemyhp = 1
+  switch(this.config.CLASS) {
+    case 'LevelEasy':
+      enemyhp = 0.1
+    break
+    case 'LevelNormal':
+      enemyhp = 0.5
+    break
+  }
 
   for(let i = 0; i < count; i++) {
     let eindex = Phaser.Math.Between(0, ENEMIES.length - 1)
-    console.log('eindex', eindex)
     const edata = ENEMIES[eindex]
+
+
+    edata.hp = Math.floor(edata.hp * enemyhp)
+    if(edata.hp < 5) edata.hp = 5
 
     const enemy = new Enemy(
       this,
