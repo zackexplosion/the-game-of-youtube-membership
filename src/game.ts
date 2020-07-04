@@ -14,22 +14,26 @@ window.emitter = new Phaser.Events.EventEmitter()
 class Model {
   private _currentMusic
   private _maxActiveSponsors
-  _soundOn = true
+  _soundOn:boolean = window.localStorage.getItem("soundOn") === 'true'
   constructor() {
     // random choose music
-    const { AVAIABLE_MUSICS } = settings
-    this.currentMusic = AVAIABLE_MUSICS[Phaser.Math.Between(0, AVAIABLE_MUSICS.length - 1)]
+    // const { AVAIABLE_MUSICS } = settings
+    // this.currentMusic = AVAIABLE_MUSICS[Phaser.Math.Between(0, AVAIABLE_MUSICS.length - 1)]
 
     // setup default
-    this.maxActiveSponsors = 6
+    // this.maxActiveSponsors = 6
+
+    console.log('is sound on?', this._soundOn)
   }
 
   get soundOn() {
+
     return this._soundOn
   }
 
   set soundOn(_: boolean) {
     this._soundOn = _
+    window.localStorage.setItem("soundOn", _.toString())
     window.emitter.emit('SOUND_ON_CHANGE', _)
   }
 

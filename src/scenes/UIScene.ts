@@ -5,6 +5,8 @@ export default class UIScene extends _UIScene {
   seekbar: HTMLInputElement
   create() {
     super.create()
+
+    this.soundButton.setFrame(window.model.soundOn? 1 : 0)
     this.soundButton
       .setInteractive()
       .on('pointerup', (e) => {

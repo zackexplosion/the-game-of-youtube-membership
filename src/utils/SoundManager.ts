@@ -35,6 +35,8 @@ export default class SoundManager {
     emitter.on('SOUND_ON_CHANGE', _ => {
       this.scene.sound.mute = !_
     })
+
+    this.scene.sound.mute = !window.model.soundOn
   }
 
   // musicChanged () {
