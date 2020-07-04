@@ -15,6 +15,8 @@ export default class PlayerBullet extends Phaser.Physics.Arcade.Sprite {
     this.x = x + (tx * settings.PEOPLE_SIZE / 2 * 2)
     this.y = y + (ty * settings.PEOPLE_SIZE / 2 * 2)
 
+
+
     scene.physics.add.existing(this)
     scene.add.existing(this)
 
@@ -24,6 +26,7 @@ export default class PlayerBullet extends Phaser.Physics.Arcade.Sprite {
     this.angle = player.angle
     const { BULLET_SPEED } = settings
 
+    this.body.reset(this.x, this.y)
     this.setVelocity(tx * BULLET_SPEED, ty * BULLET_SPEED)
 
   }
