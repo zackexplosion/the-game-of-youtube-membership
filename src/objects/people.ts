@@ -2,6 +2,7 @@ import PlayerBullet from './playerBullet'
 import { getDirFromAngle } from '@/utils'
 import settings from '@/gamedata/settings'
 import LevelScene from '@/scenes/LevelScene'
+
 export default class People extends Phaser.GameObjects.Container {
   body!: Phaser.Physics.Arcade.Body
   hp = -1
