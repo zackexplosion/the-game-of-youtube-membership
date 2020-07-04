@@ -6,6 +6,7 @@ export default class UIScene extends _UIScene {
   create() {
     super.create()
 
+    // init button by setting
     this.soundButton.setFrame(window.model.soundOn? 1 : 0)
     this.soundButton
       .setInteractive()

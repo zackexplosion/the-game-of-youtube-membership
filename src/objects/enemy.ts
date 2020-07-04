@@ -49,35 +49,58 @@ export default class Enemy extends Phaser.GameObjects.Container {
   scene: LevelScene
   fire: Fire
   mode?: string
-  constructor(scene: LevelScene, x: number, y: number, texture?, mode?) {
+  waken: boolean = false
+  constructor(scene: LevelScene, x: number, y: number, edata:any, mode?) {
     super(scene)
     this.scene = scene
     this.x = x
     this.y = y
     this.mode = mode
+    const _text = scene.add.text(x, y, edata.text, {});
+		_text.setOrigin(0.5, 0.5)
+		_text.text = edata.text
+		_text.setStyle({"fontSize": edata.size + "px"})
+    this.add(_text)
+
+    this.text = _text
+
+    this.hp = edata.hp
+    this.setSize(this.text.width, this.text.height)
   }
 
-  create() {}
+  create() {
+
+  }
 
   wakeUp() {
     this.hpPercent = 0
-    this.setSize(this.text.width, this.text.height)
-    this.text.setOrigin(0.5, 0.5)
+
     this.scene.physics.add.existing(this)
     // this.body.setCollideWorldBounds(true)
     this.body.immovable = true
 
     const { scene } = this
     // player bullet hit enemy
-    scene.physics.add.collider(scene.playerBulletGroup, this, (enemy, bullet) => {
-      bullet.destroy()
-      this.hitten()
-    })
+    scene.physics.add.collider(
+      scene.playerBulletGroup,
+      this,
+      (enemy, bullet) => {
+        bullet.destroy()
+        this.hitten()
+      }
+    )
+
+    // this.scene.tweens.add({
+    //   targets: this,
+    //   y: Phaser.Math.Between(this.text.height ,<number>this.scene.game.config.height / 2)
+    // })
     // this.setActive(false)
     switch (this.mode) {
       default:
         this.fire = new FireA(this)
     }
+
+    this.waken = true
   }
 
   hitten(): void {

@@ -30,11 +30,10 @@ export default class LevelLoaderScene extends Phaser.Scene {
     this.load.audio('player-hitten', 'assets/audios/player-hitten.mp3')
     this.load.audio('e_destroy', 'assets/audios/e-destroy.wav')
 
-
-
     const { config } = this
 
     this.load.audio('main-music', config.MUSIC_FILE_PATH)
+    this.levelToLoad = LevelScene
     // switch (config.CLASS) {
     //   case 'LevelEasy':
     //     this.levelToLoad = LevelEasy
@@ -46,15 +45,15 @@ export default class LevelLoaderScene extends Phaser.Scene {
     //     this.levelToLoad = LevelEasy
     //     break
     // }
-
-    // this.game.scene.add(config.CLASS, LevelScene)
   }
 
   create() {
     const { config } = this
     this.cameras.main.once('camerafadeoutcomplete', (camera) => {
-      // this.scene.start(config.CLASS, config)
-      this.scene.start('LevelScene', config)
+      // console.log(config.CLASS, this.levelToLoad)
+      this.game.scene.add(config.CLASS, this.levelToLoad, true)
+      this.scene.start(config.CLASS)
+      // this.scene.start('LevelScene', config)
     })
     this.loadingBar.finish()
     this.cameras.main.fadeOut(1000, 51, 51, 51)

@@ -1,9 +1,8 @@
 import SoundManager from '@/utils/SoundManager'
 import removeOutOfBoundsBullets from '@/helpers/removeOutOfBoundsBullets'
+import spawnEnermy from '@/helpers/spawnEnermy'
 import Player from '../objects/Player'
 import Enemy from '@/objects/Enemy'
-import { GAME_WIDTH, GAME_HEIGHT } from '@/gamedata/consts'
-import PlayerBullet from '@/objects/playerBullet'
 const TAG = 'DebugObjsLevel'
 export default class LevelScene extends Phaser.Scene {
   bgm
@@ -13,6 +12,8 @@ export default class LevelScene extends Phaser.Scene {
   ebullet_group_b: Phaser.Physics.Arcade.Group
   enemies: Array<Enemy>
   config: LevelConfig
+  soundManager: SoundManager
+  spawaning: boolean = false
   constructor(key: string) {
     super('LevelScene')
   }
@@ -25,16 +26,15 @@ export default class LevelScene extends Phaser.Scene {
       },
     })
     this.ebulletGroupA = this.physics.add.group()
-    console.log(TAG, config)
-    const soundManager = new SoundManager(this)
-    soundManager.setMainMusic(this.sound.add('main-music'))
-    soundManager.playMainMusic()
+
   }
 
   // run after level create
   create() {
-    this.player = new Player(this, GAME_WIDTH / 2, GAME_HEIGHT / 2)
-
+    this.player = new Player(this,
+      <number>this.game.config.width / 2,
+      <number>this.game.config.height / 2,
+    )
     // bullet colloctor
     this.time.addEvent({
       delay: 1000, // ms
@@ -42,6 +42,7 @@ export default class LevelScene extends Phaser.Scene {
       callbackScope: <LevelScene>this,
       loop: true,
     })
+
 
     window.emitter.on('PLAYER_DIE', () => {
       this.scene.start('EndScene')
@@ -52,9 +53,44 @@ export default class LevelScene extends Phaser.Scene {
     //     e.wakeUp()
     //   }
     // })
+    // console.log(TAG, config)
+    const soundManager = new SoundManager(this)
+    soundManager.setMainMusic(this.sound.add('main-music'))
+
+    soundManager.mainMusic.on('complete', () => {
+      // this.scene.start('EndScene')
+      console.log('finish :)')
+    })
+    this.soundManager = soundManager
+    soundManager.playMainMusic()
+
+    spawnEnermy.call(this, 1)
+
+    this.time.addEvent({
+      delay: 5000, // ms
+      callback: spawnEnermy,
+      callbackScope: <LevelScene>this,
+      loop: true,
+    })
   }
 
   update(time: number, delta: number) {
     this.player.update(time, delta)
+    // const music = this.soundManager.mainMusic
+    // //@ts-ignore
+    // const seek = music.seek.toFixed(1)
+    // // console.log('music.seek', seek)
+    // //@ts-ignore
+    // const spawan = (parseInt(seek) % 5) === 0 && seek > 5
+    // console.log(parseInt(seek))
+    // if(spawan) {
+    //   this.spawaning = true
+    //   console.log('spwan enermy')
+    // }
+    // // this.enemies.forEach((e) => {
+    // //   if (seek * 100 > Math.abs(e.y) && !e.waken) {
+    // //     e.wakeUp()
+    // //   }
+    // // })
   }
 }

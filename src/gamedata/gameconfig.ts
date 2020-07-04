@@ -3,7 +3,7 @@ import MenuScene from '@/scenes/menuScene'
 import LoadingScene from '@/scenes/LoadingScene'
 import EndScene from '@/scenes/endScene'
 import LevelLoaderScene from '@/scenes/LevelLoaderScene'
-import LevelScene from '@/scenes/LevelScene'
+// import LevelScene from '@/scenes/LevelScene'
 import UIScene from '@/scenes/UIScene'
 import TestScene from '@/scenes/TestScene'
 import { GAME_WIDTH, GAME_HEIGHT } from '@/gamedata/consts'
@@ -22,7 +22,7 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     MenuScene,
     UIScene,
     LevelLoaderScene,
-    LevelScene,
+    // LevelScene,
     EndScene,
     TestScene
   ],
@@ -31,13 +31,13 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     arcade: {
       // debug: new Boolean(process.env.PHYSIC_DEBUG) || false,
       // debug: true,
-      // debug: true,
-      // debugShowBody: true,
-      // debugShowStaticBody: true,
-      // debugShowVelocity: true,
-      // debugVelocityColor: 0xffff00,
-      // debugBodyColor: 0x0000ff,
-      // debugStaticBodyColor: 0xffffff,
+      debug: true,
+      debugShowBody: true,
+      debugShowStaticBody: true,
+      debugShowVelocity: true,
+      debugVelocityColor: 0xffff00,
+      debugBodyColor: 0x0000ff,
+      debugStaticBodyColor: 0xffffff,
     },
   },
   plugins: {

@@ -1,7 +1,7 @@
 export default class SoundManager {
   private scene: Phaser.Scene
   bgm: Phaser.Sound.BaseSound
-  mainMusic: Phaser.Sound.BaseSound
+  public mainMusic: Phaser.Sound.BaseSound
   constructor(scene: Phaser.Scene) {
     this.scene = scene
     const { emitter } = window
@@ -55,7 +55,7 @@ export default class SoundManager {
 
   playMainMusic() {
     this.mainMusic.play({
-      mute: !window.model.soundOn
+      // mute: !window.model.soundOn
     })
   }
 

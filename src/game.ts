@@ -23,7 +23,7 @@ class Model {
     // setup default
     // this.maxActiveSponsors = 6
 
-    console.log('is sound on?', this._soundOn)
+    // console.log('is sound on?', this._soundOn)
   }
 
   get soundOn() {
