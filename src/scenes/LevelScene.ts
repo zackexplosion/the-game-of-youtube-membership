@@ -3,6 +3,7 @@ import removeOutOfBoundsBullets from '@/helpers/removeOutOfBoundsBullets'
 import spawnEnermy from '@/helpers/spawnEnermy'
 import Player from '../objects/Player'
 import Enemy from '@/objects/Enemy'
+import { debug } from 'console'
 const TAG = 'DebugObjsLevel'
 export default class LevelScene extends Phaser.Scene {
   bgm
@@ -14,6 +15,7 @@ export default class LevelScene extends Phaser.Scene {
   config: LevelConfig
   soundManager: SoundManager
   spawaning: boolean = false
+  seeker
   constructor(key: string) {
     super('LevelScene')
   }
@@ -70,10 +72,10 @@ export default class LevelScene extends Phaser.Scene {
     let E_SPAWN_INTERVAL = 5000
     switch(this.config.CLASS) {
       case 'LevelEasy':
-        E_SPAWN_INTERVAL = 5000
+        E_SPAWN_INTERVAL = 3000
       break
       case 'LevelNormal':
-        E_SPAWN_INTERVAL = 2500
+        E_SPAWN_INTERVAL = 2000
       break
       case 'LevelHard':
         E_SPAWN_INTERVAL = 1000
@@ -85,12 +87,48 @@ export default class LevelScene extends Phaser.Scene {
       callbackScope: <LevelScene>this,
       loop: true,
     })
+
+    this.time.addEvent({
+      delay: 1000, // ms
+      callback: () => {
+        // @ts-ignore
+        const seek = Math.round(soundManager.mainMusic.seek)
+        console.log('music.seek', seek)
+
+        if(this.seeker) {
+          this.seeker.value = seek
+        }
+      },
+      loop: true,
+    })
+
+    this.createMusicSeeker()
+  }
+
+  createMusicSeeker() {
+    let seeker = <HTMLInputElement>document.createElement('input')
+    seeker.id = 'musicseeker'
+    seeker.type = 'range'
+    seeker.min = '0'
+    seeker.value = '0'
+    seeker.max = this.soundManager.mainMusic.duration.toString()
+    seeker.addEventListener('change', e => {
+      //@ts-ignore
+      var { value } = e.target
+      //@ts-ignore
+      this.soundManager.mainMusic.seek = value
+    })
+    document.body.appendChild(seeker)
+
+
+    this.seeker = seeker
   }
 
   update(time: number, delta: number) {
     this.player.update(time, delta)
-    // const music = this.soundManager.mainMusic
-    // //@ts-ignore
+    const music = this.soundManager.mainMusic
+    //@ts-ignore
+    // this.seeker.value = music.seek
     // const seek = music.seek.toFixed(1)
     // // console.log('music.seek', seek)
     // //@ts-ignore

@@ -1,7 +1,6 @@
 import LevelScene from "@/scenes/LevelScene"
 import ENEMIES from '@/gamedata/enemies.json'
 import Enemy from '@/objects/enemy'
-import E0 from '@/prefabs/enemies/E0'
 // function eCreater(scene, x, y, text, size) {
 //   // const e = new Enemy(scene, x, y, '', '')
 
@@ -24,9 +23,9 @@ export default function spawnEnermy (this: LevelScene, count:number) {
     const edata = ENEMIES[eindex]
 
 
-    edata.hp = Math.floor(edata.hp * enemyhp)
-    if(edata.hp < 5) edata.hp = 5
-
+    // edata.hp = Math.floor(edata.hp * enemyhp)
+    // if(edata.hp < 5) edata.hp = 5
+    edata.hp = Math.floor(20 * enemyhp)
     const enemy = new Enemy(
       this,
       Phaser.Math.Between(10, <number>this.game.config.width),
