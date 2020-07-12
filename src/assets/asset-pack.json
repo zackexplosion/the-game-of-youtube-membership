@@ -29,10 +29,10 @@
             },
             {
                 "url": [
-                    "src/assets/sfx_laserfire.ogg"
+                    "src/assets/audios/player-fire.ogg"
                 ],
                 "type": "audio",
-                "key": "sfx_laserfire"
+                "key": "player-fire"
             },
             {
                 "url": "src/assets/keymap.png",

@@ -62,8 +62,8 @@ export default class LevelScene extends Phaser.Scene {
     soundManager.setMainMusic(this.sound.add('main-music'))
 
     soundManager.mainMusic.on('complete', () => {
-      // this.scene.start('EndScene')
-      console.log('finish :)')
+      this.scene.start('ThanksScene')
+      // console.log('finish :)')
     })
     this.soundManager = soundManager
     soundManager.playMainMusic()

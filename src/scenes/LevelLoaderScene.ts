@@ -25,7 +25,7 @@ export default class LevelLoaderScene extends Phaser.Scene {
     this.load.image('playerBullet', 'assets/bullet.png')
     this.load.image('ebulletA', 'assets/ebullet_a.png')
     this.load.image('ebulletB', 'assets/ebullet_b.png')
-    this.load.audio('playerFireSFX', 'assets/sfx_laserfire2.ogg')
+    // this.load.audio('playerFireSFX', 'assets/sfx_laserfire2.ogg')
     // this.load.audio('playerFireSFX', 'assets/audios/player-fire.wav')
     this.load.audio('playerDie', 'assets/player_die.mp3')
     this.load.audio('player-hitten', 'assets/audios/player-hitten.mp3')

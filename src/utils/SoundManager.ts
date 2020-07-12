@@ -9,7 +9,7 @@ export default class SoundManager {
     emitter.on('PLAY_SOUND', this.playSound, this)
 
     emitter.on('PLAYER_FIRE_SFX', () => {
-      this.playSound('playerFireSFX', {
+      this.playSound('player-fire', {
         volume: 0.5
       })
     })
