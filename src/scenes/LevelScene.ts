@@ -3,8 +3,10 @@ import removeOutOfBoundsBullets from '@/helpers/removeOutOfBoundsBullets'
 import spawnEnermy from '@/helpers/spawnEnermy'
 import Player from '../objects/Player'
 import Enemy from '@/objects/Enemy'
-import { debug } from 'console'
+import MusicSeeker from '@/utils/MusicSeeker'
 const TAG = 'DebugObjsLevel'
+
+
 export default class LevelScene extends Phaser.Scene {
   bgm
   player: Player
@@ -67,7 +69,7 @@ export default class LevelScene extends Phaser.Scene {
     soundManager.playMainMusic()
 
     spawnEnermy.call(this, 1)
-    console.log('config', this.config)
+    // console.log('config', this.config)
 
     let E_SPAWN_INTERVAL = 5000
     switch(this.config.CLASS) {
@@ -95,8 +97,15 @@ export default class LevelScene extends Phaser.Scene {
         const seek = Math.round(soundManager.mainMusic.seek)
         console.log('music.seek', seek)
 
+        switch(seek) {
+          case 140:
+            // @ts-ignore
+            soundManager.changeMainMusic(this.sound.add('main-music2'), soundManager.mainMusic.seek)
+            break
+        }
+
         if(this.seeker) {
-          this.seeker.value = seek
+          this.seeker.set(seek)
         }
       },
       loop: true,
@@ -106,22 +115,7 @@ export default class LevelScene extends Phaser.Scene {
   }
 
   createMusicSeeker() {
-    let seeker = <HTMLInputElement>document.createElement('input')
-    seeker.id = 'musicseeker'
-    seeker.type = 'range'
-    seeker.min = '0'
-    seeker.value = '0'
-    seeker.max = this.soundManager.mainMusic.duration.toString()
-    seeker.addEventListener('change', e => {
-      //@ts-ignore
-      var { value } = e.target
-      //@ts-ignore
-      this.soundManager.mainMusic.seek = value
-    })
-    document.body.appendChild(seeker)
-
-
-    this.seeker = seeker
+    this.seeker = new MusicSeeker(this)
   }
 
   update(time: number, delta: number) {

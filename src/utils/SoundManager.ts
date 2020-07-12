@@ -49,6 +49,22 @@ export default class SoundManager {
   //   }
   // }
 
+  changeMainMusic(sound: Phaser.Sound.BaseSound, seek:integer) {
+
+    this.scene.tweens.add({
+      targets: this.mainMusic,
+      volume: 0,
+      duration: 1000,
+      // onComplete: () => {
+      //   this.mainMusic.destroy()
+      // }
+    })
+    sound.play({
+      seek: seek
+    })
+    this.mainMusic = sound
+  }
+
   setMainMusic(sound: Phaser.Sound.BaseSound) {
     this.mainMusic = sound
   }

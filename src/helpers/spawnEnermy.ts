@@ -1,6 +1,6 @@
 import LevelScene from "@/scenes/LevelScene"
 import ENEMIES from '@/gamedata/enemies.json'
-import Enemy from '@/objects/enemy'
+import Enemy from '@/objects/Enemy'
 // function eCreater(scene, x, y, text, size) {
 //   // const e = new Enemy(scene, x, y, '', '')
 
