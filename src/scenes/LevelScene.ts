@@ -95,6 +95,10 @@ export default class LevelScene extends Phaser.Scene {
     //   console.log(e)
     // })
 
+    // this.createMusicSeeker()
+  }
+
+  createMusicSeeker() {
     this.time.addEvent({
       delay: 1000, // ms
       callback: () => {
@@ -114,11 +118,6 @@ export default class LevelScene extends Phaser.Scene {
       },
       loop: true,
     })
-
-    this.createMusicSeeker()
-  }
-
-  createMusicSeeker() {
     this.seeker = new MusicSeeker(this)
   }
 
