@@ -50,7 +50,7 @@ export default class Player extends People {
     y: number,
     texture?
   ) {
-    super(scene, 'player', x, y)
+    super(scene, 'zack2_80', x, y)
     this.fireButton = buttonCreater(scene, [
       scene.input.activePointer,
       'SPACE'

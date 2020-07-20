@@ -21,7 +21,6 @@ export default class LevelLoaderScene extends Phaser.Scene {
       this.loadingBar.setPer(e)
     })
 
-    this.load.image('player', 'assets/zack2_80.png')
     this.load.image('playerBullet', 'assets/bullet.png')
     this.load.image('ebulletA', 'assets/ebullet_a.png')
     this.load.image('ebulletB', 'assets/ebullet_b.png')

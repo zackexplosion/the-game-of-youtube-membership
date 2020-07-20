@@ -90,12 +90,16 @@ export default class LevelScene extends Phaser.Scene {
       loop: true,
     })
 
+
+    // this.soundManager.mainMusic.addListener('timeupdate', e => {
+    //   console.log(e)
+    // })
+
     this.time.addEvent({
       delay: 1000, // ms
       callback: () => {
         // @ts-ignore
         const seek = Math.round(soundManager.mainMusic.seek)
-        console.log('music.seek', seek)
 
         switch(seek) {
           case 140:
