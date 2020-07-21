@@ -97,10 +97,14 @@ export default class menuScene extends _menuScene {
     this.difficult_array.push(this._difficults_normal)
     this.difficult_array.push(this._difficults_hard)
 
-    this.difficult_array.forEach(_ => {
+    this.difficult_array.forEach((_, index) => {
       _
         .setInteractive()
         .on('pointerup', (e) => {
+          this.startLevel()
+        })
+        .on('pointerdown', (e) => {
+          this.current_difficult_index = index
           this.menuChange(_)
         })
     })
