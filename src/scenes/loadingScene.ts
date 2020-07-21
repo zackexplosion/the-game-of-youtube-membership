@@ -24,7 +24,7 @@ export default class LoadingScene extends Phaser.Scene {
       this.load.audio(_.AUDIO_KEY, _.AUDIO_FILE_PATH)
     }
 
-    this.sound.pauseOnBlur = false
+    // this.sound.pauseOnBlur = false
   }
 
   create() {
