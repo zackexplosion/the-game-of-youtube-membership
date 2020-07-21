@@ -1,3 +1,5 @@
+/// <reference types="google.analytics" />
+
 import _menuScene from '@/scenes-editor/menuScene'
 import OrientationChecker from '@/helpers/OrientationChecker'
 import levels from '@/gamedata/levels'
@@ -23,6 +25,9 @@ export default class menuScene extends _menuScene {
   private soundManager: SoundManager
   private startLevel() {
     const _difficult = findDiffucultByIndex(this.current_difficult_index)
+    window.gtag('event', 'level_start', {
+      'level_name': _difficult.SCENE_NAME
+    })
     this.soundManager.playSound(_difficult.AUDIO_KEY)
 
 

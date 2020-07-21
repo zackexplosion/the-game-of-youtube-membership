@@ -73,6 +73,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
+    "@types/google.analytics": "0.0.40",
     "@types/lowdb": "^1.0.9",
     "@typescript-eslint/eslint-plugin": "^3.5.0",
     "circle-image": "^1.0.43",

@@ -9,6 +9,7 @@ declare global {
     settings: settings
     emitter: Phaser.Events.EventEmitter
     STYLES: any
+    gtag: any
   }
   interface ObjectConfig {
     scene: Phaser.Scene
