@@ -20,7 +20,7 @@ const main = async function () {
     return downloadImage
       .image(options)
       .then(({ filename }) => {
-        console.log('Saved to', filename) // saved to /path/to/dest/image.jpg
+        // console.log('Saved to', filename) // saved to /path/to/dest/image.jpg
         downloaded++
       })
       .catch((err) => console.error(err))

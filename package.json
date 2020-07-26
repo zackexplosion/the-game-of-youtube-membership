@@ -83,6 +83,7 @@
     "jimp": "^0.13.0",
     "moment": "^2.27.0",
     "phaser": "3.23.0",
+    "phaser3-rex-plugins": "^1.1.21",
     "serve": "^11.3.1",
     "sharp": "^0.25.4",
     "ts-loader": "^5.4.5",

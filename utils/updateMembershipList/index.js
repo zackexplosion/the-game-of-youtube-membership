@@ -1,6 +1,7 @@
 const updateDBFromYoutube = require('./updateDBFromYoutube')
 const downloadMemberProfileImages = require('./downloadMemberProfileImages')
 const handleRawMembers = require('./handleRawMembers')
+const writeToAssets = require('./writeToAssets')
 
 async function main() {
   try {

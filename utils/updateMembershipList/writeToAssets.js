@@ -24,9 +24,9 @@ async function writeToAssets() {
   })
 
   const data = JSON.stringify(results)
-  // console.log(data)
+  console.log(results.length, 'members written to gamedata')
   fs.writeFileSync(path.join(__dirname, '../../src/gamedata/memberlist.json'), data)
 }
-// module.exports = writeToAssets
+module.exports = writeToAssets
 
-writeToAssets()
+// writeToAssets()

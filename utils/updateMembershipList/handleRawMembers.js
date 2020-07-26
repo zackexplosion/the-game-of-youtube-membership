@@ -3,15 +3,15 @@ const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('db.json')
 const db = low(adapter)
 
-const firebase = require('firebase')
-const { ADMIN_USER, ADMIN_PASS, FIREBASE_APIKEY } = process.env
+// const firebase = require('firebase')
+// const { ADMIN_USER, ADMIN_PASS, FIREBASE_APIKEY } = process.env
 
-var firebaseDB = firebase
-  .initializeApp({
-    apiKey: FIREBASE_APIKEY,
-    databaseURL: 'https://zackexplosion-members.firebaseio.com/',
-  })
-  .database()
+// var firebaseDB = firebase
+//   .initializeApp({
+//     apiKey: FIREBASE_APIKEY,
+//     databaseURL: 'https://zackexplosion-members.firebaseio.com/',
+//   })
+//   .database()
 
 module.exports = async function () {
   const rawMembers = db.get('raw_members').value()
@@ -19,7 +19,7 @@ module.exports = async function () {
   rawMembers.forEach((l, index) => {
     const i = l.snippet.memberDetails
     const { channelId, displayName, channelUrl } = i
-
+    // console.log('processing')
     // this is myself
     if (channelId === 'UCnT7Ujp9CKmfDTl2v4XtLDw') {
       return false
@@ -42,12 +42,6 @@ module.exports = async function () {
     }
   })
 
-  try {
-    await firebase.auth().signInWithEmailAndPassword(ADMIN_USER, ADMIN_PASS)
-    await firebaseDB.ref('/members').set(result)
-  } catch (error) {
-    console.error(error)
-  }
   console.log(`${result.length} members writen`)
   return result
 }
