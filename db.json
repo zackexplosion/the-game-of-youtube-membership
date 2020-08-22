@@ -776,7 +776,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "MMInXGc9snbgOnrYPIdjmNq7nD8",
+      "etag": "cpMN4shm8oJowApnE20Vvqb50hg",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -789,8 +789,8 @@
           "highestAccessibleLevel": "CMzQ4MqUvq-wMA",
           "highestAccessibleLevelDisplayName": "乾乾爹娘",
           "accessibleLevels": [
-            "CNzWsffdxImO0wE",
             "CMzQ4MqUvq-wMA",
+            "CNzWsffdxImO0wE",
             "CMiU_8zn9r7YSA"
           ],
           "membershipsDuration": {
@@ -799,12 +799,12 @@
           },
           "membershipsDurationAtLevels": [
             {
-              "level": "CNzWsffdxImO0wE",
+              "level": "CMzQ4MqUvq-wMA",
               "memberSince": "2020-06-11T16:30:21.351000Z",
               "memberTotalDurationMonths": 6
             },
             {
-              "level": "CMzQ4MqUvq-wMA",
+              "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-06-11T16:30:21.351000Z",
               "memberTotalDurationMonths": 6
             },
@@ -1208,7 +1208,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "vFSbl0n9F4_Q1d3b5dnmf1MsKnQ",
+      "etag": "sNWp9RSC0UOKc8Sj64ewwZeFfvc",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -1221,8 +1221,8 @@
           "highestAccessibleLevel": "CMzQ4MqUvq-wMA",
           "highestAccessibleLevelDisplayName": "乾乾爹娘",
           "accessibleLevels": [
-            "CNzWsffdxImO0wE",
             "CMzQ4MqUvq-wMA",
+            "CNzWsffdxImO0wE",
             "CMiU_8zn9r7YSA"
           ],
           "membershipsDuration": {
@@ -1231,14 +1231,14 @@
           },
           "membershipsDurationAtLevels": [
             {
-              "level": "CNzWsffdxImO0wE",
-              "memberSince": "2020-04-06T16:21:43.485000Z",
-              "memberTotalDurationMonths": 7
-            },
-            {
               "level": "CMzQ4MqUvq-wMA",
               "memberSince": "2020-08-14T18:10:17.022000Z",
               "memberTotalDurationMonths": 0
+            },
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-04-06T16:21:43.485000Z",
+              "memberTotalDurationMonths": 7
             },
             {
               "level": "CMiU_8zn9r7YSA",
@@ -1325,7 +1325,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "BIYbCW7c5SD_dNhc4jP8UvHX7hM",
+      "etag": "EYh5dwYnlVpw6B10kkJBInYn3_M",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -1338,8 +1338,8 @@
           "highestAccessibleLevel": "CMzQ4MqUvq-wMA",
           "highestAccessibleLevelDisplayName": "乾乾爹娘",
           "accessibleLevels": [
-            "CNzWsffdxImO0wE",
             "CMzQ4MqUvq-wMA",
+            "CNzWsffdxImO0wE",
             "CMiU_8zn9r7YSA"
           ],
           "membershipsDuration": {
@@ -1348,14 +1348,14 @@
           },
           "membershipsDurationAtLevels": [
             {
-              "level": "CNzWsffdxImO0wE",
-              "memberSince": "2020-03-04T13:48:27.660000Z",
-              "memberTotalDurationMonths": 5
-            },
-            {
               "level": "CMzQ4MqUvq-wMA",
               "memberSince": "2020-08-08T04:45:44.372000Z",
               "memberTotalDurationMonths": 0
+            },
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-03-04T13:48:27.660000Z",
+              "memberTotalDurationMonths": 5
             },
             {
               "level": "CMiU_8zn9r7YSA",
@@ -1368,7 +1368,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "YFZ5k4gwmDkIFIP8oM71Nw-YxLU",
+      "etag": "91UkGP9V2olm_5NoDkYPCPu1BHs",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -1381,8 +1381,8 @@
           "highestAccessibleLevel": "CMzQ4MqUvq-wMA",
           "highestAccessibleLevelDisplayName": "乾乾爹娘",
           "accessibleLevels": [
-            "CNzWsffdxImO0wE",
             "CMzQ4MqUvq-wMA",
+            "CNzWsffdxImO0wE",
             "CMiU_8zn9r7YSA"
           ],
           "membershipsDuration": {
@@ -1391,12 +1391,12 @@
           },
           "membershipsDurationAtLevels": [
             {
-              "level": "CNzWsffdxImO0wE",
+              "level": "CMzQ4MqUvq-wMA",
               "memberSince": "2020-02-09T15:12:39.452000Z",
               "memberTotalDurationMonths": 6
             },
             {
-              "level": "CMzQ4MqUvq-wMA",
+              "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-02-09T15:12:39.452000Z",
               "memberTotalDurationMonths": 6
             },
@@ -2125,6 +2125,125 @@
       "channelUrl": "http://www.youtube.com/user/tifiosi",
       "profileImageUrl": "https://yt3.ggpht.com/-bEfH02-LjuM/AAAAAAAAAAI/AAAAAAAAAAA/woblWm_mkFg/s80-c-k-no-mo-rj-c0xffffff/photo.jpg",
       "memberSince": "2020-07-26T14:58:53.770000Z"
+    },
+    {
+      "channelId": "UCt8a2Rsu6vPv4j5i4ZQX6Qg",
+      "displayName": "寂寞魚",
+      "channelUrl": "http://www.youtube.com/channel/UCt8a2Rsu6vPv4j5i4ZQX6Qg",
+      "profileImageUrl": "https://yt3.ggpht.com/-fVi1drSYSf4/AAAAAAAAAAI/AAAAAAAAAAA/fKiOsJAVZQA/s80-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "memberSince": "2020-08-22T01:00:06.994000Z"
+    },
+    {
+      "channelId": "UC_QUTf8djMF_uC44TcD50iw",
+      "displayName": "阿誠Acheng",
+      "channelUrl": "http://www.youtube.com/channel/UC_QUTf8djMF_uC44TcD50iw",
+      "profileImageUrl": "https://yt3.ggpht.com/-_AsNyqMQEvg/AAAAAAAAAAI/AAAAAAAAAAA/YomAJ0ieSkA/s80-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "memberSince": "2020-08-17T19:19:32.274000Z"
+    },
+    {
+      "channelId": "UCkUCPdzE8F1sc-tDPMiqNEQ",
+      "displayName": "偽地藏",
+      "channelUrl": "http://www.youtube.com/user/gato0124",
+      "profileImageUrl": "https://yt3.ggpht.com/-bdz5lioMFnU/AAAAAAAAAAI/AAAAAAAAAAA/P5HgUBge_B8/s80-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "memberSince": "2020-08-17T13:33:30.988000Z"
+    },
+    {
+      "channelId": "UCIHBOsdTdizoMXoOw-xZZBw",
+      "displayName": "廖御麟",
+      "channelUrl": "http://www.youtube.com/channel/UCIHBOsdTdizoMXoOw-xZZBw",
+      "profileImageUrl": "https://yt3.ggpht.com/-9F-afSvLNnM/AAAAAAAAAAI/AAAAAAAAAAA/65M5Lwkn4qk/s80-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "memberSince": "2020-08-17T11:19:01.400000Z"
+    },
+    {
+      "channelId": "UCKQN-bWsSBi3qt31WpbZG6g",
+      "displayName": "SONGHUAN WU",
+      "channelUrl": "http://www.youtube.com/channel/UCKQN-bWsSBi3qt31WpbZG6g",
+      "profileImageUrl": "https://yt3.ggpht.com/-EftBDRYFaok/AAAAAAAAAAI/AAAAAAAAAAA/0tYqnCHXO5s/s80-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "memberSince": "2020-08-15T22:25:33.551000Z"
+    },
+    {
+      "channelId": "UCDqDxnVSxRIvRMO5FAqBobQ",
+      "displayName": "聖仁",
+      "channelUrl": "http://www.youtube.com/channel/UCDqDxnVSxRIvRMO5FAqBobQ",
+      "profileImageUrl": "https://yt3.ggpht.com/-CrneR3gbs_A/AAAAAAAAAAI/AAAAAAAAAAA/31-TsfTXl3o/s80-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "memberSince": "2020-08-15T19:05:34.228000Z"
+    },
+    {
+      "channelId": "UCogv5plI6anTKR59nUWwaoA",
+      "displayName": "Jui_wen Pan",
+      "channelUrl": "http://www.youtube.com/channel/UCogv5plI6anTKR59nUWwaoA",
+      "profileImageUrl": "https://yt3.ggpht.com/-y3AJ3Rgli1s/AAAAAAAAAAI/AAAAAAAAAAA/02bW_QcbaJ0/s80-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "memberSince": "2020-08-15T16:05:58.816000Z"
+    },
+    {
+      "channelId": "UC_w34MNdAUkJjespzKNd_KA",
+      "displayName": "Dean Vv",
+      "channelUrl": "http://www.youtube.com/channel/UC_w34MNdAUkJjespzKNd_KA",
+      "profileImageUrl": "https://yt3.ggpht.com/-XMZ543HOcc8/AAAAAAAAAAI/AAAAAAAAAAA/280RUkRuh60/s80-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "memberSince": "2020-08-15T12:10:20.201000Z"
+    },
+    {
+      "channelId": "UCJ4RQDdtFU2KTGaQ3dpfpYQ",
+      "displayName": "馬鹿遊戲存檔",
+      "channelUrl": "http://www.youtube.com/user/pig0312s",
+      "profileImageUrl": "https://yt3.ggpht.com/-_sbRdtbAoGM/AAAAAAAAAAI/AAAAAAAAAAA/scMZThudc1E/s80-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "memberSince": "2020-08-14T15:50:12.148000Z"
+    },
+    {
+      "channelId": "UC5YQc-EWOiNliHfrPLeYqGA",
+      "displayName": "Stone Wang",
+      "channelUrl": "http://www.youtube.com/user/guest00biohazard",
+      "profileImageUrl": "https://yt3.ggpht.com/-C_vh_DVbFHs/AAAAAAAAAAI/AAAAAAAAAAA/7QHSUWBfUWo/s80-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "memberSince": "2020-08-14T14:28:06.778000Z"
+    },
+    {
+      "channelId": "UCxDaStGpYtQq_SOL8sDPmVQ",
+      "displayName": "jjjstringer",
+      "channelUrl": "http://www.youtube.com/channel/UCxDaStGpYtQq_SOL8sDPmVQ",
+      "profileImageUrl": "https://yt3.ggpht.com/-ZvESXJuU2p8/AAAAAAAAAAI/AAAAAAAAAAA/MdDiLq_7Exk/s80-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "memberSince": "2020-08-14T11:39:30.465000Z"
+    },
+    {
+      "channelId": "UCoCZljHA-CuQMtFpHWCDtlg",
+      "displayName": "Bency Lin",
+      "channelUrl": "http://www.youtube.com/user/BencyTeak",
+      "profileImageUrl": "https://yt3.ggpht.com/-wwtoS_yOFDo/AAAAAAAAAAI/AAAAAAAAAAA/uBGo-lPNfHk/s80-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "memberSince": "2020-08-12T13:12:38.320000Z"
+    },
+    {
+      "channelId": "UC7aeh8iCLUiFd_zNubOF3Og",
+      "displayName": "YU WEI LIN",
+      "channelUrl": "http://www.youtube.com/user/los920236",
+      "profileImageUrl": "https://yt3.ggpht.com/-UM3nlm04uAM/AAAAAAAAAAI/AAAAAAAAAAA/GwIs37WBEPM/s80-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "memberSince": "2020-08-09T07:53:06.275000Z"
+    },
+    {
+      "channelId": "UC8pFf_G0A9Bf4Mq2EA6rx4w",
+      "displayName": "ANGUS WU",
+      "channelUrl": "http://www.youtube.com/user/angus2984",
+      "profileImageUrl": "https://yt3.ggpht.com/-v5r3I9veKSg/AAAAAAAAAAI/AAAAAAAAAAA/HReUEHzLvYc/s80-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "memberSince": "2020-08-09T06:41:59.127000Z"
+    },
+    {
+      "channelId": "UC66L-o_bVUMVaGXaOOC3BrQ",
+      "displayName": "吳定南",
+      "channelUrl": "http://www.youtube.com/channel/UC66L-o_bVUMVaGXaOOC3BrQ",
+      "profileImageUrl": "https://yt3.ggpht.com/-5b-YOBy2jhk/AAAAAAAAAAI/AAAAAAAAAAA/hJuujeXDEaE/s80-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "memberSince": "2020-08-07T14:07:54.597000Z"
+    },
+    {
+      "channelId": "UCwo7VCeaNTAvx46VuCmPcHg",
+      "displayName": "不想思考",
+      "channelUrl": "http://www.youtube.com/channel/UCwo7VCeaNTAvx46VuCmPcHg",
+      "profileImageUrl": "https://yt3.ggpht.com/-ljQtZg9_tHA/AAAAAAAAAAI/AAAAAAAAAAA/zo2JhDZ6CAQ/s80-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "memberSince": "2020-07-28T13:45:02.470000Z"
+    },
+    {
+      "channelId": "UC4Q8yu2fLqMKOqyy2AsSsoA",
+      "displayName": "朱晏霆",
+      "channelUrl": "http://www.youtube.com/channel/UC4Q8yu2fLqMKOqyy2AsSsoA",
+      "profileImageUrl": "https://yt3.ggpht.com/-pBLHESUZxaU/AAAAAAAAAAI/AAAAAAAAAAA/cmWsa4UIy7Q/s80-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "memberSince": "2020-07-28T13:42:24.300000Z"
     }
   ]
 }
