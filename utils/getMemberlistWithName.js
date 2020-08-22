@@ -21,4 +21,5 @@ function shuffle(array) {
 }
 
 shuffle(r)
+console.log(r.length)
 console.log(r.join(' '))
