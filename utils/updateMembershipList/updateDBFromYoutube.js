@@ -19,7 +19,7 @@ var SCOPES = [
 ]
 var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
     process.env.USERPROFILE) + '/.credentials/'
-var TOKEN_PATH = TOKEN_DIR + 'youtube-nodejs-quickstart.json'
+var TOKEN_PATH = TOKEN_DIR + 'zackexplosion-membership.json'
 
 /**
  * Create an OAuth2 client with the given credentials, and then execute the

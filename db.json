@@ -2,6 +2,551 @@
   "raw_members": [
     {
       "kind": "youtube#member",
+      "etag": "xM4AFMaxAFRy3I2xzdZu4fHNiTw",
+      "snippet": {
+        "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+        "memberDetails": {
+          "channelId": "UCt8a2Rsu6vPv4j5i4ZQX6Qg",
+          "channelUrl": "http://www.youtube.com/channel/UCt8a2Rsu6vPv4j5i4ZQX6Qg",
+          "displayName": "寂寞魚",
+          "profileImageUrl": "https://yt3.ggpht.com/-fVi1drSYSf4/AAAAAAAAAAI/AAAAAAAAAAA/fKiOsJAVZQA/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        "membershipsDetails": {
+          "highestAccessibleLevel": "CNzWsffdxImO0wE",
+          "highestAccessibleLevelDisplayName": "我只想趕快回家",
+          "accessibleLevels": [
+            "CNzWsffdxImO0wE"
+          ],
+          "membershipsDuration": {
+            "memberSince": "2020-08-22T01:00:06.994000Z",
+            "memberTotalDurationMonths": 0
+          },
+          "membershipsDurationAtLevels": [
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-08-22T01:00:06.994000Z",
+              "memberTotalDurationMonths": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "youtube#member",
+      "etag": "7-xV4k0qgHBJ17AWubciZjm_0_Y",
+      "snippet": {
+        "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+        "memberDetails": {
+          "channelId": "UC_QUTf8djMF_uC44TcD50iw",
+          "channelUrl": "http://www.youtube.com/channel/UC_QUTf8djMF_uC44TcD50iw",
+          "displayName": "阿誠Acheng",
+          "profileImageUrl": "https://yt3.ggpht.com/-_AsNyqMQEvg/AAAAAAAAAAI/AAAAAAAAAAA/YomAJ0ieSkA/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        "membershipsDetails": {
+          "highestAccessibleLevel": "CNzWsffdxImO0wE",
+          "highestAccessibleLevelDisplayName": "我只想趕快回家",
+          "accessibleLevels": [
+            "CNzWsffdxImO0wE"
+          ],
+          "membershipsDuration": {
+            "memberSince": "2020-08-17T19:19:32.274000Z",
+            "memberTotalDurationMonths": 0
+          },
+          "membershipsDurationAtLevels": [
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-08-17T19:19:32.274000Z",
+              "memberTotalDurationMonths": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "youtube#member",
+      "etag": "h_s1jbCa6QNDX-HaGUIdjhx_joA",
+      "snippet": {
+        "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+        "memberDetails": {
+          "channelId": "UCkUCPdzE8F1sc-tDPMiqNEQ",
+          "channelUrl": "http://www.youtube.com/user/gato0124",
+          "displayName": "偽地藏",
+          "profileImageUrl": "https://yt3.ggpht.com/-bdz5lioMFnU/AAAAAAAAAAI/AAAAAAAAAAA/P5HgUBge_B8/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        "membershipsDetails": {
+          "highestAccessibleLevel": "CNzWsffdxImO0wE",
+          "highestAccessibleLevelDisplayName": "我只想趕快回家",
+          "accessibleLevels": [
+            "CNzWsffdxImO0wE"
+          ],
+          "membershipsDuration": {
+            "memberSince": "2020-08-17T13:33:30.988000Z",
+            "memberTotalDurationMonths": 0
+          },
+          "membershipsDurationAtLevels": [
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-08-17T13:33:30.988000Z",
+              "memberTotalDurationMonths": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "youtube#member",
+      "etag": "Tapkg4Wvo04tP5hy5qyzk3BTFhk",
+      "snippet": {
+        "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+        "memberDetails": {
+          "channelId": "UCIHBOsdTdizoMXoOw-xZZBw",
+          "channelUrl": "http://www.youtube.com/channel/UCIHBOsdTdizoMXoOw-xZZBw",
+          "displayName": "廖御麟",
+          "profileImageUrl": "https://yt3.ggpht.com/-9F-afSvLNnM/AAAAAAAAAAI/AAAAAAAAAAA/65M5Lwkn4qk/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        "membershipsDetails": {
+          "highestAccessibleLevel": "CNzWsffdxImO0wE",
+          "highestAccessibleLevelDisplayName": "我只想趕快回家",
+          "accessibleLevels": [
+            "CNzWsffdxImO0wE"
+          ],
+          "membershipsDuration": {
+            "memberSince": "2020-08-17T11:19:01.400000Z",
+            "memberTotalDurationMonths": 0
+          },
+          "membershipsDurationAtLevels": [
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-08-17T11:19:01.400000Z",
+              "memberTotalDurationMonths": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "youtube#member",
+      "etag": "EhCcMUohdx4JLuAlcuM9PmRbppY",
+      "snippet": {
+        "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+        "memberDetails": {
+          "channelId": "UCKQN-bWsSBi3qt31WpbZG6g",
+          "channelUrl": "http://www.youtube.com/channel/UCKQN-bWsSBi3qt31WpbZG6g",
+          "displayName": "SONGHUAN WU",
+          "profileImageUrl": "https://yt3.ggpht.com/-EftBDRYFaok/AAAAAAAAAAI/AAAAAAAAAAA/0tYqnCHXO5s/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        "membershipsDetails": {
+          "highestAccessibleLevel": "CNzWsffdxImO0wE",
+          "highestAccessibleLevelDisplayName": "我只想趕快回家",
+          "accessibleLevels": [
+            "CNzWsffdxImO0wE"
+          ],
+          "membershipsDuration": {
+            "memberSince": "2020-08-15T22:25:33.551000Z",
+            "memberTotalDurationMonths": 0
+          },
+          "membershipsDurationAtLevels": [
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-08-15T22:25:33.551000Z",
+              "memberTotalDurationMonths": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "youtube#member",
+      "etag": "h4HXB3HMz4KhX-eUB3IEtDjeyQQ",
+      "snippet": {
+        "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+        "memberDetails": {
+          "channelId": "UCDqDxnVSxRIvRMO5FAqBobQ",
+          "channelUrl": "http://www.youtube.com/channel/UCDqDxnVSxRIvRMO5FAqBobQ",
+          "displayName": "聖仁",
+          "profileImageUrl": "https://yt3.ggpht.com/-CrneR3gbs_A/AAAAAAAAAAI/AAAAAAAAAAA/31-TsfTXl3o/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        "membershipsDetails": {
+          "highestAccessibleLevel": "CNzWsffdxImO0wE",
+          "highestAccessibleLevelDisplayName": "我只想趕快回家",
+          "accessibleLevels": [
+            "CNzWsffdxImO0wE"
+          ],
+          "membershipsDuration": {
+            "memberSince": "2020-08-15T19:05:34.228000Z",
+            "memberTotalDurationMonths": 0
+          },
+          "membershipsDurationAtLevels": [
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-08-15T19:05:34.228000Z",
+              "memberTotalDurationMonths": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "youtube#member",
+      "etag": "k_09OI4ndLxWp0ZhR99Kstc8YXM",
+      "snippet": {
+        "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+        "memberDetails": {
+          "channelId": "UCogv5plI6anTKR59nUWwaoA",
+          "channelUrl": "http://www.youtube.com/channel/UCogv5plI6anTKR59nUWwaoA",
+          "displayName": "Jui_wen Pan",
+          "profileImageUrl": "https://yt3.ggpht.com/-y3AJ3Rgli1s/AAAAAAAAAAI/AAAAAAAAAAA/02bW_QcbaJ0/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        "membershipsDetails": {
+          "highestAccessibleLevel": "CNzWsffdxImO0wE",
+          "highestAccessibleLevelDisplayName": "我只想趕快回家",
+          "accessibleLevels": [
+            "CNzWsffdxImO0wE"
+          ],
+          "membershipsDuration": {
+            "memberSince": "2020-08-15T16:05:58.816000Z",
+            "memberTotalDurationMonths": 0
+          },
+          "membershipsDurationAtLevels": [
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-08-15T16:05:58.816000Z",
+              "memberTotalDurationMonths": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "youtube#member",
+      "etag": "exaiDj4kMapqDtnTzIaiBvvGgEY",
+      "snippet": {
+        "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+        "memberDetails": {
+          "channelId": "UC_w34MNdAUkJjespzKNd_KA",
+          "channelUrl": "http://www.youtube.com/channel/UC_w34MNdAUkJjespzKNd_KA",
+          "displayName": "Dean Vv",
+          "profileImageUrl": "https://yt3.ggpht.com/-XMZ543HOcc8/AAAAAAAAAAI/AAAAAAAAAAA/280RUkRuh60/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        "membershipsDetails": {
+          "highestAccessibleLevel": "CMiU_8zn9r7YSA",
+          "highestAccessibleLevelDisplayName": "乾爹娘",
+          "accessibleLevels": [
+            "CNzWsffdxImO0wE",
+            "CMiU_8zn9r7YSA"
+          ],
+          "membershipsDuration": {
+            "memberSince": "2020-08-15T12:10:20.201000Z",
+            "memberTotalDurationMonths": 0
+          },
+          "membershipsDurationAtLevels": [
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-08-15T12:10:20.201000Z",
+              "memberTotalDurationMonths": 0
+            },
+            {
+              "level": "CMiU_8zn9r7YSA",
+              "memberSince": "2020-08-15T12:10:20.201000Z",
+              "memberTotalDurationMonths": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "youtube#member",
+      "etag": "Bznzw7841Iorfe85Ln19zDnF3Yo",
+      "snippet": {
+        "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+        "memberDetails": {
+          "channelId": "UCJ4RQDdtFU2KTGaQ3dpfpYQ",
+          "channelUrl": "http://www.youtube.com/user/pig0312s",
+          "displayName": "馬鹿遊戲存檔",
+          "profileImageUrl": "https://yt3.ggpht.com/-_sbRdtbAoGM/AAAAAAAAAAI/AAAAAAAAAAA/scMZThudc1E/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        "membershipsDetails": {
+          "highestAccessibleLevel": "CMiU_8zn9r7YSA",
+          "highestAccessibleLevelDisplayName": "乾爹娘",
+          "accessibleLevels": [
+            "CNzWsffdxImO0wE",
+            "CMiU_8zn9r7YSA"
+          ],
+          "membershipsDuration": {
+            "memberSince": "2020-08-14T15:50:12.148000Z",
+            "memberTotalDurationMonths": 0
+          },
+          "membershipsDurationAtLevels": [
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-08-14T15:50:12.148000Z",
+              "memberTotalDurationMonths": 0
+            },
+            {
+              "level": "CMiU_8zn9r7YSA",
+              "memberSince": "2020-08-14T15:50:12.148000Z",
+              "memberTotalDurationMonths": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "youtube#member",
+      "etag": "qXZs8YnVAKGAh3xOy1axmEMY2Nc",
+      "snippet": {
+        "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+        "memberDetails": {
+          "channelId": "UC5YQc-EWOiNliHfrPLeYqGA",
+          "channelUrl": "http://www.youtube.com/user/guest00biohazard",
+          "displayName": "Stone Wang",
+          "profileImageUrl": "https://yt3.ggpht.com/-C_vh_DVbFHs/AAAAAAAAAAI/AAAAAAAAAAA/7QHSUWBfUWo/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        "membershipsDetails": {
+          "highestAccessibleLevel": "CNzWsffdxImO0wE",
+          "highestAccessibleLevelDisplayName": "我只想趕快回家",
+          "accessibleLevels": [
+            "CNzWsffdxImO0wE"
+          ],
+          "membershipsDuration": {
+            "memberSince": "2020-08-14T14:28:06.778000Z",
+            "memberTotalDurationMonths": 0
+          },
+          "membershipsDurationAtLevels": [
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-08-14T14:28:06.778000Z",
+              "memberTotalDurationMonths": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "youtube#member",
+      "etag": "3m2qtdD3Ppfy9M2rn4KjGUEgR3Q",
+      "snippet": {
+        "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+        "memberDetails": {
+          "channelId": "UCxDaStGpYtQq_SOL8sDPmVQ",
+          "channelUrl": "http://www.youtube.com/channel/UCxDaStGpYtQq_SOL8sDPmVQ",
+          "displayName": "jjjstringer",
+          "profileImageUrl": "https://yt3.ggpht.com/-ZvESXJuU2p8/AAAAAAAAAAI/AAAAAAAAAAA/MdDiLq_7Exk/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        "membershipsDetails": {
+          "highestAccessibleLevel": "CNzWsffdxImO0wE",
+          "highestAccessibleLevelDisplayName": "我只想趕快回家",
+          "accessibleLevels": [
+            "CNzWsffdxImO0wE"
+          ],
+          "membershipsDuration": {
+            "memberSince": "2020-08-14T11:39:30.465000Z",
+            "memberTotalDurationMonths": 0
+          },
+          "membershipsDurationAtLevels": [
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-08-14T11:39:30.465000Z",
+              "memberTotalDurationMonths": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "youtube#member",
+      "etag": "uZDL5PEvuGNuCR28XJpjmgoX2FY",
+      "snippet": {
+        "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+        "memberDetails": {
+          "channelId": "UCoCZljHA-CuQMtFpHWCDtlg",
+          "channelUrl": "http://www.youtube.com/user/BencyTeak",
+          "displayName": "Bency Lin",
+          "profileImageUrl": "https://yt3.ggpht.com/-wwtoS_yOFDo/AAAAAAAAAAI/AAAAAAAAAAA/uBGo-lPNfHk/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        "membershipsDetails": {
+          "highestAccessibleLevel": "CNzWsffdxImO0wE",
+          "highestAccessibleLevelDisplayName": "我只想趕快回家",
+          "accessibleLevels": [
+            "CNzWsffdxImO0wE"
+          ],
+          "membershipsDuration": {
+            "memberSince": "2020-08-12T13:12:38.320000Z",
+            "memberTotalDurationMonths": 0
+          },
+          "membershipsDurationAtLevels": [
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-08-12T13:12:38.320000Z",
+              "memberTotalDurationMonths": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "youtube#member",
+      "etag": "U7fcWAWYv5ciic-wt3Gnz8TyJw4",
+      "snippet": {
+        "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+        "memberDetails": {
+          "channelId": "UC7aeh8iCLUiFd_zNubOF3Og",
+          "channelUrl": "http://www.youtube.com/user/los920236",
+          "displayName": "YU WEI LIN",
+          "profileImageUrl": "https://yt3.ggpht.com/-UM3nlm04uAM/AAAAAAAAAAI/AAAAAAAAAAA/GwIs37WBEPM/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        "membershipsDetails": {
+          "highestAccessibleLevel": "CNzWsffdxImO0wE",
+          "highestAccessibleLevelDisplayName": "我只想趕快回家",
+          "accessibleLevels": [
+            "CNzWsffdxImO0wE"
+          ],
+          "membershipsDuration": {
+            "memberSince": "2020-08-09T07:53:06.275000Z",
+            "memberTotalDurationMonths": 0
+          },
+          "membershipsDurationAtLevels": [
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-08-09T07:53:06.275000Z",
+              "memberTotalDurationMonths": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "youtube#member",
+      "etag": "Zxj1AjI6XPfJsIAuppJdihrydvE",
+      "snippet": {
+        "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+        "memberDetails": {
+          "channelId": "UC8pFf_G0A9Bf4Mq2EA6rx4w",
+          "channelUrl": "http://www.youtube.com/user/angus2984",
+          "displayName": "ANGUS WU",
+          "profileImageUrl": "https://yt3.ggpht.com/-v5r3I9veKSg/AAAAAAAAAAI/AAAAAAAAAAA/HReUEHzLvYc/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        "membershipsDetails": {
+          "highestAccessibleLevel": "CNzWsffdxImO0wE",
+          "highestAccessibleLevelDisplayName": "我只想趕快回家",
+          "accessibleLevels": [
+            "CNzWsffdxImO0wE"
+          ],
+          "membershipsDuration": {
+            "memberSince": "2020-08-09T06:41:59.127000Z",
+            "memberTotalDurationMonths": 0
+          },
+          "membershipsDurationAtLevels": [
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-08-09T06:41:59.127000Z",
+              "memberTotalDurationMonths": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "youtube#member",
+      "etag": "fTR4zOM4DuClM4RpZe27EDF8CG0",
+      "snippet": {
+        "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+        "memberDetails": {
+          "channelId": "UC66L-o_bVUMVaGXaOOC3BrQ",
+          "channelUrl": "http://www.youtube.com/channel/UC66L-o_bVUMVaGXaOOC3BrQ",
+          "displayName": "吳定南",
+          "profileImageUrl": "https://yt3.ggpht.com/-5b-YOBy2jhk/AAAAAAAAAAI/AAAAAAAAAAA/hJuujeXDEaE/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        "membershipsDetails": {
+          "highestAccessibleLevel": "CMiU_8zn9r7YSA",
+          "highestAccessibleLevelDisplayName": "乾爹娘",
+          "accessibleLevels": [
+            "CNzWsffdxImO0wE",
+            "CMiU_8zn9r7YSA"
+          ],
+          "membershipsDuration": {
+            "memberSince": "2020-08-07T14:07:54.597000Z",
+            "memberTotalDurationMonths": 0
+          },
+          "membershipsDurationAtLevels": [
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-08-07T14:07:54.597000Z",
+              "memberTotalDurationMonths": 0
+            },
+            {
+              "level": "CMiU_8zn9r7YSA",
+              "memberSince": "2020-08-07T14:07:54.597000Z",
+              "memberTotalDurationMonths": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "youtube#member",
+      "etag": "v6XtMCrw_ILFcDL7-di0gyR8_KM",
+      "snippet": {
+        "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+        "memberDetails": {
+          "channelId": "UCwo7VCeaNTAvx46VuCmPcHg",
+          "channelUrl": "http://www.youtube.com/channel/UCwo7VCeaNTAvx46VuCmPcHg",
+          "displayName": "不想思考",
+          "profileImageUrl": "https://yt3.ggpht.com/-ljQtZg9_tHA/AAAAAAAAAAI/AAAAAAAAAAA/zo2JhDZ6CAQ/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        "membershipsDetails": {
+          "highestAccessibleLevel": "CNzWsffdxImO0wE",
+          "highestAccessibleLevelDisplayName": "我只想趕快回家",
+          "accessibleLevels": [
+            "CNzWsffdxImO0wE"
+          ],
+          "membershipsDuration": {
+            "memberSince": "2020-07-28T13:45:02.470000Z",
+            "memberTotalDurationMonths": 0
+          },
+          "membershipsDurationAtLevels": [
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-07-28T13:45:02.470000Z",
+              "memberTotalDurationMonths": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "youtube#member",
+      "etag": "4ckNlBTKbPlrlTl036cSk0gabP4",
+      "snippet": {
+        "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
+        "memberDetails": {
+          "channelId": "UC4Q8yu2fLqMKOqyy2AsSsoA",
+          "channelUrl": "http://www.youtube.com/channel/UC4Q8yu2fLqMKOqyy2AsSsoA",
+          "displayName": "朱晏霆",
+          "profileImageUrl": "https://yt3.ggpht.com/-pBLHESUZxaU/AAAAAAAAAAI/AAAAAAAAAAA/cmWsa4UIy7Q/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
+        },
+        "membershipsDetails": {
+          "highestAccessibleLevel": "CNzWsffdxImO0wE",
+          "highestAccessibleLevelDisplayName": "我只想趕快回家",
+          "accessibleLevels": [
+            "CNzWsffdxImO0wE"
+          ],
+          "membershipsDuration": {
+            "memberSince": "2020-07-28T13:42:24.300000Z",
+            "memberTotalDurationMonths": 0
+          },
+          "membershipsDurationAtLevels": [
+            {
+              "level": "CNzWsffdxImO0wE",
+              "memberSince": "2020-07-28T13:42:24.300000Z",
+              "memberTotalDurationMonths": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "youtube#member",
       "etag": "M_lUc0O-iAZ6zbHz7CSAwwyUM9k",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
@@ -101,7 +646,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "QxbTiHO67-Z9eEa-eigjlLSUUyw",
+      "etag": "U5MWYlTM4NNvxG9SopGmqc3hMj4",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -118,13 +663,13 @@
           ],
           "membershipsDuration": {
             "memberSince": "2020-07-21T12:50:51.942000Z",
-            "memberTotalDurationMonths": 0
+            "memberTotalDurationMonths": 1
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-07-21T12:50:51.942000Z",
-              "memberTotalDurationMonths": 0
+              "memberTotalDurationMonths": 1
             }
           ]
         }
@@ -132,7 +677,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "EJj8q-jGkHdDG-Qdrau9AQvWvOA",
+      "etag": "ITDq67iKnQQmy0u_e-jbM9UjQn8",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -150,18 +695,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2020-07-20T12:25:28.849000Z",
-            "memberTotalDurationMonths": 0
+            "memberTotalDurationMonths": 1
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-07-20T12:25:28.849000Z",
-              "memberTotalDurationMonths": 0
+              "memberTotalDurationMonths": 1
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2020-07-20T12:25:28.849000Z",
-              "memberTotalDurationMonths": 0
+              "memberTotalDurationMonths": 1
             }
           ]
         }
@@ -169,7 +714,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "bR3sbjRm6Hj7s-JHpL7ws2M9c-Q",
+      "etag": "PO7uiSE4ySk3UImIZ-RbXEX6YP0",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -186,13 +731,13 @@
           ],
           "membershipsDuration": {
             "memberSince": "2020-07-20T11:26:54.482000Z",
-            "memberTotalDurationMonths": 0
+            "memberTotalDurationMonths": 1
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-07-20T11:26:54.482000Z",
-              "memberTotalDurationMonths": 0
+              "memberTotalDurationMonths": 1
             }
           ]
         }
@@ -231,7 +776,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "xBVAvbXMKtAX_zdFtABW9C-zang",
+      "etag": "MMInXGc9snbgOnrYPIdjmNq7nD8",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -245,28 +790,28 @@
           "highestAccessibleLevelDisplayName": "乾乾爹娘",
           "accessibleLevels": [
             "CNzWsffdxImO0wE",
-            "CMiU_8zn9r7YSA",
-            "CMzQ4MqUvq-wMA"
+            "CMzQ4MqUvq-wMA",
+            "CMiU_8zn9r7YSA"
           ],
           "membershipsDuration": {
             "memberSince": "2020-06-11T16:30:21.351000Z",
-            "memberTotalDurationMonths": 5
+            "memberTotalDurationMonths": 6
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-06-11T16:30:21.351000Z",
-              "memberTotalDurationMonths": 5
-            },
-            {
-              "level": "CMiU_8zn9r7YSA",
-              "memberSince": "2020-06-11T16:30:21.351000Z",
-              "memberTotalDurationMonths": 5
+              "memberTotalDurationMonths": 6
             },
             {
               "level": "CMzQ4MqUvq-wMA",
               "memberSince": "2020-06-11T16:30:21.351000Z",
-              "memberTotalDurationMonths": 5
+              "memberTotalDurationMonths": 6
+            },
+            {
+              "level": "CMiU_8zn9r7YSA",
+              "memberSince": "2020-06-11T16:30:21.351000Z",
+              "memberTotalDurationMonths": 6
             }
           ]
         }
@@ -274,7 +819,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "ZOFFxhLvUsHzxvVOSx1T088lfDo",
+      "etag": "VJ8KFMaQY3k2UZnFdSh751iihYM",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -292,18 +837,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2020-06-09T16:55:36.351000Z",
-            "memberTotalDurationMonths": 6
+            "memberTotalDurationMonths": 7
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-06-09T16:55:36.351000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2020-06-09T16:55:36.351000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             }
           ]
         }
@@ -311,7 +856,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "KxxAzkm-qyFN1I2x-srLMj0b_Do",
+      "etag": "6-_JF-qOHJp-MxiyeY2TJKYu3B8",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -329,18 +874,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2020-05-31T12:54:46.900000Z",
-            "memberTotalDurationMonths": 6
+            "memberTotalDurationMonths": 7
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-05-31T12:54:46.900000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2020-05-31T12:54:46.900000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             }
           ]
         }
@@ -447,7 +992,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "T6MLQabtzCbEmVvubGVQ4k0LQ3M",
+      "etag": "IXAJSJ4zfFY6zcZbl1vfjjh3gzc",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -464,13 +1009,13 @@
           ],
           "membershipsDuration": {
             "memberSince": "2020-05-10T08:20:11.621000Z",
-            "memberTotalDurationMonths": 2
+            "memberTotalDurationMonths": 3
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-05-10T08:20:11.621000Z",
-              "memberTotalDurationMonths": 2
+              "memberTotalDurationMonths": 3
             }
           ]
         }
@@ -478,7 +1023,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "dwDzLx9QPXefUzDIpEqOPLaVe2k",
+      "etag": "MdIE6DzeYZmf0484fvA9v4naT6g",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -496,18 +1041,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2020-04-28T03:52:21.614000Z",
-            "memberTotalDurationMonths": 2
+            "memberTotalDurationMonths": 3
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-04-28T03:52:21.614000Z",
-              "memberTotalDurationMonths": 2
+              "memberTotalDurationMonths": 3
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2020-04-28T03:52:21.614000Z",
-              "memberTotalDurationMonths": 2
+              "memberTotalDurationMonths": 3
             }
           ]
         }
@@ -515,7 +1060,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "HmS1aMjtxEp5zkiDrINPf-nvWFc",
+      "etag": "bUbywYjXj7msByCANWfDcScQlRg",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -533,18 +1078,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2020-04-27T14:43:13.055000Z",
-            "memberTotalDurationMonths": 2
+            "memberTotalDurationMonths": 3
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-04-27T14:43:13.055000Z",
-              "memberTotalDurationMonths": 2
+              "memberTotalDurationMonths": 3
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2020-04-27T14:43:13.055000Z",
-              "memberTotalDurationMonths": 2
+              "memberTotalDurationMonths": 3
             }
           ]
         }
@@ -552,7 +1097,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "h2WD75R8kUQdEQhB4zqwGaWeqDA",
+      "etag": "jgNxOU0F_UDEuK1BT3sXek9WvqU",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -570,18 +1115,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2020-04-27T11:28:07.004000Z",
-            "memberTotalDurationMonths": 2
+            "memberTotalDurationMonths": 3
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-04-27T11:28:07.004000Z",
-              "memberTotalDurationMonths": 2
+              "memberTotalDurationMonths": 3
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2020-04-27T11:28:07.004000Z",
-              "memberTotalDurationMonths": 2
+              "memberTotalDurationMonths": 3
             }
           ]
         }
@@ -663,7 +1208,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "IlLeUXppX930ZGN7vb1GVKm7zeY",
+      "etag": "vFSbl0n9F4_Q1d3b5dnmf1MsKnQ",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -673,26 +1218,32 @@
           "profileImageUrl": "https://yt3.ggpht.com/-vT2ySxTDFzY/AAAAAAAAAAI/AAAAAAAAAAA/4KAI8lKKnGU/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
         },
         "membershipsDetails": {
-          "highestAccessibleLevel": "CMiU_8zn9r7YSA",
-          "highestAccessibleLevelDisplayName": "乾爹娘",
+          "highestAccessibleLevel": "CMzQ4MqUvq-wMA",
+          "highestAccessibleLevelDisplayName": "乾乾爹娘",
           "accessibleLevels": [
             "CNzWsffdxImO0wE",
+            "CMzQ4MqUvq-wMA",
             "CMiU_8zn9r7YSA"
           ],
           "membershipsDuration": {
             "memberSince": "2020-04-06T16:21:43.485000Z",
-            "memberTotalDurationMonths": 6
+            "memberTotalDurationMonths": 7
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-04-06T16:21:43.485000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
+            },
+            {
+              "level": "CMzQ4MqUvq-wMA",
+              "memberSince": "2020-08-14T18:10:17.022000Z",
+              "memberTotalDurationMonths": 0
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2020-04-06T16:21:43.485000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             }
           ]
         }
@@ -700,7 +1251,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "27346lKu8jeDBwZl37zes5C7iyM",
+      "etag": "OBpgwQIM9DvyoL_C6yHOqU-7jYE",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -718,18 +1269,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2020-03-28T14:37:00.006000Z",
-            "memberTotalDurationMonths": 3
+            "memberTotalDurationMonths": 4
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-03-28T14:37:00.006000Z",
-              "memberTotalDurationMonths": 3
+              "memberTotalDurationMonths": 4
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2020-03-28T14:37:00.006000Z",
-              "memberTotalDurationMonths": 3
+              "memberTotalDurationMonths": 4
             }
           ]
         }
@@ -737,7 +1288,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "spsdgeFi13t_3Fz9NBhhmXWasyk",
+      "etag": "xX57xxIXVfCEWBHU4T9KWbfqtUU",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -755,18 +1306,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2020-03-13T04:42:26.789000Z",
-            "memberTotalDurationMonths": 4
+            "memberTotalDurationMonths": 5
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-03-13T04:42:26.789000Z",
-              "memberTotalDurationMonths": 4
+              "memberTotalDurationMonths": 5
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2020-03-13T04:42:26.789000Z",
-              "memberTotalDurationMonths": 4
+              "memberTotalDurationMonths": 5
             }
           ]
         }
@@ -774,7 +1325,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "nsVLOjqkTDOh10BQsc3cE-xerRA",
+      "etag": "BIYbCW7c5SD_dNhc4jP8UvHX7hM",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -784,26 +1335,32 @@
           "profileImageUrl": "https://yt3.ggpht.com/-SyQjWabv5NQ/AAAAAAAAAAI/AAAAAAAAAAA/K03jjAbMfPg/s88-c-k-no-mo-rj-c0xffffff/photo.jpg"
         },
         "membershipsDetails": {
-          "highestAccessibleLevel": "CMiU_8zn9r7YSA",
-          "highestAccessibleLevelDisplayName": "乾爹娘",
+          "highestAccessibleLevel": "CMzQ4MqUvq-wMA",
+          "highestAccessibleLevelDisplayName": "乾乾爹娘",
           "accessibleLevels": [
             "CNzWsffdxImO0wE",
+            "CMzQ4MqUvq-wMA",
             "CMiU_8zn9r7YSA"
           ],
           "membershipsDuration": {
             "memberSince": "2020-03-04T13:48:27.660000Z",
-            "memberTotalDurationMonths": 4
+            "memberTotalDurationMonths": 5
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-03-04T13:48:27.660000Z",
-              "memberTotalDurationMonths": 4
+              "memberTotalDurationMonths": 5
+            },
+            {
+              "level": "CMzQ4MqUvq-wMA",
+              "memberSince": "2020-08-08T04:45:44.372000Z",
+              "memberTotalDurationMonths": 0
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2020-03-04T13:48:27.660000Z",
-              "memberTotalDurationMonths": 4
+              "memberTotalDurationMonths": 5
             }
           ]
         }
@@ -811,7 +1368,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "FBZwlVI_z-qcLuNoAT3S1F1NM04",
+      "etag": "YFZ5k4gwmDkIFIP8oM71Nw-YxLU",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -825,28 +1382,28 @@
           "highestAccessibleLevelDisplayName": "乾乾爹娘",
           "accessibleLevels": [
             "CNzWsffdxImO0wE",
-            "CMiU_8zn9r7YSA",
-            "CMzQ4MqUvq-wMA"
+            "CMzQ4MqUvq-wMA",
+            "CMiU_8zn9r7YSA"
           ],
           "membershipsDuration": {
             "memberSince": "2020-02-09T15:12:39.452000Z",
-            "memberTotalDurationMonths": 5
+            "memberTotalDurationMonths": 6
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-02-09T15:12:39.452000Z",
-              "memberTotalDurationMonths": 5
-            },
-            {
-              "level": "CMiU_8zn9r7YSA",
-              "memberSince": "2020-02-09T15:12:39.452000Z",
-              "memberTotalDurationMonths": 5
+              "memberTotalDurationMonths": 6
             },
             {
               "level": "CMzQ4MqUvq-wMA",
               "memberSince": "2020-02-09T15:12:39.452000Z",
-              "memberTotalDurationMonths": 5
+              "memberTotalDurationMonths": 6
+            },
+            {
+              "level": "CMiU_8zn9r7YSA",
+              "memberSince": "2020-02-09T15:12:39.452000Z",
+              "memberTotalDurationMonths": 6
             }
           ]
         }
@@ -854,7 +1411,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "X9w5oEyIAW_2cGVZx3503_q1CLw",
+      "etag": "wL3jvDHOgg8TUa0gekbj3K3FAUE",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -872,18 +1429,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2020-01-04T12:58:55.313000Z",
-            "memberTotalDurationMonths": 6
+            "memberTotalDurationMonths": 7
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-01-04T12:58:55.313000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2020-01-04T12:58:55.313000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             }
           ]
         }
@@ -891,7 +1448,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "iHBiswDnWnVpDzLQRaJxSeQs3Ws",
+      "etag": "hXavqDXHK1FhBVyyg_PM-48yHk0",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -909,18 +1466,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2020-01-02T20:02:46.487000Z",
-            "memberTotalDurationMonths": 6
+            "memberTotalDurationMonths": 7
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2020-01-02T20:02:46.487000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2020-01-02T20:02:46.487000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             }
           ]
         }
@@ -928,7 +1485,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "YsXAtXZmMZVXkrSACQ98_SCcDNw",
+      "etag": "oTpnO34SmrRmM9U8h1I8jI8HT7w",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -946,18 +1503,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2019-12-31T01:49:37.521000Z",
-            "memberTotalDurationMonths": 6
+            "memberTotalDurationMonths": 7
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2019-12-31T01:49:37.521000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2019-12-31T01:49:37.521000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             }
           ]
         }
@@ -965,7 +1522,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "RsbD7tfK-qGVGXt6RGPl1XeSPdM",
+      "etag": "qZopiuREe43IzMNvHKcUmYkT3Z8",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -983,18 +1540,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2019-12-30T15:02:55.144000Z",
-            "memberTotalDurationMonths": 6
+            "memberTotalDurationMonths": 7
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2019-12-30T15:02:55.144000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2019-12-30T15:02:55.144000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             }
           ]
         }
@@ -1002,7 +1559,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "bBOnTVkOKp4p5vavJmqfpWO1Q2Q",
+      "etag": "Ms170mlhMw-pm6W0YqE1eElqfrM",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -1020,18 +1577,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2019-12-30T14:08:55.066000Z",
-            "memberTotalDurationMonths": 6
+            "memberTotalDurationMonths": 7
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2019-12-30T14:08:55.066000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2019-12-30T14:08:55.066000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             }
           ]
         }
@@ -1039,7 +1596,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "pjAa1mD8ZiEBUS4WgUdBdq1i97I",
+      "etag": "NI45xofuRF3XQDYGwKHNp8NDTWs",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -1057,18 +1614,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2019-12-30T13:24:22.699000Z",
-            "memberTotalDurationMonths": 6
+            "memberTotalDurationMonths": 7
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2019-12-30T13:24:22.699000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2019-12-30T13:24:22.699000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             }
           ]
         }
@@ -1076,7 +1633,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "QGv1sakv8L19u_i1FBXSVSiF5P4",
+      "etag": "RJlyRGqgR_wTMBZEQ9QFDf2bcLE",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -1094,18 +1651,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2019-12-30T12:55:21.786000Z",
-            "memberTotalDurationMonths": 6
+            "memberTotalDurationMonths": 7
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2019-12-30T12:55:21.786000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2019-12-30T12:55:21.786000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             }
           ]
         }
@@ -1113,7 +1670,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "uAH6lyklbGMZrQQ5rqtE7we3gzI",
+      "etag": "s1Afr8jR83HzGL2FEWxNso8ZQ9U",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -1131,18 +1688,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2019-12-30T11:28:57.379000Z",
-            "memberTotalDurationMonths": 6
+            "memberTotalDurationMonths": 7
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2019-12-30T11:28:57.379000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2019-12-30T11:28:57.379000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             }
           ]
         }
@@ -1150,7 +1707,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "ex2uLh48ygn9UTLEzjWW3oqqeQI",
+      "etag": "lgIwIVUt740-zbLT9saRxk4mcOI",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -1168,18 +1725,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2019-12-29T21:02:29.482000Z",
-            "memberTotalDurationMonths": 6
+            "memberTotalDurationMonths": 7
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2019-12-29T21:02:29.482000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2019-12-29T21:02:29.482000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             }
           ]
         }
@@ -1187,7 +1744,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "5U0lXlTypuAuF0KINYDJnqnGGAU",
+      "etag": "jaR3d1HWCkGrUdofLYeIHlFNwpQ",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -1205,18 +1762,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2019-12-28T12:19:55.403000Z",
-            "memberTotalDurationMonths": 6
+            "memberTotalDurationMonths": 7
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2019-12-28T12:19:55.403000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2019-12-28T12:19:55.403000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             }
           ]
         }
@@ -1224,7 +1781,7 @@
     },
     {
       "kind": "youtube#member",
-      "etag": "XChOUByMEjmKJn9fH_pucQ_WMS0",
+      "etag": "XKYO0VGvjWrAguVBQMHK9QdsPeQ",
       "snippet": {
         "creatorChannelId": "UC-r3V6Y2ljXN9kEBq0a5s8A",
         "memberDetails": {
@@ -1242,18 +1799,18 @@
           ],
           "membershipsDuration": {
             "memberSince": "2019-12-28T04:21:56.620000Z",
-            "memberTotalDurationMonths": 6
+            "memberTotalDurationMonths": 7
           },
           "membershipsDurationAtLevels": [
             {
               "level": "CNzWsffdxImO0wE",
               "memberSince": "2019-12-28T04:21:56.620000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             },
             {
               "level": "CMiU_8zn9r7YSA",
               "memberSince": "2019-12-28T04:21:56.620000Z",
-              "memberTotalDurationMonths": 6
+              "memberTotalDurationMonths": 7
             }
           ]
         }
