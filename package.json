@@ -85,7 +85,7 @@
     "phaser": "3.23.0",
     "phaser3-rex-plugins": "^1.1.21",
     "serve": "^11.3.1",
-    "sharp": "^0.25.4",
+    "sharp": "^0.30.5",
     "ts-loader": "^5.4.5",
     "webpack": ">=4 < 4.29",
     "webpack-cli": "^3.3.11",
